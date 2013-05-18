@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'tsaleh/vim-matchit'
-Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'chriskempson/tomorrow-theme.git', {'rtp': 'vim/'}
 Bundle 'tomasr/molokai'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'terryma/vim-multiple-cursors'
@@ -54,7 +54,7 @@ filetype plugin indent on     " required!
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html set shiftwidth=2 | set expandtab | set tabstop=2
-colorscheme Tomorrow 
+colorscheme Tomorrow
 
 set noswapfile
 set nobackup
@@ -74,6 +74,7 @@ set nu
 
 
 if has('gui_macvim')
+    colorscheme Tomorrow
     set guifont=Consolas\ for\ Powerline:h12
     set guioptions-=m  "no menu
     set guioptions-=T  "no toolbar
@@ -112,6 +113,8 @@ nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
 nmap <leader>t :MiniBufExplorer<cr>
 nmap <leader>b :BuffergatorToggle<cr>
+
+" clear color after search
 
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_select_completion =
