@@ -26,7 +26,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
 Bundle 'Valloric/YouCompleteMe.git'
-Bundle 'jelera/vim-javascript-syntax.git'
+Bundle "pangloss/vim-javascript"
 Bundle 'mattn/zencoding-vim.git'
 " snipMate dependencies
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -37,8 +37,9 @@ Bundle 'garbas/vim-snipmate'
 
 " Bundle 'Raimondi/delimitMate'
 Bundle 'jiangmiao/auto-pairs.git'
-"Bundle 'mhinz/vim-signify'
+" Bundle 'mhinz/vim-signify'
 Bundle 'kien/ctrlp.vim'
+Bundle 'cakebaker/scss-syntax.vim'
 "
 " original repos on github
 Bundle 'tpope/vim-fugitive'
@@ -127,4 +128,8 @@ let g:Powerline_symbols = 'fancy'
 let g:syntastic_javascrit_checkers = ['gjslint']
 let g:syntastic_javascript_gjslint_conf = '--disable 0110'
 
+" indent line
+let g:indentLine_showFirstIndentLevel = 1
 
+" for scss
+au BufRead,BufNewFile *.scss set filetype=scss
