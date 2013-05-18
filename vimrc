@@ -22,7 +22,6 @@ Bundle 'scrooloose/syntastic.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Yggdroot/indentLine'
 Bundle 'Lokaltog/vim-powerline'
-" Bundle 'fholgado/minibufexpl.vim.git'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
 Bundle 'Valloric/YouCompleteMe.git'
@@ -35,12 +34,10 @@ Bundle "honza/vim-snippets"
 " snipMate
 Bundle 'garbas/vim-snipmate'
 
-" Bundle 'Raimondi/delimitMate'
 Bundle 'jiangmiao/auto-pairs.git'
-" Bundle 'mhinz/vim-signify'
 Bundle 'kien/ctrlp.vim'
 Bundle 'cakebaker/scss-syntax.vim'
-"
+Bundle 'tpope/vim-surround.git'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
