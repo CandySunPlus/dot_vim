@@ -130,6 +130,7 @@ let g:syntastic_javascript_gjslint_conf = '--disable 0110'
 
 " indent line
 let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_indentLevel = 35
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 
 " for scss
