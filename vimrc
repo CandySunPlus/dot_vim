@@ -27,6 +27,8 @@ Bundle 'tomtom/tcomment_vim.git'
 Bundle 'Valloric/YouCompleteMe.git'
 Bundle "pangloss/vim-javascript"
 Bundle 'mattn/zencoding-vim.git'
+Bundle 'xolox/vim-misc.git'
+Bundle 'xolox/vim-session.git'
 " snipMate dependencies
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -72,7 +74,9 @@ set nu
 
 if has('gui_macvim')
     colorscheme Tomorrow
-    set guifont=Consolas\ for\ Powerline:h12
+    " set guifont=Consolas\ for\ Powerline:h12
+    set guifont=Source\ Code\ Pro:h12
+    " set guifont=Anonymous\ Pro:h12
     set guioptions-=m  "no menu
     set guioptions-=T  "no toolbar
     set guioptions-=l
@@ -111,6 +115,9 @@ nmap <leader>/ :TComment<cr>
 nmap <leader>t :MiniBufExplorer<cr>
 nmap <leader>b :BuffergatorToggle<cr>
 
+let g:session_directory = '~/.session'
+let g:session_autosave = 'yes'
+let g:session_autoload = 'no'
 " clear color after search
 
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -126,11 +133,11 @@ let g:Powerline_symbols = 'fancy'
 
 " syntasic
 let g:syntastic_javascrit_checkers = ['gjslint']
-let g:syntastic_javascript_gjslint_conf = '--disable 0110'
+" let g:syntastic_javascript_gjslint_conf = '--disable 0110'
 
 " indent line
 let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_indentLevel = 35
+let g:indentLine_indentLevel = 20
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 
 " for scss
