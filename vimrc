@@ -75,7 +75,7 @@ set nu
 if has('gui_macvim')
     colorscheme Tomorrow
     " set guifont=Consolas\ for\ Powerline:h12
-    set guifont=Source\ Code\ Pro:h12
+    set guifont=Source\ Code\ Pro\ Medium:h12
     " set guifont=Anonymous\ Pro:h12
     set guioptions-=m  "no menu
     set guioptions-=T  "no toolbar
