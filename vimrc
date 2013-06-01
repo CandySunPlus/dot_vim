@@ -36,6 +36,7 @@ Bundle "honza/vim-snippets"
 " snipMate
 Bundle 'garbas/vim-snipmate'
 
+Bundle 'mikehaertl/pdv-standalone.git'
 Bundle 'jiangmiao/auto-pairs.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'cakebaker/scss-syntax.vim'
@@ -119,6 +120,10 @@ let g:session_directory = '~/.session'
 let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
 " clear color after search
+
+nnoremap <C-K> :call PhpDocSingle()<cr>
+vnoremap <C-K> :call PhpDocRange()<cr>
+let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_select_completion =
