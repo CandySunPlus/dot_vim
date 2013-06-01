@@ -36,7 +36,7 @@ Bundle "honza/vim-snippets"
 " snipMate
 Bundle 'garbas/vim-snipmate'
 
-Bundle 'mikehaertl/pdv-standalone.git'
+Bundle 'stephpy/vim-phpdoc.git'
 Bundle 'jiangmiao/auto-pairs.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'cakebaker/scss-syntax.vim'
