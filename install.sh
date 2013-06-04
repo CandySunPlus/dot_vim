@@ -1,5 +1,6 @@
 #!/bin/bash
-script_path=`dirname "$0"`
-ln -s $script_path/vimrc ~/.vimrc
-ln -s $script_path/gvimrc ~/.gvimrc
-ln -s $script_path/tmux.conf ~/.tmux.conf
+BASE_PATH=$(cd "$(dirname "$0")"; pwd)
+rm -f ~/.vimrc ~/.gvimrc ~/.tmux.conf
+ln -s ${BASE_PATH}/vimrc ~/.vimrc
+ln -s ${BASE_PATH}/gvimrc ~/.gvimrc
+ln -s ${BASE_PATH}/tmux.conf ~/.tmux.conf
