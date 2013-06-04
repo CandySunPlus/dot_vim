@@ -114,6 +114,7 @@ nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
 nmap <leader>b :BuffergatorToggle<cr>
 
+let g:indentLine_fileTypeExclude = ['jade']
 let g:session_directory = '~/.session'
 let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
