@@ -74,9 +74,7 @@ set nu
 
 if has('gui_macvim')
     colorscheme Tomorrow
-    " set guifont=Consolas\ for\ Powerline:h12
     set guifont=Source\ Code\ Pro\ Medium:h12
-    " set guifont=Anonymous\ Pro:h12
     set guioptions-=m  "no menu
     set guioptions-=T  "no toolbar
     set guioptions-=l
@@ -87,9 +85,10 @@ if has('gui_macvim')
 
     let g:ctrlp_working_path_mode = 'ra'
 else
-    colorscheme Tomorrow
+    colorscheme Tomorrow-Night
 endif
 
+let g:colors_name = ''
 
 let g:multi_cursor_use_default_mapping = 0
 let g:multi_cursor_next_key = '<D-d>'
