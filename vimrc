@@ -54,7 +54,7 @@ filetype plugin indent on     " required!
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html set shiftwidth=2 | set expandtab | set tabstop=2
-colorscheme Tomorrow
+colorscheme Tomorrow-Night
 
 set noswapfile
 set nobackup
