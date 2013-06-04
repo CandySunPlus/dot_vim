@@ -108,12 +108,10 @@ nmap <D-[> <<
 vmap <D-[> <gv
 vmap <D-]> >gv
 
-nmap <A-Tab> :MBEbn<cr>
-nmap <A-S-Tab> :MBEbp<cr>
+map <C-Tab> :b#<cr>
 
 nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
-nmap <leader>t :MiniBufExplorer<cr>
 nmap <leader>b :BuffergatorToggle<cr>
 
 let g:session_directory = '~/.session'
@@ -141,9 +139,8 @@ let g:syntastic_javascript_checkers = ['gjslint']
 
 " indent line
 let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_indentLevel = 20
+let g:indentLine_indentLevel = 15 
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
-let g:syntastic_check_on_open = 1
 
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
