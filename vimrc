@@ -137,13 +137,13 @@ let g:ctrlp_custom_ignore = {
 let g:Powerline_symbols = 'fancy'
 
 " syntasic
-let g:syntastic_javascrit_checkers = ['gjslint']
-" let g:syntastic_javascript_gjslint_conf = '--disable 0110'
+let g:syntastic_javascript_checkers = ['gjslint']
 
 " indent line
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_indentLevel = 20
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
+let g:syntastic_check_on_open = 1
 
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
