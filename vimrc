@@ -87,7 +87,7 @@ if has('gui_macvim')
 
     let g:ctrlp_working_path_mode = 'ra'
 else
-    colorscheme Tomorrow-Night
+    colorscheme Tomorrow
 endif
 
 
@@ -119,7 +119,6 @@ let g:indentLine_fileTypeExclude = ['jade']
 let g:session_directory = '~/.session'
 let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
-" clear color after search
 
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
