@@ -118,7 +118,8 @@ map <C-Tab> :b#<cr>
 
 nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
-nmap <leader>b :BuffergatorToggle<cr>
+nmap <leader>r :CtrlPBufTag<cr>
+nmap <leader>R :CtrlPBufTagAll<cr>
 
 let g:indentLine_fileTypeExclude = ['jade']
 let g:session_directory = '~/.session'
