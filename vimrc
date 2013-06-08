@@ -24,7 +24,7 @@ Bundle 'Yggdroot/indentLine'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
-Bundle 'Valloric/YouCompleteMe.git'
+" Bundle 'Valloric/YouCompleteMe.git'
 Bundle "pangloss/vim-javascript"
 Bundle 'mattn/zencoding-vim.git'
 Bundle 'xolox/vim-misc.git'
@@ -125,14 +125,21 @@ nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_key_list_select_completion =
-  \ get( g:, 'ycm_key_list_select_completion', ['<Down>'] )
+" let g:ycm_min_num_of_chars_for_completion = 3
+" let g:ycm_key_list_select_completion =
+"   \ get( g:, 'ycm_key_list_select_completion', ['<Down>'] )
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|build)$|\v[\/](node_modules)$',
   \ 'file': '\v\.(exe|so|dll|tmp|temp|cache|pyc)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+  \ }
+let g:ctrlp_buftag_types = {
+  \ 'go'         : '--language-force=go --golang-types=ftv',
+  \ 'coffee'     : '--language-force=coffee --coffee-types=cmfvf',
+  \ 'markdown'   : '--language-force=markdown --markdown-types=hik',
+  \ 'objc'       : '--language-force=objc --objc-types=mpci',
+  \ 'rc'         : '--language-force=rust --rust-types=fTm'
   \ }
 let g:Powerline_symbols = 'fancy'
 
