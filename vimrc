@@ -132,6 +132,7 @@ let g:session_autoload = 'no'
 
 let g:jscomplete_use = ['dom', 'moz']
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_insert_char_pre = 2
 
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
