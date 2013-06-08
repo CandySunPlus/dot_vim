@@ -24,7 +24,10 @@ Bundle 'Yggdroot/indentLine'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
+Bundle 'Shougo/neocomplcache.vim.git'
 " Bundle 'Valloric/YouCompleteMe.git'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'teramako/jscomplete-vim.git'
 Bundle "pangloss/vim-javascript"
 Bundle 'mattn/zencoding-vim.git'
 Bundle 'xolox/vim-misc.git'
@@ -54,6 +57,7 @@ filetype plugin indent on     " required!
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html set shiftwidth=2 | set expandtab | set tabstop=2
+autocmd FileType javascript setl omnifunc=jscomplete#CompleteJS
 
 set noswapfile
 set nobackup
@@ -126,6 +130,9 @@ let g:session_directory = '~/.session'
 let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
 
+let g:jscomplete_use = ['dom', 'moz']
+let g:neocomplcache_enable_at_startup = 1
+
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
@@ -139,6 +146,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|tmp|temp|cache|pyc)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
   \ }
+
 let g:ctrlp_buftag_types = {
   \ 'go'         : '--language-force=go --golang-types=ftv',
   \ 'coffee'     : '--language-force=coffee --coffee-types=cmfvf',
