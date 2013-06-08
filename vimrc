@@ -101,9 +101,13 @@ let g:multi_cursor_quit_key = '<Esc>'
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
 
+map <D-r> :CtrlPBufTag<cr>
+imap <D-r> <esc>:CtrlPBufTag<cr>
+map <D-R> :CtrlPBufTagAll<cr>
+imap <D-R> <esc>:CtrlPBufTagAll<cr>
+
 map <D-p> :CtrlPBuffer<cr>
 imap <D-p> <esc>:CtrlPBuffer<cr>
-
 " Indent lines with cmd+[ and cmd+]
 nmap <D-]> >>
 nmap <D-[> <<
