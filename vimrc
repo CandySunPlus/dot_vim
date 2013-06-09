@@ -142,6 +142,7 @@ let g:neocomplcache_enable_insert_char_pre = 2
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
+let g:SimpleJsIndenter_BriefMode = 1
 
 " let g:ycm_min_num_of_chars_for_completion = 3
 " let g:ycm_key_list_select_completion =
