@@ -28,7 +28,9 @@ Bundle 'Shougo/neocomplcache.vim.git'
 " Bundle 'Valloric/YouCompleteMe.git'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'teramako/jscomplete-vim.git'
-Bundle "pangloss/vim-javascript"
+" for javascript indent
+Bundle 'jelera/vim-javascript-syntax.git'
+Bundle 'jiangmiao/simple-javascript-indenter.git'
 Bundle 'mattn/zencoding-vim.git'
 Bundle 'xolox/vim-misc.git'
 Bundle 'xolox/vim-session.git'
