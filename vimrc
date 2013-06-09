@@ -32,6 +32,9 @@ Bundle "pangloss/vim-javascript"
 Bundle 'mattn/zencoding-vim.git'
 Bundle 'xolox/vim-misc.git'
 Bundle 'xolox/vim-session.git'
+" for php5.4
+Bundle 'donnut/vim-php54-syntax'
+Bundle '2072/PHP-Indenting-for-VIm.git'
 " snipMate dependencies
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
