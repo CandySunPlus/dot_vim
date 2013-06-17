@@ -25,6 +25,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
 Bundle 'Shougo/neocomplcache.vim.git'
+Bundle 'Shougo/unite.vim.git'
 " Bundle 'Valloric/YouCompleteMe.git'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'teramako/jscomplete-vim.git'
@@ -136,8 +137,10 @@ let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
 
 let g:jscomplete_use = ['dom', 'moz']
+imap <expr> - pumvisible() ? "\<Plug>(neocomplcache_start_unite_quick_match)" : '-'
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_insert_char_pre = 2
+let g:neocomplcache_enable_quick_match = 1
 
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
