@@ -141,6 +141,24 @@ imap <expr> - pumvisible() ? "\<Plug>(neocomplcache_start_unite_quick_match)" : 
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_insert_char_pre = 2
 let g:neocomplcache_enable_quick_match = 1
+let g:neocomplcache_enable_cursor_hold_i = 1
+let g:neocomplcache_cursor_hold_i_time = 300
+autocmd InsertEnter * call s:on_insert_enter()
+
+function! s:on_insert_enter()
+  if &updatetime > g:neocomplcache_cursor_hold_i_time
+    let s:update_time_save = &updatetime
+    let &updatetime = g:neocomplcache_cursor_hold_i_time
+  endif
+endfunction
+
+autocmd InsertLeave * call s:on_insert_leave()
+
+function! s:on_insert_leave()
+  if &updatetime < s:update_time_save
+    let &updatetime = s:update_time_save
+  endif
+endfunction
 
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
