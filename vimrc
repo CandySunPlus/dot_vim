@@ -195,3 +195,8 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
+
+hi DiffAdd guibg=#13354A ctermbg=236
+hi DiffChange guifg=#89807D ctermfg=244 guibg=#4C4745 ctermbg=238
+hi DiffDelete guifg=#960050 ctermfg=89 guibg=#1E0010 ctermbg=233
+hi DiffText guibg=#4C4745 ctermbg=238
