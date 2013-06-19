@@ -78,6 +78,7 @@ set laststatus=2
 set noerrorbells
 set showcmd
 set showmode
+set cursorline
 syntax on
 set nu
 
