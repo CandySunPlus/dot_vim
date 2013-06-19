@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'tsaleh/vim-matchit'
-Bundle 'w0ng/vim-hybrid.git'
+Bundle 'chriskempson/vim-tomorrow-theme.git'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic.git' 
@@ -83,7 +83,7 @@ set nu
 
 
 if has('gui_macvim')
-    colorscheme hybrid-light
+    colorscheme Tomorrow
     " set guifont=Source\ Code\ Pro\ Medium:h12
     set guifont=TheMixMono-Regular:h12
     set linespace=1
@@ -97,7 +97,7 @@ if has('gui_macvim')
 
     let g:ctrlp_working_path_mode = 'ra'
 else
-    colorscheme hybrid
+    colorscheme Tomorrow-Night
 endif
 
 let g:colors_name = ''
@@ -179,22 +179,3 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
 
-" delay after insert
-let g:neocomplcache_enable_cursor_hold_i = 1
-let g:neocomplcache_cursor_hold_i_time = 300
-autocmd InsertEnter * call s:on_insert_enter()
- 
-function! s:on_insert_enter()
-  if &updatetime > g:neocomplcache_cursor_hold_i_time
-    let s:update_time_save = &updatetime
-    let &updatetime = g:neocomplcache_cursor_hold_i_time
-  endif
-endfunction
- 
-autocmd InsertLeave * call s:on_insert_leave()
- 
-function! s:on_insert_leave()
-  if &updatetime < s:update_time_save
-    let &updatetime = s:update_time_save
-  endif
-endfunction
