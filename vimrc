@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'tsaleh/vim-matchit'
-Bundle 'chriskempson/tomorrow-theme.git', {'rtp': 'vim/'}
+Bundle 'w0ng/vim-hybrid.git'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic.git' 
@@ -83,7 +83,7 @@ set nu
 
 
 if has('gui_macvim')
-    colorscheme Tomorrow
+    colorscheme hybrid-light
     " set guifont=Source\ Code\ Pro\ Medium:h12
     set guifont=TheMixMono-Regular:h12
     set linespace=1
@@ -97,7 +97,7 @@ if has('gui_macvim')
 
     let g:ctrlp_working_path_mode = 'ra'
 else
-    colorscheme Tomorrow-Night
+    colorscheme hybrid
 endif
 
 let g:colors_name = ''
@@ -137,28 +137,12 @@ let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
 
 let g:jscomplete_use = ['dom', 'moz']
-imap <expr> - pumvisible() ? "\<Plug>(neocomplcache_start_unite_quick_match)" : '-'
+
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_insert_char_pre = 2
-let g:neocomplcache_enable_quick_match = 1
-let g:neocomplcache_enable_cursor_hold_i = 1
-let g:neocomplcache_cursor_hold_i_time = 300
-autocmd InsertEnter * call s:on_insert_enter()
-
-function! s:on_insert_enter()
-  if &updatetime > g:neocomplcache_cursor_hold_i_time
-    let s:update_time_save = &updatetime
-    let &updatetime = g:neocomplcache_cursor_hold_i_time
-  endif
-endfunction
-
-autocmd InsertLeave * call s:on_insert_leave()
-
-function! s:on_insert_leave()
-  if &updatetime < s:update_time_save
-    let &updatetime = s:update_time_save
-  endif
-endfunction
 
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
@@ -195,7 +179,22 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
 
-hi DiffAdd guibg=#13354A ctermbg=236
-hi DiffChange guifg=#89807D ctermfg=244 guibg=#4C4745 ctermbg=238
-hi DiffDelete guifg=#960050 ctermfg=89 guibg=#1E0010 ctermbg=233
-hi DiffText guibg=#4C4745 ctermbg=238
+" delay after insert
+let g:neocomplcache_enable_cursor_hold_i = 1
+let g:neocomplcache_cursor_hold_i_time = 300
+autocmd InsertEnter * call s:on_insert_enter()
+ 
+function! s:on_insert_enter()
+  if &updatetime > g:neocomplcache_cursor_hold_i_time
+    let s:update_time_save = &updatetime
+    let &updatetime = g:neocomplcache_cursor_hold_i_time
+  endif
+endfunction
+ 
+autocmd InsertLeave * call s:on_insert_leave()
+ 
+function! s:on_insert_leave()
+  if &updatetime < s:update_time_save
+    let &updatetime = s:update_time_save
+  endif
+endfunction
