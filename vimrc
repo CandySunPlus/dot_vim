@@ -15,7 +15,6 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 Bundle 'tsaleh/vim-matchit'
 Bundle 'chriskempson/tomorrow-theme.git', {'rtp': 'vim/'}
-Bundle 'tomasr/molokai'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic.git' 
