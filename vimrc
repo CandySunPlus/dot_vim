@@ -169,6 +169,10 @@ let g:ctrlp_buftag_types = {
   \ 'rc'         : '--language-force=rust --rust-types=fTm'
   \ }
 
+let g:tagbar_type_javascript = {
+  \ 'ctagsbin' : '/usr/local/bin/jsctags'
+\ }
+
 let g:Powerline_symbols = 'fancy'
 
 " syntasic
