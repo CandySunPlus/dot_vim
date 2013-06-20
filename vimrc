@@ -19,12 +19,14 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic.git' 
 Bundle 'scrooloose/nerdtree'
-Bundle 'Yggdroot/indentLine'
+" Bundle 'Yggdroot/indentLine'
+Bundle 'nathanaelkane/vim-indent-guides.git'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
 Bundle 'Shougo/neocomplcache.vim.git'
 Bundle 'Shougo/unite.vim.git'
+Bundle 'majutsushi/tagbar.git'
 " Bundle 'Valloric/YouCompleteMe.git'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'teramako/jscomplete-vim.git'
@@ -130,8 +132,8 @@ nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
 nmap <leader>r :CtrlPBufTag<cr>
 nmap <leader>R :CtrlPBufTagAll<cr>
+nmap <leader>o :TagbarToggle<cr>
 
-let g:indentLine_fileTypeExclude = ['jade']
 let g:session_directory = '~/.session'
 let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
@@ -172,8 +174,9 @@ let g:Powerline_symbols = 'fancy'
 let g:syntastic_javascript_checkers = ['gjslint']
 
 " indent line
-let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_indentLevel = 15 
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 
 " for scss
