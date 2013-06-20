@@ -168,6 +168,7 @@ let g:ctrlp_buftag_types = {
   \ 'objc'       : '--language-force=objc --objc-types=mpci',
   \ 'rc'         : '--language-force=rust --rust-types=fTm'
   \ }
+
 let g:Powerline_symbols = 'fancy'
 
 " syntasic
