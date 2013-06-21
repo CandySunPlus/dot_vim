@@ -170,8 +170,16 @@ let g:ctrlp_buftag_types = {
   \ }
 
 let g:tagbar_type_javascript = {
-  \ 'ctagsbin' : '/usr/local/bin/jsctags'
+  \ 'ctagstype' : 'javascript',
+  \ 'kinds'     : [
+      \ 'o:objects',
+      \ 'm:members',
+      \ 'f:functions',
+      \ 'a:arraies',
+      \ 's:strings',
+    \ ]
 \ }
+
 
 let g:Powerline_symbols = 'fancy'
 
