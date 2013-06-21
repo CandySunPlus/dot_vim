@@ -20,6 +20,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic.git' 
 Bundle 'scrooloose/nerdtree'
 " Bundle 'Yggdroot/indentLine'
+Bundle 'marijnh/tern_for_vim.git'
 Bundle 'nathanaelkane/vim-indent-guides.git'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
@@ -64,7 +65,7 @@ filetype plugin indent on     " required!
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html set shiftwidth=2 | set expandtab | set tabstop=2
-autocmd FileType javascript setl omnifunc=jscomplete#CompleteJS
+" autocmd FileType javascript setl omnifunc=jscomplete#CompleteJS
 
 set noswapfile
 set nobackup
