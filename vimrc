@@ -14,12 +14,12 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'tsaleh/vim-matchit'
+Bundle 'gmarik/sudo-gui.vim'
 Bundle 'chriskempson/vim-tomorrow-theme.git'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic.git' 
 Bundle 'scrooloose/nerdtree'
-" Bundle 'Yggdroot/indentLine'
 Bundle 'marijnh/tern_for_vim.git'
 Bundle 'nathanaelkane/vim-indent-guides.git'
 Bundle 'Lokaltog/vim-powerline'
