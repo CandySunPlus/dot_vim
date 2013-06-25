@@ -14,6 +14,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'tsaleh/vim-matchit'
+Bundle 'mileszs/ack.vim.git'
 Bundle 'vim-scripts/sudo.vim.git'
 Bundle 'chriskempson/vim-tomorrow-theme.git'
 Bundle 'digitaltoad/vim-jade'
