@@ -26,7 +26,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
 Bundle 'majutsushi/tagbar.git'
-Bundle 'Valloric/YouCompleteMe.git'
+Bundle 'Shougo/neocomplcache.vim'
 Bundle 'shawncplus/phpcomplete.vim'
 " for javascript indent
 Bundle 'jelera/vim-javascript-syntax.git'
@@ -187,3 +187,5 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
 
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_disable_auto_complete = 1
