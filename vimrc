@@ -25,12 +25,10 @@ Bundle 'nathanaelkane/vim-indent-guides.git'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
-Bundle 'Shougo/neocomplcache.vim.git'
 Bundle 'Shougo/unite.vim.git'
 Bundle 'majutsushi/tagbar.git'
-" Bundle 'Valloric/YouCompleteMe.git'
+Bundle 'Valloric/YouCompleteMe.git'
 Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'teramako/jscomplete-vim.git'
 " for javascript indent
 Bundle 'jelera/vim-javascript-syntax.git'
 Bundle 'jiangmiao/simple-javascript-indenter.git'
@@ -88,9 +86,10 @@ set nu
 if has('gui_macvim')
     colorscheme Tomorrow
     " set guifont=Source\ Code\ Pro\ Medium:h12
+    set fuoptions=maxvert
     set guifont=TheMixMono-Regular:h12
     set linespace=1
-    set guioptions-=m  "no menu
+    " set guioptions-=m  "no menu
     set guioptions-=T  "no toolbar
     set guioptions-=l
     set guioptions-=L
@@ -139,13 +138,6 @@ let g:session_directory = '~/.session'
 let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
 
-let g:jscomplete_use = ['dom', 'moz']
-
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_insert_char_pre = 2
 
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
