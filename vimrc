@@ -28,6 +28,7 @@ Bundle 'tomtom/tcomment_vim.git'
 Bundle 'majutsushi/tagbar.git'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'teramako/jscomplete-vim'
 " for javascript indent
 Bundle 'jelera/vim-javascript-syntax.git'
 Bundle 'jiangmiao/simple-javascript-indenter.git'
@@ -62,7 +63,8 @@ filetype plugin indent on     " required!
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html set shiftwidth=2 | set expandtab | set tabstop=2
-" autocmd FileType javascript setl omnifunc=jscomplete#CompleteJS
+autocmd FileType javascript
+  \ :setl omnifunc=jscomplete#CompleteJS
 
 set noswapfile
 set nobackup
@@ -143,9 +145,7 @@ vnoremap <C-K> :call PhpDocRange()<cr>
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 let g:SimpleJsIndenter_BriefMode = 1
 
-" let g:ycm_min_num_of_chars_for_completion = 3
-" let g:ycm_key_list_select_completion =
-"   \ get( g:, 'ycm_key_list_select_completion', ['<Down>'] )
+:let g:jscomplete_use = ['dom', 'moz']
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|build)$|\v[\/](node_modules)$',
