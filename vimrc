@@ -27,6 +27,7 @@ Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
 Bundle 'majutsushi/tagbar.git'
 Bundle 'Shougo/neocomplcache.vim'
+Bundle 'ervandew/supertab'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'teramako/jscomplete-vim'
 " for javascript indent
@@ -189,3 +190,4 @@ au BufRead,BufNewFile *.scss set filetype=scss
 
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
+let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
