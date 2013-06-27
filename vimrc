@@ -13,6 +13,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
+Bundle 'vim-scripts/nginx.vim'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'mileszs/ack.vim.git'
 Bundle 'vim-scripts/sudo.vim.git'
@@ -188,8 +189,9 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
 
+" for nginx
+au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif 
+
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
 let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
-" spell check
-set spell spelllang=en_us
