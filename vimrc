@@ -191,3 +191,5 @@ au BufRead,BufNewFile *.scss set filetype=scss
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
 let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
+" spell check
+set spell spelllang=en_us
