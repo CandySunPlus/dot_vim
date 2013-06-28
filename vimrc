@@ -147,7 +147,7 @@ vnoremap <C-K> :call PhpDocRange()<cr>
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 let g:SimpleJsIndenter_BriefMode = 1
 
-:let g:jscomplete_use = ['dom', 'moz']
+let g:jscomplete_use = ['dom', 'moz']
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|build)$|\v[\/](node_modules)$',
