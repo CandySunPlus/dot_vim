@@ -88,11 +88,9 @@ set nu
 
 if has('gui_macvim')
     colorscheme Tomorrow
-    " set guifont=Source\ Code\ Pro\ Medium:h12
     set fuoptions=maxvert
     set guifont=TheMixMono-Regular:h12
     set linespace=1
-    " set guioptions-=m  "no menu
     set guioptions-=T  "no toolbar
     set guioptions-=l
     set guioptions-=L
@@ -101,6 +99,7 @@ if has('gui_macvim')
     set transparency=8
 
     let g:ctrlp_working_path_mode = 'ra'
+    let g:Powerline_symbols = 'fancy'
 else
     colorscheme Tomorrow-Night
 endif
@@ -115,12 +114,10 @@ let g:multi_cursor_quit_key = '<Esc>'
 
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
-
 map <D-r> :CtrlPBufTag<cr>
 imap <D-r> <esc>:CtrlPBufTag<cr>
 map <D-R> :CtrlPBufTagAll<cr>
 imap <D-R> <esc>:CtrlPBufTagAll<cr>
-
 map <D-p> :CtrlPBuffer<cr>
 imap <D-p> <esc>:CtrlPBuffer<cr>
 " Indent lines with cmd+[ and cmd+]
@@ -128,26 +125,26 @@ nmap <D-]> >>
 nmap <D-[> <<
 vmap <D-[> <gv
 vmap <D-]> >gv
-
+" switch buffer
 map <C-Tab> :b#<cr>
-
+" leader keys
 nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
 nmap <leader>r :CtrlPBufTag<cr>
 nmap <leader>R :CtrlPBufTagAll<cr>
 nmap <leader>o :TagbarToggle<cr>
+" ctrl keys
+nnoremap <C-K> :call PhpDocSingle()<cr>
+vnoremap <C-K> :call PhpDocRange()<cr>
 
+" session setting
 let g:session_directory = '~/.session'
 let g:session_autosave = 'yes'
 let g:session_autoload = 'no'
 
-
-nnoremap <C-K> :call PhpDocSingle()<cr>
-vnoremap <C-K> :call PhpDocRange()<cr>
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 let g:SimpleJsIndenter_BriefMode = 1
-
-:let g:jscomplete_use = ['dom', 'moz']
+let g:jscomplete_use = ['dom', 'moz']
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|build)$|\v[\/](node_modules)$',
@@ -175,8 +172,6 @@ let g:tagbar_type_javascript = {
 \ }
 
 
-let g:Powerline_symbols = 'fancy'
-
 " syntasic
 let g:syntastic_javascript_checkers = ['gjslint']
 
@@ -192,6 +187,7 @@ au BufRead,BufNewFile *.scss set filetype=scss
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif 
 
+" neocomplacache and superTab setting
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
 let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
