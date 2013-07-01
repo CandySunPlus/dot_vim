@@ -192,3 +192,4 @@ au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
 let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
+set completeopt-=preview
