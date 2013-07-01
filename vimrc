@@ -101,6 +101,7 @@ if has('gui_macvim')
     let g:ctrlp_working_path_mode = 'ra'
     let g:Powerline_symbols = 'fancy'
 else
+    let g:Powerline_symbols = 'compatible'
     colorscheme Tomorrow-Night
 endif
 
