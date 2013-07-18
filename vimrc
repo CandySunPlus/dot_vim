@@ -84,7 +84,7 @@ set showcmd
 set showmode
 set cursorline
 set completeopt-=preview
-" set nu
+set nu
 set rnu
 syntax on
 
