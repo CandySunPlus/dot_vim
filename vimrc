@@ -83,8 +83,10 @@ set noerrorbells
 set showcmd
 set showmode
 set cursorline
+set completeopt-=preview
+" set nu
+set rnu
 syntax on
-set nu
 
 
 if has('gui_macvim')
@@ -193,4 +195,3 @@ au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
 let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
-set completeopt-=preview
