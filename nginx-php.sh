@@ -1,6 +1,6 @@
 #!/bin/sh
-NGINX="/usr/local/bin/nginx"
-PHPFPM="/usr/local/bin/php-fpm"
+NGINX="/usr/local/sbin/nginx"
+PHPFPM="/usr/local/sbin/php-fpm"
 PIDPATH="/usr/local/var/run"
 
 if [[ $1 = "start" ]]; then
