@@ -92,8 +92,8 @@ syntax on
 if has('gui_macvim')
     colorscheme Tomorrow
     set fuoptions=maxvert
-    set guifont=TheMixMono-Regular:h12
-    set linespace=1
+    set guifont=TheMixMono-Regular:h11
+    set linespace=2
     set guioptions-=T  "no toolbar
     set guioptions-=l
     set guioptions-=L
@@ -102,7 +102,8 @@ if has('gui_macvim')
     set transparency=8
 
     let g:ctrlp_working_path_mode = 'ra'
-    let g:Powerline_symbols = 'fancy'
+    " let g:Powerline_symbols = 'fancy'
+    let g:Powerline_symbols = 'compatible'
 else
     let g:Powerline_symbols = 'compatible'
     colorscheme Tomorrow-Night
