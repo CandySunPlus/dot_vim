@@ -34,7 +34,7 @@ Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'teramako/jscomplete-vim'
 " for javascript indent
 Bundle 'jelera/vim-javascript-syntax.git'
-Bundle 'jiangmiao/simple-javascript-indenter.git'
+Bundle 'guileen/simple-javascript-indenter.git'
 Bundle 'mattn/zencoding-vim.git'
 Bundle 'xolox/vim-misc.git'
 Bundle 'xolox/vim-session.git'
@@ -194,4 +194,4 @@ au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/
 " neocomplacache and superTab setting
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
-let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
+let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
