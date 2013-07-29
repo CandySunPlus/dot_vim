@@ -52,6 +52,7 @@ Bundle 'stephpy/vim-phpdoc.git'
 Bundle 'jiangmiao/auto-pairs.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-surround.git'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
