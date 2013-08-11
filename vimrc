@@ -92,11 +92,11 @@ syntax on
 
 if has('gui_macvim')
     colorscheme Tomorrow
-    set fuoptions=maxvert
+    " set fuoptions=maxvert
     set guifont=Source\ Code\ Pro\ Medium:h12
     " set guifont=TheMixMono-Regular:h12
     set linespace=2
-    set guioptions-=T  "no toolbar
+    " set guioptions-=T  "no toolbar
     set guioptions-=l
     set guioptions-=L
     set guioptions-=r
