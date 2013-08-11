@@ -97,10 +97,10 @@ if has('gui_macvim')
     " set guifont=TheMixMono-Regular:h12
     set linespace=2
     " set guioptions-=T  "no toolbar
-    set guioptions-=l
-    set guioptions-=L
-    set guioptions-=r
-    set guioptions-=R
+    " set guioptions-=l
+    " set guioptions-=L
+    " set guioptions-=r
+    " set guioptions-=R
     set transparency=8
 
     let g:ctrlp_working_path_mode = 'ra'
