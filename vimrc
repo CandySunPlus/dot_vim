@@ -13,11 +13,11 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
+Bundle 'gmarik/sudo-gui.vim'
 Bundle 'vim-scripts/VimIM'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'mileszs/ack.vim.git'
-Bundle 'vim-scripts/sudo.vim.git'
 Bundle 'chriskempson/vim-tomorrow-theme.git'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'terryma/vim-multiple-cursors'
