@@ -35,7 +35,7 @@ Bundle 'teramako/jscomplete-vim'
 " for javascript indent
 Bundle 'jelera/vim-javascript-syntax.git'
 Bundle 'guileen/simple-javascript-indenter.git'
-Bundle 'mattn/zencoding-vim.git'
+Bundle 'mattn/emmet-vim'
 Bundle 'xolox/vim-misc.git'
 Bundle 'xolox/vim-session.git'
 " for php5.4
