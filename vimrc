@@ -15,7 +15,6 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'skammer/vim-css-color'
-Bundle 'sickill/vim-monokai'
 Bundle 'vim-scripts/VimIM'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'tsaleh/vim-matchit'
@@ -111,7 +110,10 @@ if has('gui_macvim')
 
     let g:ctrlp_working_path_mode = 'ra'
 else
-    colorscheme Monokai
+    colorscheme Tomorrow-Night
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
 endif
 
 let g:colors_name = ''
