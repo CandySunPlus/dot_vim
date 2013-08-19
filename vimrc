@@ -23,7 +23,7 @@ Bundle 'mileszs/ack.vim.git'
 Bundle 'chriskempson/vim-tomorrow-theme.git'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'scrooloose/syntastic.git' 
+Bundle 'scrooloose/syntastic.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nathanaelkane/vim-indent-guides.git'
 " Bundle 'Lokaltog/vim-powerline'
@@ -91,6 +91,8 @@ set completeopt-=preview
 set nu
 set rnu
 syntax on
+set listchars=trail:·
+set list
 
 
 if has('gui_macvim')
@@ -192,7 +194,7 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 au BufRead,BufNewFile *.scss set filetype=scss
 
 " for nginx
-au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif 
+au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
 " neocomplacache and superTab setting
 let g:neocomplcache_enable_at_startup = 1
