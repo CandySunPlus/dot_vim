@@ -26,7 +26,8 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic.git' 
 Bundle 'scrooloose/nerdtree'
 Bundle 'nathanaelkane/vim-indent-guides.git'
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
 Bundle 'majutsushi/tagbar.git'
@@ -106,10 +107,7 @@ if has('gui_macvim')
     set transparency=8
 
     let g:ctrlp_working_path_mode = 'ra'
-    " let g:Powerline_symbols = 'fancy'
-    let g:Powerline_symbols = 'compatible'
 else
-    let g:Powerline_symbols = 'compatible'
     colorscheme Monokai
 endif
 
@@ -200,3 +198,15 @@ au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+let g:airline_theme = 'bubblegum'
+" unicode symbols
+let g:airline_linecolumn_prefix = '␊ '
+let g:airline_linecolumn_prefix = '␤ '
+let g:airline_linecolumn_prefix = '¶ '
+let g:airline_branch_prefix = '⎇ '
+let g:airline_paste_symbol = 'ρ'
+let g:airline_paste_symbol = 'Þ'
+let g:airline_paste_symbol = '∥'
+let g:airline_whitespace_symbol = 'Ξ'
+let g:airline_enable_branch = 1
+let g:airline_enable_syntasic = 1
