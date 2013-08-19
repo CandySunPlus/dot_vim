@@ -90,6 +90,7 @@ set cursorline
 set completeopt-=preview
 set nu
 set rnu
+set numberwidth=2
 syntax on
 set listchars=trail:·
 set list
