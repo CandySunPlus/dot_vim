@@ -14,6 +14,8 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'gmarik/sudo-gui.vim'
+Bundle 'skammer/vim-css-color'
+Bundle 'sickill/vim-monokai'
 Bundle 'vim-scripts/VimIM'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'tsaleh/vim-matchit'
@@ -93,7 +95,7 @@ syntax on
 if has('gui_macvim')
     colorscheme Tomorrow
     " set fuoptions=maxvert
-    set guifont=Source\ Code\ Pro\ Medium:h12
+    set guifont=Source\ Code\ Pro:h12
     " set guifont=TheMixMono-Regular:h12
     set linespace=2
     " set guioptions-=T  "no toolbar
@@ -108,7 +110,7 @@ if has('gui_macvim')
     let g:Powerline_symbols = 'compatible'
 else
     let g:Powerline_symbols = 'compatible'
-    colorscheme Tomorrow-Night
+    colorscheme Monokai
 endif
 
 let g:colors_name = ''
