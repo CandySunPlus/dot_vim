@@ -14,6 +14,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'gmarik/sudo-gui.vim'
+Bundle 'mhinz/vim-signify'
 Bundle 'skammer/vim-css-color'
 Bundle 'vim-scripts/VimIM'
 Bundle 'vim-scripts/nginx.vim'
