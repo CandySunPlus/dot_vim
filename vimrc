@@ -16,7 +16,6 @@ Bundle 'gmarik/vundle'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'skammer/vim-css-color'
-Bundle 'vim-scripts/VimIM'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'tsaleh/vim-matchit'
 Bundle 'mileszs/ack.vim.git'
@@ -92,7 +91,7 @@ set nu
 set rnu
 set numberwidth=2
 syntax on
-set listchars=trail:·
+set listchars=trail:·,tab:>-
 set list
 
 
