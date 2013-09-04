@@ -79,7 +79,7 @@ set autoread
 set autowrite
 set fileformats=unix,dos,mac
 set backspace=indent,eol,start
-set hlsearch
+" set hlsearch
 set incsearch
 set laststatus=2
 set noerrorbells
