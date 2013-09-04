@@ -202,7 +202,7 @@ au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/
 " neocomplacache and superTab setting
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_disable_auto_complete = 1
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+let g:SuperTabDefaultCompletionType = '<C-X><C-O>'
 let g:airline_theme = 'bubblegum'
 " unicode symbols
 let g:airline_linecolumn_prefix = '␊ '
