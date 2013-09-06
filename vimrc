@@ -207,7 +207,7 @@ let g:SuperTabLongestEnhanced = 1
 let g:SuperTabLeadingSpaceCompletion = 0
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType ="<C-X><C-O>"
+let g:SuperTabContextDefaultCompletionType ="<C-X><C-U>"
 let g:airline_theme = 'bubblegum'
 " unicode symbols
 let g:airline_linecolumn_prefix = '␊ '
