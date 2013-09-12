@@ -13,6 +13,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
+Bundle 'brookhong/DBGPavim'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'vim-scripts/nginx.vim'
