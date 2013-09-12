@@ -24,11 +24,11 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nathanaelkane/vim-indent-guides.git'
-" Bundle 'Lokaltog/vim-powerline'
 Bundle 'bling/vim-airline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
-Bundle 'majutsushi/tagbar.git'
+" Bundle 'majutsushi/tagbar.git'
+Bundle 'esukram/vim-taglist'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'ervandew/supertab'
 Bundle 'shawncplus/phpcomplete.vim'
@@ -143,7 +143,7 @@ nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
 nmap <leader>r :CtrlPBufTag<cr>
 nmap <leader>R :CtrlPBufTagAll<cr>
-nmap <leader>o :TagbarToggle<cr>
+nmap <leader>o :TlistToggle<cr>
 " ctrl keys
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
