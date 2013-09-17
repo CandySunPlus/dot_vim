@@ -106,8 +106,6 @@ if has('gui_macvim')
     " set guioptions-=L
     " set guioptions-=r
     " set guioptions-=R
-    set transparency=8
-
     let g:ctrlp_working_path_mode = 'ra'
 else
     colorscheme Tomorrow-Night
