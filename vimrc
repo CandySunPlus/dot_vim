@@ -13,6 +13,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
+Bundle 'marijnh/tern_for_vim'
 Bundle 'joonty/vdebug.git'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'mhinz/vim-signify'
