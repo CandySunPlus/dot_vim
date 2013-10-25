@@ -34,7 +34,6 @@ Bundle 'esukram/vim-taglist'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'ervandew/supertab'
 Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'teramako/jscomplete-vim'
 " for javascript indent
 Bundle 'jelera/vim-javascript-syntax.git'
 Bundle 'guileen/simple-javascript-indenter.git'
@@ -70,8 +69,6 @@ filetype plugin indent on     " required!
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html set shiftwidth=2 | set expandtab | set tabstop=2
-autocmd FileType javascript
-  \ :setl omnifunc=jscomplete#CompleteJS
 
 set noswapfile
 set nobackup
