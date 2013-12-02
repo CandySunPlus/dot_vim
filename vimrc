@@ -29,11 +29,12 @@ Bundle 'nathanaelkane/vim-indent-guides.git'
 Bundle 'bling/vim-airline'
 Bundle 'jeetsukumaran/vim-buffergator.git'
 Bundle 'tomtom/tcomment_vim.git'
-" Bundle 'majutsushi/tagbar.git'
 Bundle 'esukram/vim-taglist'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'ervandew/supertab'
 Bundle 'shawncplus/phpcomplete.vim'
+" for python indent
+Bundle 'hynek/vim-python-pep8-indent'
 " for javascript indent
 Bundle 'jelera/vim-javascript-syntax.git'
 Bundle 'guileen/simple-javascript-indenter.git'
