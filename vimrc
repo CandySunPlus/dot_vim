@@ -52,7 +52,7 @@ Bundle "honza/vim-snippets"
 Bundle 'garbas/vim-snipmate'
 
 Bundle 'stephpy/vim-phpdoc.git'
-Bundle 'jiangmiao/auto-pairs.git'
+" Bundle 'jiangmiao/auto-pairs.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'groenewege/vim-less'
