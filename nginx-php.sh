@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 NGINX="/usr/local/sbin/nginx"
 PHPFPM="/usr/local/sbin/php-fpm"
 PIDPATH="/usr/local/var/run"
