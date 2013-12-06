@@ -1,5 +1,8 @@
 set nocompatible               " be iMproved
 set mouse=a
+set ts=4
+set expandtab
+set autoindent
 
 filetype off                   " required!
 
