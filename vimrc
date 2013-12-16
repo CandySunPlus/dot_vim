@@ -36,6 +36,8 @@ Bundle 'esukram/vim-taglist'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'ervandew/supertab'
 Bundle 'shawncplus/phpcomplete.vim'
+" for go
+Bundle 'jnwhiteh/vim-golang'
 " for python indent
 Bundle 'hynek/vim-python-pep8-indent'
 " for javascript indent
@@ -100,8 +102,8 @@ set list
 if has('gui_macvim')
     colorscheme Tomorrow
     " set fuoptions=maxvert
-    " set guifont=Source\ Code\ Pro:h12
-    set guifont=Andale\ Mono:h12
+    set guifont=Source\ Code\ Pro:h12
+    " set guifont=Andale\ Mono:h12
     " set guifont=TheMixMono-Regular:h12
     set linespace=2
     " set guioptions-=T  "no toolbar
