@@ -17,6 +17,9 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'marijnh/tern_for_vim'
+" For dash
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 Bundle 'joonty/vdebug.git'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'mhinz/vim-signify'
@@ -151,6 +154,8 @@ nmap <leader>o :TlistToggle<cr>
 " ctrl keys
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
+" dash keys
+nmap <leader>d <Plug>DashSearch
 
 " session setting
 let g:session_directory = '~/.session'
