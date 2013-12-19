@@ -17,6 +17,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'marijnh/tern_for_vim'
+Bundle 'jiangmiao/auto-pairs'
 " For dash
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
@@ -230,3 +231,10 @@ let g:airline_paste_symbol = '∥'
 let g:airline_whitespace_symbol = 'Ξ'
 let g:airline_enable_branch = 1
 let g:airline_enable_syntasic = 1
+let g:AutoPairsMapBS = 0
+
+autocmd FileType *
+            \ if &omnifunc != '' |
+            \   call SuperTabChain(&omnifunc, "<c-p>") |
+            \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
+            \ endif
