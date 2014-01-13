@@ -73,7 +73,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 " non github repos
-" ...
 
 filetype plugin indent on     " required!
 
