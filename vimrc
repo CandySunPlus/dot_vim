@@ -19,6 +19,7 @@ Bundle 'gmarik/vundle'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'phlip9/google-vim_cpp_indent'
 " For dash
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
@@ -232,7 +233,9 @@ let g:airline_whitespace_symbol = 'Ξ'
 let g:airline_enable_branch = 1
 let g:airline_enable_syntasic = 1
 let g:AutoPairsMapBS = 0
+" clang complete config
 let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+let g:clang_auto_select = 1
 
 autocmd FileType *
             \ if &omnifunc != '' |
