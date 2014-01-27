@@ -3,6 +3,7 @@ set mouse=a
 set ts=4
 set expandtab
 set autoindent
+set cindent
 
 filetype off                   " required!
 
@@ -19,7 +20,6 @@ Bundle 'gmarik/vundle'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'Rip-Rip/clang_complete'
-Bundle 'phlip9/google-vim_cpp_indent'
 " For dash
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
