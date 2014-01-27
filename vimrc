@@ -18,6 +18,7 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 Bundle 'marijnh/tern_for_vim'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'Rip-Rip/clang_complete'
 " For dash
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
@@ -105,8 +106,8 @@ set list
 if has('gui_macvim')
     colorscheme Tomorrow
     " set fuoptions=maxvert
-    set guifont=Source\ Code\ Pro:h12
-    " set guifont=Andale\ Mono:h12
+    " set guifont=Source\ Code\ Pro:h12
+    set guifont=Andale\ Mono:h12
     " set guifont=TheMixMono-Regular:h12
     set linespace=2
     " set guioptions-=T  "no toolbar
@@ -231,6 +232,7 @@ let g:airline_whitespace_symbol = 'Ξ'
 let g:airline_enable_branch = 1
 let g:airline_enable_syntasic = 1
 let g:AutoPairsMapBS = 0
+let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
 autocmd FileType *
             \ if &omnifunc != '' |
