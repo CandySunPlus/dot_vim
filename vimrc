@@ -18,6 +18,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'marijnh/tern_for_vim'
+Bundle 'xieyu/pyclewn'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'Rip-Rip/clang_complete'
 " For dash
