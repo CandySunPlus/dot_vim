@@ -243,3 +243,4 @@ autocmd FileType *
             \   call SuperTabChain(&omnifunc, "<c-p>") |
             \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
             \ endif
+set fileencodings=utf-8,gbk,gb2312,big5
