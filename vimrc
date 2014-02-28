@@ -18,7 +18,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'marijnh/tern_for_vim'
-Bundle 'xieyu/pyclewn'
+Bundle 'aklt/plantuml-syntax'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'Rip-Rip/clang_complete'
 " For dash
@@ -237,6 +237,7 @@ let g:AutoPairsMapBS = 0
 " clang complete config
 let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 let g:clang_auto_select = 1
+let g:clang_complete_macros = 1
 
 autocmd FileType *
             \ if &omnifunc != '' |
