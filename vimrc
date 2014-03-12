@@ -28,7 +28,7 @@ Bundle 'joonty/vdebug.git'
 Bundle 'gmarik/sudo-gui.vim'
 Bundle 'mhinz/vim-signify'
 Bundle 'vim-scripts/nginx.vim'
-Bundle 'tsaleh/vim-matchit'
+Bundle 'vim-scripts/matchit.zip'
 Bundle 'mileszs/ack.vim.git'
 Bundle 'chriskempson/vim-tomorrow-theme.git'
 Bundle 'digitaltoad/vim-jade'
@@ -236,6 +236,7 @@ let g:airline_enable_syntasic = 1
 let g:AutoPairsMapBS = 0
 " clang complete config
 let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+let g:clang_complete_copen = 1
 let g:clang_auto_select = 1
 let g:clang_complete_macros = 1
 
