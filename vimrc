@@ -109,8 +109,8 @@ if has('gui_macvim')
     colorscheme Tomorrow
     " set fuoptions=maxvert
     " set guifont=Source\ Code\ Pro:h12
-    set guifont=Andale\ Mono:h12
-    " set guifont=TheMixMono-Regular:h12
+    " set guifont=Andale\ Mono:h12
+    set guifont=TheSansMonoCondensed-Plain:h12
     set linespace=2
     " set guioptions-=T  "no toolbar
     " set guioptions-=l
