@@ -49,7 +49,7 @@ Bundle 'fsouza/go.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 " for javascript indent
 Bundle 'jelera/vim-javascript-syntax.git'
-Bundle 'guileen/simple-javascript-indenter.git'
+Bundle 'CandySunPlus/simple-javascript-indenter.git'
 Bundle 'mattn/emmet-vim'
 Bundle 'xolox/vim-misc.git'
 Bundle 'xolox/vim-session.git'
