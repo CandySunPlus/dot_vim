@@ -113,12 +113,16 @@ if has('gui_macvim')
     " set guifont=Andale\ Mono:h12
     set guifont=TheSansMonoCondensed-Plain:h12
     set linespace=2
-    " set guioptions-=T  "no toolbar
-    " set guioptions-=l
-    " set guioptions-=L
-    " set guioptions-=r
-    " set guioptions-=R
     let g:ctrlp_working_path_mode = 'ra'
+elseif has('gui')
+    colorscheme Tomorrow
+    " set fuoptions=maxvert
+    " set guifont=Source\ Code\ Pro:h12
+    " set guifont=Andale\ Mono:h12
+    set guifont=TheSansMonoCondensed-Plain:h12
+    set linespace=2
+    let g:ctrlp_working_path_mode = 'ra'
+
 else
     colorscheme Tomorrow-Night
     let g:indent_guides_auto_colors = 0
