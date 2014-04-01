@@ -20,7 +20,6 @@ Bundle 'gmarik/vundle'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'aklt/plantuml-syntax'
 Bundle 'jiangmiao/auto-pairs'
-Bundle 'Rip-Rip/clang_complete'
 " For dash
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
@@ -43,6 +42,9 @@ Bundle 'esukram/vim-taglist'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'ervandew/supertab'
 Bundle 'shawncplus/phpcomplete.vim'
+" for clang
+Bundle 'Rip-Rip/clang_complete'
+Bundle 'gilligan/vim-lldb'
 " for go
 Bundle 'fsouza/go.vim'
 " for python indent
@@ -67,7 +69,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'stephpy/vim-phpdoc.git'
 " Bundle 'jiangmiao/auto-pairs.git'
 Bundle 'kien/ctrlp.vim'
-Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'tpope/vim-haml'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-surround.git'
 " original repos on github
