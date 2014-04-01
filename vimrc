@@ -44,7 +44,6 @@ Bundle 'ervandew/supertab'
 Bundle 'shawncplus/phpcomplete.vim'
 " for clang
 Bundle 'Rip-Rip/clang_complete'
-Bundle 'gilligan/vim-lldb'
 " for go
 Bundle 'fsouza/go.vim'
 " for python indent
