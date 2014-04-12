@@ -29,7 +29,7 @@ Bundle 'mhinz/vim-signify'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'mileszs/ack.vim.git'
-Bundle 'chriskempson/vim-tomorrow-theme.git'
+Bundle 'chriskempson/base16-vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic.git'
@@ -108,24 +108,26 @@ set list
 
 
 if has('gui_macvim')
-    colorscheme Tomorrow
+    set background=light
+    colorscheme base16-tomorrow
     " set fuoptions=maxvert
     " set guifont=Source\ Code\ Pro:h12
     " set guifont=Andale\ Mono:h12
-    set guifont=TheSansMonoCondensed-Plain:h12
+    set guifont=TheSansMonoCondensed-Plain:h13
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 elseif has('gui')
-    colorscheme Tomorrow
+    set background=light
+    colorscheme base16-default
     " set fuoptions=maxvert
     " set guifont=Source\ Code\ Pro:h12
     " set guifont=Andale\ Mono:h12
-    set guifont=TheSansMonoCondensed-Plain:h12
+    set guifont=TheSansMonoCondensed-Plain:h13
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
-
 else
-    colorscheme Tomorrow-Night
+    colorscheme base16-tomorrow
+    let base16colorspace=256
     let g:indent_guides_auto_colors = 0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
