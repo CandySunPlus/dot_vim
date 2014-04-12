@@ -4,6 +4,7 @@ set ts=4
 set expandtab
 set autoindent
 set cindent
+let base16colorspace=256
 
 filetype off                   " required!
 
@@ -17,6 +18,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
+Bundle 'CandySunPlus/base16-vim'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'aklt/plantuml-syntax'
 Bundle 'jiangmiao/auto-pairs'
@@ -29,7 +31,6 @@ Bundle 'mhinz/vim-signify'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'mileszs/ack.vim.git'
-Bundle 'chriskempson/base16-vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic.git'
@@ -126,7 +127,7 @@ elseif has('gui')
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
-    colorscheme base16-default
+    colorscheme base16-tomorrow
     let g:indent_guides_auto_colors = 0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
