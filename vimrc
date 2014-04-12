@@ -97,7 +97,6 @@ set laststatus=2
 set noerrorbells
 set showcmd
 set showmode
-set cursorline
 set completeopt-=preview
 set nu
 set rnu
@@ -105,6 +104,7 @@ set numberwidth=2
 syntax on
 set listchars=trail:·,tab:>-
 set list
+set cursorline
 
 
 if has('gui_macvim')
@@ -126,8 +126,7 @@ elseif has('gui')
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
-    colorscheme base16-tomorrow
-    let base16colorspace=256
+    colorscheme base16-default
     let g:indent_guides_auto_colors = 0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
