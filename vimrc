@@ -128,6 +128,7 @@ elseif has('gui')
     let g:ctrlp_working_path_mode = 'ra'
 else
     colorscheme base16-tomorrow
+    set background=dark
     let g:indent_guides_auto_colors = 0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
