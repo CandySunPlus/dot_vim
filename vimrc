@@ -18,7 +18,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-Bundle 'CandySunPlus/base16-vim'
+Bundle 'chriskempson/base16-vim'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'aklt/plantuml-syntax'
 Bundle 'jiangmiao/auto-pairs'
@@ -108,18 +108,9 @@ set list
 set cursorline
 
 
-if has('gui_macvim')
+if has('gui_macvim') || has('gui')
     set background=light
     colorscheme base16-tomorrow
-    " set fuoptions=maxvert
-    " set guifont=Source\ Code\ Pro:h12
-    " set guifont=Andale\ Mono:h12
-    set guifont=TheSansMonoCondensed-Plain:h13
-    set linespace=2
-    let g:ctrlp_working_path_mode = 'ra'
-elseif has('gui')
-    set background=light
-    colorscheme base16-default
     " set fuoptions=maxvert
     " set guifont=Source\ Code\ Pro:h12
     " set guifont=Andale\ Mono:h12
@@ -127,8 +118,8 @@ elseif has('gui')
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
-    colorscheme base16-tomorrow
     set background=dark
+    colorscheme base16-tomorrow
     let g:indent_guides_auto_colors = 0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
