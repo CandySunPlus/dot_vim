@@ -19,6 +19,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 Bundle 'plasticboy/vim-markdown'
+Bundle 'CandySunPlus/python-vim-instant-markdown'
 Bundle 'chriskempson/base16-vim'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'aklt/plantuml-syntax'
@@ -247,3 +248,4 @@ autocmd FileType *
             \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
             \ endif
 set fileencodings=utf-8,gbk,gb2312,big5
+let g:vim_markdown_folding_disabled = 1
