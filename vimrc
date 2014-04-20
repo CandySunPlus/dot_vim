@@ -18,7 +18,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-Bundle 'plasticboy/vim-markdown'
+" Bundle 'plasticboy/vim-markdown'
+Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'CandySunPlus/python-vim-instant-markdown'
 Bundle 'chriskempson/base16-vim'
 Bundle 'marijnh/tern_for_vim'
