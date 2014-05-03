@@ -10,78 +10,80 @@ filetype off                   " required!
 
 let mapleader = ','
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-" My Bundles here:
-" Bundle 'plasticboy/vim-markdown'
-Bundle 'vim-pandoc/vim-pandoc'
-Bundle 'CandySunPlus/python-vim-instant-markdown'
-Bundle 'chriskempson/base16-vim'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'aklt/plantuml-syntax'
-Bundle 'jiangmiao/auto-pairs'
+" My Plugins here:
+" Plugin 'plasticboy/vim-markdown'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'CandySunPlus/python-vim-instant-markdown'
+Plugin 'chriskempson/base16-vim'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'aklt/plantuml-syntax'
+Plugin 'jiangmiao/auto-pairs'
 " For dash
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'joonty/vdebug.git'
-Bundle 'gmarik/sudo-gui.vim'
-Bundle 'mhinz/vim-signify'
-Bundle 'vim-scripts/nginx.vim'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'mileszs/ack.vim.git'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'scrooloose/syntastic.git'
-Bundle 'scrooloose/nerdtree'
-Bundle 'nathanaelkane/vim-indent-guides.git'
-Bundle 'bling/vim-airline'
-Bundle 'jeetsukumaran/vim-buffergator.git'
-Bundle 'tomtom/tcomment_vim.git'
-Bundle 'esukram/vim-taglist'
-Bundle 'Shougo/neocomplcache.vim'
-Bundle 'ervandew/supertab'
-Bundle 'shawncplus/phpcomplete.vim'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'joonty/vdebug.git'
+Plugin 'gmarik/sudo-gui.vim'
+Plugin 'mhinz/vim-signify'
+Plugin 'vim-scripts/nginx.vim'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'mileszs/ack.vim.git'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'scrooloose/nerdtree'
+Plugin 'nathanaelkane/vim-indent-guides.git'
+Plugin 'bling/vim-airline'
+Plugin 'jeetsukumaran/vim-buffergator.git'
+Plugin 'tomtom/tcomment_vim.git'
+Plugin 'esukram/vim-taglist'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'ervandew/supertab'
+Plugin 'shawncplus/phpcomplete.vim'
 " for clang
-Bundle 'Rip-Rip/clang_complete'
+Plugin 'Rip-Rip/clang_complete'
 " for go
-Bundle 'fsouza/go.vim'
+Plugin 'fsouza/go.vim'
 " for python indent
-Bundle 'hynek/vim-python-pep8-indent'
+Plugin 'hynek/vim-python-pep8-indent'
 " for javascript indent
-Bundle 'jelera/vim-javascript-syntax.git'
-" Bundle 'CandySunPlus/simple-javascript-indenter.git'
-Bundle 'pangloss/vim-javascript'
-Bundle 'mattn/emmet-vim'
-Bundle 'xolox/vim-misc.git'
-Bundle 'xolox/vim-session.git'
+Plugin 'jelera/vim-javascript-syntax.git'
+" Plugin 'CandySunPlus/simple-javascript-indenter.git'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mattn/emmet-vim'
+Plugin 'xolox/vim-misc.git'
+Plugin 'xolox/vim-session.git'
 " for php5.4
-Bundle 'donnut/vim-php54-syntax'
-Bundle '2072/PHP-Indenting-for-VIm.git'
+Plugin 'donnut/vim-php54-syntax'
+Plugin '2072/PHP-Indenting-for-VIm.git'
 " snipMate dependencies
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/vim-snippets"
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
 " snipMate
-Bundle 'garbas/vim-snipmate'
+Plugin 'garbas/vim-snipmate'
 
-Bundle 'stephpy/vim-phpdoc.git'
-" Bundle 'jiangmiao/auto-pairs.git'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-haml'
-Bundle 'groenewege/vim-less'
-Bundle 'tpope/vim-surround.git'
+Plugin 'stephpy/vim-phpdoc.git'
+" Plugin 'jiangmiao/auto-pairs.git'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-haml'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-surround.git'
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
 " non github repos
+
+call vundle#end()
 
 filetype plugin indent on     " required!
 
