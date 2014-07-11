@@ -20,15 +20,17 @@ Plugin 'gmarik/Vundle.vim'
 " My Plugins here:
 " Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'Raimondi/delimitMate'
 Plugin 'CandySunPlus/python-vim-instant-markdown'
 Plugin 'chriskempson/base16-vim'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'aklt/plantuml-syntax'
+Plugin 'toyamarinyon/vim-swift'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'mbbill/undotree'
 " For dash
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
-Plugin 'joonty/vdebug.git'
 Plugin 'gmarik/sudo-gui.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'vim-scripts/nginx.vim'
@@ -160,6 +162,7 @@ nmap <leader>/ :TComment<cr>
 nmap <leader>r :CtrlPBufTag<cr>
 nmap <leader>R :CtrlPBufTagAll<cr>
 nmap <leader>o :TlistToggle<cr>
+nmap <leader>u :UndotreeToggle<cr>
 " ctrl keys
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
