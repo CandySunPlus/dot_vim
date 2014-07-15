@@ -119,9 +119,12 @@ if has('gui_macvim') || has('gui')
     set background=light
     colorscheme base16-tomorrow
     " set fuoptions=maxvert
+    " set guifont=Luxi\ Mono:h12
+    set guifont=Fira\ Mono:h12
+    " set guifont=M+\ 1m:h13
     " set guifont=Source\ Code\ Pro:h12
     " set guifont=Andale\ Mono:h12
-    set guifont=TheSansMonoCondensed-Plain:h13
+    " set guifont=TheSansMonoCondensed-Plain:h13
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
