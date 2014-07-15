@@ -123,6 +123,7 @@ if has('gui_macvim') || has('gui')
     set guifont=Fira\ Mono:h12
     " set guifont=M+\ 1m:h13
     " set guifont=Source\ Code\ Pro:h12
+    set guifont=Luxi\ Mono:h12
     " set guifont=Andale\ Mono:h12
     " set guifont=TheSansMonoCondensed-Plain:h13
     set linespace=2
@@ -252,6 +253,7 @@ let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchain
 let g:clang_complete_copen = 1
 let g:clang_auto_select = 1
 let g:clang_complete_macros = 1
+let g:clang_make_default_keymappings = 0
 
 autocmd FileType *
             \ if &omnifunc != '' |
