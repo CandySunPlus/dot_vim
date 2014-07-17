@@ -253,7 +253,6 @@ let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchain
 let g:clang_complete_copen = 1
 let g:clang_auto_select = 1
 let g:clang_complete_macros = 1
-let g:clang_make_default_keymappings = 0
 
 autocmd FileType *
             \ if &omnifunc != '' |
