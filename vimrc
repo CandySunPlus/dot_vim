@@ -110,7 +110,7 @@ set nu
 set rnu
 set numberwidth=2
 syntax on
-set listchars=trail:·,tab:>-
+set listchars=tab:……,trail:·
 set list
 set cursorline
 
@@ -123,7 +123,7 @@ if has('gui_macvim') || has('gui')
     set guifont=Fira\ Mono:h12
     " set guifont=M+\ 1m:h13
     " set guifont=Source\ Code\ Pro:h12
-    set guifont=Luxi\ Mono:h12
+    " set guifont=Luxi\ Mono:h12
     " set guifont=Andale\ Mono:h12
     " set guifont=TheSansMonoCondensed-Plain:h13
     set linespace=2
@@ -166,6 +166,7 @@ nmap <leader>r :CtrlPBufTag<cr>
 nmap <leader>R :CtrlPBufTagAll<cr>
 nmap <leader>o :TlistToggle<cr>
 nmap <leader>u :UndotreeToggle<cr>
+nmap <leader>b :BuffergatorToggle<cr>
 " ctrl keys
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
@@ -261,3 +262,4 @@ autocmd FileType *
             \ endif
 set fileencodings=utf-8,gbk,gb2312,big5
 let g:vim_markdown_folding_disabled = 1
+let g:buffergator_suppress_keymaps = 1
