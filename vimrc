@@ -110,7 +110,7 @@ set nu
 set rnu
 set numberwidth=2
 syntax on
-set listchars=tab:……,trail:·
+set listchars=tab:>-,trail:·
 set list
 set cursorline
 
