@@ -51,6 +51,7 @@ Plugin 'shawncplus/phpcomplete.vim'
 " for clang
 Plugin 'Rip-Rip/clang_complete'
 " for go
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'fsouza/go.vim'
 " for python indent
 Plugin 'hynek/vim-python-pep8-indent'
