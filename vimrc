@@ -266,3 +266,5 @@ set fileencodings=utf-8,gbk,gb2312,big5
 let g:vim_markdown_folding_disabled = 1
 let g:buffergator_suppress_keymaps = 1
 autocmd FileType python setlocal completeopt-=preview
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 1
