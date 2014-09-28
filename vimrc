@@ -48,6 +48,7 @@ Plugin 'esukram/vim-taglist'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'ervandew/supertab'
 Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'davidhalter/jedi-vim'
 " for clang
 Plugin 'Rip-Rip/clang_complete'
 " for go
@@ -264,3 +265,4 @@ autocmd FileType *
 set fileencodings=utf-8,gbk,gb2312,big5
 let g:vim_markdown_folding_disabled = 1
 let g:buffergator_suppress_keymaps = 1
+autocmd FileType python setlocal completeopt-=preview
