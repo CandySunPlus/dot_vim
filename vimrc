@@ -268,3 +268,4 @@ let g:buffergator_suppress_keymaps = 1
 autocmd FileType python setlocal completeopt-=preview
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 1
+let g:jedi#show_call_signatures = 0
