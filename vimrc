@@ -1,3 +1,4 @@
+set shell=bash
 set nocompatible               " be iMproved
 set mouse=a
 set ts=4
@@ -20,6 +21,7 @@ Plugin 'gmarik/Vundle.vim'
 " My Plugins here:
 " Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'aliva/vim-fish'
 Plugin 'Raimondi/delimitMate'
 Plugin 'CandySunPlus/python-vim-instant-markdown'
 Plugin 'chriskempson/base16-vim'
@@ -266,6 +268,6 @@ set fileencodings=utf-8,gbk,gb2312,big5
 let g:vim_markdown_folding_disabled = 1
 let g:buffergator_suppress_keymaps = 1
 autocmd FileType python setlocal completeopt-=preview
-let g:jedi#popup_on_dot = 0
+" let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 1
-let g:jedi#show_call_signatures = 0
+" let g:jedi#show_call_signatures = 0
