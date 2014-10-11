@@ -166,6 +166,7 @@ map <C-Tab> :b#<cr>
 " leader keys
 nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
+vmap <leader>/ :TComment<cr>gv
 nmap <leader>r :CtrlPBufTag<cr>
 nmap <leader>R :CtrlPBufTagAll<cr>
 nmap <leader>o :TlistToggle<cr>
