@@ -94,7 +94,7 @@ call vundle#end()
 filetype plugin indent on     " required!
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
-autocmd FileType javascript,html,fish set shiftwidth=2 | set expandtab | set tabstop=2
+autocmd FileType javascript,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
 
 set noswapfile
 set nobackup
