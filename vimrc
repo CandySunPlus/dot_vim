@@ -21,6 +21,7 @@ Plugin 'gmarik/Vundle.vim'
 " My Plugins here:
 " Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'benmills/vimux'
 Plugin 'aliva/vim-fish'
 Plugin 'Raimondi/delimitMate'
 Plugin 'CandySunPlus/python-vim-instant-markdown'
@@ -167,8 +168,7 @@ map <C-Tab> :b#<cr>
 nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
 vmap <leader>/ :TComment<cr>gv
-nmap <leader>r :CtrlPBufTag<cr>
-nmap <leader>R :CtrlPBufTagAll<cr>
+nmap <leader>p :CtrlPBuffer<cr>
 nmap <leader>o :TlistToggle<cr>
 nmap <leader>u :UndotreeToggle<cr>
 nmap <leader>b :BuffergatorToggle<cr>
