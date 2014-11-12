@@ -211,6 +211,8 @@ let g:tagbar_type_javascript = {
 let g:syntastic_javascript_checkers = ['gjslint']
 let g:syntastic_sass_checkers = []
 let g:syntastic_scss_checkers = []
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 " indent line
 let g:indent_guides_enable_on_vim_startup = 1
