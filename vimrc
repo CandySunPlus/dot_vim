@@ -27,6 +27,7 @@ Plugin 'aliva/vim-fish'
 Plugin 'Raimondi/delimitMate'
 Plugin 'CandySunPlus/python-vim-instant-markdown'
 Plugin 'chriskempson/base16-vim'
+Plugin 'kyledoherty/espresso-colors-vim'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'toyamarinyon/vim-swift'
@@ -123,7 +124,7 @@ set cursorline
 
 if has('gui_macvim') || has('gui')
     set background=light
-    colorscheme base16-tomorrow
+    colorscheme tutticolori
     set guifont=Fira\ Mono:h12
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
