@@ -239,16 +239,8 @@ let g:SuperTabDefaultCompletionType = '<c-x><c-u>'
 let g:SuperTabContextDefaultCompletionType ="<c-x><c-o>"
 let g:airline_theme = 'bubblegum'
 " unicode symbols
-let g:airline_linecolumn_prefix = '␊ '
-let g:airline_linecolumn_prefix = '␤ '
-let g:airline_linecolumn_prefix = '¶ '
-let g:airline_branch_prefix = '⎇ '
-let g:airline_paste_symbol = 'ρ'
-let g:airline_paste_symbol = 'Þ'
-let g:airline_paste_symbol = '∥'
-let g:airline_whitespace_symbol = 'Ξ'
-let g:airline_enable_branch = 1
-let g:airline_enable_syntasic = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
 let g:AutoPairsMapBS = 0
 " clang complete config
 let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
