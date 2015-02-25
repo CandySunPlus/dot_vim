@@ -100,6 +100,7 @@ autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
 
 set noswapfile
+set nospell
 set nobackup
 set encoding=utf-8
 set autoread
