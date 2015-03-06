@@ -54,6 +54,14 @@ Plugin 'Shougo/neocomplcache.vim'
 Plugin 'ervandew/supertab'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'davidhalter/jedi-vim'
+" for Java
+Plugin 'yuratomo/java-api-complete'
+Plugin 'yuratomo/java-api-javax'
+Plugin 'yuratomo/java-api-org'
+Plugin 'yuratomo/java-api-sun'
+Plugin 'yuratomo/java-api-servlet2.3'
+Plugin 'yuratomo/java-api-android'
+Plugin 'yuratomo/java-api-junit'
 " for clang
 Plugin 'Rip-Rip/clang_complete'
 " for go
@@ -100,7 +108,6 @@ autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
 
 set noswapfile
-set nospell
 set nobackup
 set encoding=utf-8
 set autoread
@@ -225,6 +232,9 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
 
+" for objective c
+au BufRead,BufNewFile *.m set filetype=objc
+
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
@@ -262,3 +272,4 @@ autocmd FileType python setlocal completeopt-=preview
 " let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 1
 " let g:jedi#show_call_signatures = 0
+set nospell
