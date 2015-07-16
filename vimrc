@@ -21,17 +21,16 @@ Plugin 'gmarik/Vundle.vim'
 " My Plugins here:
 " Plugin 'plasticboy/vim-markdown'
 Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'benmills/vimux'
 Plugin 'aliva/vim-fish'
 Plugin 'Raimondi/delimitMate'
-Plugin 'CandySunPlus/python-vim-instant-markdown'
 Plugin 'chriskempson/base16-vim'
 Plugin 'kyledoherty/espresso-colors-vim'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'toyamarinyon/vim-swift'
-Plugin 'jiangmiao/auto-pairs'
+" Plugin 'jiangmiao/auto-pairs'
 Plugin 'mbbill/undotree'
 " For dash
 Plugin 'rizzatti/funcoo.vim'
@@ -64,6 +63,7 @@ Plugin 'yuratomo/java-api-android'
 Plugin 'yuratomo/java-api-junit'
 " for clang
 Plugin 'Rip-Rip/clang_complete'
+" Plugin 'Valloric/YouCompleteMe'
 " for go
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'fsouza/go.vim'
@@ -253,7 +253,6 @@ let g:airline_theme = 'bubblegum'
 " unicode symbols
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
-let g:AutoPairsMapBS = 0
 " clang complete config
 let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 let g:clang_complete_copen = 1
@@ -265,6 +264,7 @@ autocmd FileType *
             \   call SuperTabChain(&omnifunc, "<c-p>") |
             \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
             \ endif
+
 set fileencodings=utf-8,gbk,gb2312,big5
 let g:vim_markdown_folding_disabled = 1
 let g:buffergator_suppress_keymaps = 1
