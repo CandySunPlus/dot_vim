@@ -130,7 +130,7 @@ set list
 set cursorline
 
 
-if has('gui_macvim') || has('gui')
+if has('gui_macvim') || has('gui') || has('gui_running')
     set background=light
     colorscheme Tomorrow
     set guifont=Fira\ Mono:h14
