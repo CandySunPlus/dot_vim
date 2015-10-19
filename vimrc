@@ -19,7 +19,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " My Plugins here:
-" Plugin 'plasticboy/vim-markdown'
+Plugin 'junegunn/limelight.vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'benmills/vimux'
 Plugin 'aliva/vim-fish'
@@ -27,15 +27,14 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'chriskempson/base16-vim'
 Plugin 'kyledoherty/espresso-colors-vim'
 Plugin 'marijnh/tern_for_vim'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'toyamarinyon/vim-swift'
-" Plugin 'jiangmiao/auto-pairs'
 Plugin 'mbbill/undotree'
+" TypeScript
+Plugin 'leafgarland/typescript-vim'
 " For dash
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
-Plugin 'gmarik/sudo-gui.vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'vim-scripts/nginx.vim'
 Plugin 'vim-scripts/matchit.zip'
@@ -54,16 +53,9 @@ Plugin 'ervandew/supertab'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'davidhalter/jedi-vim'
 " for Java
-Plugin 'yuratomo/java-api-complete'
-Plugin 'yuratomo/java-api-javax'
-Plugin 'yuratomo/java-api-org'
-Plugin 'yuratomo/java-api-sun'
-Plugin 'yuratomo/java-api-servlet2.3'
-Plugin 'yuratomo/java-api-android'
-Plugin 'yuratomo/java-api-junit'
+Plugin 'artur-shaik/vim-javacomplete2'
 " for clang
 Plugin 'Rip-Rip/clang_complete'
-" Plugin 'Valloric/YouCompleteMe'
 " for go
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'fsouza/go.vim'
@@ -87,7 +79,6 @@ Plugin 'honza/vim-snippets'
 Plugin 'garbas/vim-snipmate'
 
 Plugin 'stephpy/vim-phpdoc.git'
-" Plugin 'jiangmiao/auto-pairs.git'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-haml'
 Plugin 'groenewege/vim-less'
@@ -106,6 +97,7 @@ filetype plugin indent on     " required!
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
+autocmd FileType java set omnifunc=javacomplete#Complete
 
 set noswapfile
 set nobackup
@@ -133,7 +125,8 @@ set cursorline
 if has('gui_macvim') || has('gui') || has('gui_running')
     set background=light
     colorscheme Tomorrow
-    set guifont=Fira\ Mono:h14
+    " set guifont=Fira\ Mono:h12
+    set guifont=M+\ 1m\ light:h12
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
@@ -222,6 +215,7 @@ let g:syntastic_sass_checkers = []
 let g:syntastic_scss_checkers = []
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_objc_compiler_options = ' -fobjc-arc'
 
 " indent line
 let g:indent_guides_enable_on_vim_startup = 1
@@ -258,6 +252,8 @@ let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchain
 let g:clang_complete_copen = 1
 let g:clang_auto_select = 1
 let g:clang_complete_macros = 1
+" TypeScript
+let g:typescript_compiler_options = '-sourcemap'
 
 autocmd FileType *
             \ if &omnifunc != '' |
