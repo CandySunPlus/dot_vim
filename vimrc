@@ -20,6 +20,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " My Plugins here:
 Plugin 'junegunn/limelight.vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'isRuslan/vim-es6'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'benmills/vimux'
 Plugin 'aliva/vim-fish'
