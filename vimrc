@@ -212,7 +212,7 @@ let g:tagbar_type_javascript = {
 
 
 " syntasic
-let g:syntastic_javascript_checkers = ['gjslint']
+let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_sass_checkers = []
 let g:syntastic_scss_checkers = []
 let g:syntastic_cpp_compiler = 'clang++'
@@ -242,7 +242,7 @@ let g:SuperTabLeadingSpaceCompletion = 0
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
 let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+let g:SuperTabContextDiscoverDiscovery = ["&omnifunc:<c-x><c-o>", "&completefunc:<c-x><c-u>"]
 let g:SuperTabDefaultCompletionType = '<c-x><c-u>'
 let g:SuperTabContextDefaultCompletionType ="<c-x><c-o>"
 let g:airline_theme = 'bubblegum'
@@ -270,4 +270,5 @@ autocmd FileType python setlocal completeopt-=preview
 " let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 1
 " let g:jedi#show_call_signatures = 0
+let g:jsx_ext_required = 0
 set nospell
