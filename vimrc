@@ -213,6 +213,7 @@ let g:tagbar_type_javascript = {
 
 " syntasic
 let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_jsxhint_args = "--harmony"
 let g:syntastic_sass_checkers = []
 let g:syntastic_scss_checkers = []
 let g:syntastic_cpp_compiler = 'clang++'
