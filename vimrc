@@ -127,8 +127,8 @@ set cursorline
 if has('gui_macvim') || has('gui') || has('gui_running')
     set background=light
     colorscheme Tomorrow
-    set guifont=Fira\ Mono:h12
-    " set guifont=M+\ 1m\ light:h12
+    " set guifont=Fira\ Mono:h12
+    set guifont=M+\ 1m\ light:h12
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else

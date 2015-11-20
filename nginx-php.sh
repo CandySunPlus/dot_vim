@@ -7,7 +7,7 @@ LOGPATH="/usr/local/var/log"
 
 if [[ $1 = "start" ]]; then
     echo "Start gearmand ..."
-    gearmand --queue-type mysql --mysql-user root --mysql-password 12121212 --mysql-db oms --mysql-table JobQueues -P $PIDPATH/gearmand.pid -l $LOGPATH/gearmand.log -d --verbose DEBUG
+    gearmand --queue-type mysql --mysql-user root --mysql-password 12121212 --mysql-db default --mysql-table gearman_queue -P $PIDPATH/gearmand.pid -l $LOGPATH/gearmand.log -d --verbose DEBUG
     echo "Start php-fpm ..."
     sudo $PHPFPM -D
     echo "Start nginx ..."
@@ -29,7 +29,7 @@ elif [[ $1 = "restart" ]]; then
     echo "Stopping php-fpm ..."
     sudo kill `cat $PIDPATH/php-fpm.pid`
     echo "Start gearmand ..."
-    gearmand --queue-type mysql --mysql-user root --mysql-password 12121212 --mysql-db oms --mysql-table JobQueues -P $PIDPATH/gearmand.pid -l $LOGPATH/gearmand.log -d --verbose DEBUG
+    gearmand --queue-type mysql --mysql-user root --mysql-password 12121212 --mysql-db default --mysql-table gearman_queue -P $PIDPATH/gearmand.pid -l $LOGPATH/gearmand.log -d --verbose DEBUG
     echo "Start php-fpm ..."
     sudo $PHPFPM -D
     echo "Start nginx ..."
