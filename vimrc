@@ -76,6 +76,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'honza/vim-snippets'
 " snipMate
 Plugin 'garbas/vim-snipmate'
+Plugin 'kien/ctrlp.vim'
 
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-surround.git'
@@ -244,4 +245,6 @@ set fileencodings=utf-8,gbk,gb2312,big5
 let g:vim_markdown_folding_disabled = 1
 let g:buffergator_suppress_keymaps = 1
 let g:jsx_ext_required = 0
+let g:python_host_prog = '/user/local/bin/python'
+let g:loaded_python3_provider = 1
 set nospell
