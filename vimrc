@@ -20,6 +20,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " My Plugins here:
+Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/limelight.vim'
 Plugin 'mxw/vim-jsx'
