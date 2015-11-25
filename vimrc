@@ -94,7 +94,6 @@ filetype plugin indent on     " required!
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
-autocmd FileType javascript,javascript.jsx setlocal omnifunc=tern#Complete
 
 set noswapfile
 set nobackup
