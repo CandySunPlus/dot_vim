@@ -164,6 +164,9 @@ nmap <leader>p :CtrlPBuffer<cr>
 nmap <leader>o :TlistToggle<cr>
 nmap <leader>u :UndotreeToggle<cr>
 nmap <leader>b :BuffergatorToggle<cr>
+nmap <leader>tm :TableModeToggle<cr>
+let g:table_mode_corner_corner="+"
+let g:table_mode_header_fillchar="="
 " ctrl keys
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
