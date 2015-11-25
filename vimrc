@@ -1,3 +1,4 @@
+syntax on
 set shell=bash
 set nocompatible               " be iMproved
 set mouse=a
@@ -19,6 +20,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " My Plugins here:
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/limelight.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
@@ -50,22 +52,16 @@ Plugin 'bling/vim-airline'
 Plugin 'jeetsukumaran/vim-buffergator.git'
 Plugin 'tomtom/tcomment_vim.git'
 Plugin 'esukram/vim-taglist'
-Plugin 'Shougo/neocomplcache.vim'
-Plugin 'ervandew/supertab'
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'davidhalter/jedi-vim'
 " for Java
 Plugin 'artur-shaik/vim-javacomplete2'
-" for clang
-Plugin 'Rip-Rip/clang_complete'
 " for go
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'fsouza/go.vim'
 " for python indent
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'heavenshell/vim-pydocstring'
 " for javascript indent
 Plugin 'jelera/vim-javascript-syntax.git'
-" Plugin 'CandySunPlus/simple-javascript-indenter.git'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 Plugin 'xolox/vim-misc.git'
@@ -80,9 +76,6 @@ Plugin 'honza/vim-snippets'
 " snipMate
 Plugin 'garbas/vim-snipmate'
 
-Plugin 'stephpy/vim-phpdoc.git'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-haml'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-surround.git'
 " original repos on github
@@ -100,6 +93,7 @@ filetype plugin indent on     " required!
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
+autocmd FileType javascript,javascript.jsx setlocal omnifunc=tern#Complete
 
 set noswapfile
 set nobackup
@@ -118,7 +112,6 @@ set completeopt-=preview
 set nu
 set rnu
 set numberwidth=2
-syntax on
 set listchars=tab:>-,trail:·
 set list
 set cursorline
@@ -235,41 +228,15 @@ au BufRead,BufNewFile *.m set filetype=objc
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
-" neocomplacache and superTab setting
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_disable_auto_complete = 1
-let g:SuperTabLongestEnhanced = 1
-let g:SuperTabLeadingSpaceCompletion = 0
-let g:SuperTabClosePreviewOnPopupClose = 1
-let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
-let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-let g:SuperTabContextDiscoverDiscovery = ["&omnifunc:<c-x><c-o>", "&completefunc:<c-x><c-u>"]
-let g:SuperTabDefaultCompletionType = '<c-x><c-u>'
-let g:SuperTabContextDefaultCompletionType ="<c-x><c-o>"
 let g:airline_theme = 'bubblegum'
-" unicode symbols
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
-" clang complete config
-let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
-let g:clang_complete_copen = 1
-let g:clang_auto_select = 1
-let g:clang_complete_macros = 1
+
 " TypeScript
 let g:typescript_compiler_options = '-sourcemap'
-
-autocmd FileType *
-            \ if &omnifunc != '' |
-            \   call SuperTabChain(&omnifunc, "<c-p>") |
-            \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
-            \ endif
 
 set fileencodings=utf-8,gbk,gb2312,big5
 let g:vim_markdown_folding_disabled = 1
 let g:buffergator_suppress_keymaps = 1
-autocmd FileType python setlocal completeopt-=preview
-" let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 1
-" let g:jedi#show_call_signatures = 0
 let g:jsx_ext_required = 0
 set nospell
