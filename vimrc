@@ -1,5 +1,4 @@
 syntax on
-set shell=/usr/local/bin/zsh
 if !has('nvim')
     set nocompatible               " be iMproved
 endif
@@ -62,6 +61,8 @@ Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
+Plug 'ternjs/tern_for_vim'
+
 Plug 'mattn/emmet-vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
@@ -91,6 +92,7 @@ call plug#end()
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
+autocmd FileType javascript,javascript.jsx set omnifunc=tern#Complete
 
 set noswapfile
 set nobackup
@@ -229,6 +231,9 @@ au BufRead,BufNewFile *.scss set filetype=scss
 " for objective c
 au BufRead,BufNewFile *.m set filetype=objc
 
+" for tern project file
+au BufRead,BufNewFile *.tern-project set filetype=json
+
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
@@ -237,8 +242,8 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 
 " Input Method
-let g:Vimim_cloud=-1
-let g:Vimim_toggle='erbi'
+let g:Vimim_cloud = -1
+let g:Vimim_toggle = 'erbi'
 
 " TypeScript
 let g:typescript_compiler_options = '-sourcemap'
