@@ -15,9 +15,9 @@ let mapleader = ','
 call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
+Plug 'Shougo/deoplete.nvim'
 Plug 'vhdirk/vim-cmake'
 Plug 'junegunn/limelight.vim'
 Plug 'mxw/vim-jsx'
@@ -28,7 +28,6 @@ Plug 'aliva/vim-fish'
 Plug 'Raimondi/delimitMate'
 Plug 'chriskempson/base16-vim'
 Plug 'kyledoherty/espresso-colors-vim'
-Plug 'marijnh/tern_for_vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'toyamarinyon/vim-swift'
 Plug 'mbbill/undotree'
@@ -88,8 +87,6 @@ Plug 'FuzzyFinder'
 " non github repos
 
 call plug#end()
-
-filetype plugin indent on     " required!
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
@@ -255,3 +252,9 @@ set nospell
 if maparg('<C-L>', 'n') ==# ''
     nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
+
+if has('nvim')
+    let g:python_host_prog = '/usr/local/bin/python2'
+    let g:python3_host_prog = '/usr/local/bin/python3'
+endif
+
