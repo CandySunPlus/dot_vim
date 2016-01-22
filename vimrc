@@ -19,8 +19,6 @@ Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'Shougo/deoplete.nvim'
 Plug 'vhdirk/vim-cmake'
 Plug 'junegunn/limelight.vim'
-Plug 'mxw/vim-jsx'
-Plug 'isRuslan/vim-es6'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'benmills/vimux'
 Plug 'aliva/vim-fish'
@@ -59,8 +57,11 @@ Plug 'fsouza/go.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
+Plug 'mxw/vim-jsx'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/yajs.vim'
+Plug 'justinj/vim-react-snippets'
 Plug 'jelera/vim-javascript-syntax'
-Plug 'pangloss/vim-javascript'
 Plug 'ternjs/tern_for_vim'
 
 Plug 'mattn/emmet-vim'
@@ -90,7 +91,7 @@ Plug 'FuzzyFinder'
 call plug#end()
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
-autocmd FileType javascript,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
+autocmd FileType javascript,javascript.jsx,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType javascript,javascript.jsx set omnifunc=tern#Complete
 
@@ -128,9 +129,6 @@ if has('gui_macvim') || has('gui') || has('gui_running')
 else
     set background=dark
     colorscheme Tomorrow-Night
-    let g:indent_guides_auto_colors = 0
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=0
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=8
 endif
 
 let g:colors_name = ''
@@ -260,6 +258,5 @@ endif
 
 if has('nvim')
     let g:python_host_prog = '/usr/local/bin/python2'
-    let g:python3_host_prog = '/usr/local/bin/python3'
 endif
 
