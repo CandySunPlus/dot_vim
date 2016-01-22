@@ -1,94 +1,93 @@
 syntax on
-set shell=bash
-set nocompatible               " be iMproved
+set shell=/usr/local/bin/zsh
+if !has('nvim')
+    set nocompatible               " be iMproved
+endif
 set mouse=a
 set ts=4
 set expandtab
 set autoindent
 set cindent
+set magic
 let base16colorspace=256
-
-filetype off                   " required!
-
 let mapleader = ','
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle
-" required!
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'junegunn/limelight.vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'isRuslan/vim-es6'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'benmills/vimux'
-Plugin 'aliva/vim-fish'
-Plugin 'Raimondi/delimitMate'
-Plugin 'chriskempson/base16-vim'
-Plugin 'kyledoherty/espresso-colors-vim'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'aklt/plantuml-syntax'
-Plugin 'toyamarinyon/vim-swift'
-Plugin 'mbbill/undotree'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
+Plug 'vhdirk/vim-cmake'
+Plug 'junegunn/limelight.vim'
+Plug 'mxw/vim-jsx'
+Plug 'isRuslan/vim-es6'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'benmills/vimux'
+Plug 'aliva/vim-fish'
+Plug 'Raimondi/delimitMate'
+Plug 'chriskempson/base16-vim'
+Plug 'kyledoherty/espresso-colors-vim'
+Plug 'marijnh/tern_for_vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'toyamarinyon/vim-swift'
+Plug 'mbbill/undotree'
+" Input Method
+Plug 'vim-scripts/VimIM'
 " TypeScript
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 " For dash
-Plugin 'rizzatti/funcoo.vim'
-Plugin 'rizzatti/dash.vim'
-Plugin 'mhinz/vim-signify'
-Plugin 'vim-scripts/nginx.vim'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'mileszs/ack.vim.git'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/syntastic.git'
-Plugin 'scrooloose/nerdtree'
-Plugin 'nathanaelkane/vim-indent-guides.git'
-Plugin 'bling/vim-airline'
-Plugin 'jeetsukumaran/vim-buffergator.git'
-Plugin 'tomtom/tcomment_vim.git'
-Plugin 'esukram/vim-taglist'
-Plugin 'shawncplus/phpcomplete.vim'
+Plug 'rizzatti/funcoo.vim'
+Plug 'rizzatti/dash.vim'
+Plug 'mhinz/vim-signify'
+Plug 'vim-scripts/nginx.vim'
+Plug 'vim-scripts/matchit.zip'
+Plug 'mileszs/ack.vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'bling/vim-airline'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'tomtom/tcomment_vim'
+Plug 'esukram/vim-taglist'
+Plug 'shawncplus/phpcomplete.vim'
 " for Java
-Plugin 'artur-shaik/vim-javacomplete2'
+Plug 'artur-shaik/vim-javacomplete2'
 " for go
-Plugin 'fsouza/go.vim'
+Plug 'fsouza/go.vim'
 " for python indent
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'heavenshell/vim-pydocstring'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
-Plugin 'jelera/vim-javascript-syntax.git'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mattn/emmet-vim'
-Plugin 'xolox/vim-misc.git'
-Plugin 'xolox/vim-session.git'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'mattn/emmet-vim'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 " for php5.4
-Plugin 'donnut/vim-php54-syntax'
-Plugin '2072/PHP-Indenting-for-VIm.git'
+Plug 'donnut/vim-php54-syntax'
+Plug '2072/PHP-Indenting-for-VIm'
 " snipMate dependencies
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'honza/vim-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'honza/vim-snippets'
 " snipMate
-Plugin 'garbas/vim-snipmate'
-Plugin 'kien/ctrlp.vim'
+Plug 'garbas/vim-snipmate'
+Plug 'kien/ctrlp.vim'
 
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-surround.git'
+Plug 'groenewege/vim-less'
+Plug 'tpope/vim-surround'
 " original repos on github
-Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/vim-easymotion'
+Plug 'tpope/vim-fugitive'
+Plug 'Lokaltog/vim-easymotion'
 " vim-scripts repos
-Plugin 'L9'
-Plugin 'FuzzyFinder'
+Plug 'L9'
+Plug 'FuzzyFinder'
 " non github repos
 
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on     " required!
 
@@ -98,13 +97,15 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 
 set noswapfile
 set nobackup
-set encoding=utf-8
+if !has('nvim')
+    set encoding=utf-8
+endif
 set autoread
 set autowrite
 set fileformats=unix,dos,mac
 set backspace=indent,eol,start
 " set hlsearch
-set incsearch
+" set incsearch
 set laststatus=2
 set noerrorbells
 set showcmd
@@ -119,8 +120,8 @@ set cursorline
 
 
 if has('gui_macvim') || has('gui') || has('gui_running')
-    set background=light
-    colorscheme Tomorrow
+    set background=dark
+    colorscheme Tomorrow-Night
     " set guifont=Fira\ Mono:h12
     set guifont=M+\ 1m\ light:h12
     set linespace=2
@@ -210,7 +211,7 @@ let g:tagbar_type_javascript = {
 
 " syntasic
 let g:syntastic_javascript_checkers = ['jsxhint']
-let g:syntastic_javascript_jsxhint_args = "--harmony"
+let g:syntastic_javascript_jsxhint_args = "--harmony --esnext"
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "--rcfile=/usr/local/etc/pylint.rc"
 let g:syntastic_sass_checkers = []
@@ -238,6 +239,10 @@ let g:airline_theme = 'bubblegum'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 
+" Input Method
+let g:Vimim_cloud=-1
+let g:Vimim_toggle='erbi'
+
 " TypeScript
 let g:typescript_compiler_options = '-sourcemap'
 
@@ -245,6 +250,8 @@ set fileencodings=utf-8,gbk,gb2312,big5
 let g:vim_markdown_folding_disabled = 1
 let g:buffergator_suppress_keymaps = 1
 let g:jsx_ext_required = 0
-let g:python_host_prog = '/user/local/bin/python'
-let g:loaded_python3_provider = 1
 set nospell
+
+if maparg('<C-L>', 'n') ==# ''
+    nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
