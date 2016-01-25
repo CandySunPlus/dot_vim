@@ -57,11 +57,9 @@ Plug 'fsouza/go.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
+Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/yajs.vim'
 Plug 'justinj/vim-react-snippets'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'ternjs/tern_for_vim'
 
 Plug 'mattn/emmet-vim'
@@ -119,9 +117,9 @@ set list
 set cursorline
 
 
-if has('gui_macvim') || has('gui') || has('gui_running')
-    set background=dark
-    colorscheme Tomorrow-Night
+if has('gui_macvim') || has('gui') || has('gui_running') || has('nvim')
+    set background=light
+    colorscheme Tomorrow
     " set guifont=Fira\ Mono:h12
     set guifont=M+\ 1m\ light:h12
     set linespace=2
