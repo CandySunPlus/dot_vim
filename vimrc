@@ -58,6 +58,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
 Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'justinj/vim-react-snippets'
 Plug 'ternjs/tern_for_vim'
