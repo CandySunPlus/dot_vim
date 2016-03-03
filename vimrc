@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
 Plug 'Valloric/YouCompleteMe'
+Plug 'joshdick/onedark.vim'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'Shougo/deoplete.nvim'
 Plug 'vhdirk/vim-cmake'
@@ -44,7 +45,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'bling/vim-airline'
+" Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tomtom/tcomment_vim'
 Plug 'esukram/vim-taglist'
@@ -119,15 +121,14 @@ set cursorline
 
 
 if has('gui_macvim') || has('gui') || has('gui_running') || has('nvim')
-    set background=light
-    colorscheme Tomorrow
+    colorscheme onedark
     " set guifont=Fira\ Mono:h12
     set guifont=M+\ 1m\ light:h12
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
     set background=dark
-    colorscheme Tomorrow-Night
+    colorscheme onedark
 endif
 
 let g:colors_name = ''
@@ -234,9 +235,9 @@ au BufRead,BufNewFile *.tern-project set filetype=json
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
-let g:airline_theme = 'bubblegum'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
+" let g:airline_theme = 'bubblegum'
+" let g:airline#extensions#branch#enabled = 1
+" let g:airline#extensions#syntastic#enabled = 1
 
 " Input Method
 let g:Vimim_cloud = -1
