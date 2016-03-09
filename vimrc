@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 " My Plugins here:
 Plug 'Valloric/YouCompleteMe'
 Plug 'joshdick/onedark.vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'Shougo/deoplete.nvim'
 Plug 'vhdirk/vim-cmake'
@@ -56,11 +57,12 @@ Plug 'artur-shaik/vim-javacomplete2'
 " for go
 Plug 'fsouza/go.vim'
 " for python indent
+Plug 'jmcantrell/vim-virtualenv'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
 Plug 'pangloss/vim-javascript'
-Plug 'jelera/vim-javascript-syntax'
+" Plug 'jelera/vim-javascript-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'justinj/vim-react-snippets'
 Plug 'ternjs/tern_for_vim'
@@ -78,7 +80,6 @@ Plug 'honza/vim-snippets'
 " snipMate
 Plug 'garbas/vim-snipmate'
 Plug 'kien/ctrlp.vim'
-
 Plug 'groenewege/vim-less'
 Plug 'tpope/vim-surround'
 " original repos on github
@@ -119,19 +120,20 @@ set listchars=tab:>-,trail:·
 set list
 set cursorline
 
+colorscheme solarized
+let g:solarized_termcolors=256
 
-if has('gui_macvim') || has('gui') || has('gui_running') || has('nvim')
-    colorscheme onedark
-    " set guifont=Fira\ Mono:h12
-    set guifont=M+\ 1m\ light:h12
+if has('gui_macvim') || has('gui') || has('gui_running')
+    set background=light
+    set macligatures
+    set guifont=Letter\ Gothic:h12
     set linespace=2
+    let g:lightline = { 'colorscheme': 'solarized' }
     let g:ctrlp_working_path_mode = 'ra'
 else
     set background=dark
-    colorscheme onedark
+    let g:lightline = { 'colorscheme': 'solarized_dark' }
 endif
-
-let g:colors_name = ''
 
 let g:multi_cursor_use_default_mapping = 0
 let g:multi_cursor_next_key = '<D-d>'
@@ -260,3 +262,48 @@ if has('nvim')
     let g:python_host_prog = '/usr/local/bin/python2'
 endif
 
+let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
+
+function! LightLineFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? '⭠ '._ : ''
+  endif
+  return ''
+endfunction
+
+function! LightLineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "⭤"
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineFilename()
+    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+                \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+                \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
+
+let g:lightline.active = {
+            \ 'left': [ ['mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+            \ }
+let g:lightline.component_function = {
+            \ 'fugitive': 'LightLineFugitive',
+            \ 'filename': 'LightLineFilename'
+            \ }
