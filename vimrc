@@ -16,7 +16,7 @@ call plug#begin('~/.vim/plugged')
 " My Plugins here:
 Plug 'Valloric/YouCompleteMe'
 Plug 'joshdick/onedark.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'Shougo/deoplete.nvim'
 Plug 'vhdirk/vim-cmake'
@@ -120,18 +120,20 @@ set listchars=tab:>-,trail:·
 set list
 set cursorline
 
-colorscheme solarized
-let g:solarized_termcolors=256
+if has('gui_macvim')
+    set macligatures
+endif
 
 if has('gui_macvim') || has('gui') || has('gui_running')
+    colorscheme solarized
     set background=light
-    set macligatures
     set guifont=Letter\ Gothic:h12
     set linespace=2
     let g:lightline = { 'colorscheme': 'solarized' }
     let g:ctrlp_working_path_mode = 'ra'
 else
     set background=dark
+    colorscheme onedark
     let g:lightline = { 'colorscheme': 'solarized_dark' }
 endif
 
