@@ -133,8 +133,8 @@ if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_a
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
-    set background=dark
-    colorscheme onedark
+    colorscheme solarized
+    set background=light
 endif
 
 let g:multi_cursor_use_default_mapping = 0
