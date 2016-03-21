@@ -31,7 +31,8 @@ Plug 'aklt/plantuml-syntax'
 Plug 'toyamarinyon/vim-swift'
 Plug 'mbbill/undotree'
 " Input Method
-Plug 'vim-scripts/VimIM'
+" Plug 'vim-scripts/VimIM'
+Plug 'CandySunPlus/CY_erbi'
 " TypeScript
 Plug 'leafgarland/typescript-vim'
 " For dash
@@ -46,8 +47,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'bling/vim-airline'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'itchyny/lightline.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tomtom/tcomment_vim'
 Plug 'esukram/vim-taglist'
@@ -124,17 +126,15 @@ if has('gui_macvim')
     set macligatures
 endif
 
-if has('gui_macvim') || has('gui') || has('gui_running')
+if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_app')
     colorscheme solarized
     set background=light
-    set guifont=Letter\ Gothic:h12
+    set guifont=Letter\ Gothic\ for\ Powerline:h12
     set linespace=2
-    let g:lightline = { 'colorscheme': 'solarized' }
     let g:ctrlp_working_path_mode = 'ra'
 else
     set background=dark
     colorscheme onedark
-    let g:lightline = { 'colorscheme': 'solarized_dark' }
 endif
 
 let g:multi_cursor_use_default_mapping = 0
@@ -239,9 +239,10 @@ au BufRead,BufNewFile *.tern-project set filetype=json
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
-" let g:airline_theme = 'bubblegum'
-" let g:airline#extensions#branch#enabled = 1
-" let g:airline#extensions#syntastic#enabled = 1
+let g:airline_theme = 'solarized'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " Input Method
 let g:Vimim_cloud = -1
@@ -266,46 +267,3 @@ endif
 
 let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 
-function! LightLineFugitive()
-  if exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
-  endif
-  return ''
-endfunction
-
-function! LightLineModified()
-  if &filetype == "help"
-    return ""
-  elseif &modified
-    return "+"
-  elseif &modifiable
-    return ""
-  else
-    return ""
-  endif
-endfunction
-
-function! LightLineReadonly()
-  if &filetype == "help"
-    return ""
-  elseif &readonly
-    return "⭤"
-  else
-    return ""
-  endif
-endfunction
-
-function! LightLineFilename()
-    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-                \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-                \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-endfunction
-
-let g:lightline.active = {
-            \ 'left': [ ['mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-            \ }
-let g:lightline.component_function = {
-            \ 'fugitive': 'LightLineFugitive',
-            \ 'filename': 'LightLineFilename'
-            \ }
