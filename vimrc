@@ -65,9 +65,11 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
-Plug 'pangloss/vim-javascript'
-Plug 'othree/yajs.vim'
-Plug 'othree/vim-jsx'
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'pangloss/vim-javascript'
+" Plug 'othree/yajs.vim'
+" Plug 'othree/vim-jsx'
 " Plug 'jelera/vim-javascript-syntax'
 " Plug 'mxw/vim-jsx'
 Plug 'justinj/vim-react-snippets'
