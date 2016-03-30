@@ -35,6 +35,8 @@ Plug 'mbbill/undotree'
 Plug 'CandySunPlus/CY_erbi'
 " TypeScript
 Plug 'leafgarland/typescript-vim'
+" Plug 'Shougo/vimproc.vim'
+" Plug 'Quramy/tsuquyomi'
 " For dash
 Plug 'rizzatti/funcoo.vim'
 Plug 'rizzatti/dash.vim'
@@ -64,10 +66,11 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
 Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim'
+Plug 'othree/vim-jsx'
 " Plug 'jelera/vim-javascript-syntax'
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
 Plug 'justinj/vim-react-snippets'
-Plug 'ternjs/tern_for_vim'
 
 Plug 'mattn/emmet-vim'
 Plug 'xolox/vim-misc'
@@ -97,7 +100,6 @@ call plug#end()
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType javascript,javascript.jsx,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
-autocmd FileType javascript,javascript.jsx set omnifunc=tern#Complete
 
 set noswapfile
 set nobackup
@@ -267,3 +269,4 @@ endif
 
 let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 
+let g:javascript_enable_domhtmlcss = 1
