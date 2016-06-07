@@ -133,7 +133,8 @@ endif
 if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_app')
     colorscheme solarized
     set background=light
-    set guifont=Letter\ Gothic\ for\ Powerline:h12
+    set guifont=Fira\ Code:h12
+    " set guifont=Letter\ Gothic\ for\ Powerline:h12
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
