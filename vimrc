@@ -48,7 +48,8 @@ Plug 'digitaltoad/vim-jade'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'itchyny/lightline.vim'
@@ -138,8 +139,8 @@ if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_a
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
-    colorscheme solarized
-    set background=light
+    colorscheme onedark
+    set background=dark
 endif
 
 let g:multi_cursor_use_default_mapping = 0
@@ -227,9 +228,9 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:syntastic_objc_compiler_options = ' -fobjc-arc'
 
 " indent line
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
+" let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_start_level = 2
+" let g:indent_guides_guide_size = 1
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 
 " for scss
