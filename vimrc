@@ -33,8 +33,10 @@ Plug 'mbbill/undotree'
 " Input Method
 " Plug 'vim-scripts/VimIM'
 Plug 'CandySunPlus/CY_erbi'
+" For all language
+Plug 'sheerun/vim-polyglot'
 " TypeScript
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 " Plug 'Shougo/vimproc.vim'
 " Plug 'Quramy/tsuquyomi'
 " For dash
@@ -60,27 +62,28 @@ Plug 'shawncplus/phpcomplete.vim'
 " for Java
 Plug 'artur-shaik/vim-javacomplete2'
 " for go
-Plug 'fsouza/go.vim'
+" Plug 'fsouza/go.vim'
 " for python indent
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'bigfish/vim-js-context-coloring'
+" Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'pangloss/vim-javascript'
 " Plug 'othree/yajs.vim'
 " Plug 'othree/vim-jsx'
 " Plug 'jelera/vim-javascript-syntax'
 " Plug 'mxw/vim-jsx'
-Plug 'justinj/vim-react-snippets'
+" Plug 'justinj/vim-react-snippets'
 
 Plug 'mattn/emmet-vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 " for php5.4
-Plug 'donnut/vim-php54-syntax'
-Plug '2072/PHP-Indenting-for-VIm'
+" Plug 'donnut/vim-php54-syntax'
+" Plug '2072/PHP-Indenting-for-VIm'
 " snipMate dependencies
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
