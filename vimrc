@@ -225,6 +225,7 @@ let g:syntastic_javascript_jsxhint_args = "--harmony --esnext"
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "--rcfile=/usr/local/etc/pylint.rc"
 let g:syntastic_typescript_checkers = ['tsc', 'tslint']
+let g:syntastic_typescript_tsc_fname = ''
 let g:syntastic_sass_checkers = []
 let g:syntastic_scss_checkers = []
 let g:syntastic_cpp_compiler = 'clang++'
