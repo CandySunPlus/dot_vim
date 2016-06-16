@@ -104,7 +104,7 @@ Plug 'FuzzyFinder'
 call plug#end()
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
-autocmd FileType javascript,javascript.jsx,html,fish,json set shiftwidth=2 | set expandtab | set tabstop=2
+autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
 
 set noswapfile
@@ -224,6 +224,7 @@ let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_args = "--harmony --esnext"
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "--rcfile=/usr/local/etc/pylint.rc"
+let g:syntastic_typescript_checkers = ['tsc', 'tslint']
 let g:syntastic_sass_checkers = []
 let g:syntastic_scss_checkers = []
 let g:syntastic_cpp_compiler = 'clang++'
