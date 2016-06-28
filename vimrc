@@ -71,6 +71,7 @@ Plug 'heavenshell/vim-pydocstring'
 Plug 'bigfish/vim-js-context-coloring'
 " Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'pangloss/vim-javascript'
 " Plug 'othree/yajs.vim'
 " Plug 'othree/vim-jsx'
@@ -106,6 +107,7 @@ call plug#end()
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
+autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 
 set noswapfile
 set nobackup
@@ -134,7 +136,7 @@ if has('gui_macvim')
     set macligatures
 endif
 
-if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_app')
+if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
     colorscheme solarized
     set background=light
     set guifont=Fira\ Code:h12
@@ -220,8 +222,10 @@ let g:tagbar_type_javascript = {
 
 
 " syntasic
-let g:syntastic_javascript_checkers = ['jsxhint']
-let g:syntastic_javascript_jsxhint_args = "--harmony --esnext"
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_args = '--config /Users/niksun/.eslintrc.json'
+" let g:syntastic_javascript_checkers = ['jsxhint', 'eslint']
+" let g:syntastic_javascript_jsxhint_args = '--harmony --esnext'
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "--rcfile=/usr/local/etc/pylint.rc"
 let g:syntastic_typescript_checkers = ['tsc', 'tslint']
@@ -276,6 +280,7 @@ if has('nvim')
     let g:python_host_prog = '/usr/local/bin/python2'
 endif
 
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 
 let g:javascript_enable_domhtmlcss = 1
