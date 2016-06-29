@@ -147,7 +147,9 @@ if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_a
     colorscheme base16-monokai
     set background=dark
     set guifont=Fira\ Code:h12
-    " set guifont=Letter\ Gothic\ for\ Powerline:h12
+    set guifontwide=PingFangSC-Light:h12
+    " set guifontwide=PingFangSC-Ultralight:h12
+    " set guifont=Letter\ Gothic\ for\ Powerline:h12 中文字体使用
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
