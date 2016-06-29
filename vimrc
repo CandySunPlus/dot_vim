@@ -86,6 +86,7 @@ Plug 'xolox/vim-session'
 " Plug '2072/PHP-Indenting-for-VIm'
 "
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
@@ -190,7 +191,7 @@ let g:table_mode_header_fillchar="="
 nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
 " dash keys
-nmap <leader>d <Plug>DashSearch
+nmap <leader>da <Plug>DashSearch
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 
 " session setting
@@ -279,7 +280,13 @@ let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.css = [':' ]
 let g:ycm_semantic_triggers.less = [':']
 let g:ycm_semantic_triggers.scss = [':']
+let g:ycm_key_detailed_diagnostics = '<leader>d'
+let g:ycm_key_invoke_completion = '<S-Space>'
 
 let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
+
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 let g:javascript_enable_domhtmlcss = 1
