@@ -21,7 +21,6 @@ Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'Shougo/deoplete.nvim'
 Plug 'vhdirk/vim-cmake'
 Plug 'junegunn/limelight.vim'
-Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'benmills/vimux'
 Plug 'aliva/vim-fish'
 Plug 'Raimondi/delimitMate'
@@ -71,7 +70,7 @@ Plug 'heavenshell/vim-pydocstring'
 Plug 'bigfish/vim-js-context-coloring'
 " Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'pangloss/vim-javascript'
 " Plug 'othree/yajs.vim'
 " Plug 'othree/vim-jsx'
@@ -92,7 +91,6 @@ Plug 'honza/vim-snippets'
 " snipMate
 Plug 'garbas/vim-snipmate'
 Plug 'kien/ctrlp.vim'
-Plug 'groenewege/vim-less'
 Plug 'tpope/vim-surround'
 " original repos on github
 Plug 'tpope/vim-fugitive'
@@ -108,6 +106,15 @@ autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+" for scss
+au BufRead,BufNewFile *.scss set filetype=scss
+" for objective c
+au BufRead,BufNewFile *.m set filetype=objc
+" for tern project file
+au BufRead,BufNewFile *.tern-project set filetype=json
+" for nginx
+au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
+
 
 set noswapfile
 set nobackup
@@ -137,14 +144,14 @@ if has('gui_macvim')
 endif
 
 if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
-    colorscheme solarized
-    set background=light
+    colorscheme base16-monokai
+    set background=dark
     set guifont=Fira\ Code:h12
     " set guifont=Letter\ Gothic\ for\ Powerline:h12
     set linespace=2
     let g:ctrlp_working_path_mode = 'ra'
 else
-    colorscheme onedark
+    colorscheme base16-monokai
     set background=dark
 endif
 
@@ -241,19 +248,6 @@ let g:syntastic_objc_compiler_options = ' -fobjc-arc'
 " let g:indent_guides_start_level = 2
 " let g:indent_guides_guide_size = 1
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
-
-" for scss
-au BufRead,BufNewFile *.scss set filetype=scss
-
-" for objective c
-au BufRead,BufNewFile *.m set filetype=objc
-
-" for tern project file
-au BufRead,BufNewFile *.tern-project set filetype=json
-
-" for nginx
-au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
-
 let g:airline_theme = 'solarized'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
@@ -281,6 +275,10 @@ if has('nvim')
 endif
 
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_semantic_triggers = {}
+let g:ycm_semantic_triggers.css = [ 're!:\s+' ]
+let g:ycm_semantic_triggers.less = [ 're!:\s+' ]
+let g:ycm_semantic_triggers.scss = [ 're!:\s+' ]
 let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 
 let g:javascript_enable_domhtmlcss = 1
