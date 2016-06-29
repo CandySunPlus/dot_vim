@@ -278,9 +278,9 @@ endif
 
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 let g:ycm_semantic_triggers = {}
-let g:ycm_semantic_triggers.css = [ 're!:\s+' ]
-let g:ycm_semantic_triggers.less = [ 're!:\s+' ]
-let g:ycm_semantic_triggers.scss = [ 're!:\s+' ]
+let g:ycm_semantic_triggers.css = [ ':' ]
+let g:ycm_semantic_triggers.less = [ ':' ]
+let g:ycm_semantic_triggers.scss = [ ':' ]
 let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 
 let g:javascript_enable_domhtmlcss = 1
