@@ -84,12 +84,9 @@ Plug 'xolox/vim-session'
 " for php5.4
 " Plug 'donnut/vim-php54-syntax'
 " Plug '2072/PHP-Indenting-for-VIm'
-" snipMate dependencies
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'honza/vim-snippets'
-" snipMate
-Plug 'garbas/vim-snipmate'
+"
+Plug 'SirVer/ultisnips'
+
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 " original repos on github
@@ -194,6 +191,7 @@ nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
 " dash keys
 nmap <leader>d <Plug>DashSearch
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 
 " session setting
 let g:session_directory = '~/.session'
@@ -278,9 +276,10 @@ endif
 
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 let g:ycm_semantic_triggers = {}
-let g:ycm_semantic_triggers.css = [ ':' ]
-let g:ycm_semantic_triggers.less = [ ':' ]
-let g:ycm_semantic_triggers.scss = [ ':' ]
+let g:ycm_semantic_triggers.css = [':' ]
+let g:ycm_semantic_triggers.less = [':']
+let g:ycm_semantic_triggers.scss = [':']
+
 let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 
 let g:javascript_enable_domhtmlcss = 1
