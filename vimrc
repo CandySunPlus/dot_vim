@@ -29,6 +29,7 @@ Plug 'kyledoherty/espresso-colors-vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'toyamarinyon/vim-swift'
 Plug 'mbbill/undotree'
+Plug 'editorconfig/editorconfig-vim'
 " Input Method
 " Plug 'vim-scripts/VimIM'
 Plug 'CandySunPlus/CY_erbi'
@@ -129,7 +130,7 @@ set laststatus=2
 set noerrorbells
 set showcmd
 set showmode
-set completeopt-=preview
+" set completeopt-=preview
 set nu
 set rnu
 set numberwidth=2
@@ -144,8 +145,8 @@ endif
 if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
     colorscheme base16-monokai
     set background=dark
+    exec 'set guifontwide=PingFangSC-Light:h12'
     set guifont=Fira\ Code:h12
-    set guifontwide=PingFangSC-Light:h12
     " set guifontwide=PingFangSC-Ultralight:h12
     " set guifont=Letter\ Gothic\ for\ Powerline:h12 中文字体使用
     set linespace=2
@@ -282,8 +283,9 @@ let g:ycm_semantic_triggers.less = [':']
 let g:ycm_semantic_triggers.scss = [':']
 let g:ycm_key_detailed_diagnostics = '<leader>d'
 let g:ycm_key_invoke_completion = '<S-Space>'
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
-let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
+" let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
