@@ -145,8 +145,13 @@ endif
 if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
     colorscheme base16-monokai
     set background=dark
+    " set guifont=Fira\ Code:h12
+    " set guifont=Hasklig:h12
+    " set guifont=CamingoCode:h12
+    " set guifont=Input:h12
+    set guifont=Letter\ Gothic\ for\ Powerline:h12
+    " set guifont=M+\ 1m:h12
     exec 'set guifontwide=PingFangSC-Light:h12'
-    set guifont=Fira\ Code:h12
     " set guifontwide=PingFangSC-Ultralight:h12
     " set guifont=Letter\ Gothic\ for\ Powerline:h12 中文字体使用
     set linespace=2
@@ -204,11 +209,7 @@ let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 let g:SimpleJsIndenter_BriefMode = 1
 let g:jscomplete_use = ['dom', 'moz']
 
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|build)$|\v[\/](node_modules)$',
-  \ 'file': '\v\.(exe|so|dll|tmp|temp|cache|pyc)$',
-  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-  \ }
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 let g:ctrlp_buftag_types = {
   \ 'go'         : '--language-force=go --golang-types=ftv',
@@ -292,3 +293,4 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 let g:javascript_enable_domhtmlcss = 1
+let g:ackprg = 'ag --nogroup --nocolor --column'
