@@ -147,11 +147,13 @@ if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_a
     set background=dark
     " set guifont=Fira\ Code:h12
     " set guifont=Hasklig:h12
+    " set guifont=menlo:h12
     " set guifont=CamingoCode:h12
-    " set guifont=Input:h12
-    set guifont=Letter\ Gothic\ for\ Powerline:h12
+    set guifont=Source\ Han\ Sans\ HW\ SC:h12
+    " set guifont=Letter\ Gothic\ for\ Powerline:h14
+    " set guifont=NanumGothicCoding:h12
     " set guifont=M+\ 1m:h12
-    exec 'set guifontwide=PingFangSC-Light:h12'
+    " exec 'set guifontwide=PingFangSC-Light:h12'
     " set guifontwide=PingFangSC-Ultralight:h12
     " set guifont=Letter\ Gothic\ for\ Powerline:h12 中文字体使用
     set linespace=2
@@ -160,6 +162,12 @@ else
     colorscheme base16-monokai
     set background=dark
 endif
+
+if exists('neovim_dot_app')
+    call MacSetFont('Source Han Sans HW SC', 12)
+    call MacMenu("File.Print", "")
+endif
+
 
 let g:multi_cursor_use_default_mapping = 0
 let g:multi_cursor_next_key = '<D-d>'
@@ -254,7 +262,7 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 let g:airline_theme = 'base16_monokai'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 " Input Method
 let g:Vimim_cloud = -1
@@ -275,6 +283,8 @@ endif
 
 if has('nvim')
     let g:python_host_prog = '/usr/local/bin/python2'
+    let g:python3_host_prog = '/usr/local/bin/python3'
+    let g:deoplete#enable_at_startup = 1
 endif
 
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
@@ -294,3 +304,4 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 let g:javascript_enable_domhtmlcss = 1
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
