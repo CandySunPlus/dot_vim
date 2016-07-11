@@ -7,4 +7,8 @@ ln -s ~/.vim/binary/ctags/5.8/bin/ctags /usr/local/bin/ctags
 ln -s ${BASE_PATH}/vimrc ~/.vimrc
 ln -s ${BASE_PATH}/gvimrc ~/.gvimrc
 ln -s ${BASE_PATH}/ctags ~/.ctags
+ln -s ${BASE_PATH}/.tern-config ~/.tern-config
+ln -s ${BASE_PATH}/.editorconfig ~/.editorconfig
+ln -s ${BASE_PATH}/.agignore ~/.agignore
+
 ln -s ${BASE_PATH}/tmux.conf ~/.tmux.conf
