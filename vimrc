@@ -14,11 +14,11 @@ let mapleader = ','
 call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 Plug 'Shougo/deoplete.nvim'
+Plug 'Rip-Rip/clang_complete'
 Plug 'carlitux/deoplete-ternjs'
-Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-jedi'
 Plug 'mhartington/deoplete-typescript'
 
@@ -91,6 +91,7 @@ autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+au FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
 " for objective c
@@ -273,16 +274,27 @@ if has('nvim')
     let g:python_host_prog = '/usr/local/bin/python2'
     let g:python3_host_prog = '/usr/local/bin/python3'
     let g:deoplete#enable_at_startup = 1
+    let g:deoplete#auto_completion_start_length = 1
+    let g:deoplete#enable_smart_case = 1
+    let g:deoplete#max_list=6
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+    let g:clang_complete_auto = 0
+    let g:clang_auto_select = 0
+    let g:clang_omnicppcomplete_compliance = 0
+    let g:clang_make_default_keymappings = 0
 endif
 
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
-let g:ycm_semantic_triggers = {}
-let g:ycm_semantic_triggers.css = [':' ]
-let g:ycm_semantic_triggers.less = [':']
-let g:ycm_semantic_triggers.scss = [':']
-let g:ycm_key_detailed_diagnostics = '<leader>d'
-let g:ycm_key_invoke_completion = '<S-Space>'
-let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
+
+" let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+" let g:ycm_semantic_triggers = {}
+" let g:ycm_semantic_triggers.css = [':' ]
+" let g:ycm_semantic_triggers.less = [':']
+" let g:ycm_semantic_triggers.scss = [':']
+" let g:ycm_key_detailed_diagnostics = '<leader>d'
+" let g:ycm_key_invoke_completion = '<S-Space>'
+" let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 
