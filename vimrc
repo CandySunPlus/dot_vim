@@ -15,10 +15,16 @@ call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
 Plug 'Valloric/YouCompleteMe'
+
+Plug 'Shougo/deoplete.nvim'
+Plug 'carlitux/deoplete-ternjs'
+Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-jedi'
+Plug 'mhartington/deoplete-typescript'
+
 Plug 'joshdick/onedark.vim'
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-Plug 'Shougo/deoplete.nvim'
 Plug 'vhdirk/vim-cmake'
 Plug 'junegunn/limelight.vim'
 Plug 'benmills/vimux'
@@ -31,14 +37,10 @@ Plug 'toyamarinyon/vim-swift'
 Plug 'mbbill/undotree'
 Plug 'editorconfig/editorconfig-vim'
 " Input Method
-" Plug 'vim-scripts/VimIM'
 Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
 " TypeScript
-" Plug 'leafgarland/typescript-vim'
-" Plug 'Shougo/vimproc.vim'
-" Plug 'Quramy/tsuquyomi'
 " For dash
 Plug 'rizzatti/funcoo.vim'
 Plug 'rizzatti/dash.vim'
@@ -50,11 +52,9 @@ Plug 'digitaltoad/vim-jade'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
-" Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'itchyny/lightline.vim'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tomtom/tcomment_vim'
 Plug 'esukram/vim-taglist'
@@ -62,30 +62,16 @@ Plug 'shawncplus/phpcomplete.vim'
 " for Java
 Plug 'artur-shaik/vim-javacomplete2'
 " for go
-" Plug 'fsouza/go.vim'
 " for python indent
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
 Plug 'bigfish/vim-js-context-coloring'
-" Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
-" Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-" Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
-" Plug 'pangloss/vim-javascript'
-" Plug 'othree/yajs.vim'
-" Plug 'othree/vim-jsx'
-" Plug 'jelera/vim-javascript-syntax'
-" Plug 'mxw/vim-jsx'
-" Plug 'justinj/vim-react-snippets'
 
 Plug 'mattn/emmet-vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-" for php5.4
-" Plug 'donnut/vim-php54-syntax'
-" Plug '2072/PHP-Indenting-for-VIm'
-"
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
@@ -282,6 +268,8 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 if has('nvim')
+    let g:ycm_auto_trigger = 0
+    let g:ycm_min_num_of_chars_for_completion = 99
     let g:python_host_prog = '/usr/local/bin/python2'
     let g:python3_host_prog = '/usr/local/bin/python3'
     let g:deoplete#enable_at_startup = 1
