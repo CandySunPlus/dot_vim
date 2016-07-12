@@ -306,4 +306,5 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:javascript_enable_domhtmlcss = 1
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:jsdoc_enable_es6 = 1
+nmap <silent> <C-l> <Plug>(jsdoc)
 
