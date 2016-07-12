@@ -68,6 +68,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
 Plug 'bigfish/vim-js-context-coloring'
+Plug 'heavenshell/vim-jsdoc'
 
 Plug 'mattn/emmet-vim'
 Plug 'xolox/vim-misc'
@@ -304,4 +305,5 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 let g:javascript_enable_domhtmlcss = 1
 let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:jsdoc_enable_es6 = 1
 
