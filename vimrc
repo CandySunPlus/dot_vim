@@ -14,13 +14,13 @@ let mapleader = ','
 call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
-" Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 
-Plug 'Shougo/deoplete.nvim'
-Plug 'Rip-Rip/clang_complete'
-Plug 'carlitux/deoplete-ternjs'
-Plug 'zchee/deoplete-jedi'
-Plug 'mhartington/deoplete-typescript'
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'Rip-Rip/clang_complete'
+" Plug 'carlitux/deoplete-ternjs'
+" Plug 'zchee/deoplete-jedi'
+" Plug 'mhartington/deoplete-typescript'
 
 Plug 'joshdick/onedark.vim'
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
@@ -98,7 +98,7 @@ au BufRead,BufNewFile *.scss set filetype=scss
 " for objective c
 au BufRead,BufNewFile *.m set filetype=objc
 " for tern project file
-au BufRead,BufNewFile *.tern-project set filetype=json
+au BufRead,BufNewFile *.tern-project,*.tern-config set filetype=json
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
@@ -112,7 +112,7 @@ set autoread
 set autowrite
 set fileformats=unix,dos,mac
 set backspace=indent,eol,start
-" set hlsearch
+set nohlsearch
 " set incsearch
 set laststatus=2
 set noerrorbells
@@ -131,28 +131,34 @@ if has('gui_macvim')
 endif
 
 if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
-    colorscheme base16-monokai
-    set background=dark
+    " colorscheme base16-monokai
+    colorscheme base16-solarized-light
+    set background=light
     " set guifont=Fira\ Code:h12
     " set guifont=Hasklig:h12
     " set guifont=menlo:h12
     " set guifont=CamingoCode:h12
-    set guifont=Source\ Han\ Sans\ HW\ SC:h12
+    " set guifont=Source\ Han\ Sans\ HW\ SC:h12
+    " set guifont=Office\ Code\ Pro:h12
+    " set guifont=mononoki:h12
+    set guifont=Inziu\ IosevakaCC\ Slab\ SC:h12
     " set guifont=Letter\ Gothic\ for\ Powerline:h14
     " set guifont=NanumGothicCoding:h12
     " set guifont=M+\ 1m:h12
     " exec 'set guifontwide=PingFangSC-Light:h12'
     " set guifontwide=PingFangSC-Ultralight:h12
     " set guifont=Letter\ Gothic\ for\ Powerline:h12 中文字体使用
-    set linespace=2
+    set linespace=1
     let g:ctrlp_working_path_mode = 'ra'
 else
     colorscheme base16-monokai
-    set background=dark
+    set background=light
 endif
 
 if exists('neovim_dot_app')
-    call MacSetFont('Source Han Sans HW SC', 12)
+    " call MacSetFont('Source Han Sans HW SC', 12)
+    " call MacSetFont('mononoki', 12)
+    call MacSetFont('Inziu IosevkaCC Slab SC', 12)
     call MacMenu("File.Print", "")
 endif
 
@@ -250,7 +256,7 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 let g:airline_theme = 'base16_monokai'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 
 " Input Method
 let g:Vimim_cloud = -1
@@ -270,34 +276,32 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 if has('nvim')
-    let g:ycm_auto_trigger = 0
-    let g:ycm_min_num_of_chars_for_completion = 99
     let g:python_host_prog = '/usr/local/bin/python2'
     let g:python3_host_prog = '/usr/local/bin/python3'
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#auto_completion_start_length = 1
-    let g:deoplete#enable_smart_case = 1
-    let g:deoplete#max_list=6
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-    let g:clang_complete_auto = 0
-    let g:clang_auto_select = 0
-    let g:clang_omnicppcomplete_compliance = 0
-    let g:clang_make_default_keymappings = 0
-    let g:tern_request_timeout = 1
-    let g:tern_show_signature_in_pum = 0
+    " let g:deoplete#enable_at_startup = 1
+    " let g:deoplete#auto_completion_start_length = 1
+    " let g:deoplete#enable_smart_case = 1
+    " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+    " let g:clang_complete_auto = 0
+    " let g:clang_auto_select = 0
+    " let g:clang_omnicppcomplete_compliance = 0
+    " let g:clang_make_default_keymappings = 0
+    " let g:tern_request_timeout = 1
+    " let g:tern_show_signature_in_pum = 0
 endif
 
-let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
+" let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
 
-" let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
-" let g:ycm_semantic_triggers = {}
-" let g:ycm_semantic_triggers.css = [':' ]
-" let g:ycm_semantic_triggers.less = [':']
-" let g:ycm_semantic_triggers.scss = [':']
-" let g:ycm_key_detailed_diagnostics = '<leader>d'
-" let g:ycm_key_invoke_completion = '<S-Space>'
-" let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_semantic_triggers = {}
+let g:ycm_semantic_triggers.css = [':' ]
+let g:ycm_semantic_triggers.less = [':']
+let g:ycm_semantic_triggers.scss = [':']
+let g:ycm_key_detailed_diagnostics = '<leader>d'
+let g:ycm_key_invoke_completion = '<S-Space>'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:airline_exclude_preview = 1
 
 " let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 
