@@ -141,7 +141,7 @@ if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_a
     " set guifont=Source\ Han\ Sans\ HW\ SC:h12
     " set guifont=Office\ Code\ Pro:h12
     " set guifont=mononoki:h12
-    set guifont=Inziu\ IosevakaCC\ Slab\ SC:h12
+    set guifont=Inziu\ IosevkaCC\ Slab\ SC:h12
     " set guifont=Letter\ Gothic\ for\ Powerline:h14
     " set guifont=NanumGothicCoding:h12
     " set guifont=M+\ 1m:h12
