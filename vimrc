@@ -66,14 +66,15 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
-Plug 'bigfish/vim-js-context-coloring'
+Plug 'pangloss/vim-javascript'
 Plug 'heavenshell/vim-jsdoc'
 
 Plug 'mattn/emmet-vim'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+" for session
+Plug 'tpope/vim-obsession'
 
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
@@ -166,7 +167,6 @@ if exists('neovim_dot_app')
     call MacMenu("File.Print", "")
 endif
 
-
 let g:multi_cursor_use_default_mapping = 0
 let g:multi_cursor_next_key = '<D-d>'
 let g:multi_cursor_prev_key = '<D-u>'
@@ -197,6 +197,7 @@ nmap <leader>o :TlistToggle<cr>
 nmap <leader>u :UndotreeToggle<cr>
 nmap <leader>b :BuffergatorToggle<cr>
 nmap <leader>tm :TableModeToggle<cr>
+nmap <leader>il :IndentLinesReset<cr>
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
 " ctrl keys
@@ -205,11 +206,6 @@ vnoremap <C-K> :call PhpDocRange()<cr>
 " dash keys
 nmap <leader>da <Plug>DashSearch
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
-
-" session setting
-let g:session_directory = '~/.session'
-let g:session_autosave = 'yes'
-let g:session_autoload = 'no'
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 let g:SimpleJsIndenter_BriefMode = 1
