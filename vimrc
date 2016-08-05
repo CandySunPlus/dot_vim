@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
 Plug 'Valloric/YouCompleteMe'
+Plug 'junegunn/vim-easy-align'
 
 " Plug 'Shougo/deoplete.nvim'
 " Plug 'Rip-Rip/clang_complete'
@@ -295,6 +296,7 @@ endif
 " let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
 
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_rust_src_path = '/Users/niksun/Documents/rust/src'
 let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.css = [':' ]
 let g:ycm_semantic_triggers.less = [':']
@@ -305,6 +307,18 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:airline_exclude_preview = 1
 
 " let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
+
+let g:javascript_plugin_jsdoc = 1
+" let g:javascript_conceal_function       = "ƒ"
+" let g:javascript_conceal_null           = "ø"
+" let g:javascript_conceal_this           = "@"
+" let g:javascript_conceal_return         = "⇚"
+" let g:javascript_conceal_undefined      = "¿"
+" let g:javascript_conceal_NaN            = "ℕ"
+" let g:javascript_conceal_prototype      = "¶"
+" let g:javascript_conceal_static         = "•"
+" let g:javascript_conceal_super          = "Ω"
+" let g:javascript_conceal_arrow_function = "⇒"
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
