@@ -137,14 +137,18 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 set background=light
 let g:ctrlp_working_path_mode = 'ra'
-" if has('gui_macvim') || has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
-"     set background=light
-"     colorscheme base16-solarized-light
+if has('gui_macvim')
+"|| has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
+    set background=light
+    colorscheme base16-solarized-light
 "     set guifont=Fira\ Code:h12
     " set guifont=Hasklig:h12
     " set guifont=menlo:h12
     " set guifont=CamingoCode:h12
-    " set guifont=Source\ Han\ Sans\ HW\ SC:h12
+    set guifont=Source\ Han\ Sans\ HW\ SC:h12
+    " set guifontwide=FZSongKeBenXiuKaiS-R-GB:h12
+    set guifontwide=HYRunYuan:h12
+    let g:airline_powerline_fonts = 0
     " set guifont=Office\ Code\ Pro:h12
     " set guifont=mononoki:h12
     " set guifont=Inziu\ IosevkaCC\ Slab\ SC:h12
@@ -152,13 +156,14 @@ let g:ctrlp_working_path_mode = 'ra'
     " set guifont=NanumGothicCoding:h12
     " set guifont=M+\ 1m:h12
     " exec 'set guifontwide=PingFangSC-Light:h12'
+    " set guifontwide=Inziu\ IosevkaCC\ Slab\ SC:h12
     " set guifontwide=PingFangSC-Ultralight:h12
     " set guifont=Letter\ Gothic\ for\ Powerline:h12 中文字体使用
 "     set linespace=1
 "     let g:ctrlp_working_path_mode = 'ra'
-" else
-"     set background=light
-" endif
+else
+    let g:airline_powerline_fonts = 1
+endif
 
 if exists('neovim_dot_app')
     " call MacSetFont('Source Han Sans HW SC', 12)
@@ -257,7 +262,7 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 let g:airline_theme = 'base16'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " Input Method
