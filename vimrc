@@ -23,6 +23,11 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'zchee/deoplete-jedi'
 " Plug 'mhartington/deoplete-typescript'
 
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/unite-outline'
+Plug 'Shougo/neomru.vim'
+Plug 'Quramy/tsuquyomi'
 Plug 'joshdick/onedark.vim'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'vhdirk/vim-cmake'
@@ -77,7 +82,6 @@ Plug 'honza/vim-snippets'
 " for session
 Plug 'tpope/vim-obsession'
 
-Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 " original repos on github
 Plug 'tpope/vim-fugitive'
@@ -94,6 +98,8 @@ autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set 
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 au FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
+au FileType typescript setl omnifunc=tsuquyomi#complete
+
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
 " for objective c
@@ -136,7 +142,6 @@ if filereadable(expand("~/.vimrc_background"))
     source ~/.vimrc_background
 endif
 set background=light
-let g:ctrlp_working_path_mode = 'ra'
 if has('gui_macvim')
 "|| has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
     set background=light
@@ -160,7 +165,6 @@ if has('gui_macvim')
     " set guifontwide=PingFangSC-Ultralight:h12
     " set guifont=Letter\ Gothic\ for\ Powerline:h12 中文字体使用
 "     set linespace=1
-"     let g:ctrlp_working_path_mode = 'ra'
 else
     let g:airline_powerline_fonts = 1
 endif
@@ -181,12 +185,6 @@ let g:multi_cursor_quit_key = '<Esc>'
 
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
-map <D-r> :CtrlPBufTag<cr>
-imap <D-r> <esc>:CtrlPBufTag<cr>
-map <D-R> :CtrlPBufTagAll<cr>
-imap <D-R> <esc>:CtrlPBufTagAll<cr>
-map <D-p> :CtrlPBuffer<cr>
-imap <D-p> <esc>:CtrlPBuffer<cr>
 " Indent lines with cmd+[ and cmd+]
 nmap <D-]> >>
 nmap <D-[> <<
@@ -198,7 +196,6 @@ map <C-Tab> :b#<cr>
 nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
 vmap <leader>/ :TComment<cr>gv
-nmap <leader>p :CtrlPBuffer<cr>
 nmap <leader>o :TlistToggle<cr>
 nmap <leader>u :UndotreeToggle<cr>
 nmap <leader>b :BuffergatorToggle<cr>
@@ -217,27 +214,24 @@ let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 let g:SimpleJsIndenter_BriefMode = 1
 let g:jscomplete_use = ['dom', 'moz']
 
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+" Unite
+let g:unite_source_rec_min_cache_files = 1200
+let g:unite_prompt = '» '
+" Use ag for search
+if executable('ag')
+    let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
+endif
 
-let g:ctrlp_buftag_types = {
-  \ 'go'         : '--language-force=go --golang-types=ftv',
-  \ 'coffee'     : '--language-force=coffee --coffee-types=cmfvf',
-  \ 'markdown'   : '--language-force=markdown --markdown-types=hik',
-  \ 'objc'       : '--language-force=objc --objc-types=mpci',
-  \ 'rc'         : '--language-force=rust --rust-types=fTm'
-  \ }
+nmap <space> [unite]
+nnoremap [unite] <nop>
 
-let g:tagbar_type_javascript = {
-  \ 'ctagstype' : 'javascript',
-  \ 'kinds'     : [
-      \ 'o:objects',
-      \ 'm:members',
-      \ 'f:functions',
-      \ 'a:arraies',
-      \ 's:strings',
-    \ ]
-\ }
-
+if has('nvim')
+    nnoremap <silent> [unite]p :<C-U>Unite -auto-resize -toggle -buffer-name=files ile_rec/neovim<CR>
+else
+    nnoremap <silent> [unite]p :<C-U>Unite -auto-resize -toggle -buffer-name=files file_rec/async<CR>
+endif
+nnoremap <silent> [unite]b :<C-U>Unite -auto-resize -buffer-name=buffers buffer<CR>
+nnoremap <silent> [unite]q :<C-U>Unite -quick-match -buffer-name=buffers buffer<CR>
 
 " syntasic
 let g:syntastic_javascript_checkers = ['eslint']
@@ -246,7 +240,11 @@ let g:syntastic_javascript_eslint_args = '--config /Users/niksun/.eslintrc.json'
 " let g:syntastic_javascript_jsxhint_args = '--harmony --esnext'
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "--rcfile=/usr/local/etc/pylint.rc"
-let g:syntastic_typescript_checkers = ['tslint']
+let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_completion_detail = 1
+let g:tsuquyomi_use_local_typescript = 1
+let g:tsuquyomi_single_quote_import = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 let g:syntastic_typescript_tsc_fname = ''
 let g:syntastic_sass_checkers = []
 let g:syntastic_scss_checkers = []
@@ -306,6 +304,10 @@ let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.css = [':' ]
 let g:ycm_semantic_triggers.less = [':']
 let g:ycm_semantic_triggers.scss = [':']
+" let g:ycm_filetype_blacklist = { 'typescript': 1 }
+" let g:ycm_filetype_specific_completion_to_disable = {
+"             \ 'typescript': 1
+"             \}
 let g:ycm_key_detailed_diagnostics = '<leader>d'
 let g:ycm_key_invoke_completion = '<S-Space>'
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -330,7 +332,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 let g:javascript_enable_domhtmlcss = 1
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --nogroup --nocolor --column --hidden'
 let g:jsdoc_enable_es6 = 1
 
 nmap <silent> <C-l> <Plug>(jsdoc)
