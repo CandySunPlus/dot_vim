@@ -226,7 +226,7 @@ nmap <space> [unite]
 nnoremap [unite] <nop>
 
 if has('nvim')
-    nnoremap <silent> [unite]p :<C-U>Unite -auto-resize -toggle -buffer-name=files ile_rec/neovim<CR>
+    nnoremap <silent> [unite]p :<C-U>Unite -auto-resize -toggle -buffer-name=files file_rec/neovim<CR>
 else
     nnoremap <silent> [unite]p :<C-U>Unite -auto-resize -toggle -buffer-name=files file_rec/async<CR>
 endif
