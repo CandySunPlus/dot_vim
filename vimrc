@@ -217,6 +217,7 @@ let g:jscomplete_use = ['dom', 'moz']
 " Unite
 let g:unite_source_rec_min_cache_files = 1200
 let g:unite_prompt = '» '
+
 " Use ag for search
 if executable('ag')
     let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
@@ -231,7 +232,7 @@ else
     nnoremap <silent> [unite]p :<C-U>Unite -auto-resize -toggle -buffer-name=files file_rec/async<CR>
 endif
 nnoremap <silent> [unite]b :<C-U>Unite -auto-resize -buffer-name=buffers buffer<CR>
-nnoremap <silent> [unite]q :<C-U>Unite -quick-match -buffer-name=buffers buffer<CR>
+nnoremap <silent> [unite]o :<C-U>Unite -auto-resize -buffer-name=outline outline<CR>
 
 " syntasic
 let g:syntastic_javascript_checkers = ['eslint']
