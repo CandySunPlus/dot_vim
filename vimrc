@@ -27,7 +27,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 Plug 'Shougo/neomru.vim'
-Plug 'Quramy/tsuquyomi'
+Plug 'CandySunPlus/tsuquyomi'
 Plug 'joshdick/onedark.vim'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'vhdirk/vim-cmake'
@@ -98,7 +98,8 @@ autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set 
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 au FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
-au FileType typescript setl omnifunc=tsuquyomi#complete
+" au FileType typescript setl omnifunc=tsuquyomi#complete 
+" au FileType typescript setl completeopt-=menu
 
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
@@ -141,7 +142,7 @@ if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
     source ~/.vimrc_background
 endif
-set background=light
+
 if has('gui_macvim')
 "|| has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
     set background=light
@@ -308,9 +309,13 @@ endif
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 let g:ycm_rust_src_path = '/Users/niksun/Documents/rust/src'
 let g:ycm_semantic_triggers = {}
-let g:ycm_semantic_triggers.css = [':' ]
-let g:ycm_semantic_triggers.less = [':']
-let g:ycm_semantic_triggers.scss = [':']
+if !exists("g:ycm_semantic_triggers")
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+let g:ycm_semantic_triggers['css'] = [':']
+let g:ycm_semantic_triggers['less'] = [':']
+let g:ycm_semantic_triggers['scss'] = [':']
 " let g:ycm_filetype_blacklist = { 'typescript': 1 }
 " let g:ycm_filetype_specific_completion_to_disable = {
 "             \ 'typescript': 1
