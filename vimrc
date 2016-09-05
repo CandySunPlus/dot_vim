@@ -355,3 +355,6 @@ if !exists('g:easy_align_delimiters')
 endif
 let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
 
+let g:indentLine_char = "┆"
+let g:indentLine_first_char = "┆"
+
