@@ -27,6 +27,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 Plug 'Shougo/neomru.vim'
+Plug 'luke-gru/vim-riml'
 Plug 'CandySunPlus/tsuquyomi'
 Plug 'joshdick/onedark.vim'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
