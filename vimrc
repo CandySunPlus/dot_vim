@@ -212,8 +212,6 @@ nmap <leader>da <Plug>DashSearch
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
-let g:SimpleJsIndenter_BriefMode = 1
-let g:jscomplete_use = ['dom', 'moz']
 
 " Unite
 let g:unite_source_rec_min_cache_files = 1200
@@ -268,6 +266,8 @@ let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 let g:airline_theme = 'base16'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#tab_nr_type = 0
 " let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
