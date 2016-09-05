@@ -237,7 +237,7 @@ else
     nnoremap <silent> [unite]p :<C-U>Unite -auto-resize -start-insert -toggle -buffer-name=files file_rec/async<CR>
 endif
 nnoremap <silent> [unite]b :<C-U>Unite -auto-resize -start-insert -buffer-name=buffers buffer<CR>
-nnoremap <silent> [unite]o :<C-U>Unite -auto-resize -start-insert -buffer-name=outline outline<CR>
+nnoremap <silent> [unite]o :<C-U>Unite -auto-resize -start-insert -direction=topleft -buffer-name=outline outline<CR>
 
 " syntasic
 let g:syntastic_javascript_checkers = ['eslint']
