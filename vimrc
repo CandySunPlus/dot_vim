@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 " My Plugins here:
 Plug 'Valloric/YouCompleteMe'
 Plug 'godlygeek/tabular'
+Plug 'skywind3000/asyncrun.vim'
 
 " Plug 'Shougo/deoplete.nvim'
 " Plug 'Rip-Rip/clang_complete'
