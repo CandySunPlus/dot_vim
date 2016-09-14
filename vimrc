@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
 Plug 'Valloric/YouCompleteMe'
-Plug 'junegunn/vim-easy-align'
+Plug 'godlygeek/tabular'
 
 " Plug 'Shougo/deoplete.nvim'
 " Plug 'Rip-Rip/clang_complete'
@@ -98,7 +98,7 @@ autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set 
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 au FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
-" au FileType typescript setl omnifunc=tsuquyomi#complete 
+" au FileType typescript setl omnifunc=tsuquyomi#complete
 " au FileType typescript setl completeopt-=menu
 
 " for scss
@@ -154,7 +154,7 @@ if has('gui_macvim')
     set guifont=Source\ Han\ Sans\ HW\ SC:h12
     " set guifontwide=FZSongKeBenXiuKaiS-R-GB:h12
     set guifontwide=HYRunYuan:h12
-    let g:airline_powerline_fonts = 0
+    " let g:airline_powerline_fonts = 0
     " set guifont=Office\ Code\ Pro:h12
     " set guifont=mononoki:h12
     " set guifont=Inziu\ IosevkaCC\ Slab\ SC:h12
@@ -348,12 +348,6 @@ let g:ackprg = 'ag --nogroup --nocolor --column --hidden'
 let g:jsdoc_enable_es6 = 1
 
 nmap <silent> <C-l> <Plug>(jsdoc)
-vmap <Leader>a <Plug>(EasyAlign)
-nmap <Leader>a <Plug>(EasyAlign)
-if !exists('g:easy_align_delimiters')
-  let g:easy_align_delimiters = {}
-endif
-let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
 
 let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
