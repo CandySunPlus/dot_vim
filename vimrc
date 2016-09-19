@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 " My Plugins here:
 Plug 'Valloric/YouCompleteMe'
 Plug 'godlygeek/tabular'
+Plug 'bufkill.vim'
 
 " Plug 'Shougo/deoplete.nvim'
 " Plug 'Rip-Rip/clang_complete'
@@ -36,7 +37,6 @@ Plug 'benmills/vimux'
 Plug 'aliva/vim-fish'
 Plug 'Raimondi/delimitMate'
 Plug 'chriskempson/base16-vim'
-Plug 'skammer/vim-css-color'
 Plug 'aklt/plantuml-syntax'
 Plug 'toyamarinyon/vim-swift'
 Plug 'mbbill/undotree'
