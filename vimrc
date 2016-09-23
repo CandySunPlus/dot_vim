@@ -18,29 +18,23 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'godlygeek/tabular'
 Plug 'bufkill.vim'
 
-" Plug 'Shougo/deoplete.nvim'
-" Plug 'Rip-Rip/clang_complete'
-" Plug 'carlitux/deoplete-ternjs'
-" Plug 'zchee/deoplete-jedi'
-" Plug 'mhartington/deoplete-typescript'
-
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 Plug 'Shougo/neomru.vim'
 Plug 'CandySunPlus/tsuquyomi'
-Plug 'joshdick/onedark.vim'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'vhdirk/vim-cmake'
 Plug 'junegunn/limelight.vim'
 Plug 'benmills/vimux'
 Plug 'aliva/vim-fish'
-Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate' // conflict with indentLine plugin
+Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'toyamarinyon/vim-swift'
-Plug 'mbbill/undotree'
-Plug 'editorconfig/editorconfig-vim'
+ Plug 'mbbill/undotree'
+ Plug 'editorconfig/editorconfig-vim'
 " Input Method
 Plug 'CandySunPlus/CY_erbi'
 " For all language
@@ -62,7 +56,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tomtom/tcomment_vim'
-Plug 'esukram/vim-taglist'
 Plug 'shawncplus/phpcomplete.vim'
 " for Java
 Plug 'artur-shaik/vim-javacomplete2'
