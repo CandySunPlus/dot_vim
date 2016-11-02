@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 Plug 'godlygeek/tabular'
 Plug 'bufkill.vim'
+Plug 'kylef/apiblueprint.vim'
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/unite.vim'
@@ -315,6 +316,7 @@ let g:ycm_semantic_triggers['scss'] = [':']
 "             \}
 let g:ycm_key_detailed_diagnostics = '<leader>d'
 let g:ycm_key_invoke_completion = '<S-Space>'
+let g:ycm_global_ycm_extra_conf = '/Users/niksun/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:airline_exclude_preview = 1
 
