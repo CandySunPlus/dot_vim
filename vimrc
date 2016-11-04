@@ -18,6 +18,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'godlygeek/tabular'
 Plug 'bufkill.vim'
 Plug 'kylef/apiblueprint.vim'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/unite.vim'
