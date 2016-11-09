@@ -16,7 +16,7 @@ call plug#begin('~/.vim/plugged')
 " My Plugins here:
 Plug 'Valloric/YouCompleteMe'
 Plug 'godlygeek/tabular'
-Plug 'bufkill.vim'
+Plug 'qpkorr/vim-bufkill'
 Plug 'kylef/apiblueprint.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
@@ -42,6 +42,8 @@ Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
 " TypeScript
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'HerringtonDarkholme/yats.vim'
 " For dash
 Plug 'rizzatti/funcoo.vim'
 Plug 'rizzatti/dash.vim'
@@ -253,10 +255,6 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:syntastic_objc_compiler_options = ' -fobjc-arc'
 
-" indent line
-" let g:indent_guides_enable_on_vim_startup = 1
-" let g:indent_guides_start_level = 2
-" let g:indent_guides_guide_size = 1
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 let g:airline_theme = 'base16'
 let g:airline#extensions#branch#enabled = 1
@@ -347,4 +345,6 @@ nmap <silent> <C-l> <Plug>(jsdoc)
 
 let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
-
+" let g:polyglot_disabled = ['typescript']
+autocmd FileType typescript JsPreTmpl markdown
+autocmd FileType typescript syn clear foldBraces
