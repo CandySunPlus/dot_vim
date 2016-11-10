@@ -42,8 +42,8 @@ Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
 " TypeScript
-Plug 'Quramy/vim-js-pretty-template'
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'Quramy/vim-js-pretty-template'
+" Plug 'HerringtonDarkholme/yats.vim'
 " For dash
 Plug 'rizzatti/funcoo.vim'
 Plug 'rizzatti/dash.vim'
@@ -346,5 +346,5 @@ nmap <silent> <C-l> <Plug>(jsdoc)
 let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
 " let g:polyglot_disabled = ['typescript']
-autocmd FileType typescript JsPreTmpl markdown
-autocmd FileType typescript syn clear foldBraces
+" autocmd FileType typescript JsPreTmpl markdown
+" autocmd FileType typescript syn clear foldBraces
