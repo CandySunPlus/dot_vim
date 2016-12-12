@@ -135,7 +135,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(sanityinc-tomorrow-night
+   dotspacemacs-themes '(sanityinc-tomorrow-bright
                          spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
@@ -331,15 +331,41 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   (vector "#cccccc" "#f2777a" "#99cc99" "#ffcc66" "#6699cc" "#cc99cc" "#66cccc" "#515151"))
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-bright)))
  '(custom-safe-themes
    (quote
-    ("c968804189e0fc963c641f5c9ad64bca431d41af2fb7e1d01a2a6666376f819c" default)))
+    ("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "c968804189e0fc963c641f5c9ad64bca431d41af2fb7e1d01a2a6666376f819c" default)))
  '(evil-want-Y-yank-to-eol nil)
+ '(fci-rule-color "#515151" t)
  '(hl-sexp-background-color "#121212")
  '(my/base16-colors base16-default-dark-colors)
  '(package-selected-packages
    (quote
-    (apib-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help base16-theme web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode smeargle orgit org mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flycheck-pos-tip evil-magit magit magit-popup git-commit with-editor monokai-theme material-theme helm-company helm-c-yasnippet company-web web-completion-data company-statistics company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode tide typescript-mode flycheck yapfify reveal-in-osx-finder rainbow-mode rainbow-identifiers pyvenv pytest pyenv-mode py-isort pip-requirements pbcopy pangu-spacing osx-trash osx-dictionary mwim live-py-mode launchctl hy-mode helm-pydoc find-by-pinyin-dired cython-mode color-identifiers-mode chinese-pyim chinese-pyim-basedict pos-tip anaconda-mode pythonic ace-pinyin pinyinlib ace-jump-mode ws-butler window-numbering volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump f s define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup which-key use-package spacemacs-theme quelpa macrostep hydra evil elisp-slime-nav bind-map auto-compile async))))
+    (apib-mode xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help base16-theme web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode smeargle orgit org mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md flycheck-pos-tip evil-magit magit magit-popup git-commit with-editor monokai-theme material-theme helm-company helm-c-yasnippet company-web web-completion-data company-statistics company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode tide typescript-mode flycheck yapfify reveal-in-osx-finder rainbow-mode rainbow-identifiers pyvenv pytest pyenv-mode py-isort pip-requirements pbcopy pangu-spacing osx-trash osx-dictionary mwim live-py-mode launchctl hy-mode helm-pydoc find-by-pinyin-dired cython-mode color-identifiers-mode chinese-pyim chinese-pyim-basedict pos-tip anaconda-mode pythonic ace-pinyin pinyinlib ace-jump-mode ws-butler window-numbering volatile-highlights vi-tilde-fringe uuidgen toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu eval-sexp-fu highlight dumb-jump f s define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup which-key use-package spacemacs-theme quelpa macrostep hydra evil elisp-slime-nav bind-map auto-compile async)))
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#f2777a")
+     (40 . "#f99157")
+     (60 . "#ffcc66")
+     (80 . "#99cc99")
+     (100 . "#66cccc")
+     (120 . "#6699cc")
+     (140 . "#cc99cc")
+     (160 . "#f2777a")
+     (180 . "#f99157")
+     (200 . "#ffcc66")
+     (220 . "#99cc99")
+     (240 . "#66cccc")
+     (260 . "#6699cc")
+     (280 . "#cc99cc")
+     (300 . "#f2777a")
+     (320 . "#f99157")
+     (340 . "#ffcc66")
+     (360 . "#99cc99"))))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
