@@ -148,9 +148,9 @@ if has('gui_macvim')
     " set guifont=Hasklig:h12
     " set guifont=menlo:h12
     " set guifont=CamingoCode:h12
-    set guifont=Source\ Han\ Sans\ HW\ SC:h12
+    set guifont=Iosevka-Light:h12
+    set guifontwide=Source\ Han\ Sans\ HW\ SC:h12
     " set guifontwide=FZSongKeBenXiuKaiS-R-GB:h12
-    set guifontwide=HYRunYuan:h12
     " let g:airline_powerline_fonts = 0
     " set guifont=Office\ Code\ Pro:h12
     " set guifont=mononoki:h12
@@ -162,7 +162,7 @@ if has('gui_macvim')
     " set guifontwide=Inziu\ IosevkaCC\ Slab\ SC:h12
     " set guifontwide=PingFangSC-Ultralight:h12
     " set guifont=Letter\ Gothic\ for\ Powerline:h12 中文字体使用
-"     set linespace=1
+    let g:airline_powerline_fonts = 1
 else
     let g:airline_powerline_fonts = 1
 endif
@@ -227,7 +227,7 @@ call unite#custom#profile('default', 'context', {
 
 nmap <space> [unite]
 nnoremap [unite] <nop>
-nmap <silent> <buffer><F5> <Plug>(unite_redraw)
+nmap <leader>ur <Plug>(unite_redraw)
 if has('nvim')
     nnoremap <silent> [unite]p :<C-U>Unite -auto-resize -start-insert -toggle -buffer-name=files file_rec/neovim<CR>
 else
