@@ -25,6 +25,7 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 Plug 'Shougo/neomru.vim'
 Plug 'CandySunPlus/tsuquyomi'
+Plug 'skywind3000/asyncrun.vim'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'vhdirk/vim-cmake'
 Plug 'junegunn/limelight.vim'
@@ -143,7 +144,7 @@ endif
 if has('gui_macvim')
 "|| has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
     set background=light
-    colorscheme base16-solarized-light
+    colorscheme base16-cupcake
 "     set guifont=Fira\ Code:h12
     " set guifont=Hasklig:h12
     " set guifont=menlo:h12
