@@ -36,8 +36,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'toyamarinyon/vim-swift'
- Plug 'mbbill/undotree'
- Plug 'editorconfig/editorconfig-vim'
+Plug 'mbbill/undotree'
+Plug 'editorconfig/editorconfig-vim'
 " Input Method
 Plug 'CandySunPlus/CY_erbi'
 " For all language
@@ -242,6 +242,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_args = '--config /Users/niksun/.eslintrc.json'
 " let g:syntastic_javascript_checkers = ['jsxhint', 'eslint']
 " let g:syntastic_javascript_jsxhint_args = '--harmony --esnext'
+let g:syntastic_html_checkers = []
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "--rcfile=/usr/local/etc/pylint.rc"
 let g:tsuquyomi_disable_quickfix = 1
