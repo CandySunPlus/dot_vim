@@ -24,7 +24,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 Plug 'Shougo/neomru.vim'
-Plug 'CandySunPlus/tsuquyomi'
+" Plug 'CandySunPlus/tsuquyomi'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'vhdirk/vim-cmake'
@@ -43,6 +43,7 @@ Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
 " TypeScript
+Plug 'Quramy/tsuquyomi'
 " Plug 'Quramy/vim-js-pretty-template'
 " Plug 'HerringtonDarkholme/yats.vim'
 " For dash
