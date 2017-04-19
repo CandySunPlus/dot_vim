@@ -24,6 +24,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 Plug 'Shougo/neomru.vim'
+Plug 'sbdchd/neoformat'
 " Plug 'CandySunPlus/tsuquyomi'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
@@ -96,7 +97,9 @@ autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
-au FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
+autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
+autocmd FileType javascript set formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ none\ --tab-width\ 4\ --print-width\ 100
+let g:neoformat_try_formatprg = 1
 " au FileType typescript setl omnifunc=tsuquyomi#complete
 " au FileType typescript setl completeopt-=menu
 
@@ -108,6 +111,7 @@ au BufRead,BufNewFile *.m set filetype=objc
 au BufRead,BufNewFile *.tern-project,*.tern-config set filetype=json
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
+
 
 
 set noswapfile
