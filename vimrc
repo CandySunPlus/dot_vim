@@ -109,6 +109,8 @@ au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile *.m set filetype=objc
 " for tern project file
 au BufRead,BufNewFile *.tern-project,*.tern-config set filetype=json
+" for nasm
+au BufRead,BufNewFile *.asm set filetype=nasm
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
