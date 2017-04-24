@@ -1,0 +1,70 @@
+syntax on
+if !has('nvim')
+    set nocompatible               " be iMproved
+endif
+set mouse=a
+set ts=4
+set expandtab
+set autoindent
+set cindent
+set magic
+let mapleader = ','
+
+
+call plug#begin('~/.vim/plugged')
+Plug 'sheerun/vim-polyglot'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-surround'
+Plug 'tmhedberg/matchit'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdtree'
+Plug 'Lokaltog/vim-easymotion'
+call plug#end()
+
+autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
+autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
+autocmd FileType make setlocal noexpandtab
+autocmd FileType java set omnifunc=javacomplete#Complete
+autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
+autocmd FileType javascript set formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ none\ --tab-width\ 4\ --print-width\ 100
+let g:neoformat_try_formatprg = 1
+" au FileType typescript setl omnifunc=tsuquyomi#complete
+" au FileType typescript setl completeopt-=menu
+
+" for scss
+au BufRead,BufNewFile *.scss set filetype=scss
+" for objective c
+au BufRead,BufNewFile *.m set filetype=objc
+" for tern project file
+au BufRead,BufNewFile *.tern-project,*.tern-config set filetype=json
+" for nasm
+au BufRead,BufNewFile *.asm set filetype=nasm
+" for nginx
+au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
+
+
+set noswapfile
+set nobackup
+if !has('nvim')
+    set encoding=utf-8
+endif
+set autoread
+set autowrite
+set fileformats=unix,dos,mac
+set backspace=indent,eol,start
+set nohlsearch
+" set incsearch
+set laststatus=2
+set noerrorbells
+set showcmd
+set showmode
+" set completeopt-=preview
+set nu
+set numberwidth=2
+set nolist
+set cursorline
+
+nmap <leader>k :NERDTreeToggle<cr>
+nmap <leader>/ :TComment<cr>
+vmap <leader>/ :TComment<cr>gv
