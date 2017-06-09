@@ -76,8 +76,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'heavenshell/vim-jsdoc'
 
 Plug 'mattn/emmet-vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 " for session
 Plug 'tpope/vim-obsession'
@@ -99,6 +99,7 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
 autocmd FileType javascript set formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ none\ --tab-width\ 4\ --print-width\ 100
+autocmd FileType typescript set formatprg=prettier\ --stdin\ --single-quote\ --parser\ typescript\ --trailing-comma\ none\ --tab-width\ 4\ --print-width\ 100
 let g:neoformat_try_formatprg = 1
 " au FileType typescript setl omnifunc=tsuquyomi#complete
 " au FileType typescript setl completeopt-=menu
@@ -263,6 +264,8 @@ let g:syntastic_scss_checkers = []
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:syntastic_objc_compiler_options = ' -fobjc-arc'
+let g:syntastic_java_checkers=['javac']
+let g:syntastic_java_javac_config_file_enabled = 1
 
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
 let g:airline_theme = 'base16'
