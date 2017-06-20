@@ -21,8 +21,9 @@ Plug 'kylef/apiblueprint.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/unite-outline'
+" Plug 'Shougo/unite.vim'
+" Plug 'Shougo/unite-outline'
+Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neomru.vim'
 Plug 'sbdchd/neoformat'
 " Plug 'CandySunPlus/tsuquyomi'
@@ -219,44 +220,64 @@ nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
-" Unite
-let g:unite_source_rec_min_cache_files = 1200
-let g:unite_prompt = '» '
+" Denite
+" Option 1 : Set colors yourself
+hi deniteMatchedChar ctermbg=NONE ctermfg=154
+" Option 2 : link to other Highlight Group
+hi link deniteMatchedChar Identifier
+call denite#custom#option('default', 'prompt', '»')
+" call denite#custom#option('default', 'highlight_mode_insert', 'CursorLine')
+" call denite#custom#option('default', 'highlight_matched_range', 'None')
+" call denite#custom#option('default', 'highlight_matched_char', 'None')
 
+call denite#custom#map(
+            \ 'insert',
+            \ '<Down>',
+            \ '<denite:move_to_next_line>',
+            \ 'noremap'
+            \)
+call denite#custom#map(
+            \ 'insert',
+            \ '<C-n>',
+            \ '<denite:move_to_next_line>',
+            \ 'noremap'
+            \)
+call denite#custom#map(
+            \ 'insert',
+            \ '<Up>',
+            \ '<denite:move_to_previous_line>',
+            \ 'noremap'
+            \)
+call denite#custom#map(
+            \ 'insert',
+            \ '<C-p>',
+            \ '<denite:move_to_previous_line>',
+            \ 'noremap'
+            \)
+
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs', ['.git/'])
+call denite#custom#source('file_rec', 'matchers', ['matcher_fuzzy', 'matcher_ignore_globs'])
 " Use ag for search
 if executable('ag')
-    let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
+    call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', ''])
+    call denite#custom#var('grep', 'command', ['ag'])
+    call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+    call denite#custom#var('grep', 'recursive_opts', [])
+    call denite#custom#var('grep', 'pattern_opt', [])
+    call denite#custom#var('grep', 'separator', ['--'])
+    call denite#custom#var('grep', 'final_opts', [])
+
 endif
 
-call unite#custom#profile('default', 'context', {
-            \   'start_insert': 1,
-            \   'winheight': 10,
-            \   'direction': 'botright',
-            \ })
-
-nmap <space> [unite]
-nnoremap [unite] <nop>
-nmap <leader>ur <Plug>(unite_redraw)
-if has('nvim')
-    nnoremap <silent> [unite]p :<C-U>Unite -auto-resize -start-insert -toggle -buffer-name=files file_rec/neovim<CR>
-else
-    nnoremap <silent> [unite]p :<C-U>Unite -auto-resize -start-insert -toggle -buffer-name=files file_rec/async<CR>
-endif
-nnoremap <silent> [unite]b :<C-U>Unite -auto-resize -start-insert -buffer-name=buffers buffer<CR>
-nnoremap <silent> [unite]o :<C-U>Unite -auto-resize -start-insert -direction=topleft -buffer-name=outline outline<CR>
-
+nmap <space> [denite]
+nnoremap <silent> [denite]p :<C-U>Denite -auto-resize file_rec<CR>
+nnoremap <silent> [denite]b :<C-U>Denite -auto-resize buffer<CR>
 " syntasic
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_args = '--config /Users/niksun/.eslintrc.json'
-" let g:syntastic_javascript_checkers = ['jsxhint', 'eslint']
-" let g:syntastic_javascript_jsxhint_args = '--harmony --esnext'
 let g:syntastic_html_checkers = []
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "--rcfile=/usr/local/etc/pylint.rc"
-" let g:tsuquyomi_disable_quickfix = 1
-" let g:tsuquyomi_completion_detail = 1
-" let g:tsuquyomi_use_local_typescript = 1
-" let g:tsuquyomi_single_quote_import = 1
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_sass_checkers = []
 let g:syntastic_scss_checkers = []
@@ -295,17 +316,6 @@ endif
 if has('nvim')
     let g:python_host_prog = '/usr/local/bin/python2'
     let g:python3_host_prog = '/usr/local/bin/python3'
-    " let g:deoplete#enable_at_startup = 1
-    " let g:deoplete#auto_completion_start_length = 1
-    " let g:deoplete#enable_smart_case = 1
-    " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-    " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-    " let g:clang_complete_auto = 0
-    " let g:clang_auto_select = 0
-    " let g:clang_omnicppcomplete_compliance = 0
-    " let g:clang_make_default_keymappings = 0
-    " let g:tern_request_timeout = 1
-    " let g:tern_show_signature_in_pum = 0
 endif
 
 " let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
@@ -320,10 +330,6 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 let g:ycm_semantic_triggers['css'] = [':']
 let g:ycm_semantic_triggers['less'] = [':']
 let g:ycm_semantic_triggers['scss'] = [':']
-" let g:ycm_filetype_blacklist = { 'typescript': 1 }
-" let g:ycm_filetype_specific_completion_to_disable = {
-"             \ 'typescript': 1
-"             \}
 let g:ycm_key_detailed_diagnostics = '<leader>d'
 let g:ycm_key_invoke_completion = '<S-Space>'
 let g:ycm_global_ycm_extra_conf = '/Users/niksun/.ycm_extra_conf.py'
@@ -333,17 +339,6 @@ let g:airline_exclude_preview = 1
 " let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 
 let g:javascript_plugin_jsdoc = 1
-" let g:javascript_conceal_function       = "ƒ"
-" let g:javascript_conceal_null           = "ø"
-" let g:javascript_conceal_this           = "@"
-" let g:javascript_conceal_return         = "⇚"
-" let g:javascript_conceal_undefined      = "¿"
-" let g:javascript_conceal_NaN            = "ℕ"
-" let g:javascript_conceal_prototype      = "¶"
-" let g:javascript_conceal_static         = "•"
-" let g:javascript_conceal_super          = "Ω"
-" let g:javascript_conceal_arrow_function = "⇒"
-
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
@@ -356,15 +351,4 @@ nmap <silent> <C-l> <Plug>(jsdoc)
 
 let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
-" let g:polyglot_disabled = ['typescript']
-" autocmd FileType typescript JsPreTmpl markdown
-" autocmd FileType typescript syn clear foldBraces
-"
-" if exists('$TMUX')
-"   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-"   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-" else
-"   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-"   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-" endif
 
