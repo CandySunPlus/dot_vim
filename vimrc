@@ -44,7 +44,7 @@ Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
 " TypeScript
-Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 " Plug 'Quramy/vim-js-pretty-template'
 " Plug 'HerringtonDarkholme/yats.vim'
 " For dash
@@ -76,8 +76,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'heavenshell/vim-jsdoc'
 
 Plug 'mattn/emmet-vim'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " for session
 Plug 'tpope/vim-obsession'
@@ -253,12 +253,11 @@ let g:syntastic_javascript_eslint_args = '--config /Users/niksun/.eslintrc.json'
 let g:syntastic_html_checkers = []
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "--rcfile=/usr/local/etc/pylint.rc"
-let g:tsuquyomi_disable_quickfix = 1
-let g:tsuquyomi_completion_detail = 1
-let g:tsuquyomi_use_local_typescript = 1
-let g:tsuquyomi_single_quote_import = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
-let g:syntastic_typescript_tsc_fname = ''
+" let g:tsuquyomi_disable_quickfix = 1
+" let g:tsuquyomi_completion_detail = 1
+" let g:tsuquyomi_use_local_typescript = 1
+" let g:tsuquyomi_single_quote_import = 1
+let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_sass_checkers = []
 let g:syntastic_scss_checkers = []
 let g:syntastic_cpp_compiler = 'clang++'
@@ -360,3 +359,12 @@ let g:indentLine_first_char = "┆"
 " let g:polyglot_disabled = ['typescript']
 " autocmd FileType typescript JsPreTmpl markdown
 " autocmd FileType typescript syn clear foldBraces
+"
+" if exists('$TMUX')
+"   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" else
+"   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" endif
+
