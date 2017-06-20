@@ -95,15 +95,29 @@ Plug 'FuzzyFinder'
 call plug#end()
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
-autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
+" autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
-autocmd FileType javascript set formatprg=prettier\ --stdin\ --single-quote\ --trailing-comma\ none\ --tab-width\ 4\ --print-width\ 100
-autocmd FileType typescript set formatprg=prettier\ --stdin\ --single-quote\ --parser\ typescript\ --trailing-comma\ none\ --tab-width\ 4\ --print-width\ 100
-let g:neoformat_try_formatprg = 1
-" au FileType typescript setl omnifunc=tsuquyomi#complete
-" au FileType typescript setl completeopt-=menu
+let g:neoformat_html_htmlbeautify = {
+            \ 'exe': 'html-beautify',
+            \ 'args': ['-A force-aligned', '-w 100']
+            \ }
+let g:neoformat_typescript_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--stdin', '--single-quote', '--parser typescript', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
+            \ 'stdin': 1,
+            \ }
+
+let g:neoformat_javascript_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--stdin', '--single-quote', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
+            \ 'stdin': 1,
+            \ }
+let g:neoformat_enabled_html = ['htmlbeautify']
+let g:neoformat_enabled_javascript = ['prettier']
+let g:neoformat_enabled_typescript = ['prettier']
+
 
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
@@ -209,6 +223,7 @@ nmap <leader>u :UndotreeToggle<cr>
 nmap <leader>b :BuffergatorToggle<cr>
 nmap <leader>tm :TableModeToggle<cr>
 nmap <leader>il :IndentLinesReset<cr>
+nmap <leader>ff :Neoformat<cr>
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
 " ctrl keys
