@@ -87,9 +87,6 @@ Plug 'tpope/vim-surround'
 " original repos on github
 Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/vim-easymotion'
-" vim-scripts repos
-Plug 'L9'
-Plug 'FuzzyFinder'
 " non github repos
 
 call plug#end()
@@ -166,8 +163,8 @@ endif
 
 if has('gui_macvim')
 "|| has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
-    set background=light
-    colorscheme base16-cupcake
+    " set background=light
+    " colorscheme base16-cupcake
 "     set guifont=Fira\ Code:h12
     " set guifont=Hasklig:h12
     " set guifont=menlo:h12
