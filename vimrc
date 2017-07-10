@@ -229,6 +229,7 @@ vnoremap <C-K> :call PhpDocRange()<cr>
 " dash keys
 nmap <leader>da <Plug>DashSearch
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
