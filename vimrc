@@ -83,6 +83,8 @@ Plug 'honza/vim-snippets'
 " for session
 Plug 'tpope/vim-obsession'
 
+Plug 'wakatime/vim-wakatime'
+
 Plug 'tpope/vim-surround'
 " original repos on github
 Plug 'tpope/vim-fugitive'
