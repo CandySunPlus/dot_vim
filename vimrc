@@ -8,6 +8,7 @@ set expandtab
 set autoindent
 set cindent
 set magic
+set hidden
 let mapleader = ','
 
 
@@ -44,6 +45,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
+Plug 'darthmall/vim-vue'
 " TypeScript
 " Plug 'Quramy/tsuquyomi'
 " Plug 'Quramy/vim-js-pretty-template'
@@ -94,13 +96,14 @@ Plug 'Lokaltog/vim-easymotion'
 call plug#end()
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
-" autocmd FileType html,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
-autocmd FileType java set omnifunc=javacomplete#Complete
+autocmd FileType less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
-autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
+" autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
+let g:JavaComplete_Home = $HOME . '/.vim/plugged/vim-javacomplete2'
 let g:neoformat_html_htmlbeautify = {
             \ 'exe': 'html-beautify',
-            \ 'args': ['-A force-aligned', '-w 100']
+            \'args':['-A force','-w 100','-U a,abbr,area,audio,b,bdi,bdo,br,button,canvas,cite,code,data,datalist,del,dfn,em,embed,i,iframe,img,input,ins,kbd,keygen,label,map,mark,math,meter,noscript,object,output,progress,q,ruby,s,samp,select,small,span,strong,sub,sup,svg,textarea,time,u,var,video,wbr,text,acronym,address,big,dt,ins,strike,tt']
             \ }
 let g:neoformat_typescript_prettier = {
             \ 'exe': 'prettier',
@@ -294,6 +297,8 @@ let g:syntastic_html_checkers = []
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = "--rcfile=/usr/local/etc/pylint.rc"
 let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_less_checkers = ['lessc']
+let g:syntastic_less_lessc_args = "--npm-import='prefix=~'"
 let g:syntastic_sass_checkers = []
 let g:syntastic_scss_checkers = []
 let g:syntastic_cpp_compiler = 'clang++'
@@ -357,6 +362,7 @@ let g:javascript_plugin_jsdoc = 1
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", $HOME."/.snips"]
 
 let g:javascript_enable_domhtmlcss = 1
 let g:ackprg = 'ag --nogroup --nocolor --column --hidden'
@@ -367,3 +373,4 @@ nmap <silent> <C-l> <Plug>(jsdoc)
 let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
 
+let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
