@@ -59,7 +59,8 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'mileszs/ack.vim'
 Plug 'digitaltoad/vim-jade'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
@@ -167,27 +168,8 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 if has('gui_macvim')
-"|| has('gui') || has('gui_running') || exists('neovim_dot_app') || exists('g:nyaovim_version')
-    " set background=light
-    " colorscheme base16-cupcake
-"     set guifont=Fira\ Code:h12
-    " set guifont=Hasklig:h12
-    " set guifont=menlo:h12
-    " set guifont=CamingoCode:h12
     set guifont=Iosevka-Light:h12
     set guifontwide=Source\ Han\ Sans\ HW\ SC:h12
-    " set guifontwide=FZSongKeBenXiuKaiS-R-GB:h12
-    " let g:airline_powerline_fonts = 0
-    " set guifont=Office\ Code\ Pro:h12
-    " set guifont=mononoki:h12
-    " set guifont=Inziu\ IosevkaCC\ Slab\ SC:h12
-    " set guifont=Letter\ Gothic\ for\ Powerline:h14
-    " set guifont=NanumGothicCoding:h12
-    " set guifont=M+\ 1m:h12
-    " exec 'set guifontwide=PingFangSC-Light:h12'
-    " set guifontwide=Inziu\ IosevkaCC\ Slab\ SC:h12
-    " set guifontwide=PingFangSC-Ultralight:h12
-    " set guifont=Letter\ Gothic\ for\ Powerline:h12 中文字体使用
     let g:airline_powerline_fonts = 1
 else
     let g:airline_powerline_fonts = 1
@@ -290,27 +272,17 @@ endif
 nmap <space> [denite]
 nnoremap <silent> [denite]p :<C-U>Denite -auto-resize file_rec<CR>
 nnoremap <silent> [denite]b :<C-U>Denite -auto-resize buffer<CR>
-" syntasic
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_args = '--config /Users/niksun/.eslintrc.json'
-let g:syntastic_html_checkers = []
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_pylint_args = "--rcfile=/usr/local/etc/pylint.rc"
-let g:syntastic_typescript_checkers = ['tslint']
-let g:syntastic_less_checkers = ['lessc']
-let g:syntastic_less_lessc_args = "--npm-import='prefix=~'"
-let g:syntastic_sass_checkers = []
-let g:syntastic_scss_checkers = []
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
-let g:syntastic_objc_compiler_options = ' -fobjc-arc'
-let g:syntastic_java_checkers=['javac']
-let g:syntastic_java_javac_config_file_enabled = 1
 
-let g:syntastic_html_tidy_ignore_errors = ['trimming empty']
+let g:ale_linters = {
+            \ 'javascript': ['eslint'],
+            \ 'typescript': ['tslint'],
+            \ 'less': ['lessc'],
+            \ 'java': ['javac']
+            \}
+
 let g:airline_theme = 'base16'
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#tab_nr_type = 0
 " let g:airline_powerline_fonts = 1
@@ -340,7 +312,7 @@ endif
 
 " let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
 
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_rust_src_path = '/Users/niksun/Documents/rust/src'
 let g:ycm_semantic_triggers = {}
 if !exists("g:ycm_semantic_triggers")
@@ -373,4 +345,4 @@ nmap <silent> <C-l> <Plug>(jsdoc)
 let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
 
-let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
+let g:JavaComplete_GradleExecutable = "/usr/bin/gradle"
