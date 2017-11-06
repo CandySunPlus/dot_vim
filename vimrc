@@ -312,7 +312,7 @@ endif
 
 " let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
 
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 let g:ycm_rust_src_path = '/Users/niksun/Documents/rust/src'
 let g:ycm_semantic_triggers = {}
 if !exists("g:ycm_semantic_triggers")
@@ -345,4 +345,4 @@ nmap <silent> <C-l> <Plug>(jsdoc)
 let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
 
-let g:JavaComplete_GradleExecutable = "/usr/bin/gradle"
+let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
