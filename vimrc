@@ -280,6 +280,8 @@ let g:ale_linters = {
             \ 'java': ['javac']
             \}
 
+let g:ale_javascript_eslint_options = '-c ~/.eslintrc.json'
+
 let g:airline_theme = 'base16'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
