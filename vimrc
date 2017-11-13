@@ -280,7 +280,9 @@ let g:ale_linters = {
             \ 'java': ['javac']
             \}
 
+let g:ale_less_lessc_use_global = 1
 let g:ale_javascript_eslint_options = '-c ~/.eslintrc.json'
+let g:ale_less_lessc_options = '--npm-import="prefix=~"'
 
 let g:airline_theme = 'base16'
 let g:airline#extensions#branch#enabled = 1
