@@ -277,6 +277,7 @@ let g:ale_linters = {
             \ 'javascript': ['eslint'],
             \ 'typescript': ['tslint'],
             \ 'less': ['lessc'],
+            \ 'html': [],
             \ 'java': ['javac']
             \}
 
