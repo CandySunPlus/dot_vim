@@ -1,7 +1,7 @@
 syntax on
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" set termguicolors
 if !has('nvim')
     set nocompatible               " be iMproved
 endif
@@ -101,6 +101,7 @@ call plug#end()
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
+autocmd FileType make setlocal noexpandtab
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
@@ -326,7 +327,7 @@ endif
 " let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
 
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
-let g:ycm_rust_src_path = '/Users/niksun/Documents/rust/src'
+" let g:ycm_rust_src_path = '~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 let g:ycm_semantic_triggers = {}
 if !exists("g:ycm_semantic_triggers")
     let g:ycm_semantic_triggers = {}
