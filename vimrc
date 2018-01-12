@@ -172,8 +172,9 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 if has('gui_macvim')
-    set guifont=Iosevka-Light:h12
-    set guifontwide=Source\ Han\ Sans\ HW\ SC:h12
+    set guifont=Operator\ Mono:h12
+    " set guifontwide=Inziu\ IosevkaCC\ Slab\ SC:h12
+    " set guifontwide=Hei:h12
     let g:airline_powerline_fonts = 1
 else
     let g:airline_powerline_fonts = 1
@@ -346,8 +347,8 @@ let g:airline_exclude_preview = 1
 
 let g:javascript_plugin_jsdoc = 1
 let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", $HOME."/.snips"]
 
 let g:javascript_enable_domhtmlcss = 1
@@ -360,3 +361,6 @@ let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
 
 let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
+
+
+" 中文
