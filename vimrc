@@ -226,6 +226,10 @@ nmap <leader>da <Plug>DashSearch
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 
+"Use 'm/M' to move among buffers
+noremap m :bn<CR>
+noremap M :bp<CR>
+
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
 " Denite
