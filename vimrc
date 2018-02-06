@@ -11,6 +11,7 @@ set expandtab
 set autoindent
 set cindent
 set magic
+set ignorecase smartcase
 set hidden
 let mapleader = ','
 
