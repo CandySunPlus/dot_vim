@@ -194,6 +194,8 @@ let g:multi_cursor_prev_key = '<D-u>'
 let g:multi_cursor_skip_key = '<D-k>' "until we got multiple keys support
 let g:multi_cursor_quit_key = '<Esc>'
 
+vmap <C-c> "+y
+
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
 " Indent lines with cmd+[ and cmd+]
