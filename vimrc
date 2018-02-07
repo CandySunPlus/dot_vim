@@ -8,6 +8,7 @@ set expandtab
 set autoindent
 set cindent
 set magic
+set ignorecase smartcase
 set hidden
 let mapleader = ','
 
@@ -197,6 +198,8 @@ let g:multi_cursor_prev_key = '<D-u>'
 let g:multi_cursor_skip_key = '<D-k>' "until we got multiple keys support
 let g:multi_cursor_quit_key = '<Esc>'
 
+vmap <C-c> "+y
+
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
 " Indent lines with cmd+[ and cmd+]
@@ -238,12 +241,16 @@ let g:LanguageClient_serverCommands = {
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-nnoremap <silent> <leader>jh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <C-h> :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <leader>jd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <leader>jr :call LanguageClient_textDocument_rename()<CR>
 " let g:LanguageClient_loggingLevel = 'DEBUG'
 " nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 " nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+"Use 'm/M' to move among buffers
+noremap m :bn<CR>
+noremap M :bp<CR>
+
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
 " Denite
