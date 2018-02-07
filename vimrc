@@ -11,6 +11,7 @@ set expandtab
 set autoindent
 set cindent
 set magic
+set ignorecase smartcase
 set hidden
 let mapleader = ','
 
@@ -194,6 +195,8 @@ let g:multi_cursor_prev_key = '<D-u>'
 let g:multi_cursor_skip_key = '<D-k>' "until we got multiple keys support
 let g:multi_cursor_quit_key = '<Esc>'
 
+vmap <C-c> "+y
+
 map <D-/> :TComment<cr>
 vmap <D-/> :TComment<cr>gv
 " Indent lines with cmd+[ and cmd+]
@@ -222,6 +225,10 @@ vnoremap <C-K> :call PhpDocRange()<cr>
 nmap <leader>da <Plug>DashSearch
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+
+"Use 'm/M' to move among buffers
+noremap m :bn<CR>
+noremap M :bp<CR>
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
