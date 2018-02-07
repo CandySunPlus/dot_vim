@@ -22,7 +22,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
 Plug 'CandySunPlus/LanguageServer-ts-neovim',  {'do': 'npm i'}
-Plug 'CandySunPlus/LanguageServer-css-neovim',  {'do': 'npm i'}
 if !has('nvim')
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
@@ -229,7 +228,8 @@ nmap <leader>da <Plug>DashSearch
 
 let g:cm_sources_override = {
             \ 'cm-jedi': { 'enable': 0 },
-            \ 'cm-gocode': { 'enable': 0 }
+            \ 'cm-gocode': { 'enable': 0 },
+            \ 'cm-css': { 'scopes': ['css', 'scss', 'less', 'sass'] }
             \}
 
 let g:LanguageClient_serverCommands = {
