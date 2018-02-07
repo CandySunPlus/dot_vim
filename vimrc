@@ -1,7 +1,4 @@
 syntax on
-" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-" set termguicolors
 if !has('nvim')
     set nocompatible               " be iMproved
 endif
@@ -14,30 +11,36 @@ set magic
 set hidden
 let mapleader = ','
 
-
 call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
-Plug 'Valloric/YouCompleteMe'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
+Plug 'CandySunPlus/LanguageServer-ts-neovim',  {'do': 'npm i'}
+Plug 'CandySunPlus/LanguageServer-css-neovim',  {'do': 'npm i'}
+if !has('nvim')
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'godlygeek/tabular'
 Plug 'qpkorr/vim-bufkill'
 Plug 'kylef/apiblueprint.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'jaxbot/browserlink.vim'
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-" Plug 'Shougo/unite.vim'
-" Plug 'Shougo/unite-outline'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neomru.vim'
 Plug 'sbdchd/neoformat'
-" Plug 'CandySunPlus/tsuquyomi'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'vhdirk/vim-cmake'
 Plug 'junegunn/limelight.vim'
 Plug 'benmills/vimux'
 Plug 'aliva/vim-fish'
-" Plug 'Raimondi/delimitMate' // conflict with indentLine plugin
 Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
 Plug 'aklt/plantuml-syntax'
@@ -50,9 +53,7 @@ Plug 'CandySunPlus/CY_erbi'
 Plug 'sheerun/vim-polyglot'
 Plug 'darthmall/vim-vue'
 " TypeScript
-" Plug 'Quramy/tsuquyomi'
-" Plug 'Quramy/vim-js-pretty-template'
-" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'CandySunPlus/tsuquyomi'
 " For dash
 Plug 'rizzatti/funcoo.vim'
 Plug 'rizzatti/dash.vim'
@@ -99,11 +100,13 @@ Plug 'Lokaltog/vim-easymotion'
 
 call plug#end()
 
+let g:deoplete#enable_at_startup = 1
+
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType make setlocal noexpandtab
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+" autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
 let g:JavaComplete_Home = $HOME . '/.vim/plugged/vim-javacomplete2'
 let g:neoformat_html_htmlbeautify = {
@@ -220,9 +223,27 @@ nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
 " dash keys
 nmap <leader>da <Plug>DashSearch
-nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 
+let g:cm_sources_override = {
+            \ 'cm-jedi': { 'enable': 0 },
+            \ 'cm-gocode': { 'enable': 0 }
+            \}
+
+let g:LanguageClient_serverCommands = {
+            \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+            \ 'go': ['go-langserver', '-gocodecompletion'],
+            \ 'python': ['pyls']
+            \ }
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+nnoremap <silent> <leader>jh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <leader>jd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <leader>jr :call LanguageClient_textDocument_rename()<CR>
+" let g:LanguageClient_loggingLevel = 'DEBUG'
+" nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+" nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
 " Denite
@@ -327,23 +348,24 @@ endif
 
 " let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
 
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
-" let g:ycm_rust_src_path = '~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
-let g:ycm_semantic_triggers = {}
-if !exists("g:ycm_semantic_triggers")
-    let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
-let g:ycm_semantic_triggers['css'] = [':']
-let g:ycm_semantic_triggers['less'] = [':']
-let g:ycm_semantic_triggers['scss'] = [':']
-let g:ycm_key_detailed_diagnostics = '<leader>d'
-let g:ycm_key_invoke_completion = '<S-Space>'
-let g:ycm_global_ycm_extra_conf = '/Users/niksun/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:airline_exclude_preview = 1
-
+" let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+" let g:ycm_rust_src_path = '/Users/niksun/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+"
+" let g:ycm_semantic_triggers = {}
+" if !exists("g:ycm_semantic_triggers")
+"     let g:ycm_semantic_triggers = {}
+" endif
+" let g:ycm_semantic_triggers['typescript'] = ['.']
+" let g:ycm_semantic_triggers['css'] = [':']
+" let g:ycm_semantic_triggers['less'] = [':']
+" let g:ycm_semantic_triggers['scss'] = [':']
+" let g:ycm_key_detailed_diagnostics = '<leader>d'
+" let g:ycm_key_invoke_completion = '<S-Space>'
+" let g:ycm_global_ycm_extra_conf = '/Users/niksun/.ycm_extra_conf.py'
+" let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
+"
+let g:airline_exclude_preview = 1
 
 let g:javascript_plugin_jsdoc = 1
 let g:UltiSnipsExpandTrigger="<c-j>"
