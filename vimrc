@@ -51,7 +51,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
-Plug 'darthmall/vim-vue'
+Plug 'posva/vim-vue'
 " TypeScript
 " Plug 'CandySunPlus/tsuquyomi'
 " For dash
