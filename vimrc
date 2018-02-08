@@ -105,6 +105,7 @@ let g:deoplete#enable_at_startup = 1
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType make setlocal noexpandtab
+autocmd FileType vue syntax sync fromstart
 " autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " autocmd FileType less set omnifunc=csscomplete#CompleteCSS
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
@@ -390,6 +391,7 @@ let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
 
 let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
+let g:vue_disable_pre_processors=1
 
 
 " 中文
