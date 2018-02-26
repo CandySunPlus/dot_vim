@@ -73,7 +73,7 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tomtom/tcomment_vim'
 Plug 'shawncplus/phpcomplete.vim'
 " for Java
-Plug 'artur-shaik/vim-javacomplete2'
+" Plug 'artur-shaik/vim-javacomplete2'
 " for go
 " for python indent
 Plug 'jmcantrell/vim-virtualenv'
@@ -106,8 +106,8 @@ autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType make setlocal noexpandtab
 autocmd FileType vue syntax sync fromstart
-" autocmd FileType java setlocal omnifunc=javacomplete#Complete
-" autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
 let g:JavaComplete_Home = $HOME . '/.vim/plugged/vim-javacomplete2'
 let g:neoformat_html_htmlbeautify = {
@@ -128,6 +128,7 @@ let g:neoformat_javascript_prettier = {
 let g:neoformat_enabled_html = ['htmlbeautify']
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_enabled_typescript = ['prettier']
+let g:neoformat_enabled_python = ['yapf']
 
 
 " for scss
@@ -312,6 +313,8 @@ let g:ale_linters = {
             \ 'typescript': ['tslint'],
             \ 'less': ['lessc'],
             \ 'html': [],
+            \ 'cpp': [],
+            \ 'c': [],
             \ 'java': ['javac']
             \}
 
@@ -355,22 +358,24 @@ if has('nvim')
 endif
 
 " let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
+" let g:ycm_log_level = 'debug'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+" let g:ycm_rust_src_path = '~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+let g:ycm_semantic_triggers = {}
+if !exists("g:ycm_semantic_triggers")
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+let g:ycm_semantic_triggers['css'] = [':']
+let g:ycm_semantic_triggers['less'] = [':']
+let g:ycm_semantic_triggers['scss'] = [':']
+let g:ycm_semantic_triggers['vue'] = ['.',':','/','@','*']
+let g:ycm_key_detailed_diagnostics = '<leader>d'
+let g:ycm_key_invoke_completion = '<S-Space>'
+let g:ycm_global_ycm_extra_conf = '/Users/niksun/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:airline_exclude_preview = 1
 
-" let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
-" let g:ycm_rust_src_path = '/Users/niksun/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
-"
-" let g:ycm_semantic_triggers = {}
-" if !exists("g:ycm_semantic_triggers")
-"     let g:ycm_semantic_triggers = {}
-" endif
-" let g:ycm_semantic_triggers['typescript'] = ['.']
-" let g:ycm_semantic_triggers['css'] = [':']
-" let g:ycm_semantic_triggers['less'] = [':']
-" let g:ycm_semantic_triggers['scss'] = [':']
-" let g:ycm_key_detailed_diagnostics = '<leader>d'
-" let g:ycm_key_invoke_completion = '<S-Space>'
-" let g:ycm_global_ycm_extra_conf = '/Users/niksun/.ycm_extra_conf.py'
-" let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 "
 let g:airline_exclude_preview = 1
