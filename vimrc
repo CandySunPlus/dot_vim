@@ -15,16 +15,7 @@ let mapleader = ','
 call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'roxma/nvim-completion-manager'
-Plug 'roxma/LanguageServer-php-neovim',  {'do': 'composer install && composer run-script parse-stubs'}
-Plug 'CandySunPlus/LanguageServer-ts-neovim',  {'do': 'npm i'}
-if !has('nvim')
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'Valloric/YouCompleteMe'
 Plug 'godlygeek/tabular'
 Plug 'qpkorr/vim-bufkill'
 Plug 'kylef/apiblueprint.vim'
