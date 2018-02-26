@@ -219,27 +219,11 @@ vnoremap <C-K> :call PhpDocRange()<cr>
 " dash keys
 nmap <leader>da <Plug>DashSearch
 
-let g:cm_sources_override = {
-            \ 'cm-jedi': { 'enable': 0 },
-            \ 'cm-gocode': { 'enable': 0 },
-            \ 'cm-css': { 'scopes': ['css', 'scss', 'less', 'sass'] }
-            \}
-
-let g:LanguageClient_serverCommands = {
-            \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-            \ 'go': ['go-langserver', '-gocodecompletion'],
-            \ 'python': ['pyls']
-            \ }
-
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-nnoremap <silent> <C-h> :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> <leader>jd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <leader>jr :call LanguageClient_textDocument_rename()<CR>
-" let g:LanguageClient_loggingLevel = 'DEBUG'
-" nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
-" nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 "Use 'm/M' to move among buffers
 noremap m :bn<CR>
 noremap M :bp<CR>
