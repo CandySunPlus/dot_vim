@@ -20,7 +20,8 @@ Plug 'godlygeek/tabular'
 Plug 'qpkorr/vim-bufkill'
 Plug 'kylef/apiblueprint.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'jaxbot/browserlink.vim'
+Plug 'CandySunPlus/browserlink.vim'
+" Plug 'jaxbot/browserlink.vim'
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/denite.nvim'
@@ -353,7 +354,6 @@ let g:airline_exclude_preview = 1
 
 " let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 "
-let g:airline_exclude_preview = 1
 
 let g:javascript_plugin_jsdoc = 1
 let g:UltiSnipsExpandTrigger="<c-j>"
