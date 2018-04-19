@@ -128,6 +128,7 @@ let g:neoformat_enabled_typescript = ['prettier']
 let g:neoformat_enabled_python = ['yapf']
 
 
+au BufRead,BufNewFile *.wxml set filetype=html
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
 " for objective c
