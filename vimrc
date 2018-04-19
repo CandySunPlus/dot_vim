@@ -1,7 +1,4 @@
 syntax on
-" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-" set termguicolors
 if !has('nvim')
     set nocompatible               " be iMproved
 endif
@@ -15,7 +12,6 @@ set ignorecase smartcase
 set hidden
 let mapleader = ','
 
-
 call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
@@ -24,21 +20,19 @@ Plug 'godlygeek/tabular'
 Plug 'qpkorr/vim-bufkill'
 Plug 'kylef/apiblueprint.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'CandySunPlus/browserlink.vim'
+" Plug 'jaxbot/browserlink.vim'
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-" Plug 'Shougo/unite.vim'
-" Plug 'Shougo/unite-outline'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neomru.vim'
 Plug 'sbdchd/neoformat'
-" Plug 'CandySunPlus/tsuquyomi'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 Plug 'vhdirk/vim-cmake'
 Plug 'junegunn/limelight.vim'
 Plug 'benmills/vimux'
 Plug 'aliva/vim-fish'
-" Plug 'Raimondi/delimitMate' // conflict with indentLine plugin
 Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
 Plug 'aklt/plantuml-syntax'
@@ -49,11 +43,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
-Plug 'darthmall/vim-vue'
+Plug 'posva/vim-vue'
 " TypeScript
-" Plug 'Quramy/tsuquyomi'
-" Plug 'Quramy/vim-js-pretty-template'
-" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'CandySunPlus/tsuquyomi'
 " For dash
 Plug 'rizzatti/funcoo.vim'
 Plug 'rizzatti/dash.vim'
@@ -100,11 +92,14 @@ Plug 'Lokaltog/vim-easymotion'
 
 call plug#end()
 
+let g:deoplete#enable_at_startup = 1
+
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType make setlocal noexpandtab
-" autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType vue syntax sync fromstart
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
 let g:JavaComplete_Home = $HOME . '/.vim/plugged/vim-javacomplete2'
 let g:neoformat_html_htmlbeautify = {
@@ -225,9 +220,12 @@ nnoremap <C-K> :call PhpDocSingle()<cr>
 vnoremap <C-K> :call PhpDocRange()<cr>
 " dash keys
 nmap <leader>da <Plug>DashSearch
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
-
 "Use 'm/M' to move among buffers
 noremap m :bn<CR>
 noremap M :bp<CR>
@@ -356,6 +354,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:airline_exclude_preview = 1
 
 " let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
+"
 
 let g:javascript_plugin_jsdoc = 1
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -373,6 +372,7 @@ let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
 
 let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
+let g:vue_disable_pre_processors=1
 
 
 " 中文
