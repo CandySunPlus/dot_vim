@@ -68,7 +68,7 @@ Plug 'shawncplus/phpcomplete.vim'
 " Plug 'artur-shaik/vim-javacomplete2'
 " for go
 " for python indent
-Plug 'jmcantrell/vim-virtualenv'
+" Plug 'jmcantrell/vim-virtualenv'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'heavenshell/vim-pydocstring'
 " for javascript indent
@@ -108,15 +108,16 @@ let g:neoformat_html_htmlbeautify = {
             \ }
 let g:neoformat_typescript_prettier = {
             \ 'exe': 'prettier',
-            \ 'args': ['--stdin', '--single-quote', '--parser typescript', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
+            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--single-quote', '--parser typescript', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
             \ 'stdin': 1,
             \ }
 
 let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
-            \ 'args': ['--stdin', '--single-quote', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
+            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--single-quote', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
             \ 'stdin': 1,
             \ }
+
 let g:neoformat_enabled_html = ['htmlbeautify']
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_enabled_typescript = ['prettier']
@@ -124,6 +125,7 @@ let g:neoformat_enabled_python = ['yapf']
 
 
 au BufRead,BufNewFile *.wxml set filetype=html
+au BufRead,BufNewFile *.mina set filetype=vue
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
 " for objective c
@@ -289,6 +291,7 @@ let g:ale_linters = {
             \ 'javascript': ['eslint'],
             \ 'typescript': ['tslint'],
             \ 'less': ['lessc'],
+            \ 'go': [],
             \ 'html': [],
             \ 'cpp': [],
             \ 'c': [],
@@ -330,7 +333,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 if has('nvim')
-    let g:python_host_prog = '/usr/local/bin/python2'
+    " let g:python_host_prog = '/usr/local/bin/python2'
     let g:python3_host_prog = '/usr/local/bin/python3'
 endif
 
