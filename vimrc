@@ -215,7 +215,7 @@ nmap <leader>u :UndotreeToggle<cr>
 nmap <leader>b :BuffergatorToggle<cr>
 nmap <leader>tm :TableModeToggle<cr>
 nmap <leader>il :IndentLinesReset<cr>
-nmap <leader>ff :ALEFix<cr>:YcmCompleter FixIt<cr>:Neoformat<cr>
+nmap <leader>ff :YcmCompleter OrganizeImports<cr>:ALEFix<cr>:Neoformat<cr>
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
 " ctrl keys
