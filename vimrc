@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
 " My Plugins here:
 Plug 'Valloric/YouCompleteMe'
 Plug 'godlygeek/tabular'
+Plug 'wellle/targets.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'kylef/apiblueprint.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -214,7 +215,7 @@ nmap <leader>u :UndotreeToggle<cr>
 nmap <leader>b :BuffergatorToggle<cr>
 nmap <leader>tm :TableModeToggle<cr>
 nmap <leader>il :IndentLinesReset<cr>
-nmap <leader>ff :Neoformat<cr>
+nmap <leader>ff :ALEFix<cr>:YcmCompleter FixIt<cr>:Neoformat<cr>
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
 " ctrl keys
@@ -306,6 +307,7 @@ let g:ale_fixers = {
 let g:ale_less_lessc_use_global = 1
 let g:ale_javascript_eslint_options = '-c ~/.eslintrc.json'
 let g:ale_less_lessc_options = '--npm-import="prefix=~"'
+let g:ale_typescript_tslint_options = '--project ./'
 
 let g:airline_theme = 'base16'
 let g:airline#extensions#branch#enabled = 1
