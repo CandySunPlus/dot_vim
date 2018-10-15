@@ -214,11 +214,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 nmap <leader>jd :call LanguageClient#textDocument_definition()<CR>
 nmap <leader>jr :call LanguageClient#textDocument_rename()<CR>
 nmap <leader>jh :call LanguageClient#textDocument_hover()<CR>
-nmap <leader>fi :YcmCompleter OrganizeImports<CR>:ALEFix<CR>
+nmap <leader>fo :call LanguageClient#textDocument_formatting()<CR>:ALEFix<CR>
 nmap <leader>ff :Neoformat<CR>
-"Use 'm/M' to move among buffers
-noremap m :bn<CR>
-noremap M :bp<CR>
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
