@@ -10,34 +10,84 @@ set cindent
 set magic
 set ignorecase smartcase
 set hidden
+set noswapfile
+set nobackup
+if !has('nvim')
+    set encoding=utf-8
+endif
+set autoread
+set autowrite
+set fileformats=unix,dos,mac
+set backspace=indent,eol,start
+set nohlsearch
+" set incsearch
+set laststatus=2
+set shortmess+=c
+set noerrorbells
+set showcmd
+set showmode
+set completeopt=noinsert,menuone,noselect
+set nu
+set rnu
+set numberwidth=2
+set listchars=tab:>-,trail:·
+set list
+set cursorline
 let mapleader = ','
 
 call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
-Plug 'Valloric/YouCompleteMe'
+
+" Auto Complete
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
+if has('nvim')
+    Plug 'ncm2/ncm2'
+    Plug 'roxma/nvim-yarp'
+    " Complete Source
+    Plug 'ncm2/ncm2-bufword'
+    Plug 'ncm2/ncm2-path'
+    Plug 'ncm2/ncm2-ultisnips'
+
+    au TextChangedI * call ncm2#auto_trigger()
+    autocmd BufEnter * call ncm2#enable_for_buffer()
+
+    Plug 'autozimu/LanguageClient-neovim', {
+                \ 'branch': 'next',
+                \ 'do': 'bash install.sh',
+                \ }
+
+    let g:LanguageClient_serverCommands = {
+                \ 'vue': ['vls'],
+                \ 'rust': ['rls'],
+                \ 'typescript': ['typescript-language-server', '--stdio'],
+                \ 'javascript': ['typescript-language-server', '--stdio'],
+                \ 'javascript.jsx': ['typescript-language-server', '--stdio'],
+                \ 'python': ['pyls'],
+                \ 'go': ['go-langserver', '-diagnostics', '-gocodecompletion'],
+                \ 'css': ['css-languageserver', '--stdio'],
+                \ 'less': ['css-languageserver', '--stdio'],
+                \ 'sass': ['css-languageserver', '--stdio'],
+                \ }
+
+    let g:LanguageClient_completionPreferTextEdit = 1
+    let g:LanguageClient_diagnosticsSignsMax = 0
+endif
+
 Plug 'godlygeek/tabular'
 Plug 'wellle/targets.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'kylef/apiblueprint.vim'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'CandySunPlus/browserlink.vim'
-" Plug 'jaxbot/browserlink.vim'
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neomru.vim'
 Plug 'sbdchd/neoformat'
-Plug 'skywind3000/asyncrun.vim'
-Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-Plug 'vhdirk/vim-cmake'
 Plug 'junegunn/limelight.vim'
 Plug 'benmills/vimux'
-Plug 'aliva/vim-fish'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
-Plug 'aklt/plantuml-syntax'
-Plug 'toyamarinyon/vim-swift'
 Plug 'mbbill/undotree'
 Plug 'editorconfig/editorconfig-vim'
 " Input Method
@@ -45,17 +95,9 @@ Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
 Plug 'posva/vim-vue'
-" TypeScript
-" Plug 'CandySunPlus/tsuquyomi'
-" For dash
-Plug 'rizzatti/funcoo.vim'
-Plug 'rizzatti/dash.vim'
+" Addition
 Plug 'mhinz/vim-signify'
-Plug 'vim-scripts/nginx.vim'
 Plug 'vim-scripts/matchit.zip'
-Plug 'digitaltoad/vim-jade'
-Plug 'terryma/vim-multiple-cursors'
-" Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
@@ -64,17 +106,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tomtom/tcomment_vim'
-Plug 'shawncplus/phpcomplete.vim'
-" for Java
-" Plug 'artur-shaik/vim-javacomplete2'
-" for go
-" for python indent
-" Plug 'jmcantrell/vim-virtualenv'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'heavenshell/vim-pydocstring'
-" for javascript indent
-Plug 'pangloss/vim-javascript'
-Plug 'heavenshell/vim-jsdoc'
 
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
@@ -82,9 +113,7 @@ Plug 'honza/vim-snippets'
 
 " for session
 Plug 'tpope/vim-obsession'
-
 Plug 'wakatime/vim-wakatime'
-
 Plug 'tpope/vim-surround'
 " original repos on github
 Plug 'tpope/vim-fugitive'
@@ -93,37 +122,11 @@ Plug 'Lokaltog/vim-easymotion'
 
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 autocmd FileType less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType make setlocal noexpandtab
 autocmd FileType vue syntax sync fromstart
-autocmd FileType less set omnifunc=csscomplete#CompleteCSS
-
-" autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
-let g:JavaComplete_Home = $HOME . '/.vim/plugged/vim-javacomplete2'
-let g:neoformat_html_htmlbeautify = {
-            \ 'exe': 'html-beautify',
-            \'args':['-A force','-w 100','-U a,abbr,area,audio,b,bdi,bdo,br,button,canvas,cite,code,data,datalist,del,dfn,em,embed,i,iframe,img,input,ins,kbd,keygen,label,map,mark,math,meter,noscript,object,output,progress,q,ruby,s,samp,select,small,span,strong,sub,sup,svg,textarea,time,u,var,video,wbr,text,acronym,address,big,dt,ins,strike,tt']
-            \ }
-let g:neoformat_typescript_prettier = {
-            \ 'exe': 'prettier',
-            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--single-quote', '--parser typescript', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
-            \ 'stdin': 1,
-            \ }
-
-let g:neoformat_javascript_prettier = {
-            \ 'exe': 'prettier',
-            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--single-quote', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
-            \ 'stdin': 1,
-            \ }
-
-let g:neoformat_enabled_html = ['htmlbeautify']
-let g:neoformat_enabled_javascript = ['prettier']
-let g:neoformat_enabled_typescript = ['prettier']
-let g:neoformat_enabled_python = ['yapf']
-
 
 au BufRead,BufNewFile *.wxml set filetype=html
 au BufRead,BufNewFile *.mina set filetype=vue
@@ -139,29 +142,6 @@ au BufRead,BufNewFile *.asm set filetype=nasm
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
 
-
-set noswapfile
-set nobackup
-if !has('nvim')
-    set encoding=utf-8
-endif
-set autoread
-set autowrite
-set fileformats=unix,dos,mac
-set backspace=indent,eol,start
-set nohlsearch
-" set incsearch
-set laststatus=2
-set noerrorbells
-set showcmd
-set showmode
-" set completeopt-=preview
-set nu
-set rnu
-set numberwidth=2
-set listchars=tab:>-,trail:·
-set list
-set cursorline
 
 if has('gui_macvim')
     set macligatures
@@ -197,8 +177,6 @@ let g:multi_cursor_quit_key = '<Esc>'
 
 vmap <C-c> "+y
 
-map <D-/> :TComment<cr>
-vmap <D-/> :TComment<cr>gv
 " Indent lines with cmd+[ and cmd+]
 nmap <D-]> >>
 nmap <D-[> <<
@@ -215,21 +193,17 @@ nmap <leader>u :UndotreeToggle<cr>
 nmap <leader>b :BuffergatorToggle<cr>
 nmap <leader>tm :TableModeToggle<cr>
 nmap <leader>il :IndentLinesReset<cr>
-nmap <leader>fi :YcmCompleter OrganizeImports<CR>:ALEFix<CR>
-nmap <leader>ff :Neoformat<CR>
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
-" ctrl keys
-nnoremap <C-K> :call PhpDocSingle()<cr>
-vnoremap <C-K> :call PhpDocRange()<cr>
-" dash keys
-nmap <leader>da <Plug>DashSearch
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+nmap <leader>jd :call LanguageClient#textDocument_definition()<CR>
+nmap <leader>jr :call LanguageClient#textDocument_rename()<CR>
+nmap <leader>jh :call LanguageClient#textDocument_hover()<CR>
+nmap <leader>fi :YcmCompleter OrganizeImports<CR>:ALEFix<CR>
+nmap <leader>ff :Neoformat<CR>
 "Use 'm/M' to move among buffers
 noremap m :bn<CR>
 noremap M :bp<CR>
@@ -289,6 +263,31 @@ nmap <space> [denite]
 nnoremap <silent> [denite]p :<C-U>Denite -auto-resize file_rec<CR>
 nnoremap <silent> [denite]b :<C-U>Denite -auto-resize buffer<CR>
 
+
+" autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
+let g:JavaComplete_Home = $HOME . '/.vim/plugged/vim-javacomplete2'
+let g:neoformat_html_htmlbeautify = {
+            \ 'exe': 'html-beautify',
+            \'args':['-A force','-w 100','-U a,abbr,area,audio,b,bdi,bdo,br,button,canvas,cite,code,data,datalist,del,dfn,em,embed,i,iframe,img,input,ins,kbd,keygen,label,map,mark,math,meter,noscript,object,output,progress,q,ruby,s,samp,select,small,span,strong,sub,sup,svg,textarea,time,u,var,video,wbr,text,acronym,address,big,dt,ins,strike,tt']
+            \ }
+let g:neoformat_typescript_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--single-quote', '--parser typescript', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
+            \ 'stdin': 1,
+            \ }
+
+let g:neoformat_javascript_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--single-quote', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
+            \ 'stdin': 1,
+            \ }
+
+let g:neoformat_enabled_html = ['htmlbeautify']
+let g:neoformat_enabled_javascript = ['prettier']
+let g:neoformat_enabled_typescript = ['prettier']
+let g:neoformat_enabled_python = ['yapf']
+
+
 let g:ale_linters = {
             \ 'javascript': ['eslint'],
             \ 'typescript': ['tslint'],
@@ -336,33 +335,29 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 if has('nvim')
-    " let g:python_host_prog = '/usr/local/bin/python2'
     let g:python3_host_prog = '/usr/local/bin/python3'
 endif
 
-" let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
 " let g:ycm_log_level = 'debug'
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+" let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 " let g:ycm_rust_src_path = '~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
-let g:ycm_semantic_triggers = {}
-if !exists("g:ycm_semantic_triggers")
-    let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
-let g:ycm_semantic_triggers['css'] = [':']
-let g:ycm_semantic_triggers['less'] = [':']
-let g:ycm_semantic_triggers['scss'] = [':']
-let g:ycm_semantic_triggers['vue'] = ['.',':','/','@','*']
-let g:ycm_key_detailed_diagnostics = '<leader>d'
-let g:ycm_key_invoke_completion = '<S-Space>'
-let g:ycm_global_ycm_extra_conf = '/Users/niksun/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:airline_exclude_preview = 1
-
+" let g:ycm_semantic_triggers = {}
+" if !exists("g:ycm_semantic_triggers")
+"     let g:ycm_semantic_triggers = {}
+" endif
+" let g:ycm_semantic_triggers['typescript'] = ['.']
+" let g:ycm_semantic_triggers['css'] = [':']
+" let g:ycm_semantic_triggers['less'] = [':']
+" let g:ycm_semantic_triggers['scss'] = [':']
+" let g:ycm_semantic_triggers['vue'] = ['.',':','/','@','*']
+" let g:ycm_key_detailed_diagnostics = '<leader>d'
+" let g:ycm_key_invoke_completion = '<S-Space>'
+" let g:ycm_global_ycm_extra_conf = '/Users/niksun/.ycm_extra_conf.py'
+" let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
 "
 
-let g:javascript_plugin_jsdoc = 1
+let g:airline_exclude_preview = 1
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
@@ -370,9 +365,6 @@ let g:UltiSnipsSnippetDirectories = ["UltiSnips", $HOME."/.snips"]
 
 let g:javascript_enable_domhtmlcss = 1
 let g:ackprg = 'ag --nogroup --nocolor --column --hidden'
-let g:jsdoc_enable_es6 = 1
-
-nmap <silent> <C-l> <Plug>(jsdoc)
 
 let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
@@ -380,5 +372,3 @@ let g:indentLine_first_char = "┆"
 let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
 let g:vue_disable_pre_processors=1
 
-
-" 中文
