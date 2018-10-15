@@ -15,6 +15,7 @@ set nobackup
 if !has('nvim')
     set encoding=utf-8
 endif
+set fileencodings=utf-8,gbk,gb2312,big5
 set autoread
 set autowrite
 set fileformats=unix,dos,mac
@@ -153,8 +154,6 @@ au BufRead,BufNewFile *.asm set filetype=nasm
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
-
-
 if has('gui_macvim')
     set macligatures
 endif
@@ -166,29 +165,13 @@ endif
 
 if has('gui_macvim')
     set guifont=Operator\ Mono:h12
-    " set guifontwide=Inziu\ IosevkaCC\ Slab\ SC:h12
-    " set guifontwide=Hei:h12
     let g:airline_powerline_fonts = 1
 else
     let g:airline_powerline_fonts = 1
 endif
 
-if exists('neovim_dot_app')
-    " call MacSetFont('Source Han Sans HW SC', 12)
-    " call MacSetFont('mononoki', 12)
-    call MacSetFont('Fira Code', 12)
-    " call MacSetFont('Inziu IosevkaCC Slab SC', 12)
-    call MacMenu("File.Print", "")
-endif
-
-let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_next_key = '<D-d>'
-let g:multi_cursor_prev_key = '<D-u>'
-let g:multi_cursor_skip_key = '<D-k>' "until we got multiple keys support
-let g:multi_cursor_quit_key = '<Esc>'
 
 vmap <C-c> "+y
-
 " Indent lines with cmd+[ and cmd+]
 nmap <D-]> >>
 nmap <D-[> <<
@@ -333,7 +316,6 @@ let g:Vimim_toggle = 'erbi'
 " TypeScript
 let g:typescript_compiler_options = '-sourcemap'
 
-set fileencodings=utf-8,gbk,gb2312,big5
 let g:vim_markdown_folding_disabled = 1
 let g:buffergator_suppress_keymaps = 1
 let g:jsx_ext_required = 0
