@@ -58,6 +58,9 @@ if has('nvim')
                 \ 'do': 'bash install.sh',
                 \ }
 
+    set completefunc=LanguageClient#complete
+    set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
+
     let g:LanguageClient_serverCommands = {
                 \ 'vue': ['vls'],
                 \ 'rust': ['rls'],
@@ -69,8 +72,17 @@ if has('nvim')
                 \ 'css': ['css-languageserver', '--stdio'],
                 \ 'less': ['css-languageserver', '--stdio'],
                 \ 'sass': ['css-languageserver', '--stdio'],
+                \ 'java': ['jdtls'],
                 \ }
 
+    let g:LanguageClient_rootMarkers = {
+                \ 'javascript': ['project.json'],
+                \ 'typescript': ['tsconfig.json'],
+                \ 'rust': ['Cargo.toml'],
+                \ 'go': ['Gopkg.toml'],
+                \ }
+
+    let g:LanguageClient_diagnosticsEnable = 0
     let g:LanguageClient_completionPreferTextEdit = 1
     let g:LanguageClient_diagnosticsSignsMax = 0
 endif
