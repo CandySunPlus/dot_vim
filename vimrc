@@ -201,7 +201,7 @@ nmap <leader>ff :Neoformat<CR>
 function SetLSPShortcuts()
   nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
   nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>:ALEFIX<CR>
+  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>:ALEFix<CR>
   nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
   nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
   nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
