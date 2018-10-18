@@ -27,7 +27,7 @@ set shortmess+=c
 set noerrorbells
 set showcmd
 set showmode
-set completeopt=noinsert,menuone,noselect
+set completeopt=noinsert,menuone,noselect,preview
 set nu
 set rnu
 set numberwidth=2
@@ -69,6 +69,8 @@ if has('nvim')
                 \ 'javascript': ['typescript-language-server', '--stdio'],
                 \ 'javascript.jsx': ['typescript-language-server', '--stdio'],
                 \ 'python': ['pyls'],
+                \ 'cpp': ['clangd'],
+                \ 'c': ['clangd'],
                 \ 'go': ['go-langserver', '-diagnostics', '-gocodecompletion'],
                 \ 'css': ['css-languageserver', '--stdio'],
                 \ 'less': ['css-languageserver', '--stdio'],
@@ -194,11 +196,25 @@ let g:table_mode_header_fillchar="="
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-nmap <leader>jd :call LanguageClient#textDocument_definition()<CR>
-nmap <leader>jr :call LanguageClient#textDocument_rename()<CR>
-nmap <leader>jh :call LanguageClient#textDocument_hover()<CR>
-nmap <leader>fo :call LanguageClient#textDocument_formatting()<CR>:ALEFix<CR>
 nmap <leader>ff :Neoformat<CR>
+
+function SetLSPShortcuts()
+  nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
+  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>:ALEFIX<CR>
+  nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
+  nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
+  nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
+  nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
+  nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
+  nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
+endfunction()
+
+augroup LSP
+  autocmd!
+  autocmd FileType * call SetLSPShortcuts()
+augroup END
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
@@ -282,7 +298,7 @@ let g:neoformat_enabled_python = ['yapf']
 
 let g:ale_linters = {
             \ 'javascript': ['eslint'],
-            \ 'typescript': ['tslint'],
+            \ 'typescript': ['tsserver', 'tslint'],
             \ 'less': ['lessc'],
             \ 'go': [],
             \ 'html': [],
@@ -293,13 +309,14 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
             \ 'javascript': ['eslint'],
-            \ 'typescript': ['tslint']
+            \ 'typescript': ['tsserver', 'tslint']
             \}
 
 let g:ale_less_lessc_use_global = 1
 let g:ale_javascript_eslint_options = '-c ~/.eslintrc.json'
 let g:ale_less_lessc_options = '--npm-import="prefix=~"'
 let g:ale_typescript_tslint_options = '--project ./'
+let g:ale_proto_protoc_gen_lint_options = '--proto_path=${GOPATH}/src'
 
 let g:airline_theme = 'base16'
 let g:airline#extensions#branch#enabled = 1
@@ -362,4 +379,3 @@ let g:indentLine_first_char = "┆"
 
 let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
 let g:vue_disable_pre_processors=1
-
