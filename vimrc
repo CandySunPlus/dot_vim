@@ -122,7 +122,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'tomtom/tcomment_vim'
 
 Plug 'mattn/emmet-vim'
