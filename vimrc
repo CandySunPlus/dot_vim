@@ -321,7 +321,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
             \ 'javascript': ['eslint'],
-            \ 'typescript': ['tsserver', 'tslint']
+            \ 'typescript': ['tslint']
             \}
 
 let g:ale_less_lessc_use_global = 1
