@@ -114,6 +114,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'posva/vim-vue'
 " Addition
 Plug 'mhinz/vim-signify'
+Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
 Plug 'rking/ag.vim'
