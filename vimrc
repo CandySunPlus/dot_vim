@@ -34,7 +34,7 @@ set numberwidth=2
 set listchars=tab:>-,trail:·
 set list
 set cursorline
-let mapleader = ','
+let mapleader = ' '
 
 call plug#begin('~/.vim/plugged')
 
@@ -98,6 +98,7 @@ Plug 'kylef/apiblueprint.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neomru.vim'
+Plug 'chemzqm/denite-git'
 Plug 'sbdchd/neoformat'
 Plug 'junegunn/limelight.vim'
 Plug 'benmills/vimux'
@@ -182,14 +183,13 @@ vmap <D-]> >gv
 " switch buffer
 map <C-Tab> :b#<cr>
 " leader keys
-nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
 vmap <leader>/ :TComment<cr>gv
-nmap <leader>o :TlistToggle<cr>
-nmap <leader>u :UndotreeToggle<cr>
-nmap <leader>b :BuffergatorToggle<cr>
+nmap <leader>k :<C-U>NERDTreeToggle<cr>
+nmap <leader>o :<C-U>TlistToggle<cr>
+nmap <leader>u :<C-U>UndotreeToggle<cr>
+nmap <leader>il :<C-U>IndentLinesReset<cr>
 nmap <leader>tm :TableModeToggle<cr>
-nmap <leader>il :IndentLinesReset<cr>
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
 
@@ -224,9 +224,6 @@ hi deniteMatchedChar ctermbg=NONE ctermfg=154
 " Option 2 : link to other Highlight Group
 hi link deniteMatchedChar Identifier
 call denite#custom#option('default', 'prompt', '»')
-" call denite#custom#option('default', 'highlight_mode_insert', 'CursorLine')
-" call denite#custom#option('default', 'highlight_matched_range', 'None')
-" call denite#custom#option('default', 'highlight_matched_char', 'None')
 
 call denite#custom#map(
             \ 'insert',
@@ -267,9 +264,13 @@ if executable('ag')
 
 endif
 
-nmap <space> [denite]
-nnoremap <silent> [denite]p :<C-U>Denite -auto-resize file_rec<CR>
-nnoremap <silent> [denite]b :<C-U>Denite -auto-resize buffer<CR>
+nnoremap <silent> <leader>p :<C-U>Denite -auto-resize file_rec<CR>
+nnoremap <silent> <leader>b :<C-U>Denite -auto-resize buffer<CR>
+" denite git plugin
+nnoremap <silent> <leader>gl :<C-U>Denite gitlog<CR>
+nnoremap <silent> <leader>gs :<C-U>Denite gitstatus<CR>
+nnoremap <silent> <leader>gc :<C-U>Denite gitchanged<CR>
+nnoremap <silent> <leader>gb :<C-U>Denite gitbranch<CR>
 
 
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
@@ -346,24 +347,6 @@ if has('nvim')
     let g:python3_host_prog = '/usr/local/bin/python3'
 endif
 
-" let g:ycm_log_level = 'debug'
-" let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
-" let g:ycm_rust_src_path = '~/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
-" let g:ycm_semantic_triggers = {}
-" if !exists("g:ycm_semantic_triggers")
-"     let g:ycm_semantic_triggers = {}
-" endif
-" let g:ycm_semantic_triggers['typescript'] = ['.']
-" let g:ycm_semantic_triggers['css'] = [':']
-" let g:ycm_semantic_triggers['less'] = [':']
-" let g:ycm_semantic_triggers['scss'] = [':']
-" let g:ycm_semantic_triggers['vue'] = ['.',':','/','@','*']
-" let g:ycm_key_detailed_diagnostics = '<leader>d'
-" let g:ycm_key_invoke_completion = '<S-Space>'
-" let g:ycm_global_ycm_extra_conf = '/Users/niksun/.ycm_extra_conf.py'
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:virtualenv_directory = '/Users/niksun/development/study/python/virtualenvs'
-"
 
 let g:airline_exclude_preview = 1
 let g:UltiSnipsExpandTrigger="<c-j>"
