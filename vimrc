@@ -201,20 +201,20 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
 if !exists('*SetLSPShortcuts')
-function SetLSPShortcuts()
-  nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>:ALEFix<CR>
-  nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-  nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
-  nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
-  nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-endfunction()
+    function SetLSPShortcuts()
+        nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
+        nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
+        nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>:ALEFix<CR>
+        nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
+        nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
+        nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
+        nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
+    endfunction()
 endif
 
 augroup LSP
-  autocmd!
-  autocmd FileType * call SetLSPShortcuts()
+    autocmd!
+    autocmd FileType * call SetLSPShortcuts()
 augroup END
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
@@ -299,6 +299,12 @@ let g:neoformat_enabled_html = ['htmlbeautify']
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_enabled_typescript = ['prettier']
 let g:neoformat_enabled_python = ['yapf']
+" Enable alignment globally
+let g:neoformat_basic_format_align = 1
+" Enable tab to spaces conversion globally
+let g:neoformat_basic_format_retab = 1
+" Enable trimmming of trailing whitespace globally
+let g:neoformat_basic_format_trim = 1
 
 
 let g:ale_linters = {
