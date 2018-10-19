@@ -93,7 +93,6 @@ endif
 
 Plug 'godlygeek/tabular'
 Plug 'wellle/targets.vim'
-Plug 'qpkorr/vim-bufkill'
 Plug 'kylef/apiblueprint.vim'
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -101,8 +100,6 @@ Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neomru.vim'
 Plug 'chemzqm/denite-git'
 Plug 'sbdchd/neoformat'
-Plug 'junegunn/limelight.vim'
-Plug 'benmills/vimux'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
 Plug 'mbbill/undotree'
@@ -123,11 +120,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tomtom/tcomment_vim'
-
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
 " for session
 Plug 'tpope/vim-obsession'
 Plug 'wakatime/vim-wakatime'
@@ -167,12 +162,6 @@ if filereadable(expand("~/.vimrc_background"))
     source ~/.vimrc_background
 endif
 
-if has('gui_macvim')
-    set guifont=Operator\ Mono:h12
-    let g:airline_powerline_fonts = 1
-else
-    let g:airline_powerline_fonts = 1
-endif
 
 
 vmap <C-c> "+y
@@ -334,8 +323,8 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#tab_nr_type = 0
-" let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " Input Method
 let g:Vimim_cloud = -1
