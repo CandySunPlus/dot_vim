@@ -88,6 +88,7 @@ if has('nvim')
     let g:LanguageClient_diagnosticsEnable = 0
     let g:LanguageClient_completionPreferTextEdit = 1
     let g:LanguageClient_diagnosticsSignsMax = 0
+    let g:LanguageClient_hoverPreview = 'Always'
 endif
 
 Plug 'godlygeek/tabular'
@@ -190,26 +191,26 @@ nmap <leader>o :<C-U>TlistToggle<cr>
 nmap <leader>u :<C-U>UndotreeToggle<cr>
 nmap <leader>il :<C-U>IndentLinesReset<cr>
 nmap <leader>tm :TableModeToggle<cr>
+nmap <leader>ff :Neoformat<CR>
+
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-nmap <leader>ff :Neoformat<CR>
 
+if !exists('*SetLSPShortcuts')
 function SetLSPShortcuts()
   nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
   nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
   nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>:ALEFix<CR>
   nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-  nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
   nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
   nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
   nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
-  nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
 endfunction()
+endif
 
 augroup LSP
   autocmd!
@@ -261,7 +262,6 @@ if executable('ag')
     call denite#custom#var('grep', 'pattern_opt', [])
     call denite#custom#var('grep', 'separator', ['--'])
     call denite#custom#var('grep', 'final_opts', [])
-
 endif
 
 nnoremap <silent> <leader>p :<C-U>Denite -auto-resize file_rec<CR>
@@ -271,6 +271,10 @@ nnoremap <silent> <leader>gl :<C-U>Denite gitlog<CR>
 nnoremap <silent> <leader>gs :<C-U>Denite gitstatus<CR>
 nnoremap <silent> <leader>gc :<C-U>Denite gitchanged<CR>
 nnoremap <silent> <leader>gb :<C-U>Denite gitbranch<CR>
+" denite language client
+nnoremap <silent> <leader>lo :<C-U>Denite documentSymbol<CR>
+nnoremap <silent> <leader>lr :<C-U>Denite references<CR>
+nnoremap <silent> <leader>lm :Denite contextMenu<CR>
 
 
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete

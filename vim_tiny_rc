@@ -8,8 +8,27 @@ set expandtab
 set autoindent
 set cindent
 set magic
-let mapleader = ','
-
+let mapleader = ' '
+set noswapfile
+set nobackup
+if !has('nvim')
+    set encoding=utf-8
+endif
+set autoread
+set autowrite
+set fileformats=unix,dos,mac
+set backspace=indent,eol,start
+set nohlsearch
+" set incsearch
+set laststatus=2
+set noerrorbells
+set showcmd
+set showmode
+" set completeopt-=preview
+set nu
+set numberwidth=2
+set nolist
+set cursorline
 
 call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
@@ -43,27 +62,6 @@ au BufRead,BufNewFile *.asm set filetype=nasm
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
-
-set noswapfile
-set nobackup
-if !has('nvim')
-    set encoding=utf-8
-endif
-set autoread
-set autowrite
-set fileformats=unix,dos,mac
-set backspace=indent,eol,start
-set nohlsearch
-" set incsearch
-set laststatus=2
-set noerrorbells
-set showcmd
-set showmode
-" set completeopt-=preview
-set nu
-set numberwidth=2
-set nolist
-set cursorline
 
 nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
