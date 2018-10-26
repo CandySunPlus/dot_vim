@@ -117,8 +117,11 @@ Plug 'w0rp/ale'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+Plug 'bling/vim-bufferline'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'tomtom/tcomment_vim'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
@@ -318,13 +321,38 @@ let g:ale_less_lessc_options = '--npm-import="prefix=~"'
 let g:ale_typescript_tslint_options = '--project ./'
 let g:ale_proto_protoc_gen_lint_options = '--proto_path=${GOPATH}/src'
 
-let g:airline_theme = 'base16'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline#extensions#tabline#tab_nr_type = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+" let g:airline_theme = 'base16'
+" let g:airline#extensions#branch#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+" let g:airline#extensions#tabline#tab_nr_type = 0
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts = 1
+" let g:airline_exclude_preview = 1
+let g:lightline = { }
+let g:lightline.component_function = {
+            \   'gitbranch': 'fugitive#head',
+            \ }
+let g:lightline.tabline = {
+            \   'left': [['tabs']],
+            \   'right': [['close']],
+            \ }
+let g:lightline.component_type = {
+            \   'linter_checking': 'left',
+            \   'linter_warnings': 'warning',
+            \   'linter_errors': 'error',
+            \   'linter_ok': 'left',
+            \ }
+let g:lightline.component_expand = {
+            \   'linter_checking': 'lightline#ale#checking',
+            \   'linter_warnings': 'lightline#ale#warnings',
+            \   'linter_errors': 'lightline#ale#errors',
+            \   'linter_ok': 'lightline#ale#ok',
+            \ }
+let g:lightline.active = { 
+            \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
+            \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]],
+            \ }
 
 " Input Method
 let g:Vimim_cloud = -1
@@ -347,7 +375,6 @@ if has('nvim')
 endif
 
 
-let g:airline_exclude_preview = 1
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
