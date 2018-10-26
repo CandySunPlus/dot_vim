@@ -31,6 +31,7 @@ set completeopt=noinsert,menuone,noselect,preview
 set nu
 set rnu
 set numberwidth=2
+set showtabline=2
 set listchars=tab:>-,trail:·
 set list
 set cursorline
@@ -119,9 +120,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
-Plug 'bling/vim-bufferline'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'mgee/lightline-bufferline'
 Plug 'tomtom/tcomment_vim'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
@@ -321,20 +320,34 @@ let g:ale_less_lessc_options = '--npm-import="prefix=~"'
 let g:ale_typescript_tslint_options = '--project ./'
 let g:ale_proto_protoc_gen_lint_options = '--proto_path=${GOPATH}/src'
 
-" let g:airline_theme = 'base16'
-" let g:airline#extensions#branch#enabled = 1
-" let g:airline#extensions#ale#enabled = 1
-" let g:airline#extensions#tabline#buffer_nr_show = 1
-" let g:airline#extensions#tabline#tab_nr_type = 0
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
-" let g:airline_exclude_preview = 1
+let g:lightline#bufferline#show_number  = 2
+let g:lightline#bufferline#shorten_path = 1
+let g:lightline#bufferline#unnamed = '[No Name]'
+let g:lightline#bufferline#number_map = {
+            \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+            \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+nmap <Leader>0 <Plug>lightline#bufferline#go(10)
+
 let g:lightline = { }
+let g:lightline.colorscheme = 'powerline'
+let g:lightline = {
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' },
+            \ }
 let g:lightline.component_function = {
             \   'gitbranch': 'fugitive#head',
             \ }
 let g:lightline.tabline = {
-            \   'left': [['tabs']],
+            \   'left': [['buffers']],
             \   'right': [['close']],
             \ }
 let g:lightline.component_type = {
@@ -342,14 +355,16 @@ let g:lightline.component_type = {
             \   'linter_warnings': 'warning',
             \   'linter_errors': 'error',
             \   'linter_ok': 'left',
+            \   'buffers': 'tabsel',
             \ }
 let g:lightline.component_expand = {
             \   'linter_checking': 'lightline#ale#checking',
             \   'linter_warnings': 'lightline#ale#warnings',
             \   'linter_errors': 'lightline#ale#errors',
             \   'linter_ok': 'lightline#ale#ok',
+            \   'buffers': 'lightline#bufferline#buffers',
             \ }
-let g:lightline.active = { 
+let g:lightline.active = {
             \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
             \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]],
             \ }
