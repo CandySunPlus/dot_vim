@@ -92,6 +92,7 @@ if has('nvim')
     let g:LanguageClient_hoverPreview = 'Always'
 endif
 
+Plug '0x84/vim-coderunner'
 Plug 'godlygeek/tabular'
 Plug 'wellle/targets.vim'
 Plug 'kylef/apiblueprint.vim'
@@ -367,6 +368,18 @@ let g:lightline.component_expand = {
 let g:lightline.active = {
             \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
             \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]],
+            \ }
+
+" Vim Run Code
+let g:vcr_languages = {}
+let g:vcr_languages["typescript"] = {
+            \ "cmd": "deno",
+            \ "ext": "ts",
+            \ }
+
+let g:vcr_languages["javascript"] = {
+            \ "cmd": "node",
+            \ "ext": "js",
             \ }
 
 " Input Method
