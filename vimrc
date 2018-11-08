@@ -54,6 +54,7 @@ if has('nvim')
 
     au TextChangedI * call ncm2#auto_trigger()
     autocmd BufEnter * call ncm2#enable_for_buffer()
+    autocmd CompleteDone * silent! pclose!
 
     Plug 'autozimu/LanguageClient-neovim', {
                 \ 'branch': 'next',
@@ -367,7 +368,12 @@ let g:lightline.component_expand = {
             \ }
 let g:lightline.active = {
             \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
-            \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]],
+            \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+            \       ['lineinfo'], ['percent'], [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ]],
+            \ }
+
+let g:lightline.component = {
+            \   'charvaluehex': '0x%B',
             \ }
 
 " Vim Run Code
