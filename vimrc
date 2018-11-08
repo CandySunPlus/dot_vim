@@ -369,7 +369,7 @@ let g:lightline.component_expand = {
 let g:lightline.active = {
             \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
             \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
-            \       ['lineinfo'], ['percent'], [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ]],
+            \       ['lineinfo', 'percent', 'charvaluehex'], [ 'fileformat', 'fileencoding', 'filetype']],
             \ }
 
 let g:lightline.component = {
