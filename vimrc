@@ -32,6 +32,8 @@ set nu
 set rnu
 set numberwidth=2
 set showtabline=2
+set foldmethod=syntax
+set foldlevel=99
 set listchars=tab:>-,trail:·
 set list
 set cursorline
@@ -304,7 +306,7 @@ let g:ale_linters = {
             \ 'javascript': ['eslint'],
             \ 'typescript': ['tsserver', 'tslint'],
             \ 'less': ['lessc'],
-            \ 'go': [],
+            \ 'go': ['gofmt', 'goimports'],
             \ 'html': [],
             \ 'cpp': [],
             \ 'c': [],
