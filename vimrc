@@ -141,24 +141,29 @@ nmap <leader>il :<C-U>IndentLinesReset<cr>
 nmap <leader>tm :TableModeToggle<cr>
 nmap <leader>ff :Neoformat<CR>
 
-let g:table_mode_corner_corner="+"
-let g:table_mode_header_fillchar="="
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+" auto close preview window when complete done
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" Show signature help while editing
+autocmd CursorHoldI * silent! call CocActionAsync('showSignatureHelp')
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-if !exists('*SetLSPShortcuts')
-    function SetLSPShortcuts()
-        nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-        nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-        nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>:ALEFix<CR>
-        nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-        nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
-        nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
-        nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-    endfunction()
-endif
+nmap <leader>ld <Plug>(coc-definition)
+nmap <leader>lr <Plug>(coc-references)
+nmap <leader>ln <Plug>(coc-rename)
+nmap <leader>lf :ALEFix<CR><Plug>(coc-format)
+vmap <leader>lf <Plug>(coc-format-selected)
+nmap <leader>li <Plug>(coc-implementation)
+nmap <leader>lt <Plug>(coc-type-definition)
+nmap <leader>la <Plug>(coc-codeaction)
+nmap <leader>lh :call CocAction('doHover')<CR>
+
+let g:table_mode_corner_corner="+"
+let g:table_mode_header_fillchar="="
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
@@ -215,9 +220,8 @@ nnoremap <silent> <leader>gs :<C-U>Denite gitstatus<CR>
 nnoremap <silent> <leader>gc :<C-U>Denite gitchanged<CR>
 nnoremap <silent> <leader>gb :<C-U>Denite gitbranch<CR>
 " denite language client
-nnoremap <silent> <leader>lo :<C-U>Denite documentSymbol<CR>
-nnoremap <silent> <leader>lr :<C-U>Denite references<CR>
-nnoremap <silent> <leader>lm :Denite contextMenu<CR>
+nnoremap <silent> <leader>lo :<C-U>Denite coc-symbols<CR>
+nnoremap <silent> <leader>le :<C-U>Denite coc-extension<CR>
 
 
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
@@ -248,7 +252,6 @@ let g:neoformat_basic_format_align = 1
 let g:neoformat_basic_format_retab = 1
 " Enable trimmming of trailing whitespace globally
 let g:neoformat_basic_format_trim = 1
-
 
 let g:ale_linters = {
             \ 'javascript': ['eslint'],

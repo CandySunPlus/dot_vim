@@ -8,6 +8,10 @@
                 "funcSnippetEnabled": true,
                 "gocodeCompletionEnabled": true
             }
+        },
+        "clangd": {
+            "command": "clangd",
+            "filetypes": ["c", "cpp", "objc", "objcpp"]
         }
     }
 }
