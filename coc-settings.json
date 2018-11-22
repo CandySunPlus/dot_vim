@@ -6,7 +6,9 @@
             "filetypes": ["go"],
             "initializationOptions": {
                 "funcSnippetEnabled": true,
-                "gocodeCompletionEnabled": true
+                "lintTool": "golint",
+                "gocodeCompletionEnabled": true,
+                "diagnosticsEnabled": true
             }
         },
         "clangd": {
