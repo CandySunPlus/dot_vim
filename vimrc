@@ -155,7 +155,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>ld <Plug>(coc-definition)
 nmap <leader>lr <Plug>(coc-references)
 nmap <leader>ln <Plug>(coc-rename)
-nmap <leader>lf :ALEFix<CR><Plug>(coc-format)
+nmap <leader>lf <Plug>(coc-format):ALEFix<cr>
 vmap <leader>lf <Plug>(coc-format-selected)
 nmap <leader>li <Plug>(coc-implementation)
 nmap <leader>lt <Plug>(coc-type-definition)
