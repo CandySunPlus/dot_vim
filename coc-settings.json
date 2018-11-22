@@ -1,0 +1,13 @@
+{
+    "coc.source.gocode.enable": false,
+    "languageserver": {
+        "golang": {
+            "command": "go-langserver",
+            "filetypes": ["go"],
+            "initializationOptions": {
+                "funcSnippetEnabled": true,
+                "gocodeCompletionEnabled": true
+            }
+        }
+    }
+}

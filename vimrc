@@ -46,55 +46,8 @@ call plug#begin('~/.vim/plugged')
 " Auto Complete
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-if has('nvim')
-    Plug 'ncm2/ncm2'
-    Plug 'roxma/nvim-yarp'
-    " Complete Source
-    Plug 'ncm2/ncm2-bufword'
-    Plug 'ncm2/ncm2-path'
-    Plug 'ncm2/ncm2-ultisnips'
-
-    au TextChangedI * call ncm2#auto_trigger()
-    autocmd BufEnter * call ncm2#enable_for_buffer()
-    autocmd CompleteDone * silent! pclose!
-
-    Plug 'autozimu/LanguageClient-neovim', {
-                \ 'branch': 'next',
-                \ 'do': 'bash install.sh',
-                \ }
-
-    set completefunc=LanguageClient#complete
-    set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
-
-    let g:LanguageClient_serverCommands = {
-                \ 'vue': ['vls'],
-                \ 'rust': ['rls'],
-                \ 'typescript': ['typescript-language-server', '--stdio'],
-                \ 'javascript': ['typescript-language-server', '--stdio'],
-                \ 'javascript.jsx': ['typescript-language-server', '--stdio'],
-                \ 'python': ['pyls'],
-                \ 'cpp': ['clangd'],
-                \ 'c': ['clangd'],
-                \ 'go': ['go-langserver', '-diagnostics', '-gocodecompletion'],
-                \ 'css': ['css-languageserver', '--stdio'],
-                \ 'less': ['css-languageserver', '--stdio'],
-                \ 'sass': ['css-languageserver', '--stdio'],
-                \ 'java': ['jdtls'],
-                \ }
-
-    let g:LanguageClient_rootMarkers = {
-                \ 'javascript': ['project.json'],
-                \ 'typescript': ['tsconfig.json'],
-                \ 'rust': ['Cargo.toml'],
-                \ 'go': ['Gopkg.toml'],
-                \ }
-
-    let g:LanguageClient_diagnosticsEnable = 0
-    let g:LanguageClient_completionPreferTextEdit = 1
-    let g:LanguageClient_diagnosticsSignsMax = 0
-    let g:LanguageClient_hoverPreview = 'Always'
-endif
-
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'Konfekt/FastFold'
 Plug '0x84/vim-coderunner'
 Plug 'godlygeek/tabular'
 Plug 'wellle/targets.vim'
@@ -206,11 +159,6 @@ if !exists('*SetLSPShortcuts')
         nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
     endfunction()
 endif
-
-augroup LSP
-    autocmd!
-    autocmd FileType * call SetLSPShortcuts()
-augroup END
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
@@ -349,6 +297,7 @@ let g:lightline = {
             \ }
 let g:lightline.component_function = {
             \   'gitbranch': 'fugitive#head',
+            \   'cocstatus': 'coc#status'
             \ }
 let g:lightline.tabline = {
             \   'left': [['buffers']],
@@ -369,7 +318,7 @@ let g:lightline.component_expand = {
             \   'buffers': 'lightline#bufferline#buffers',
             \ }
 let g:lightline.active = {
-            \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
+            \   'left':[[ 'mode', 'paste' ], [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ]],
             \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
             \       ['lineinfo', 'percent', 'charvaluehex'], [ 'fileformat', 'fileencoding', 'filetype']],
             \ }
@@ -410,7 +359,6 @@ if has('nvim')
     let g:python3_host_prog = '/usr/local/bin/python3'
 endif
 
-
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
@@ -424,3 +372,9 @@ let g:indentLine_first_char = "┆"
 
 let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
 let g:vue_disable_pre_processors=1
+
+" FastFold
+nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
