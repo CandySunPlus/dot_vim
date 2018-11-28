@@ -122,6 +122,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 
+hi ALEError ctermbg=none cterm=undercurl
 
 vmap <C-c> "+y
 " Indent lines with cmd+[ and cmd+]
@@ -266,6 +267,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
             \ 'javascript': ['eslint'],
+            \ 'rust': ['rustfmt'],
             \ 'typescript': ['tslint']
             \}
 
@@ -321,7 +323,7 @@ let g:lightline.component_expand = {
             \   'buffers': 'lightline#bufferline#buffers',
             \ }
 let g:lightline.active = {
-            \   'left':[[ 'mode', 'paste' ], [ 'cocstatus', 'gitbranch', 'readonly', 'filename', 'modified' ]],
+            \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
             \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
             \       ['lineinfo', 'percent', 'charvaluehex'], [ 'fileformat', 'fileencoding', 'filetype']],
             \ }
@@ -381,3 +383,4 @@ nmap zuz <Plug>(FastFoldUpdate)
 let g:fastfold_savehook = 1
 let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
 let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+
