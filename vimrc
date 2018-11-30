@@ -81,7 +81,6 @@ Plug 'mgee/lightline-bufferline'
 Plug 'tomtom/tcomment_vim'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 " for session
 Plug 'tpope/vim-obsession'
 Plug 'wakatime/vim-wakatime'
@@ -143,8 +142,7 @@ nmap <leader>tm :TableModeToggle<cr>
 nmap <leader>ff :Neoformat<CR>
 
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " auto close preview window when complete done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
