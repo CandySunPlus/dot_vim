@@ -27,16 +27,17 @@ set shortmess+=c
 set noerrorbells
 set showcmd
 set showmode
-set completeopt=noinsert,menuone,noselect,preview
+set completeopt=noinsert,menuone,preview
 set nu
 set rnu
 set numberwidth=2
 set showtabline=2
-set foldmethod=syntax
-set foldlevel=99
 set listchars=tab:>-,trail:·
 set list
 set cursorline
+set updatetime=300
+set signcolumn=yes
+
 let mapleader = ' '
 
 call plug#begin('~/.vim/plugged')
@@ -44,9 +45,9 @@ call plug#begin('~/.vim/plugged')
 " My Plugins here:
 
 " Auto Complete
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
+
+Plug 'vimlab/split-term.vim'
 Plug 'Konfekt/FastFold'
 Plug '0x84/vim-coderunner'
 Plug 'godlygeek/tabular'
@@ -129,8 +130,6 @@ nmap <D-]> >>
 nmap <D-[> <<
 vmap <D-[> <gv
 vmap <D-]> >gv
-" switch buffer
-map <C-Tab> :b#<cr>
 " leader keys
 nmap <leader>/ :TComment<cr>
 vmap <leader>/ :TComment<cr>gv
@@ -141,13 +140,28 @@ nmap <leader>il :<C-U>IndentLinesReset<cr>
 nmap <leader>tm :TableModeToggle<cr>
 nmap <leader>ff :Neoformat<CR>
 
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> for trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " auto close preview window when complete done
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-" Show signature help while editing
-autocmd CursorHoldI * silent! call CocActionAsync('showSignatureHelp')
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
@@ -362,10 +376,8 @@ if has('nvim')
     let g:python3_host_prog = '/usr/local/bin/python3'
 endif
 
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", $HOME."/.snips"]
+let g:UltiSnipsExpandTrigger = "<c-j>"
 
 let g:javascript_enable_domhtmlcss = 1
 let g:ackprg = 'ag --nogroup --nocolor --column --hidden'
@@ -376,9 +388,4 @@ let g:indentLine_first_char = "┆"
 let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
 let g:vue_disable_pre_processors=1
 
-" FastFold
-nmap zuz <Plug>(FastFoldUpdate)
-let g:fastfold_savehook = 1
-let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
-let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
