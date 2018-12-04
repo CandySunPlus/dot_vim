@@ -245,13 +245,13 @@ let g:neoformat_html_htmlbeautify = {
             \ }
 let g:neoformat_typescript_prettier = {
             \ 'exe': 'prettier',
-            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--single-quote', '--parser typescript', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
+            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--parser typescript'],
             \ 'stdin': 1,
             \ }
 
 let g:neoformat_javascript_prettier = {
             \ 'exe': 'prettier',
-            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--single-quote', '--trailing-comma none', '--tab-width 4', '--print-width 100'],
+            \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
             \ 'stdin': 1,
             \ }
 
