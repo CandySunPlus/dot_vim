@@ -270,7 +270,7 @@ let g:ale_linters = {
             \ 'javascript': ['eslint'],
             \ 'typescript': ['tsserver', 'tslint'],
             \ 'less': ['lessc'],
-            \ 'go': ['gofmt', 'goimports'],
+            \ 'go': ['gobuild'],
             \ 'html': [],
             \ 'cpp': [],
             \ 'c': [],
@@ -280,7 +280,8 @@ let g:ale_linters = {
 let g:ale_fixers = {
             \ 'javascript': ['eslint'],
             \ 'rust': ['rustfmt'],
-            \ 'typescript': ['tslint']
+            \ 'typescript': ['tslint'],
+            \ 'go': ['goimports'],
             \}
 
 let g:ale_less_lessc_use_global = 1
