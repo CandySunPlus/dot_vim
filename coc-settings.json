@@ -1,6 +1,7 @@
 {
     "coc.preferences.noselect": false,
     "coc.preferences.preferCompleteThanJumpPlaceholder": true,
+    "coc.preferences.diagnostic.level": "warning",
     "coc.source.gocode.enable": false,
     "languageserver": {
         "golang": {
