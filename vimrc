@@ -27,7 +27,8 @@ set shortmess+=c
 set noerrorbells
 set showcmd
 set showmode
-set completeopt=noinsert,menuone
+set completeopt=noinsert,preview,menuone
+set splitbelow
 set nu
 set rnu
 set numberwidth=2
