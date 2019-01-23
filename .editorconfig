@@ -14,6 +14,9 @@ indent_size = 4
 [{Yaml, **.yaml, **.yml}]
 indent_size = 2
 
+[*.dart]
+indent_size = 2
+
 [{Makefile,**.mk}]
 indent_style = tab
 

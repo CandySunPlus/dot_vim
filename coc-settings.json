@@ -17,6 +17,14 @@
         "clangd": {
             "command": "clangd",
             "filetypes": ["c", "cpp", "objc", "objcpp"]
+        },
+        "swift": {
+            "command": "sourcekit-lsp",
+            "filetypes": ["swift"]
+        },
+        "dart": {
+            "command": "dart_language_server",
+            "filetypes": ["dart"]
         }
     }
 }

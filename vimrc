@@ -18,6 +18,7 @@ endif
 set fileencodings=utf-8,gbk,gb2312,big5
 set autoread
 set autowrite
+set noic
 set fileformats=unix,dos,mac
 set backspace=indent,eol,start
 set nohlsearch
@@ -27,8 +28,7 @@ set shortmess+=c
 set noerrorbells
 set showcmd
 set showmode
-set completeopt=noinsert,preview,menuone
-set splitbelow
+set completeopt=menu,menuone,noinsert
 set nu
 set rnu
 set numberwidth=2
@@ -45,6 +45,7 @@ call plug#begin('~/.vim/plugged')
 
 " My Plugins here:
 
+Plug 'tpope/vim-scriptease'
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
 
@@ -69,6 +70,8 @@ Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
 Plug 'posva/vim-vue'
+" Flutter
+Plug 'reisub0/hot-reload.vim'
 " Addition
 Plug 'mhinz/vim-signify'
 Plug 'kshenoy/vim-signature'
@@ -96,7 +99,7 @@ call plug#end()
 
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
-autocmd FileType less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
+autocmd FileType dart,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType make setlocal noexpandtab
 autocmd FileType vue syntax sync fromstart
 
