@@ -18,7 +18,6 @@ endif
 set fileencodings=utf-8,gbk,gb2312,big5
 set autoread
 set autowrite
-set noic
 set fileformats=unix,dos,mac
 set backspace=indent,eol,start
 set nohlsearch
