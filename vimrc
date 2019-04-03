@@ -61,7 +61,6 @@ Plug 'Shougo/neomru.vim'
 Plug 'chemzqm/denite-git'
 Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
-Plug 'chriskempson/base16-vim'
 Plug 'mbbill/undotree'
 Plug 'editorconfig/editorconfig-vim'
 " Input Method
@@ -93,12 +92,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/vim-easymotion'
 " non github repos
+Plug 'danielwe/base16-vim'
 
 call plug#end()
 
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
-autocmd FileType dart,less,sass,scss,css set shiftwidth=2 | set expandtab | set tabstop=2
 autocmd FileType make setlocal noexpandtab
 autocmd FileType vue syntax sync fromstart
 
@@ -219,7 +218,7 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs', ['.git/'])
 call denite#custom#source('file_rec', 'matchers', ['matcher_fuzzy', 'matcher_ignore_globs'])
 " Use ag for search
 if executable('ag')
-    call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', ''])
+    call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', ''])
     call denite#custom#var('grep', 'command', ['ag'])
     call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
     call denite#custom#var('grep', 'recursive_opts', [])
@@ -228,7 +227,7 @@ if executable('ag')
     call denite#custom#var('grep', 'final_opts', [])
 endif
 
-nnoremap <silent> <leader>p :<C-U>Denite -auto-resize file_rec<CR>
+nnoremap <silent> <leader>p :<C-U>Denite -auto-resize file/rec<CR>
 nnoremap <silent> <leader>b :<C-U>Denite -auto-resize buffer<CR>
 " denite git plugin
 nnoremap <silent> <leader>gl :<C-U>Denite gitlog<CR>
