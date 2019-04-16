@@ -67,6 +67,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'CandySunPlus/CY_erbi'
 " For all language
 Plug 'sheerun/vim-polyglot'
+Plug 'othree/yajs.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'posva/vim-vue'
 " Flutter
 Plug 'reisub0/hot-reload.vim'
@@ -238,6 +240,7 @@ nnoremap <silent> <leader>gb :<C-U>Denite gitbranch<CR>
 nnoremap <silent> <leader>lo :<C-U>Denite coc-symbols<CR>
 nnoremap <silent> <leader>le :<C-U>Denite coc-extension<CR>
 
+let g:polyglot_disabled = ['javascript', 'typescript', 'javascript.jsx', 'typescript.tsx']
 
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
 let g:JavaComplete_Home = $HOME . '/.vim/plugged/vim-javacomplete2'
