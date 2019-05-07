@@ -14,9 +14,15 @@
                 "diagnosticsEnabled": true
             }
         },
-        "clangd": {
-            "command": "clangd",
-            "filetypes": ["c", "cpp", "objc", "objcpp"]
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": ".ccls-cache"
+                }
+            }
         },
         "swift": {
             "command": "sourcekit-lsp",

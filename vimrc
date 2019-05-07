@@ -287,6 +287,7 @@ let g:ale_fixers = {
             \ 'rust': ['rustfmt'],
             \ 'typescript': ['tslint'],
             \ 'go': ['goimports'],
+            \ 'dart': ['dartfmt']
             \}
 
 let g:ale_less_lessc_use_global = 1
