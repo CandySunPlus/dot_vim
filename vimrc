@@ -138,7 +138,6 @@ vmap <D-]> >gv
 nmap <leader>/ :TComment<cr>
 vmap <leader>/ :TComment<cr>gv
 nmap <leader>k :<C-U>NERDTreeToggle<cr>
-nmap <leader>o :<C-U>TlistToggle<cr>
 nmap <leader>u :<C-U>UndotreeToggle<cr>
 nmap <leader>il :<C-U>IndentLinesReset<cr>
 nmap <leader>tm :TableModeToggle<cr>
@@ -177,7 +176,8 @@ vmap <leader>lf <Plug>(coc-format-selected)
 nmap <leader>li <Plug>(coc-implementation)
 nmap <leader>lt <Plug>(coc-type-definition)
 nmap <leader>la <Plug>(coc-codeaction)
-nmap <leader>lh :call CocAction('doHover')<CR>
+nmap <leader>lo :<C-u>CocList outline<CR>
+nmap <leader>le :<C-u>CocList extensions<CR>
 
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
@@ -236,9 +236,6 @@ nnoremap <silent> <leader>gl :<C-U>Denite gitlog<CR>
 nnoremap <silent> <leader>gs :<C-U>Denite gitstatus<CR>
 nnoremap <silent> <leader>gc :<C-U>Denite gitchanged<CR>
 nnoremap <silent> <leader>gb :<C-U>Denite gitbranch<CR>
-" denite language client
-nnoremap <silent> <leader>lo :<C-U>Denite coc-symbols<CR>
-nnoremap <silent> <leader>le :<C-U>Denite coc-extension<CR>
 
 let g:polyglot_disabled = ['javascript', 'typescript', 'javascript.jsx', 'typescript.tsx']
 
