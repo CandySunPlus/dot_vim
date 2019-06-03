@@ -190,45 +190,6 @@ let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 hi deniteMatchedChar ctermbg=NONE ctermfg=154
 " Option 2 : link to other Highlight Group
 hi link deniteMatchedChar Identifier
-call denite#custom#option('default', 'prompt', '»')
-
-call denite#custom#map(
-            \ 'insert',
-            \ '<Down>',
-            \ '<denite:move_to_next_line>',
-            \ 'noremap'
-            \)
-call denite#custom#map(
-            \ 'insert',
-            \ '<C-n>',
-            \ '<denite:move_to_next_line>',
-            \ 'noremap'
-            \)
-call denite#custom#map(
-            \ 'insert',
-            \ '<Up>',
-            \ '<denite:move_to_previous_line>',
-            \ 'noremap'
-            \)
-call denite#custom#map(
-            \ 'insert',
-            \ '<C-p>',
-            \ '<denite:move_to_previous_line>',
-            \ 'noremap'
-            \)
-
-call denite#custom#filter('matcher_ignore_globs', 'ignore_globs', ['.git/'])
-call denite#custom#source('file/rec', 'matchers', ['matcher_fuzzy', 'matcher_ignore_globs'])
-" Use ag for search
-if executable('ag')
-    call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', ''])
-    call denite#custom#var('grep', 'command', ['ag'])
-    call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
-    call denite#custom#var('grep', 'recursive_opts', [])
-    call denite#custom#var('grep', 'pattern_opt', [])
-    call denite#custom#var('grep', 'separator', ['--'])
-    call denite#custom#var('grep', 'final_opts', [])
-endif
 
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
@@ -245,6 +206,22 @@ function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <Space>
   \ denite#do_map('toggle_select').'j'
 endfunction
+
+call denite#custom#option('default', 'prompt', '»')
+call denite#custom#filter('matcher/ignore_globs', 'ignore_globs', ['.git/'])
+call denite#custom#source('file/rec', 'matchers', ['matcher/cpsm', 'matcher/ignore_globs'])
+call denite#custom#source('file/rec', 'sorters', ['sorter/sublime'])
+
+" Use ag for search
+if executable('ag')
+    call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', ''])
+    call denite#custom#var('grep', 'command', ['ag'])
+    call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+    call denite#custom#var('grep', 'recursive_opts', [])
+    call denite#custom#var('grep', 'pattern_opt', [])
+    call denite#custom#var('grep', 'separator', ['--'])
+    call denite#custom#var('grep', 'final_opts', [])
+endif
 
 nnoremap <silent> <leader>p :<C-U>Denite -auto-resize file/rec<CR>
 nnoremap <silent> <leader>b :<C-U>Denite -auto-resize buffer<CR>
