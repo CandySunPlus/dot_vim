@@ -5,14 +5,9 @@
     "coc.source.gocode.enable": false,
     "languageserver": {
         "golang": {
-            "command": "go-langserver",
+            "command": "gopls",
             "filetypes": ["go"],
-            "initializationOptions": {
-                "funcSnippetEnabled": true,
-                "lintTool": "golint",
-                "gocodeCompletionEnabled": true,
-                "diagnosticsEnabled": true
-            }
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"]
         },
         "ccls": {
             "command": "ccls",
