@@ -251,9 +251,16 @@ let g:neoformat_javascript_prettier = {
             \ 'stdin': 1,
             \ }
 
+let g:neoformat_yaml_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--parser yaml', '--tab-width 2'],
+            \ 'stdin': 1,
+            \ }
+
 let g:neoformat_enabled_html = ['htmlbeautify']
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_enabled_typescript = ['prettier']
+let g:neoformat_enabled_yaml = ['prettier']
 let g:neoformat_enabled_python = ['yapf']
 " Enable alignment globally
 let g:neoformat_basic_format_align = 1

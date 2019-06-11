@@ -11,14 +11,17 @@ charset = utf-8
 indent_style = space
 indent_size = 4
 
-[{Yaml, **.yaml, **.yml}]
+[*.{yaml,yml,yamllint}]
+indent_style = space
 indent_size = 2
 
 [*.dart]
 indent_size = 2
+indent_style = space
 
-[{*.cc, *.cpp, *.c, *.h, *.hpp}]
+[*.{c,cc,h,cpp,hpp}]
 indent_size = 2
+indent_style = space
 
 [{Makefile,**.mk}]
 indent_style = tab
