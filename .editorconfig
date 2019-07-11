@@ -26,5 +26,5 @@ indent_style = space
 [{Makefile,**.mk}]
 indent_style = tab
 
-[{go,**.go}]
+[*.go]
 indent_style = tab

@@ -1,8 +1,11 @@
 {
-    "coc.preferences.noselect": false,
-    "coc.preferences.preferCompleteThanJumpPlaceholder": true,
-    "coc.preferences.diagnostic.level": "warning",
-    "coc.source.gocode.enable": false,
+    "diagnostic.level": "warning",
+    "suggest.noselect": false,
+    "list.insertMappings": {
+        "<C-n>": "normal:j",
+        "<C-p>": "normal:k"
+    },
+    "list.source.grep.command": "ag",
     "languageserver": {
         "golang": {
             "command": "gopls",
@@ -27,5 +30,6 @@
             "command": "dart_language_server",
             "filetypes": ["dart"]
         }
-    }
+    },
+    "git.enableGutters": false
 }

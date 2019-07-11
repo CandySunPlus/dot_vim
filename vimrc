@@ -56,9 +56,7 @@ Plug 'wellle/targets.vim'
 Plug 'kylef/apiblueprint.vim'
 
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Shougo/denite.nvim'
 Plug 'Shougo/neomru.vim'
-Plug 'chemzqm/denite-git'
 Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
@@ -92,7 +90,6 @@ Plug 'tpope/vim-obsession'
 Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
 " original repos on github
-Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/vim-easymotion'
 " non github repos
 Plug 'danielwe/base16-vim'
@@ -100,8 +97,8 @@ Plug 'danielwe/base16-vim'
 call plug#end()
 
 
-autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
-autocmd FileType make setlocal noexpandtab
+" autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
+" autocmd FileType make setlocal noexpandtab
 autocmd FileType vue syntax sync fromstart
 
 au BufRead,BufNewFile *.wxml set filetype=html
@@ -169,6 +166,10 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+nmap <leader>p :<C-u>CocList files<CR>
+nmap <leader>o :<C-u>CocList mru<CR>
+nmap <leader>b :<C-u>CocList buffers<CR>
+nmap <leader>g :<C-u>CocList grep<CR>
 nmap <leader>ld <Plug>(coc-definition)
 nmap <leader>lr <Plug>(coc-references)
 nmap <leader>ln <Plug>(coc-rename)
@@ -179,57 +180,14 @@ nmap <leader>lt <Plug>(coc-type-definition)
 nmap <leader>la <Plug>(coc-codeaction)
 nmap <leader>lo :<C-u>CocList outline<CR>
 nmap <leader>le :<C-u>CocList extensions<CR>
+nmap <leader>gs :<C-u>CocList gstatus<CR>
+nmap <leader>gb :<C-u>CocList branches<CR>
+nmap <leader>gc :<C-u>CocList commits<CR>
 
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
-
-" Denite
-" Option 1 : Set colors yourself
-hi deniteMatchedChar ctermbg=NONE ctermfg=154
-" Option 2 : link to other Highlight Group
-hi link deniteMatchedChar Identifier
-
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space>
-  \ denite#do_map('toggle_select').'j'
-endfunction
-
-call denite#custom#option('default', 'prompt', '»')
-call denite#custom#filter('matcher/ignore_globs', 'ignore_globs', ['.git/'])
-call denite#custom#source('file/rec', 'matchers', ['matcher/cpsm', 'matcher/ignore_globs'])
-call denite#custom#source('file/rec', 'sorters', ['sorter/sublime'])
-
-" Use ag for search
-if executable('ag')
-    call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', ''])
-    call denite#custom#var('grep', 'command', ['ag'])
-    call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
-    call denite#custom#var('grep', 'recursive_opts', [])
-    call denite#custom#var('grep', 'pattern_opt', [])
-    call denite#custom#var('grep', 'separator', ['--'])
-    call denite#custom#var('grep', 'final_opts', [])
-endif
-
-nnoremap <silent> <leader>p :<C-U>Denite -auto-resize file/rec<CR>
-nnoremap <silent> <leader>b :<C-U>Denite -auto-resize buffer<CR>
-" denite git plugin
-nnoremap <silent> <leader>gl :<C-U>Denite gitlog<CR>
-nnoremap <silent> <leader>gs :<C-U>Denite gitstatus<CR>
-nnoremap <silent> <leader>gc :<C-U>Denite gitchanged<CR>
-nnoremap <silent> <leader>gb :<C-U>Denite gitbranch<CR>
 
 let g:polyglot_disabled = ['javascript', 'typescript', 'javascript.jsx', 'typescript.tsx']
 
@@ -311,6 +269,10 @@ nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
+function! LightlineGitBranch()
+  return get(g:, 'coc_git_status', '')
+endfunction
+
 let g:lightline = { }
 let g:lightline.colorscheme = 'powerline'
 let g:lightline = {
@@ -318,8 +280,8 @@ let g:lightline = {
             \ 'subseparator': { 'left': '', 'right': '' },
             \ }
 let g:lightline.component_function = {
-            \   'gitbranch': 'fugitive#head',
-            \   'cocstatus': 'coc#status'
+            \   'gitbranch': 'LightlineGitBranch',
+            \   'cocstatus': 'coc#status',
             \ }
 let g:lightline.tabline = {
             \   'left': [['buffers']],
@@ -342,7 +304,7 @@ let g:lightline.component_expand = {
 let g:lightline.active = {
             \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
             \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
-            \       ['lineinfo', 'percent', 'charvaluehex'], [ 'fileformat', 'fileencoding', 'filetype']],
+            \       ['lineinfo', 'percent', 'cocstatus'], [ 'fileformat', 'fileencoding', 'filetype']],
             \ }
 
 let g:lightline.component = {
