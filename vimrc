@@ -281,7 +281,6 @@ let g:lightline = {
             \ }
 let g:lightline.component_function = {
             \   'gitbranch': 'LightlineGitBranch',
-            \   'cocstatus': 'coc#status',
             \ }
 let g:lightline.tabline = {
             \   'left': [['buffers']],
@@ -304,7 +303,7 @@ let g:lightline.component_expand = {
 let g:lightline.active = {
             \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
             \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
-            \       ['lineinfo', 'percent', 'cocstatus'], [ 'fileformat', 'fileencoding', 'filetype']],
+            \       ['lineinfo', 'percent'], [ 'fileformat', 'fileencoding', 'filetype']],
             \ }
 
 let g:lightline.component = {
