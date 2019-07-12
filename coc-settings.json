@@ -2,6 +2,9 @@
     "diagnostic.level": "warning",
     "suggest.noselect": false,
     "diagnostic.warningSign": ">>",
+    "yaml.schemas": {
+        "kubernetes": "*.k8s.yaml"
+    },
     "list.insertMappings": {
         "<C-n>": "normal:j",
         "<C-p>": "normal:k"
