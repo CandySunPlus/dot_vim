@@ -83,7 +83,7 @@ Plug 'maximbaz/lightline-ale'
 Plug 'mgee/lightline-bufferline'
 Plug 'tomtom/tcomment_vim'
 Plug 'mattn/emmet-vim'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " for session
 Plug 'tpope/vim-obsession'
