@@ -35,5 +35,9 @@
             "filetypes": ["dart"]
         }
     },
-    "git.enableGutters": false
+    "git.enableGutters": false,
+    "snippets.extends": {
+        "cpp": ["c"],
+        "typescript": ["javascript"]
+    }
 }
