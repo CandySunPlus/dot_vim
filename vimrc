@@ -92,7 +92,8 @@ Plug 'tpope/vim-surround'
 " original repos on github
 Plug 'Lokaltog/vim-easymotion'
 " non github repos
-Plug 'danielwe/base16-vim'
+" Plug 'danielwe/base16-vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -118,10 +119,12 @@ if has('gui_macvim')
     set macligatures
 endif
 
-if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace=256
-    source ~/.vimrc_background
-endif
+colorscheme nord
+
+" if filereadable(expand("~/.vimrc_background"))
+"     let base16colorspace=256
+"     source ~/.vimrc_background
+" endif
 
 
 hi ALEError ctermbg=none cterm=undercurl
@@ -274,10 +277,10 @@ function! LightlineGitBranch()
 endfunction
 
 let g:lightline = { }
-let g:lightline.colorscheme = 'powerline'
 let g:lightline = {
             \ 'separator': { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' },
+            \ 'colorscheme': 'nord',
             \ }
 let g:lightline.component_function = {
             \   'gitbranch': 'LightlineGitBranch',
