@@ -1,6 +1,5 @@
 {
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-    "diagnostic.level": "warning",
     "suggest.noselect": false,
     "diagnostic.warningSign": ">>",
     "yaml.schemas": {
@@ -43,7 +42,5 @@
     },
     "tslint.packageManager": "yarn",
     "tslint.autoFixOnSave": true,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true
 }
