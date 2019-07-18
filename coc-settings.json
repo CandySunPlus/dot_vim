@@ -1,4 +1,5 @@
 {
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "diagnostic.level": "warning",
     "suggest.noselect": false,
     "diagnostic.warningSign": ">>",

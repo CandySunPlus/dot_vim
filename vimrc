@@ -74,12 +74,10 @@ Plug 'reisub0/hot-reload.vim'
 Plug 'mhinz/vim-signify'
 Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/matchit.zip'
-Plug 'w0rp/ale'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
 Plug 'mgee/lightline-bufferline'
 Plug 'tomtom/tcomment_vim'
 Plug 'mattn/emmet-vim'
@@ -126,8 +124,6 @@ colorscheme nord
 "     source ~/.vimrc_background
 " endif
 
-
-hi ALEError ctermbg=none cterm=undercurl
 
 vmap <C-c> "+y
 " Indent lines with cmd+[ and cmd+]
@@ -176,13 +172,15 @@ nmap <leader>g :<C-u>CocList grep<CR>
 nmap <leader>ld <Plug>(coc-definition)
 nmap <leader>lr <Plug>(coc-references)
 nmap <leader>ln <Plug>(coc-rename)
-nmap <leader>lf <Plug>(coc-format):ALEFix<cr>
+nmap <leader>lq <Plug>(coc-fix-current)<cr>
+nmap <leader>lf <Plug>(coc-format)<cr>
 vmap <leader>lf <Plug>(coc-format-selected)
 nmap <leader>li <Plug>(coc-implementation)
 nmap <leader>lt <Plug>(coc-type-definition)
 nmap <leader>la <Plug>(coc-codeaction)
+vmap <leader>la <Plug>(coc-codeaction-selected)
 nmap <leader>lo :<C-u>CocList outline<CR>
-nmap <leader>le :<C-u>CocList extensions<CR>
+nmap <leader>le :<C-u>CocList diagnostics<CR>
 nmap <leader>gs :<C-u>CocList gstatus<CR>
 nmap <leader>gb :<C-u>CocList branches<CR>
 nmap <leader>gc :<C-u>CocList commits<CR>
@@ -230,31 +228,6 @@ let g:neoformat_basic_format_retab = 1
 " Enable trimmming of trailing whitespace globally
 let g:neoformat_basic_format_trim = 1
 
-let g:ale_linters = {
-            \ 'javascript': ['eslint'],
-            \ 'typescript': ['tsserver', 'tslint'],
-            \ 'less': ['lessc'],
-            \ 'go': ['gobuild'],
-            \ 'html': [],
-            \ 'cpp': [],
-            \ 'c': [],
-            \ 'java': ['javac']
-            \}
-
-let g:ale_fixers = {
-            \ 'javascript': ['eslint'],
-            \ 'rust': ['rustfmt'],
-            \ 'typescript': ['tslint'],
-            \ 'go': ['goimports'],
-            \ 'dart': ['dartfmt']
-            \}
-
-let g:ale_less_lessc_use_global = 1
-let g:ale_javascript_eslint_options = '-c ~/.eslintrc.json'
-let g:ale_less_lessc_options = '--npm-import="prefix=~"'
-let g:ale_typescript_tslint_options = '--project ./'
-let g:ale_proto_protoc_gen_lint_options = '--proto_path=${GOPATH}/src'
-
 let g:lightline#bufferline#show_number  = 2
 let g:lightline#bufferline#shorten_path = 1
 let g:lightline#bufferline#unnamed = '[No Name]'
@@ -272,8 +245,25 @@ nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
-function! LightlineGitBranch()
-  return get(g:, 'coc_git_status', '')
+function! LightlineGitBranch() abort
+    return get(g:, 'coc_git_status', '')
+endfunction
+
+autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+
+function! LightlineCocWarnings() abort
+    let l:info = get(b:, 'coc_diagnostic_info', {})
+    return get(info, 'warning', 0) == 0 ? '' : printf('W: %d', info['warning'])
+endfunction
+
+function! LightlineCocErrors() abort
+    let l:info = get(b:, 'coc_diagnostic_info', {})
+    return get(info, 'error', 0) == 0 ? '' : printf('E: %d', info['error'])
+endfunction
+
+function! LightlineCocOk() abort
+    let l:info = get(b:, 'coc_diagnostic_info', {})
+    return (get(info, 'error', 0) == 0 && get(info, 'warning', 0) == 0) ? 'OK' : ''
 endfunction
 
 let g:lightline = { }
@@ -290,22 +280,20 @@ let g:lightline.tabline = {
             \   'right': [['close']],
             \ }
 let g:lightline.component_type = {
-            \   'linter_checking': 'left',
             \   'linter_warnings': 'warning',
             \   'linter_errors': 'error',
             \   'linter_ok': 'left',
             \   'buffers': 'tabsel',
             \ }
 let g:lightline.component_expand = {
-            \   'linter_checking': 'lightline#ale#checking',
-            \   'linter_warnings': 'lightline#ale#warnings',
-            \   'linter_errors': 'lightline#ale#errors',
-            \   'linter_ok': 'lightline#ale#ok',
             \   'buffers': 'lightline#bufferline#buffers',
+            \   'linter_warnings': 'LightlineCocWarnings',
+            \   'linter_errors': 'LightlineCocErrors',
+            \   'linter_ok': 'LightlineCocOk',
             \ }
 let g:lightline.active = {
             \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
-            \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+            \   'right': [[ 'linter_errors', 'linter_warnings', 'linter_ok' ],
             \       ['lineinfo', 'percent'], [ 'fileformat', 'fileencoding', 'filetype']],
             \ }
 
