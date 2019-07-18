@@ -172,7 +172,6 @@ nmap <leader>g :<C-u>CocList grep<CR>
 nmap <leader>ld <Plug>(coc-definition)
 nmap <leader>lr <Plug>(coc-references)
 nmap <leader>ln <Plug>(coc-rename)
-nmap <leader>lq <Plug>(coc-fix-current)<cr>
 nmap <leader>lf <Plug>(coc-format)<cr>
 vmap <leader>lf <Plug>(coc-format-selected)
 nmap <leader>li <Plug>(coc-implementation)
