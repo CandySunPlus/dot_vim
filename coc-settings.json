@@ -42,5 +42,5 @@
     },
     "tslint.packageManager": "yarn",
     "tslint.autoFixOnSave": true,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
