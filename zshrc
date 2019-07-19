@@ -4,6 +4,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/niksun/.oh-my-zsh"
 
+ZLE_RPROMPT_INDENT=0
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git)
