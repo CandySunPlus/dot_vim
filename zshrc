@@ -46,9 +46,3 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 # for proxy
 alias proxy="export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087"
 alias unproxy="unset http_proxy;unset https_proxy"
-
-# for docker
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.64.2:2376"
-export DOCKER_CERT_PATH="/Users/niksun/.docker/machine/machines/xhyve"
-export DOCKER_MACHINE_NAME="xhyve"
