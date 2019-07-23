@@ -19,6 +19,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 export XDG_CONFIG_HOME=~/.config
 export CURL_CA_BUNDLE=/etc/ssl/cert.pem
 export GOPATH="/Users/niksun/development/golang"
+export GO111MODULE=on
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
 
