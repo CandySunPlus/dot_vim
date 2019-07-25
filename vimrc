@@ -132,10 +132,10 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
-" colorscheme onehalfdark
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'palenight'
-colorscheme material
+colorscheme onehalfdark
+" let g:material_terminal_italics = 1
+" let g:material_theme_style = 'palenight'
+" colorscheme material
 
 vmap <C-c> "+y
 " Indent lines with cmd+[ and cmd+]
@@ -286,7 +286,7 @@ let g:lightline = { }
 let g:lightline = {
             \ 'separator': { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' },
-            \ 'colorscheme': 'material_vim',
+            \ 'colorscheme': 'onehalfdark',
             \ }
 let g:lightline.component_function = {
             \   'gitbranch': 'GitBranch',
