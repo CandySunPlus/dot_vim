@@ -255,17 +255,17 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 function! LightlineCocWarnings() abort
     let l:info = get(b:, 'coc_diagnostic_info', {})
-    return get(info, 'warning', 0) == 0 ? '' : printf('W: %d', info['warning'])
+    return get(info, 'warning', 0) == 0 ? '' : printf(' %d', info['warning'])
 endfunction
 
 function! LightlineCocErrors() abort
     let l:info = get(b:, 'coc_diagnostic_info', {})
-    return get(info, 'error', 0) == 0 ? '' : printf('E: %d', info['error'])
+    return get(info, 'error', 0) == 0 ? '' : printf(' %d', info['error'])
 endfunction
 
 function! LightlineCocOk() abort
     let l:info = get(b:, 'coc_diagnostic_info', {})
-    return (get(info, 'error', 0) == 0 && get(info, 'warning', 0) == 0) ? 'OK' : ''
+    return (get(info, 'error', 0) == 0 && get(info, 'warning', 0) == 0) ? '' : ''
 endfunction
 
 function! GitBranch() abort
@@ -300,12 +300,13 @@ let g:lightline.component_expand = {
 let g:lightline.active = {
             \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
             \   'right': [[ 'linter_errors', 'linter_warnings', 'linter_ok' ],
-            \       ['lineinfo', 'percent'], [ 'ffsymbol', 'fileencoding', 'ftsymbol']],
+            \       ['ffsymbol', 'ftsymbol', 'lineinfo']],
             \ }
 
 let g:lightline.component = {
-            \   'ffsymbol': '%{WebDevIconsGetFileFormatSymbol()}',
+            \   'ffsymbol': '%{WebDevIconsGetFileFormatSymbol()} %{&fenc!=#""?&fenc:&enc}',
             \   'ftsymbol': '%{WebDevIconsGetFileTypeSymbol()}',
+            \   'lineinfo': ' %l:%c %p%%'
             \ }
 
 " Vim Run Code

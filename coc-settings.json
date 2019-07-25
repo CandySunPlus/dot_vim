@@ -1,6 +1,8 @@
 {
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-    "diagnostic.warningSign": ">>",
+    "diagnostic.infoSign": "\uf129",
+    "diagnostic.warningSign": "\uf526",
+    "diagnostic.errorSign": "\uf656",
     "yaml.schemas": {
         "kubernetes": "*.k8s.yaml"
     },
