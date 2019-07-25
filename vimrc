@@ -132,7 +132,7 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
-colorscheme onehalfdark
+colorscheme nord
 " let g:material_terminal_italics = 1
 " let g:material_theme_style = 'palenight'
 " colorscheme material
@@ -286,7 +286,7 @@ let g:lightline = { }
 let g:lightline = {
             \ 'separator': { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' },
-            \ 'colorscheme': 'onehalfdark',
+            \ 'colorscheme': 'nord',
             \ }
 let g:lightline.component_function = {
             \   'gitbranch': 'GitBranch',
