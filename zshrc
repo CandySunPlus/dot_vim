@@ -20,7 +20,7 @@ export XDG_CONFIG_HOME=~/.config
 export CURL_CA_BUNDLE=/etc/ssl/cert.pem
 export GOPATH="/Users/niksun/development/golang"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
 # for python virtualenv wrapper
 export WORKON_HOME=~/.opt/envs
