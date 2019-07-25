@@ -1,6 +1,5 @@
 {
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-    "suggest.noselect": false,
     "diagnostic.warningSign": ">>",
     "yaml.schemas": {
         "kubernetes": "*.k8s.yaml"

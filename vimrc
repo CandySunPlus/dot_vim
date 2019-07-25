@@ -47,6 +47,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-scriptease'
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'vimlab/split-term.vim'
 Plug 'Konfekt/FastFold'
@@ -87,6 +88,7 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-obsession'
 Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 " original repos on github
 Plug 'Lokaltog/vim-easymotion'
 " non github repos
@@ -187,6 +189,11 @@ nmap <leader>gc :<C-u>CocList commits<CR>
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
 
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+
+
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
 let g:polyglot_disabled = ['javascript', 'typescript', 'javascript.jsx', 'typescript.tsx']
@@ -231,8 +238,8 @@ let g:lightline#bufferline#show_number  = 2
 let g:lightline#bufferline#shorten_path = 1
 let g:lightline#bufferline#unnamed = '[No Name]'
 let g:lightline#bufferline#number_map = {
-            \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
-            \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
+            \ 0: '', 1: '', 2: '', 3: '', 4: '',
+            \ 5: '', 6: '', 7: '', 8: '', 9: ''}
 nmap <Leader>1 <Plug>lightline#bufferline#go(1)
 nmap <Leader>2 <Plug>lightline#bufferline#go(2)
 nmap <Leader>3 <Plug>lightline#bufferline#go(3)
@@ -243,10 +250,6 @@ nmap <Leader>7 <Plug>lightline#bufferline#go(7)
 nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
-
-function! LightlineGitBranch() abort
-    return get(g:, 'coc_git_status', '')
-endfunction
 
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
@@ -265,6 +268,10 @@ function! LightlineCocOk() abort
     return (get(info, 'error', 0) == 0 && get(info, 'warning', 0) == 0) ? 'OK' : ''
 endfunction
 
+function! GitBranch() abort
+    return "" != fugitive#head() ? ' '.fugitive#head() : ''
+endfunction
+
 let g:lightline = { }
 let g:lightline = {
             \ 'separator': { 'left': '', 'right': '' },
@@ -272,7 +279,7 @@ let g:lightline = {
             \ 'colorscheme': 'nord',
             \ }
 let g:lightline.component_function = {
-            \   'gitbranch': 'LightlineGitBranch',
+            \   'gitbranch': 'GitBranch',
             \ }
 let g:lightline.tabline = {
             \   'left': [['buffers']],
