@@ -300,11 +300,12 @@ let g:lightline.component_expand = {
 let g:lightline.active = {
             \   'left':[[ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'filename', 'modified' ]],
             \   'right': [[ 'linter_errors', 'linter_warnings', 'linter_ok' ],
-            \       ['lineinfo', 'percent'], [ 'fileformat', 'fileencoding', 'filetype']],
+            \       ['lineinfo', 'percent'], [ 'ffsymbol', 'fileencoding', 'ftsymbol']],
             \ }
 
 let g:lightline.component = {
-            \   'charvaluehex': '0x%B',
+            \   'ffsymbol': '%{WebDevIconsGetFileFormatSymbol()}',
+            \   'ftsymbol': '%{WebDevIconsGetFileTypeSymbol()}',
             \ }
 
 " Vim Run Code
