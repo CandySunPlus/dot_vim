@@ -181,6 +181,7 @@ nmap <leader>li <Plug>(coc-implementation)
 nmap <leader>lt <Plug>(coc-type-definition)
 nmap <leader>la <Plug>(coc-codeaction)
 vmap <leader>la <Plug>(coc-codeaction-selected)
+nmap <leader>ls :<C-u>call CocAction('doHover')<CR>
 nmap <leader>lo :<C-u>CocList outline<CR>
 nmap <leader>le :<C-u>CocList diagnostics<CR>
 nmap <leader>gs :<C-u>CocList gstatus<CR>
