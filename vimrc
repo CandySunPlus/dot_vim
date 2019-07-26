@@ -62,11 +62,6 @@ Plug 'mbbill/undotree'
 Plug 'editorconfig/editorconfig-vim'
 " Input Method
 Plug 'CandySunPlus/CY_erbi'
-" For all language
-Plug 'sheerun/vim-polyglot'
-Plug 'othree/yajs.vim'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'posva/vim-vue'
 " Flutter
 Plug 'reisub0/hot-reload.vim'
 " Addition
@@ -93,6 +88,11 @@ Plug 'Lokaltog/vim-easymotion'
 " Plug 'danielwe/base16-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
+" For all language
+Plug 'sheerun/vim-polyglot'
+Plug 'othree/yajs.vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
