@@ -27,7 +27,6 @@ set shortmess+=c
 set noerrorbells
 set showcmd
 set showmode
-set completeopt=menu,menuone,noinsert
 set nu
 set rnu
 set numberwidth=2
@@ -47,7 +46,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-scriptease'
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
-Plug 'ryanoasis/vim-devicons'
 
 Plug 'vimlab/split-term.vim'
 Plug 'Konfekt/FastFold'
@@ -94,6 +92,7 @@ Plug 'Lokaltog/vim-easymotion'
 " non github repos
 " Plug 'danielwe/base16-vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -190,10 +189,6 @@ nmap <leader>gc :<C-u>CocList commits<CR>
 
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
-
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'

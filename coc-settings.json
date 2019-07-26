@@ -3,6 +3,36 @@
     "diagnostic.infoSign": "\uf129",
     "diagnostic.warningSign": "\uf526",
     "diagnostic.errorSign": "\uf656",
+    "suggest.autoTrigger": "always",
+    "suggest.noselect": false,
+    "suggest.triggerAfterInsertEnter": true,
+    "suggest.completionItemKindLabels": {
+        "function": "\uf794",
+        "method": "\uf6a6",
+        "variable": "\uf71b",
+        "constant": "\uf8ff",
+        "struct": "\ufb44",
+        "class": "\uf0e8",
+        "interface": "\ufa52",
+        "text": "\ue612",
+        "enum": "\uf435",
+        "enumMember": "\uf02b",
+        "module": "\uf668",
+        "color": "\ue22b",
+        "property": "\ufab6",
+        "field": "\uf93d",
+        "unit": "\uf475",
+        "file": "\uf471",
+        "value": "\uf8a3",
+        "event": "\ufacd",
+        "folder": "\uf115",
+        "keyword": "\uf893",
+        "snippet": "\uf64d",
+        "operator": "\uf915",
+        "reference": "\uf87a",
+        "typeParameter": "\uf278",
+        "default": "\uf29c"
+    },
     "yaml.schemas": {
         "kubernetes": "*.k8s.yaml"
     },
@@ -14,13 +44,32 @@
     "languageserver": {
         "golang": {
             "command": "gopls",
-            "filetypes": ["go"],
-            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"]
+            "filetypes": [
+                "go"
+            ],
+            "rootPatterns": [
+                "go.mod",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ]
         },
         "ccls": {
             "command": "ccls",
-            "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "filetypes": [
+                "c",
+                "cpp",
+                "cuda",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
             "initializationOptions": {
                 "cache": {
                     "directory": ".ccls-cache"
@@ -29,17 +78,25 @@
         },
         "swift": {
             "command": "sourcekit-lsp",
-            "filetypes": ["swift"]
+            "filetypes": [
+                "swift"
+            ]
         },
         "dart": {
             "command": "dart_language_server",
-            "filetypes": ["dart"]
+            "filetypes": [
+                "dart"
+            ]
         }
     },
     "git.enableGutters": false,
     "snippets.extends": {
-        "cpp": ["c"],
-        "typescript": ["javascript"]
+        "cpp": [
+            "c"
+        ],
+        "typescript": [
+            "javascript"
+        ]
     },
     "tslint.packageManager": "yarn",
     "tslint.autoFixOnSave": true,
