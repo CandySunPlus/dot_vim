@@ -87,6 +87,17 @@
             "filetypes": [
                 "dart"
             ]
+        },
+        "dockerfile": {
+            "command": "docker-langserver",
+            "filetypes": ["Dockerfile"],
+            "args": ["--stdio"]
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "filetypes": ["sh"],
+            "args": ["start"],
+            "ignoredRootPaths": ["~"]
         }
     },
     "git.enableGutters": false,
