@@ -22,11 +22,6 @@ export GOPATH="/Users/niksun/development/golang"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
-# for python virtualenv wrapper
-export WORKON_HOME=~/.opt/envs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
-
 # for nodejs
 export NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 export ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
@@ -48,3 +43,10 @@ alias proxy="export http_proxy=http://127.0.0.1:1087;export https_proxy=http://1
 alias unproxy="unset http_proxy;unset https_proxy"
 
 export DOCKER_HOST=ssh://root@119.27.180.231
+
+# for python virtual ENV
+export VIRTUALENVWRAPPER_PYTHON=`which python3`
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/development/python
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
