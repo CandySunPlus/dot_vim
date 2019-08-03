@@ -111,10 +111,8 @@
     },
     "tslint.packageManager": "yarn",
     "tslint.autoFixOnSave": true,
-    "tsserver.log": "verbose",
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
     "python.jediEnabled": false,
-    "python.venvPath": "~/.opt/envs",
     "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
     "python.linting.pylintPath": "/usr/local/bin/pylint"
 }
