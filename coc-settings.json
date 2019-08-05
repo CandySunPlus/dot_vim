@@ -98,6 +98,11 @@
             "filetypes": ["sh"],
             "args": ["start"],
             "ignoredRootPaths": ["~"]
+        },
+        "metals": {
+            "command": "metals-vim",
+            "rootPatterns": ["build.sbt"],
+            "filetypes": ["scala", "sbt"]
         }
     },
     "git.enableGutters": false,
