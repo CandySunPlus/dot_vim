@@ -82,6 +82,12 @@
                 "swift"
             ]
         },
+        "kotlin": {
+            "command": "kotlin-language-server",
+            "filetypes": [
+                "kotlin"
+            ]
+        },
         "dart": {
             "command": "dart_language_server",
             "filetypes": [
@@ -122,7 +128,8 @@
     "tslint.packageManager": "yarn",
     "tslint.autoFixOnSave": true,
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-    "python.jediEnabled": false,
     "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
-    "python.linting.pylintPath": "/usr/local/bin/pylint"
+    "python.linting.pylintPath": "/usr/local/bin/pylint",
+    "python.jediEnabled": false,
+    "java.errors.incompleteClasspath.severity": "ignore"
 }

@@ -19,7 +19,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 export XDG_CONFIG_HOME=~/.config
 export CURL_CA_BUNDLE=/etc/ssl/cert.pem
 export GOPATH="/Users/niksun/development/golang"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
+export JAVA_HOME=`/usr/libexec/java_home`
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
 # for nodejs
@@ -48,5 +48,4 @@ export DOCKER_HOST=ssh://root@119.27.180.231
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/development/python
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+source /usr/local/bin/virtualenvwrapper.sh
