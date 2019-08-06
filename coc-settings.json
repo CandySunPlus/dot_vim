@@ -102,7 +102,12 @@
         "metals": {
             "command": "metals-vim",
             "rootPatterns": ["build.sbt"],
-            "filetypes": ["scala", "sbt"]
+            "filetypes": ["scala", "sbt"],
+            "settings": {
+                "metals": {
+                    "sbt-script": "/usr/local/bin/sbt"
+                }
+            }
         }
     },
     "git.enableGutters": false,
