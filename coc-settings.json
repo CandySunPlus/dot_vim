@@ -131,5 +131,9 @@
     "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
     "python.linting.pylintPath": "/usr/local/bin/pylint",
     "python.jediEnabled": false,
-    "java.errors.incompleteClasspath.severity": "ignore"
+    "java.jdt.ls.vmargs": "-javaagent:/Users/niksun/.opt/lombok.jar -Xbootclasspath/a:/Users/niksun/.opt/lombok.jar",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.import.maven.enabled": true,
+    "java.import.gradle.enabled": true,
+    "java.maven.downloadSources": true
 }
