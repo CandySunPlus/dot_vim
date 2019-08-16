@@ -52,7 +52,13 @@
                 ".vim/",
                 ".git/",
                 ".hg/"
-            ]
+            ],
+            "settings": {
+                "gopls": {
+                    "usePlaceholders": true,
+                    "wantCompletionDocumentation": true
+                }
+            }
         },
         "ccls": {
             "command": "ccls",

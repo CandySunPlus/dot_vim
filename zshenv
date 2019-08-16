@@ -46,7 +46,6 @@ export PKG_CONFIG_PATH="/usr/local/opt/protobuf@3.6/lib/pkgconfig:$PKG_CONFIG_PA
 path=(
     /Users/niksun/.cargo/bin
     /Users/niksun/.yarn/bin
-    /Users/niksun/development/golang/bin
     /Users/niksun/.opt/bin
     /Users/niksun/.go/bin
     /Users/niksun/.pub-cache/bin

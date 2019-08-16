@@ -18,7 +18,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 # common
 export XDG_CONFIG_HOME=~/.config
 export CURL_CA_BUNDLE=/etc/ssl/cert.pem
-export GOPATH="/Users/niksun/development/golang"
+export GOPATH="/Users/niksun/.go"
 export JAVA_HOME=`/usr/libexec/java_home`
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
