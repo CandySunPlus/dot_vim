@@ -44,11 +44,11 @@ export CPPFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/opt/protobuf@3.6/inc
 export PKG_CONFIG_PATH="/usr/local/opt/protobuf@3.6/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 path=(
-    /Users/niksun/.cargo/bin
-    /Users/niksun/.yarn/bin
-    /Users/niksun/.opt/bin
-    /Users/niksun/.go/bin
-    /Users/niksun/.pub-cache/bin
+    $HOME/.cargo/bin
+    $HOME/.yarn/bin
+    $HOME/.opt/bin
+    $HOME/.go/bin
+    $HOME/.pub-cache/bin
     /usr/local/lib/ruby/gems/2.5.0/bin
     /usr/local/opt/llvm/bin
     /usr/local/opt/go/libexec/bin

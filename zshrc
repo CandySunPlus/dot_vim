@@ -45,7 +45,9 @@ alias unproxy="unset http_proxy; unset https_proxy; "
 export DOCKER_HOST=ssh://root@119.27.180.231
 
 # for python virtual ENV
-export VIRTUALENVWRAPPER_PYTHON=`which python3`
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/development/python
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
+    export VIRTUALENVWRAPPER_PYTHON=`which python3`
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/development/python
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
