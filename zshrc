@@ -42,7 +42,7 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 alias proxy="export http_proxy=http://127.0.0.1:1087; export https_proxy=http://127.0.0.1:1087; "
 alias unproxy="unset http_proxy; unset https_proxy; "
 
-export DOCKER_HOST=ssh://root@119.27.180.231
+export DOCKER_HOST=ssh://Cloud
 
 # for python virtual ENV
 if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
