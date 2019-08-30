@@ -90,9 +90,6 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
 " For all language
 Plug 'sheerun/vim-polyglot'
-Plug 'othree/yajs.vim'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -198,8 +195,6 @@ let g:table_mode_header_fillchar="="
 
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
-
-let g:polyglot_disabled = ['javascript', 'typescript', 'javascript.jsx', 'typescript.tsx']
 
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
 let g:JavaComplete_Home = $HOME . '/.vim/plugged/vim-javacomplete2'
