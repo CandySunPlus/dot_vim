@@ -127,6 +127,7 @@ endif
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 
+let g:webdevicons_conceal_nerdtree_brackets = 0
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_italic = 1
