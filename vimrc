@@ -97,6 +97,7 @@ call plug#end()
 " autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
 " autocmd FileType make setlocal noexpandtab
 autocmd FileType vue syntax sync fromstart
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 au BufRead,BufNewFile *.wxml set filetype=html
 au BufRead,BufNewFile *.mina set filetype=vue
@@ -122,6 +123,9 @@ endif
 " if (has('termguicolors'))
 "   set termguicolors
 " endif
+
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
