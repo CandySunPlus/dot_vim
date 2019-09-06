@@ -68,7 +68,6 @@ Plug 'reisub0/hot-reload.vim'
 Plug 'mhinz/vim-signify'
 Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/matchit.zip'
-Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
@@ -348,7 +347,6 @@ let g:UltiSnipsSnippetDirectories = ["UltiSnips", $HOME."/.snips"]
 let g:UltiSnipsExpandTrigger = "<c-j>"
 
 let g:javascript_enable_domhtmlcss = 1
-let g:ackprg = 'ag --nogroup --nocolor --column --hidden'
 
 let g:indentLine_char = "┆"
 let g:indentLine_first_char = "┆"
