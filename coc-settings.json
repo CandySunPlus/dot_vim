@@ -55,7 +55,8 @@
             "settings": {
                 "gopls": {
                     "usePlaceholders": true,
-                    "wantCompletionDocumentation": true
+                    "completeUnimported": true,
+                    "completionDocumentation": true
                 }
             }
         },
@@ -136,6 +137,7 @@
     "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
     "python.linting.pylintPath": "/usr/local/bin/pylint",
     "python.jediEnabled": false,
+    "python.analysis.downloadChannel": "daily",
     "java.jdt.ls.vmargs": "-javaagent:/Users/niksun/.opt/lombok.jar -Xbootclasspath/a:/Users/niksun/.opt/lombok.jar",
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.import.maven.enabled": true,
