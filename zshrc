@@ -7,7 +7,7 @@ export ZSH="/Users/niksun/.oh-my-zsh"
 ZLE_RPROMPT_INDENT=0
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting vi-mode)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.p10k
