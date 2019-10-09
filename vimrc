@@ -202,29 +202,31 @@ let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
 
 " autocmd FileType c,cpp,objc,objcpp setl omnifunc=clang_complete#ClangComplete
 let g:JavaComplete_Home = $HOME . '/.vim/plugged/vim-javacomplete2'
-let g:neoformat_html_htmlbeautify = {
-            \ 'exe': 'html-beautify',
-            \'args':['-A force','-w 100','-U a,abbr,area,audio,b,bdi,bdo,br,button,canvas,cite,code,data,datalist,del,dfn,em,embed,i,iframe,img,input,ins,kbd,keygen,label,map,mark,math,meter,noscript,object,output,progress,q,ruby,s,samp,select,small,span,strong,sub,sup,svg,textarea,time,u,var,video,wbr,text,acronym,address,big,dt,ins,strike,tt']
-            \ }
-let g:neoformat_typescript_prettier = {
-            \ 'exe': 'prettier',
-            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--parser typescript'],
-            \ 'stdin': 1,
-            \ }
+" let g:neoformat_html_htmlbeautify = {
+"             \ 'exe': 'html-beautify',
+"             \'args':['-A force','-w 100','-U a,abbr,area,audio,b,bdi,bdo,br,button,canvas,cite,code,data,datalist,del,dfn,em,embed,i,iframe,img,input,ins,kbd,keygen,label,map,mark,math,meter,noscript,object,output,progress,q,ruby,s,samp,select,small,span,strong,sub,sup,svg,textarea,time,u,var,video,wbr,text,acronym,address,big,dt,ins,strike,tt']
+"             \ }
+" let g:neoformat_typescript_prettier = {
+"             \ 'exe': 'prettier',
+"             \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--parser typescript'],
+"             \ 'stdin': 1,
+"             \ }
+"
+" let g:neoformat_javascript_prettier = {
+"             \ 'exe': 'prettier',
+"             \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
+"             \ 'stdin': 1,
+"             \ }
+"
+" let g:neoformat_yaml_prettier = {
+"             \ 'exe': 'prettier',
+"             \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--parser yaml', '--tab-width 2'],
+"             \ 'stdin': 1,
+"             \ }
 
-let g:neoformat_javascript_prettier = {
-            \ 'exe': 'prettier',
-            \ 'args': ['--stdin', '--stdin-filepath', '%:p'],
-            \ 'stdin': 1,
-            \ }
-
-let g:neoformat_yaml_prettier = {
-            \ 'exe': 'prettier',
-            \ 'args': ['--stdin', '--stdin-filepath', '%:p', '--parser yaml', '--tab-width 2'],
-            \ 'stdin': 1,
-            \ }
-
-let g:neoformat_enabled_html = ['htmlbeautify']
+let g:neoformat_enabled_html = ['prettier']
+let g:neoformat_enabled_less = ['prettier']
+let g:neoformat_enabled_scss = ['prettier']
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_enabled_typescript = ['prettier']
 let g:neoformat_enabled_yaml = ['prettier']
