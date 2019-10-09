@@ -34,7 +34,8 @@
         "default": "\uf29c"
     },
     "yaml.schemas": {
-        "kubernetes": "*.k8s.yaml"
+        "kubernetes": "*.k8s.yaml",
+        "http://json.schemastore.org/drone": "*drone.yml"
     },
     "list.insertMappings": {
         "<C-n>": "normal:j",

@@ -31,12 +31,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # for drone
-export DRONE_SERVER=https://drone.wehaowu.com
-export DRONE_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXh0Ijoic3VuZmVuZ21pbmciLCJ0eXBlIjoidXNlciJ9.upYOCG8lrx1cNb7-FTG_zNyHjaW0hQcookLplEARJxM
+export DRONE_SERVER=https://cicd.wehaowu.com
+export DRONE_TOKEN=55f24eb3d61ef6ac5e83d550178638dc
 
 # for flutter
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+# for nnn
+export NNN_USE_EDITOR=1
 
 # for proxy
 alias proxy="export http_proxy=http://127.0.0.1:1087; export https_proxy=http://127.0.0.1:1087; "
