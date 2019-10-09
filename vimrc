@@ -177,7 +177,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>p :<C-u>CocList files<CR>
 nmap <leader>o :<C-u>CocList mru<CR>
 nmap <leader>b :<C-u>CocList buffers<CR>
-nmap <leader>g :<C-u>CocList grep<CR>
+nmap <leader>g :<C-u>CocList --auto-preview --interactive grep<CR>
 nmap <leader>ld <Plug>(coc-definition)
 nmap <leader>lr <Plug>(coc-references)
 nmap <leader>ln <Plug>(coc-rename)
