@@ -81,6 +81,7 @@ Plug 'tpope/vim-obsession'
 Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'jreybert/vimagit'
 " original repos on github
 Plug 'Lokaltog/vim-easymotion'
 " non github repos
@@ -177,7 +178,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>p :<C-u>CocList files<CR>
 nmap <leader>o :<C-u>CocList mru<CR>
 nmap <leader>b :<C-u>CocList buffers<CR>
-nmap <leader>g :<C-u>CocList --auto-preview --interactive grep<CR>
+nmap <leader>f :<C-u>CocList grep<CR>
 nmap <leader>ld <Plug>(coc-definition)
 nmap <leader>lr <Plug>(coc-references)
 nmap <leader>ln <Plug>(coc-rename)
@@ -190,7 +191,7 @@ vmap <leader>la <Plug>(coc-codeaction-selected)
 nmap <leader>ls :<C-u>call CocAction('doHover')<CR>
 nmap <leader>lo :<C-u>CocList outline<CR>
 nmap <leader>le :<C-u>CocList diagnostics<CR>
-nmap <leader>gs :<C-u>CocList gstatus<CR>
+nmap <leader>gg :<C-u>Magit<CR>
 nmap <leader>gb :<C-u>CocList branches<CR>
 nmap <leader>gc :<C-u>CocList commits<CR>
 

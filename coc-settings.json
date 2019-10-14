@@ -3,6 +3,7 @@
     "diagnostic.infoSign": "\uf129",
     "diagnostic.warningSign": "\uf526",
     "diagnostic.errorSign": "\uf656",
+    "suggest.enablePreview": true,
     "suggest.autoTrigger": "always",
     "suggest.noselect": false,
     "suggest.triggerAfterInsertEnter": true,
