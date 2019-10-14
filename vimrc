@@ -142,13 +142,13 @@ nmap <D-[> <<
 vmap <D-[> <gv
 vmap <D-]> >gv
 " leader keys
-nmap <leader>/ :TComment<cr>
-vmap <leader>/ :TComment<cr>gv
+nmap <leader>/ :<C-U>TComment<cr>
+vmap <leader>/ :<C-U>TComment<cr>gv
 nmap <leader>k :<C-U>NERDTreeToggle<cr>
 nmap <leader>u :<C-U>UndotreeToggle<cr>
 nmap <leader>il :<C-U>IndentLinesReset<cr>
-nmap <leader>tm :TableModeToggle<cr>
-nmap <leader>ff :Neoformat<CR>
+nmap <leader>tm :<C-U>TableModeToggle<cr>
+nmap <leader>ff :<C-U>Neoformat<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -174,26 +174,28 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd User VimagitEnterCommit startinsert
 
-nmap <leader>p :<C-u>CocList files<CR>
-nmap <leader>o :<C-u>CocList mru<CR>
-nmap <leader>b :<C-u>CocList buffers<CR>
-nmap <leader>f :<C-u>CocList grep<CR>
+
+nmap <leader>g :<C-U>call magit#show_magit('h')<CR>
+nmap <leader>p :<C-U>CocList files<CR>
+nmap <leader>o :<C-U>CocList mru<CR>
+nmap <leader>b :<C-U>CocList buffers<CR>
+nmap <leader>f :<C-U>CocList grep<CR>
 nmap <leader>ld <Plug>(coc-definition)
 nmap <leader>lr <Plug>(coc-references)
 nmap <leader>ln <Plug>(coc-rename)
-nmap <leader>lf <Plug>(coc-format)<cr>
+nmap <leader>lf <Plug>(coc-format)
 vmap <leader>lf <Plug>(coc-format-selected)
 nmap <leader>li <Plug>(coc-implementation)
 nmap <leader>lt <Plug>(coc-type-definition)
 nmap <leader>la <Plug>(coc-codeaction)
 vmap <leader>la <Plug>(coc-codeaction-selected)
-nmap <leader>ls :<C-u>call CocAction('doHover')<CR>
-nmap <leader>lo :<C-u>CocList outline<CR>
-nmap <leader>le :<C-u>CocList diagnostics<CR>
-nmap <leader>gg :<C-u>Magit<CR>
-nmap <leader>gb :<C-u>CocList branches<CR>
-nmap <leader>gc :<C-u>CocList commits<CR>
+nmap <leader>ls :<C-U>call CocAction('doHover')<CR>
+nmap <leader>lo :<C-U>CocList outline<CR>
+nmap <leader>le :<C-U>CocList diagnostics<CR>
+nmap <leader>gb :<C-U>CocList branches<CR>
+nmap <leader>gc :<C-U>CocList commits<CR>
 
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
