@@ -177,7 +177,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 autocmd User VimagitEnterCommit startinsert
 
 
-nmap <leader>g :<C-U>call magit#show_magit('h')<CR>
+nmap <silent> <leader>g :<C-U>call magit#show_magit('h')<CR>
 nmap <leader>p :<C-U>CocList files<CR>
 nmap <leader>o :<C-U>CocList mru<CR>
 nmap <leader>b :<C-U>CocList buffers<CR>
