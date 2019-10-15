@@ -41,5 +41,9 @@ yabai -m config right_padding                20
 yabai -m config window_gap                   10
 
 # rule
+yabai -m rule --add app="^系统偏好设置$" manage=off
+yabai -m rule --add app="^微信$" manage=off
+yabai -m rule --add app="^企业微信$" manage=off
+yabai -m rule --add app="^QQ音乐$" manage=off
 
 echo "yabai configuration loaded.."
