@@ -143,7 +143,7 @@ vnoremap <silent> <D-[> <gv
 vnoremap <silent> <D-]> >gv
 " leader keys
 nmap <silent> <leader>/ :<C-U>TComment<cr>
-vmap <silent> <leader>/ :<C-U>TComment<cr>gv
+vmap <silent> <leader>/ :TComment<cr>gv
 nmap <silent> <leader>k :<C-U>NERDTreeToggle<cr>
 nmap <silent> <leader>u :<C-U>UndotreeToggle<cr>
 nmap <silent> <leader>il :<C-U>IndentLinesReset<cr>

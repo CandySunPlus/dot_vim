@@ -45,6 +45,7 @@ export NNN_USE_EDITOR=1
 alias proxy="export http_proxy=http://127.0.0.1:1087; export https_proxy=http://127.0.0.1:1087; "
 alias unproxy="unset http_proxy; unset https_proxy; "
 alias ls="exa"
+alias kssh="kitty +kitten ssh"
 
 export DOCKER_HOST=ssh://Cloud
 
