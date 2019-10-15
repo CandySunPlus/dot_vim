@@ -135,20 +135,20 @@ let g:nord_italic_comments = 1
 
 colorscheme nord
 
-vmap <C-c> "+y
+vnoremap <silent> <C-c> "+y
 " Indent lines with cmd+[ and cmd+]
-nmap <D-]> >>
-nmap <D-[> <<
-vmap <D-[> <gv
-vmap <D-]> >gv
+nnoremap <silent> <D-]> >>
+nnoremap <silent> <D-[> <<
+vnoremap <silent> <D-[> <gv
+vnoremap <silent> <D-]> >gv
 " leader keys
-nmap <leader>/ :<C-U>TComment<cr>
-vmap <leader>/ :<C-U>TComment<cr>gv
-nmap <leader>k :<C-U>NERDTreeToggle<cr>
-nmap <leader>u :<C-U>UndotreeToggle<cr>
-nmap <leader>il :<C-U>IndentLinesReset<cr>
-nmap <leader>tm :<C-U>TableModeToggle<cr>
-nmap <leader>ff :<C-U>Neoformat<CR>
+nmap <silent> <leader>/ :<C-U>TComment<cr>
+vmap <silent> <leader>/ :<C-U>TComment<cr>gv
+nmap <silent> <leader>k :<C-U>NERDTreeToggle<cr>
+nmap <silent> <leader>u :<C-U>UndotreeToggle<cr>
+nmap <silent> <leader>il :<C-U>IndentLinesReset<cr>
+nmap <silent> <leader>tm :<C-U>TableModeToggle<cr>
+nmap <silent> <leader>ff :<C-U>Neoformat<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -178,24 +178,24 @@ autocmd User VimagitEnterCommit startinsert
 
 
 nmap <silent> <leader>g :<C-U>call magit#show_magit('h')<CR>
-nmap <leader>p :<C-U>CocList files<CR>
-nmap <leader>o :<C-U>CocList mru<CR>
-nmap <leader>b :<C-U>CocList buffers<CR>
-nmap <leader>f :<C-U>CocList grep<CR>
-nmap <leader>ld <Plug>(coc-definition)
-nmap <leader>lr <Plug>(coc-references)
-nmap <leader>ln <Plug>(coc-rename)
-nmap <leader>lf <Plug>(coc-format)
-vmap <leader>lf <Plug>(coc-format-selected)
-nmap <leader>li <Plug>(coc-implementation)
-nmap <leader>lt <Plug>(coc-type-definition)
-nmap <leader>la <Plug>(coc-codeaction)
-vmap <leader>la <Plug>(coc-codeaction-selected)
-nmap <leader>ls :<C-U>call CocAction('doHover')<CR>
-nmap <leader>lo :<C-U>CocList outline<CR>
-nmap <leader>le :<C-U>CocList diagnostics<CR>
-nmap <leader>gb :<C-U>CocList branches<CR>
-nmap <leader>gc :<C-U>CocList commits<CR>
+nmap <silent> <leader>p :<C-U>CocList files<CR>
+nmap <silent> <leader>o :<C-U>CocList mru<CR>
+nmap <silent> <leader>b :<C-U>CocList buffers<CR>
+nmap <silent> <leader>f :<C-U>CocList --auto-preview --interactive grep<CR>
+nmap <silent> <leader>ld <Plug>(coc-definition)
+nmap <silent> <leader>lr <Plug>(coc-references)
+nmap <silent> <leader>ln <Plug>(coc-rename)
+nmap <silent> <leader>lf <Plug>(coc-format)
+vmap <silent> <leader>lf <Plug>(coc-format-selected)
+nmap <silent> <leader>li <Plug>(coc-implementation)
+nmap <silent> <leader>lt <Plug>(coc-type-definition)
+nmap <silent> <leader>la <Plug>(coc-codeaction)
+vmap <silent> <leader>la <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>ls :<C-U>call CocAction('doHover')<CR>
+nmap <silent> <leader>lo :<C-U>CocList outline<CR>
+nmap <silent> <leader>le :<C-U>CocList diagnostics<CR>
+nmap <silent> <leader>gb :<C-U>CocList branches<CR>
+nmap <silent> <leader>gc :<C-U>CocList commits<CR>
 
 let g:table_mode_corner_corner="+"
 let g:table_mode_header_fillchar="="
@@ -233,16 +233,16 @@ let g:lightline#bufferline#unnamed = '[No Name]'
 let g:lightline#bufferline#number_map = {
             \ 0: '', 1: '', 2: '', 3: '', 4: '',
             \ 5: '', 6: '', 7: '', 8: '', 9: ''}
-nmap <Leader>1 <Plug>lightline#bufferline#go(1)
-nmap <Leader>2 <Plug>lightline#bufferline#go(2)
-nmap <Leader>3 <Plug>lightline#bufferline#go(3)
-nmap <Leader>4 <Plug>lightline#bufferline#go(4)
-nmap <Leader>5 <Plug>lightline#bufferline#go(5)
-nmap <Leader>6 <Plug>lightline#bufferline#go(6)
-nmap <Leader>7 <Plug>lightline#bufferline#go(7)
-nmap <Leader>8 <Plug>lightline#bufferline#go(8)
-nmap <Leader>9 <Plug>lightline#bufferline#go(9)
-nmap <Leader>0 <Plug>lightline#bufferline#go(10)
+nmap <silent> <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <silent> <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <silent> <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <silent> <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <silent> <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <silent> <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <silent> <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <silent> <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <silent> <Leader>9 <Plug>lightline#bufferline#go(9)
+nmap <silent> <Leader>0 <Plug>lightline#bufferline#go(10)
 
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
