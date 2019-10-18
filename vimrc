@@ -175,6 +175,7 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 autocmd BufWritePre *.go silent call CocActionAsync('runCommand', 'editor.action.organizeImport')
+autocmd User CocJumpPlaceholder silent call CocActionAsync('showSignatureHelp')
 autocmd User VimagitEnterCommit startinsert
 
 
