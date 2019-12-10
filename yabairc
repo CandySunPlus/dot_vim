@@ -45,5 +45,7 @@ yabai -m rule --add app="^系统偏好设置$" manage=off
 yabai -m rule --add app="^微信$" manage=off
 yabai -m rule --add app="^企业微信$" manage=off
 yabai -m rule --add app="^QQ音乐$" manage=off
+yabai -m rule --add app="^CleanMyMac X$" manage=off
+yabai -m rule --add app="^Telegram$" manage=off
 
 echo "yabai configuration loaded.."
