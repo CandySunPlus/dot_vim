@@ -56,3 +56,5 @@ if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
     export PROJECT_HOME=$HOME/development/python
     source /usr/local/bin/virtualenvwrapper.sh
 fi
+
+neofetch

@@ -1,148 +1,162 @@
 {
-    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-    "diagnostic.infoSign": "\uf129",
-    "diagnostic.warningSign": "\uf526",
-    "diagnostic.errorSign": "\uf656",
-    "suggest.enablePreview": true,
-    "suggest.autoTrigger": "always",
-    "suggest.noselect": false,
-    "suggest.triggerAfterInsertEnter": true,
-    "suggest.completionItemKindLabels": {
-        "function": "\uf794",
-        "method": "\uf6a6",
-        "variable": "\uf71b",
-        "constant": "\uf8ff",
-        "struct": "\ufb44",
-        "class": "\uf0e8",
-        "interface": "\ufa52",
-        "text": "\ue612",
-        "enum": "\uf435",
-        "enumMember": "\uf02b",
-        "module": "\uf668",
-        "color": "\ue22b",
-        "property": "\ufab6",
-        "field": "\uf93d",
-        "unit": "\uf475",
-        "file": "\uf471",
-        "value": "\uf8a3",
-        "event": "\ufacd",
-        "folder": "\uf115",
-        "keyword": "\uf893",
-        "snippet": "\uf64d",
-        "operator": "\uf915",
-        "reference": "\uf87a",
-        "typeParameter": "\uf278",
-        "default": "\uf29c"
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "diagnostic.infoSign": "\uf129",
+  "diagnostic.warningSign": "\uf526",
+  "diagnostic.errorSign": "\uf656",
+  "suggest.enablePreview": true,
+  "suggest.autoTrigger": "always",
+  "suggest.noselect": false,
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "suggest.completionItemKindLabels": {
+    "function": "\uf794",
+    "method": "\uf6a6",
+    "variable": "\uf71b",
+    "constant": "\uf8ff",
+    "struct": "\ufb44",
+    "class": "\uf0e8",
+    "interface": "\ufa52",
+    "text": "\ue612",
+    "enum": "\uf435",
+    "enumMember": "\uf02b",
+    "module": "\uf668",
+    "color": "\ue22b",
+    "property": "\ufab6",
+    "field": "\uf93d",
+    "unit": "\uf475",
+    "file": "\uf471",
+    "value": "\uf8a3",
+    "event": "\ufacd",
+    "folder": "\uf115",
+    "keyword": "\uf893",
+    "snippet": "\uf64d",
+    "operator": "\uf915",
+    "reference": "\uf87a",
+    "typeParameter": "\uf278",
+    "default": "\uf29c"
+  },
+  "yaml.schemas": {
+    "kubernetes": "*.k8s.yaml",
+    "http://json.schemastore.org/drone": "*drone.yml"
+  },
+  "list.insertMappings": {
+    "<C-n>": "normal:j",
+    "<C-p>": "normal:k"
+  },
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "filetypes": [
+        "go"
+      ],
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "usePlaceholders": true,
+        "completeUnimported": true,
+        "completionDocumentation": true
+      }
     },
-    "yaml.schemas": {
-        "kubernetes": "*.k8s.yaml",
-        "http://json.schemastore.org/drone": "*drone.yml"
-    },
-    "list.insertMappings": {
-        "<C-n>": "normal:j",
-        "<C-p>": "normal:k"
-    },
-    "languageserver": {
-        "golang": {
-            "command": "gopls",
-            "filetypes": [
-                "go"
-            ],
-            "rootPatterns": [
-                "go.mod",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "settings": {
-                "gopls": {
-                    "usePlaceholders": true,
-                    "completeUnimported": true,
-                    "completionDocumentation": true
-                }
-            }
-        },
-        "ccls": {
-            "command": "ccls",
-            "filetypes": [
-                "c",
-                "cpp",
-                "cuda",
-                "objc",
-                "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": ".ccls-cache"
-                }
-            }
-        },
-        "swift": {
-            "command": "sourcekit-lsp",
-            "filetypes": [
-                "swift"
-            ]
-        },
-        "kotlin": {
-            "command": "kotlin-language-server",
-            "filetypes": [
-                "kotlin"
-            ]
-        },
-        "dart": {
-            "command": "dart_language_server",
-            "filetypes": [
-                "dart"
-            ]
-        },
-        "dockerfile": {
-            "command": "docker-langserver",
-            "filetypes": ["Dockerfile"],
-            "args": ["--stdio"]
-        },
-        "bash": {
-            "command": "bash-language-server",
-            "filetypes": ["sh"],
-            "args": ["start"],
-            "ignoredRootPaths": ["~"]
-        },
-        "metals": {
-            "command": "metals-vim",
-            "rootPatterns": ["build.sbt"],
-            "filetypes": ["scala", "sbt"],
-            "settings": {
-                "metals": {
-                    "sbt-script": "/usr/local/bin/sbt"
-                }
-            }
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [
+        "c",
+        "cpp",
+        "cuda",
+        "objc",
+        "objcpp"
+      ],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": ".ccls-cache"
         }
+      }
     },
-    "git.enableGutters": false,
-    "snippets.extends": {
-        "cpp": [
-            "c"
-        ],
-        "typescript": [
-            "javascript"
-        ]
+    "swift": {
+      "command": "sourcekit-lsp",
+      "filetypes": [
+        "swift"
+      ]
     },
-    "tslint.packageManager": "yarn",
-    "tslint.autoFixOnSave": true,
-    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-    "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
-    "python.linting.pylintPath": "/usr/local/bin/pylint",
-    "python.jediEnabled": false,
-    "python.analysis.downloadChannel": "daily",
-    "java.jdt.ls.vmargs": "-javaagent:/Users/niksun/.opt/lombok.jar -Xbootclasspath/a:/Users/niksun/.opt/lombok.jar",
-    "java.configuration.updateBuildConfiguration": "automatic",
-    "java.import.maven.enabled": true,
-    "java.import.gradle.enabled": true,
-    "java.maven.downloadSources": true
+    "kotlin": {
+      "command": "kotlin-language-server",
+      "filetypes": [
+        "kotlin"
+      ]
+    },
+    "dart": {
+      "command": "dart_language_server",
+      "filetypes": [
+        "dart"
+      ]
+    },
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": [
+        "Dockerfile"
+      ],
+      "args": [
+        "--stdio"
+      ]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "filetypes": [
+        "sh"
+      ],
+      "args": [
+        "start"
+      ],
+      "ignoredRootPaths": [
+        "~"
+      ]
+    },
+    "metals": {
+      "command": "metals-vim",
+      "rootPatterns": [
+        "build.sbt"
+      ],
+      "filetypes": [
+        "scala",
+        "sbt"
+      ],
+      "settings": {
+        "metals": {
+          "sbt-script": "/usr/local/bin/sbt"
+        }
+      }
+    }
+  },
+  "git.enableGutters": false,
+  "snippets.extends": {
+    "cpp": [
+      "c"
+    ],
+    "typescript": [
+      "javascript"
+    ]
+  },
+  "tslint.packageManager": "yarn",
+  "tslint.autoFixOnSave": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
+  "python.linting.pylintPath": "/usr/local/bin/pylint",
+  "python.jediEnabled": false,
+  "python.analysis.downloadChannel": "daily",
+  "java.jdt.ls.vmargs": "-javaagent:/Users/niksun/.opt/lombok.jar -Xbootclasspath/a:/Users/niksun/.opt/lombok.jar",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.import.maven.enabled": true,
+  "java.import.gradle.enabled": true,
+  "java.maven.downloadSources": true
 }
