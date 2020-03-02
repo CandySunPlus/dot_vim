@@ -49,7 +49,7 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
 
 Plug 'vimlab/split-term.vim'
 Plug 'Konfekt/FastFold'
-Plug '0x84/vim-coderunner'
+" Plug '0x84/vim-coderunner'
 Plug 'godlygeek/tabular'
 Plug 'wellle/targets.vim'
 Plug 'kylef/apiblueprint.vim'

@@ -26,9 +26,6 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bott
 export NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 export ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
 export SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # for drone
 export DRONE_SERVER=https://cicd.wehaowu.com
@@ -58,3 +55,7 @@ if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
 fi
 
 neofetch
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
