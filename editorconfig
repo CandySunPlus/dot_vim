@@ -9,31 +9,7 @@ end_of_line = lf
 insert_final_newline = true
 charset = utf-8
 indent_style = space
-indent_size = 4
-
-[*.{yaml,yml,yamllint}]
-indent_style = space
 indent_size = 2
-
-[*.dart]
-indent_size = 2
-indent_style = space
-
-[*.{scala,sbt}]
-indent_size = 2
-indent_style = space
-
-[*.{c,cc,h,cpp,hpp}]
-indent_size = 2
-indent_style = space
-
-[*.json]
-indent_size = 2
-indent_style = space
-
-[*.{less,css,scss,sass}]
-indent_size = 2
-indent_style = space
 
 [{Makefile,**.mk}]
 indent_style = tab
