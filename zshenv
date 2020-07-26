@@ -48,6 +48,7 @@ path=(
     $HOME/.yarn/bin
     $HOME/.opt/bin
     $HOME/.go/bin
+    $HOME/.dotnet/tools
     $HOME/.pub-cache/bin
     /usr/local/lib/ruby/gems/2.5.0/bin
     /usr/local/opt/llvm/bin
