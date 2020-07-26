@@ -50,8 +50,8 @@ path=(
     $HOME/.go/bin
     $HOME/.dotnet/tools
     $HOME/.pub-cache/bin
-    /usr/local/lib/ruby/gems/2.5.0/bin
-    /usr/local/opt/llvm/bin
+    /usr/local/lib/ruby/gems/2.7.0/bin
+    /usr/local/opt/{llvm,ruby}/bin
     /usr/local/opt/go/libexec/bin
     /usr/local/{bin,sbin}
     /usr/local/opt/protobuf@3.6/bin
