@@ -61,26 +61,20 @@
         "completionDocumentation": true
       }
     },
-    "ccls": {
-      "command": "ccls",
+    "clangd": {
+      "command": "clangd",
       "filetypes": [
         "c",
-        "cpp",
-        "cuda",
-        "objc",
-        "objcpp"
+        "cpp"
       ],
       "rootPatterns": [
-        ".ccls",
         "compile_commands.json",
         ".vim/",
         ".git/",
         ".hg/"
       ],
       "initializationOptions": {
-        "cache": {
-          "directory": ".ccls-cache"
-        }
+        "clangd.semanticHighlighting": true
       }
     },
     "swift": {
@@ -93,12 +87,6 @@
       "command": "kotlin-language-server",
       "filetypes": [
         "kotlin"
-      ]
-    },
-    "dart": {
-      "command": "dart_language_server",
-      "filetypes": [
-        "dart"
       ]
     },
     "dockerfile": {
@@ -147,6 +135,7 @@
       "javascript"
     ]
   },
+  "javascript.format.tabSize": 2,
   "tslint.packageManager": "yarn",
   "tslint.autoFixOnSave": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
@@ -158,5 +147,6 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.import.maven.enabled": true,
   "java.import.gradle.enabled": true,
-  "java.maven.downloadSources": true
+  "java.maven.downloadSources": true,
+  "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false
 }

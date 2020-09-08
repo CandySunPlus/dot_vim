@@ -49,6 +49,7 @@ path=(
     $HOME/.opt/bin
     $HOME/.go/bin
     $HOME/.pub-cache/bin
+    /usr/local/Caskroom/flutter/1.20.2/flutter/.pub-cache/bin
     /usr/local/lib/ruby/gems/2.7.0/bin
     /usr/local/opt/{llvm,ruby}/bin
     /usr/local/opt/go/libexec/bin
