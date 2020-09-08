@@ -61,22 +61,6 @@
         "completionDocumentation": true
       }
     },
-    "clangd": {
-      "command": "clangd",
-      "filetypes": [
-        "c",
-        "cpp"
-      ],
-      "rootPatterns": [
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "initializationOptions": {
-        "clangd.semanticHighlighting": true
-      }
-    },
     "swift": {
       "command": "sourcekit-lsp",
       "filetypes": [
@@ -148,5 +132,7 @@
   "java.import.maven.enabled": true,
   "java.import.gradle.enabled": true,
   "java.maven.downloadSources": true,
-  "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false
+  "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
+  "clangd.path": "/Users/niksun/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
+  "clangd.semanticHighlighting": true
 }
