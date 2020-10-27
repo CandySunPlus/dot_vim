@@ -90,6 +90,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
 " For all language
 Plug 'sheerun/vim-polyglot'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 call plug#end()
 

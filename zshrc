@@ -32,7 +32,7 @@ export DRONE_SERVER=https://cicd.wehaowu.com
 export DRONE_TOKEN=55f24eb3d61ef6ac5e83d550178638dc
 
 # for flutter
-export PUB_HOSTED_URL=https://dart-pub.mirrors.sjtug.sjtu.edu.cn
+export PUB_HOSTED_URL=https://pub.sankuai.com
 export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
 
 # for nnn

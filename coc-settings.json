@@ -61,28 +61,6 @@
         "completionDocumentation": true
       }
     },
-    "ccls": {
-      "command": "ccls",
-      "filetypes": [
-        "c",
-        "cpp",
-        "cuda",
-        "objc",
-        "objcpp"
-      ],
-      "rootPatterns": [
-        ".ccls",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "initializationOptions": {
-        "cache": {
-          "directory": ".ccls-cache"
-        }
-      }
-    },
     "swift": {
       "command": "sourcekit-lsp",
       "filetypes": [
@@ -93,12 +71,6 @@
       "command": "kotlin-language-server",
       "filetypes": [
         "kotlin"
-      ]
-    },
-    "dart": {
-      "command": "dart_language_server",
-      "filetypes": [
-        "dart"
       ]
     },
     "dockerfile": {
@@ -147,6 +119,7 @@
       "javascript"
     ]
   },
+  "javascript.format.tabSize": 2,
   "tslint.packageManager": "yarn",
   "tslint.autoFixOnSave": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
@@ -158,5 +131,8 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.import.maven.enabled": true,
   "java.import.gradle.enabled": true,
-  "java.maven.downloadSources": true
+  "java.maven.downloadSources": true,
+  "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
+  "clangd.path": "/Users/niksun/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
+  "clangd.semanticHighlighting": true
 }
