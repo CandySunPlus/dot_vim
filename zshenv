@@ -48,6 +48,7 @@ path=(
     $HOME/.yarn/bin
     $HOME/.opt/bin
     $HOME/.go/bin
+    $HOME/.dotnet/tools
     $HOME/.pub-cache/bin
     /usr/local/Caskroom/flutter/1.20.2/flutter/.pub-cache/bin
     /usr/local/lib/ruby/gems/2.7.0/bin
