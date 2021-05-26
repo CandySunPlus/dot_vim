@@ -1,6 +1,7 @@
 syntax on
 if !has('nvim')
     set nocompatible               " be iMproved
+    set encoding=utf-8
 endif
 set mouse=a
 set ts=4
@@ -12,16 +13,12 @@ set ignorecase smartcase
 set hidden
 set noswapfile
 set nobackup
-if !has('nvim')
-    set encoding=utf-8
-endif
 set fileencodings=utf-8,gbk,gb2312,big5
 set autoread
 set autowrite
 set fileformats=unix,dos,mac
 set backspace=indent,eol,start
 set nohlsearch
-" set incsearch
 set laststatus=2
 set shortmess+=c
 set noerrorbells
@@ -44,11 +41,11 @@ call plug#begin('~/.vim/plugged')
 " My Plugins here:
 
 Plug 'tpope/vim-scriptease'
+Plug 'qpkorr/vim-bufkill'
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
 
 Plug 'vimlab/split-term.vim'
-Plug 'Konfekt/FastFold'
 " Plug '0x84/vim-coderunner'
 Plug 'godlygeek/tabular'
 Plug 'wellle/targets.vim'
@@ -74,22 +71,24 @@ Plug 'itchyny/lightline.vim'
 Plug 'mgee/lightline-bufferline'
 Plug 'tomtom/tcomment_vim'
 Plug 'mattn/emmet-vim'
-" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " for session
 Plug 'tpope/vim-obsession'
-Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'jreybert/vimagit'
 " original repos on github
 Plug 'Lokaltog/vim-easymotion'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
 " non github repos
 " Plug 'danielwe/base16-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
 " For all language
 Plug 'sheerun/vim-polyglot'
+Plug 'briancollins/vim-jst'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 call plug#end()
@@ -101,6 +100,8 @@ autocmd FileType vue syntax sync fromstart
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 au BufRead,BufNewFile *.wxml set filetype=html
+au BufRead,BufNewFile *.wxss set filetype=less
+au BufRead,BufNewFile *.wxs set filetype=javascript
 au BufRead,BufNewFile *.mina set filetype=vue
 " for scss
 au BufRead,BufNewFile *.scss set filetype=scss
@@ -195,13 +196,11 @@ nmap <silent> <leader>lt <Plug>(coc-type-definition)
 nmap <silent> <leader>la <Plug>(coc-codeaction)
 vmap <silent> <leader>la <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>ls :<C-U>call CocAction('doHover')<CR>
+nmap <silent> <leader>lc :<C-U>CocList commands<CR>
 nmap <silent> <leader>lo :<C-U>CocList outline<CR>
 nmap <silent> <leader>le :<C-U>CocList diagnostics<CR>
 nmap <silent> <leader>gb :<C-U>CocList branches<CR>
 nmap <silent> <leader>gc :<C-U>CocList commits<CR>
-
-let g:table_mode_corner_corner="+"
-let g:table_mode_header_fillchar="="
 
 
 let g:pdv_cfg_Author = 'Fengming Sun <s@sfmblog.cn>'
@@ -324,7 +323,6 @@ let g:Vimim_toggle = 'erbi'
 " TypeScript
 let g:typescript_compiler_options = '-sourcemap'
 
-let g:vim_markdown_folding_disabled = 1
 let g:buffergator_suppress_keymaps = 1
 let g:jsx_ext_required = 0
 set nospell
@@ -347,5 +345,4 @@ let g:indentLine_first_char = "┆"
 
 let g:JavaComplete_GradleExecutable = "/usr/local/bin/gradle"
 let g:vue_disable_pre_processors=1
-
-
+let g:jst_default_subtype = "javascript"

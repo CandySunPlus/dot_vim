@@ -20,7 +20,7 @@ export XDG_CONFIG_HOME=~/.config
 export CURL_CA_BUNDLE=/etc/ssl/cert.pem
 export GOPATH="$HOME/.go"
 export JAVA_HOME=$(/usr/libexec/java_home)
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles
 
 # for nodejs
 export NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
@@ -39,8 +39,8 @@ export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
 export NNN_USE_EDITOR=1
 
 # for proxy
-alias proxy="export http_proxy=http://127.0.0.1:1087; export https_proxy=http://127.0.0.1:1087; "
-alias unproxy="unset http_proxy; unset https_proxy; "
+alias proxy="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
+alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
 alias kssh="kitty +kitten ssh"
 

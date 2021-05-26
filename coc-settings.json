@@ -44,21 +44,12 @@
     "<C-p>": "normal:k"
   },
   "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "filetypes": [
-        "go"
-      ],
-      "rootPatterns": [
-        "go.mod",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
+    "cmake": {
+      "command": "cmake-language-server",
+      "filetypes": ["cmake"],
+      "rootPatterns": [ "build/" ],
       "initializationOptions": {
-        "usePlaceholders": true,
-        "completeUnimported": true,
-        "completionDocumentation": true
+        "buildDirectory": "build"
       }
     },
     "swift": {
@@ -111,28 +102,15 @@
     }
   },
   "git.enableGutters": false,
-  "snippets.extends": {
-    "cpp": [
-      "c"
-    ],
-    "typescript": [
-      "javascript"
-    ]
-  },
-  "javascript.format.tabSize": 2,
   "tslint.packageManager": "yarn",
   "tslint.autoFixOnSave": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
-  "python.linting.pylintPath": "/usr/local/bin/pylint",
-  "python.jediEnabled": false,
-  "python.analysis.downloadChannel": "daily",
   "java.jdt.ls.vmargs": "-javaagent:/Users/niksun/.opt/lombok.jar -Xbootclasspath/a:/Users/niksun/.opt/lombok.jar",
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.import.maven.enabled": true,
   "java.import.gradle.enabled": true,
   "java.maven.downloadSources": true,
   "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
-  "clangd.path": "/Users/niksun/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
+  "clangd.path": "/Library/Developer/CommandLineTools/usr/bin/clangd",
   "clangd.semanticHighlighting": true
 }
