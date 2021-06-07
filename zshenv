@@ -63,7 +63,7 @@ path=(
 #
 # Homebrew
 #
-export HOMEBREW_GITHUB_API_TOKEN="99c07e375a5f12a453b7de071381d324e42aed77"
+export HOMEBREW_GITHUB_API_TOKEN="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"
 
 #
 # Less
