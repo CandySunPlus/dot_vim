@@ -116,7 +116,7 @@
   "java.import.gradle.enabled": true,
   "java.maven.downloadSources": true,
   "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
-  "clangd.path": "/Library/Developer/CommandLineTools/usr/bin/clangd",
+  "clangd.path": "/usr/bin/clangd",
   "clangd.semanticHighlighting": true,
   "snippets.extends": {
     "cpp": ["c"],
