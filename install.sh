@@ -13,4 +13,5 @@ ln -s ${BASE_PATH}/zshrc ~/.zshrc
 ln -s ${BASE_PATH}/zshenv ~/.zshenv
 ln -s ${BASE_PATH}/p10k.zsh ~/.p10k.zsh
 ln -s ${BASE_PATH}/tmux.conf ~/.tmux.conf
-ln -s ${BASE_PATH}/kitty ~/.config/kitty
+ln -s ${BASE_PATH}/kitty ~/.config/
+ln -s ${BASE_PATH}/lvim ~/.config/
