@@ -101,7 +101,7 @@
       }
     }
   },
-  "rust-analyzer.assist.importPrefix": "crate",
+  "rust-analyzer.assist.importPrefix": "by_crate",
   "rust-analyzer.assist.importGroup": true,
   "rust-analyzer.assist.importGranularity": "crate",
   "rust-analyzer.updates.channel": "nightly",
@@ -115,8 +115,7 @@
   "java.import.maven.enabled": true,
   "java.import.gradle.enabled": true,
   "java.maven.downloadSources": true,
-  "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
-  "clangd.path": "/usr/bin/clangd",
+  "clangd.path": "clangd",
   "clangd.semanticHighlighting": true,
   "snippets.extends": {
     "cpp": ["c"],
