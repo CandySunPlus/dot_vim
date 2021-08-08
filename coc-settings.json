@@ -112,5 +112,10 @@
   "java.maven.downloadSources": true,
   "flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
   "clangd.path": "/Library/Developer/CommandLineTools/usr/bin/clangd",
-  "clangd.semanticHighlighting": true
+  "clangd.semanticHighlighting": true,
+  "snippets.extends": {
+    "cpp": ["c"],
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  }
 }

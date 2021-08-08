@@ -19,7 +19,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 export XDG_CONFIG_HOME=~/.config
 export CURL_CA_BUNDLE=/etc/ssl/cert.pem
 export GOPATH="$HOME/.go"
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=/usr/local/opt/openjdk
 # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles
 
 # for nodejs
@@ -56,6 +56,6 @@ fi
 
 neofetch
 
-export NVM_DIR="$HOME/.config/nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
