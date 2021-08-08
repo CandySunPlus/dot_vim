@@ -338,6 +338,7 @@ endif
 
 if has('nvim')
     let g:python3_host_prog = '/usr/local/bin/python3'
+    let g:node_host_prog = '~/.config/nvm/versios/node/v14.17.1/bin/node'
 endif
 
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", $HOME."/.snips"]

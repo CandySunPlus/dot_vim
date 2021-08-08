@@ -42,6 +42,19 @@ typeset -gU cdpath fpath mailpath path
 # export LDFLAGS="-L/usr/local/opt/llvm/lib -L/usr/local/opt/protobuf@3.6/lib"
 # export CPPFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/opt/protobuf@3.6/include"
 # export PKG_CONFIG_PATH="/usr/local/opt/protobuf@3.6/lib/pkgconfig:$PKG_CONFIG_PATH"
+#
+LDFLAGS=(
+  -L/usr/local/opt/ruby/lib
+  $LDFLAGS
+)
+CPPFLAGS=(
+  -I/usr/local/opt/ruby/include
+  $CPPFLAGS
+)
+PKG_CONFIG_PATH=(
+  /usr/local/opt/ruby/lib/pkgconfig
+  $PKG_CONFIG_PATH
+)
 
 path=(
     $HOME/.cargo/bin
@@ -52,7 +65,7 @@ path=(
     $HOME/.emacs.d/bin
     $HOME/.pub-cache/bin
     /usr/local/Caskroom/flutter/1.20.2/flutter/.pub-cache/bin
-    /usr/local/lib/ruby/gems/2.7.0/bin
+    /usr/local/opt/ruby/bin
     /usr/local/opt/{llvm,ruby}/bin
     /usr/local/opt/go/libexec/bin
     /usr/local/{bin,sbin}
@@ -64,7 +77,7 @@ path=(
 #
 # Homebrew
 #
-export HOMEBREW_GITHUB_API_TOKEN="99c07e375a5f12a453b7de071381d324e42aed77"
+export HOMEBREW_GITHUB_API_TOKEN="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"
 
 #
 # Less
@@ -80,3 +93,5 @@ if (( $+commands[lesspipe.sh] )); then
   export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
+. "$HOME/.cargo/env"
+export DOCKER_HOST=ssh://vm
