@@ -62,6 +62,7 @@ path=(
     $HOME/.opt/bin
     $HOME/.go/bin
     $HOME/.dotnet/tools
+    $HOME/.emacs.d/bin
     $HOME/.pub-cache/bin
     /usr/local/Caskroom/flutter/1.20.2/flutter/.pub-cache/bin
     /usr/local/opt/ruby/bin

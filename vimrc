@@ -84,7 +84,11 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " non github repos
 " Plug 'danielwe/base16-vim'
-Plug 'arcticicestudio/nord-vim'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
+Plug 'connorholyday/vim-snazzy'
 Plug 'ryanoasis/vim-devicons'
 " For all language
 Plug 'sheerun/vim-polyglot'
@@ -122,23 +126,21 @@ if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 endif
 
-set guifont=MonoLisa:h12
-
-
-" if (has('termguicolors'))
-"   set termguicolors
-" endif
+if (has('termguicolors'))
+  set termguicolors
+endif
 
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 
 let g:webdevicons_conceal_nerdtree_brackets = 0
-let g:nord_cursor_line_number_background = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
+" let g:nord_cursor_line_number_background = 1
+" let g:nord_uniform_status_lines = 1
+" let g:nord_italic = 1
+" let g:nord_italic_comments = 1
 
-colorscheme nord
+" let ayucolor="mirage"
+colorscheme snazzy
 
 vnoremap <silent> <C-c> "+y
 " Indent lines with cmd+[ and cmd+]
@@ -274,7 +276,7 @@ let g:lightline = { }
 let g:lightline = {
             \ 'separator': { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' },
-            \ 'colorscheme': 'nord',
+            \ 'colorscheme': 'snazzy',
             \ }
 let g:lightline.component_function = {
             \   'gitbranch': 'GitBranch',
