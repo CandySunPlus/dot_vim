@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/niksun/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZLE_RPROMPT_INDENT=0
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -35,7 +35,8 @@ export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
 export NNN_USE_EDITOR=1
 
 # for proxy
-alias proxy="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
+PHOST=172.30.186.178
+alias proxy="export https_proxy=http://$PHOST:7890 http_proxy=http://$PHOST:7890 all_proxy=socks5://$PHOST:7890"
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
 alias kssh="kitty +kitten ssh"

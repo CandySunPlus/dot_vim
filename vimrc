@@ -337,7 +337,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 if has('nvim')
-    let g:python3_host_prog = '/usr/local/bin/python3'
+    let g:python3_host_prog = '/usr/bin/python3'
 endif
 
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", $HOME."/.snips"]

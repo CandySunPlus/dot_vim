@@ -60,6 +60,7 @@ path=(
     $HOME/.cargo/bin
     $HOME/.yarn/bin
     $HOME/.opt/bin
+    $HOME/.local/bin
     $HOME/.go/bin
     $HOME/.dotnet/tools
     $HOME/.emacs.d/bin
@@ -68,8 +69,8 @@ path=(
     /usr/local/opt/ruby/bin
     /usr/local/opt/{llvm,ruby}/bin
     /usr/local/opt/go/libexec/bin
+    $HOME/.android/cmdline-tools/latest/bin
     /usr/local/{bin,sbin}
-    /usr/local/opt/protobuf@3.6/bin
     $path
 )
 
