@@ -44,14 +44,6 @@
     "<C-p>": "normal:k"
   },
   "languageserver": {
-    "cmake": {
-      "command": "cmake-language-server",
-      "filetypes": ["cmake"],
-      "rootPatterns": [ "build/" ],
-      "initializationOptions": {
-        "buildDirectory": "build"
-      }
-    },
     "swift": {
       "command": "sourcekit-lsp",
       "filetypes": [
