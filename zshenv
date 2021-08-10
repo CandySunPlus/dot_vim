@@ -60,6 +60,7 @@ path=(
     $HOME/.cargo/bin
     $HOME/.yarn/bin
     $HOME/.opt/bin
+    $HOME/.local/bin
     $HOME/.go/bin
     $HOME/.dotnet/tools
     $HOME/.emacs.d/bin
