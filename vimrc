@@ -89,6 +89,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 Plug 'connorholyday/vim-snazzy'
+Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 " For all language
 Plug 'sheerun/vim-polyglot'
@@ -140,7 +141,9 @@ let g:webdevicons_conceal_nerdtree_brackets = 0
 " let g:nord_italic_comments = 1
 
 " let ayucolor="mirage"
-colorscheme snazzy
+colorscheme onedark
+let g:onedark_termcolors = 256
+let g:onedark_terminal_italics = 1
 
 vnoremap <silent> <C-c> "+y
 " Indent lines with cmd+[ and cmd+]
@@ -276,7 +279,7 @@ let g:lightline = { }
 let g:lightline = {
             \ 'separator': { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' },
-            \ 'colorscheme': 'snazzy',
+            \ 'colorscheme': 'onedark',
             \ }
 let g:lightline.component_function = {
             \   'gitbranch': 'GitBranch',
