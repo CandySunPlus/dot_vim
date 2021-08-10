@@ -339,9 +339,9 @@ if maparg('<C-L>', 'n') ==# ''
     nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
-if has('nvim')
-    let g:python3_host_prog = '/usr/bin/python3'
-endif
+" if has('nvim')
+"     let g:python3_host_prog = '/usr/bin/python3'
+" endif
 
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", $HOME."/.snips"]
 let g:UltiSnipsExpandTrigger = "<c-j>"
