@@ -128,6 +128,10 @@ if (has('nvim'))
 endif
 
 if (has('termguicolors'))
+  " fix bug for vim
+  set t_8f=[38;2;%lu;%lu;%lum
+  set t_8b=[48;2;%lu;%lu;%lum
+
   set termguicolors
 endif
 
