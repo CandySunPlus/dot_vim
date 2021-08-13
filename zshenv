@@ -95,4 +95,3 @@ if (( $+commands[lesspipe.sh] )); then
 fi
 
 . "$HOME/.cargo/env"
-export DOCKER_HOST=ssh://vm
