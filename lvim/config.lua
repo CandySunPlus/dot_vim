@@ -8,9 +8,9 @@ vim.g.tokyonight_style = "storm"
 vim.o.cmdheight = 1
 vim.o.relativenumber = true
 vim.o.wrap = true
--- vim.o.opt.foldmethod = "expr"
--- vim.o.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.o.opt.foldlevel = 5
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevel = 5
 
 
 -- TODO: User Config for predefined plugins

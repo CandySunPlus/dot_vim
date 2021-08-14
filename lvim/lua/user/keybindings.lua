@@ -21,11 +21,14 @@ M.config = function ()
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
     w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
+    t = { "<cmd>TodoTrouble<cr>", "TodoTrouble"}
   }
+
   lvim.builtin.which_key.mappings["e"] = {}
   lvim.builtin.which_key.mappings["k"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
   lvim.builtin.which_key.mappings["l"]["s"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" }
   lvim.builtin.which_key.mappings["l"]["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" }
+  lvim.builtin.which_key.mappings["l"]["t"] = { "<cmd>TodoTelescope<cr>", "Todo" }
 end
 
 return M
