@@ -27,6 +27,11 @@ if [[ -z "$LANG" ]]; then
 fi
 
 #
+# Android
+#
+export ANDROID_NDK_HOME='/Users/niksun/.android/ndk'
+
+#
 # Paths
 #
 
@@ -95,3 +100,4 @@ if (( $+commands[lesspipe.sh] )); then
 fi
 
 . "$HOME/.cargo/env"
+
