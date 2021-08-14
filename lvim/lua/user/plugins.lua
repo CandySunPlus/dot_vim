@@ -19,6 +19,21 @@ M.config = function ()
       end
     },
     {
+      "andymass/vim-matchup",
+      event = "CursorMoved",
+      config = function()
+        vim.g.matchup_matchparen_offscreen = { method = "popup" }
+      end,
+    },
+    {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require("todo-comments").setup()
+      end,
+      event = "BufRead",
+    },
+    {
       "windwp/nvim-spectre",
       event = "BufRead",
       config = function()
@@ -37,8 +52,11 @@ M.config = function ()
       disable = not lvim.builtin.galaxyline.active,
     },
     {
-      "tpope/vim-surround",
-      keys = {"c", "d", "y"}
+     'blackCauldron7/surround.nvim',
+        event = "BufRead",
+        config = function()
+          require "surround".setup {}
+        end,
     },
     {
       "simrat39/symbols-outline.nvim",
@@ -57,8 +75,10 @@ M.config = function ()
     },
     {
       "ray-x/lsp_signature.nvim",
-      config = function() require"lsp_signature".on_attach() end,
-      event = "InsertEnter"
+      config = function()
+        require("user/lsp_signature").config()
+      end,
+      event = "InsertEnter",
     },
     {
       "folke/trouble.nvim",

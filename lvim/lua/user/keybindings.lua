@@ -25,6 +25,7 @@ M.config = function ()
   lvim.builtin.which_key.mappings["e"] = {}
   lvim.builtin.which_key.mappings["k"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
   lvim.builtin.which_key.mappings["l"]["s"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" }
+  lvim.builtin.which_key.mappings["l"]["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" }
 end
 
 return M

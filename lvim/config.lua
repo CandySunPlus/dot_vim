@@ -42,7 +42,7 @@ require("user.builtin").config()
 --     args = {}
 --   }
 -- }
--- lvim.lsp.override = { "rust" }
+lvim.lsp.override = { "rust" }
 require("user.json_schemas").setup()
 
 -- Additional Plugins
