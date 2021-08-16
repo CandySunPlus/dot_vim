@@ -1,0 +1,20 @@
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+[init]
+  defaultBranch = main
+[user]
+  name = NikSun
+  email = candysfm@gmail.com
+[core]
+  editor = lvim
+[difftool]
+  prompt = true
+[diff]
+  tool = nvimdiff
+[difftool "nvimdiff"]
+  cmd = "lvim -d \"$LOCAL\" \"$REMOTE\""
+[mergetool]
+  keepBackup = false

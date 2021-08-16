@@ -40,6 +40,7 @@ PHOST=172.30.186.178
 alias proxy="export https_proxy=http://$PHOST:7890 http_proxy=http://$PHOST:7890 all_proxy=socks5://$PHOST:7890"
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
+alias nvim="lvim"
 alias kssh="kitty +kitten ssh"
 
 # for python virtual ENV
