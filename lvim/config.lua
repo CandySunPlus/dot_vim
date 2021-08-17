@@ -4,7 +4,9 @@
 lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight"
-vim.g.tokyonight_style = "storm"
+-- vim.o.tabstop = 4
+-- vim.o.shiftwidth = 4
+vim.o.numberwidth = 2
 vim.o.cmdheight = 1
 vim.o.relativenumber = true
 vim.o.wrap = true
@@ -12,6 +14,8 @@ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 5
 
+-- for plugins
+vim.g.tokyonight_style = "storm"
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile

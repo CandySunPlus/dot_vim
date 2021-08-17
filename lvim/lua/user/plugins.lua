@@ -52,11 +52,11 @@ M.config = function ()
       disable = not lvim.builtin.galaxyline.active,
     },
     {
-     'blackCauldron7/surround.nvim',
-        event = "BufRead",
-        config = function()
-          require "surround".setup {}
-        end,
+      'blackCauldron7/surround.nvim',
+      event = "BufRead",
+      config = function()
+        require "surround".setup {}
+      end,
     },
     {
       "simrat39/symbols-outline.nvim",
@@ -87,6 +87,13 @@ M.config = function ()
         require("trouble").setup()
       end,
       cmd = "Trouble",
+    },
+    {
+      "editorconfig/editorconfig",
+      event = "BufRead",
+      config = function()
+        require("user/editorconfig").config()
+      end
     }
   }
 end
