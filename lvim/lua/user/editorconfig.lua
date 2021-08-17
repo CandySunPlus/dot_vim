@@ -5,6 +5,7 @@ M.config = function()
     'fugitive://.*',
     'scp://.*'
   }
+  vim.g.EditorConfig_verbose = true
 end
 
 return M

@@ -89,11 +89,12 @@ M.config = function ()
       cmd = "Trouble",
     },
     {
-      "editorconfig/editorconfig",
+      "editorconfig/editorconfig-vim",
       event = "BufRead",
       config = function()
         require("user/editorconfig").config()
-      end
+      end,
+      cmd = {"EditorConfigEnable", "EditorConfigDisable", "EditorConfigReload"}
     }
   }
 end
