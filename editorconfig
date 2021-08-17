@@ -18,4 +18,4 @@ indent_style = tab
 indent_style = tab
 
 [*.lua]
-indent_style = 2
+indent_size = 2
