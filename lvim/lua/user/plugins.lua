@@ -49,7 +49,7 @@ M.config = function ()
     },
     {
       "nvim-lua/lsp-status.nvim",
-      disable = not lvim.builtin.galaxyline.active,
+      disable = not lvim.builtin.lualine.active,
     },
     {
       'blackCauldron7/surround.nvim',
