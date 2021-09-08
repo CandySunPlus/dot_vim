@@ -10,6 +10,7 @@ vim.o.numberwidth = 2
 vim.o.cmdheight = 1
 vim.o.relativenumber = true
 vim.o.wrap = true
+vim.o.foldenable = false
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 5
