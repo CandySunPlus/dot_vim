@@ -73,7 +73,7 @@ M.config = function()
     -- these override the defaults set by rust-tools.nvim
     -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
     server = {
-      cmd = { DATA_PATH .. "/lspinstall/rust/rust-analyzer" },
+      cmd = { vim.fn.stdpath "data" .. "/lspinstall/rust/rust-analyzer" },
       on_attach = require("lsp").common_on_attach,
     }, -- rust-analyser options
   }
