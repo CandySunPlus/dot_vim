@@ -16,7 +16,7 @@ M.config = function(lualine)
       return lsp_status.status()
     end,
     icon = '',
-    condition = conditions.hide_in_width
+    cond = conditions.hide_in_width
   }
   table.insert(config.sections.lualine_c, lsp_status_component)
   lualine.setup(config)
