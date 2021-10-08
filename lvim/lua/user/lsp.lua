@@ -25,10 +25,7 @@
 local M = {}
 
 M.config = function ()
-  lvim.lang.cpp.lsp.setup.cmd[1] = "clangd"
-  lvim.lang.c.lsp.setup.cmd[1] = "clangd"
   lvim.lsp.override = { "rust" }
-  require("user.json_schemas").setup()
 end
 
 return M
