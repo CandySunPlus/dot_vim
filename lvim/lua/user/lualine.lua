@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function(lualine)
   local config = lualine.get_config()
-  local conditions = require "core.lualine.conditions"
+  -- local conditions = require "core.lualine.conditions"
   local lsp_status_component = {
     function ()
       local lsp_status = require "lsp-status"
@@ -16,7 +16,7 @@ M.config = function(lualine)
       return lsp_status.status()
     end,
     icon = '',
-    cond = conditions.hide_in_width
+    -- cond = conditions.hide_in_width
   }
   table.insert(config.sections.lualine_c, lsp_status_component)
   lualine.setup(config)

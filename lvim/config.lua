@@ -22,9 +22,6 @@ vim.g.tokyonight_style = "storm"
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 require("user.builtin").config()
 
--- generic LSP settings
-require("user.lsp").config()
-
 -- Additional Plugins
 require("user.plugins").config()
 

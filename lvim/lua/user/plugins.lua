@@ -63,13 +63,6 @@ M.config = function ()
       cmd = "SymbolsOutline",
     },
     {
-      "simrat39/rust-tools.nvim",
-      config = function()
-        require("user.rust_tools").config()
-      end,
-      ft = { "rust", "rs" },
-    },
-    {
       "sindrets/diffview.nvim",
       cmd = "DiffviewOpen",
     },
