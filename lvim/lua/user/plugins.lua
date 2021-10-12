@@ -69,9 +69,16 @@ M.config = function ()
     {
       "ray-x/lsp_signature.nvim",
       config = function()
-        require("user/lsp_signature").config()
+        require("user/lsp_sign").config()
       end,
       event = "InsertEnter",
+    },
+    {
+      "simrat39/rust-tools.nvim",
+      config = function()
+        require("user.rust_tools").config()
+      end,
+      ft = { "rust", "rs" },
     },
     {
       "folke/trouble.nvim",

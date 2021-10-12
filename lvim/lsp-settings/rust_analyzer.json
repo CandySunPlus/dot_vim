@@ -1,4 +1,4 @@
 {
-    "rust-analyzer.inlayHints.enable": true
-    "rust-analyzer.server.path": "rust-analyzer"
+    "rust-analyzer.inlayHints.enable": true,
+    "rust-analyzer.server.path": "/usr/local/bin/rust-analyzer"
 }
