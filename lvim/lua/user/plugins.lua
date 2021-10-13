@@ -89,6 +89,15 @@ M.config = function ()
       cmd = "Trouble",
     },
     {
+      "rcarriga/nvim-dap-ui",
+      config = function()
+        require("dapui").setup()
+      end,
+      ft = { "python", "rust", "go" },
+      requires = { "mfussenegger/nvim-dap" },
+      disable = not lvim.builtin.dap.active,
+    },
+    {
       "editorconfig/editorconfig-vim",
       event = "BufRead",
       config = function()
