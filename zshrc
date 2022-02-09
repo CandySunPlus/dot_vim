@@ -35,12 +35,12 @@ export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
 # for nnn
 export NNN_USE_EDITOR=1
 
+# export DOCKER_HOST="ssh://LinuxLocal"
 # for proxy
-PHOST=172.30.186.178
+PHOST=127.0.0.1
 alias proxy="export https_proxy=http://$PHOST:7890 http_proxy=http://$PHOST:7890 all_proxy=socks5://$PHOST:7890"
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
-alias nvim="lvim"
 alias kssh="kitty +kitten ssh"
 
 # for python virtual ENV
@@ -61,3 +61,15 @@ export NVM_DIR="$HOME/.config/nvm"
 eval "$(zoxide init zsh)"
 
 alias luamake=/home/niksun/source/lua-language-server/3rd/luamake/luamake
+
+
+
+
+# >>> xmake >>>
+[[ -s "$HOME/.xmake/profile" ]] && source "$HOME/.xmake/profile" # load xmake profile
+# <<< xmake <<<
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -e "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; then source "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; fi
+# END_KITTY_SHELL_INTEGRATION

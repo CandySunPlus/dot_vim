@@ -104,6 +104,9 @@ M.config = function ()
         require("user/editorconfig").config()
       end,
       cmd = {"EditorConfigEnable", "EditorConfigDisable", "EditorConfigReload"}
+    },
+    {
+      "mhinz/vim-crates"
     }
   }
 end

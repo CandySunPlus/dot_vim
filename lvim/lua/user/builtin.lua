@@ -1,11 +1,6 @@
 local M = {}
 
 M.config = function ()
-  lvim.builtin.dashboard.active = true
-  lvim.builtin.terminal.active = true
-  lvim.builtin.nvimtree.side = "left"
-  lvim.builtin.nvimtree.show_icons.git = 0
-
   -- CMP
   -- =========================================
   lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
@@ -30,7 +25,9 @@ M.config = function ()
 
   -- NvimTree
   -- =========================================
-  lvim.builtin.nvimtree.setup.auto_open = 0
+  lvim.builtin.nvimtree.side = "left"
+  lvim.builtin.nvimtree.show_icons.git = 0
+  lvim.builtin.nvimtree.setup.open_on_setup = 0
   lvim.builtin.nvimtree.setup.diagnostics = {
     enable = true,
     icons = {
@@ -68,7 +65,6 @@ M.config = function ()
 
   lvim.builtin.dap.active = false
   lvim.builtin.terminal.active = true
-  lvim.builtin.nvimtree.auto_open = 0
 
   if lvim.builtin.dap.active then
     require("user.dap").config()

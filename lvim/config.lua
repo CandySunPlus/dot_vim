@@ -14,6 +14,7 @@ vim.o.foldenable = false
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.foldlevel = 5
+vim.o.showbreak = " ↳  "
 
 -- for plugins
 vim.g.tokyonight_style = "storm"

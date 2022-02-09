@@ -63,6 +63,7 @@ PKG_CONFIG_PATH=(
 
 path=(
     $HOME/.cargo/bin
+    $HOME/.android/emulator
     $HOME/.yarn/bin
     $HOME/.opt/bin
     $HOME/.local/bin

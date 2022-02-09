@@ -9,6 +9,7 @@ M.config = function ()
     { "BufRead,BufNewFile", "*.mina", "setfiletype vue"},
     { "BufRead,BufNewFile", "*.m", "setfiletype objc"},
     { "BufRead,BufNewFile", "*.asm", "setfiletype nasm"},
+    { "BufRead,BufNewFile", "Cargo.toml", "call crates#toggle()"},
     { "BufRead,BufNewFile", "/etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/*", "setfiletype nginx"},
   }
 end
