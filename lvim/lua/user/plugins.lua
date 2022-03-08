@@ -54,7 +54,7 @@ M.config = function ()
     {
       'ur4ltz/surround.nvim',
       config = function()
-        require "surround".setup {mappings_style = "surround"}
+        require "surround".setup {mappings_style = "sandwich"}
       end,
     },
     {

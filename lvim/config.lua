@@ -6,6 +6,7 @@ lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight"
 -- vim.o.tabstop = 4
 -- vim.o.shiftwidth = 4
+vim.o.exrc = true
 vim.o.numberwidth = 2
 vim.o.cmdheight = 1
 vim.o.relativenumber = true
@@ -28,7 +29,7 @@ end
 require("user.builtin").config()
 
 -- generic LSP settings
-lvim.lsp.override = { "rust_analyzer" }
+vim.list_extend(lvim.lsp.override, { "rust_analyzer" })
 
 -- Additional Plugins
 require("user.plugins").config()
