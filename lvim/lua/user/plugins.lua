@@ -52,10 +52,9 @@ M.config = function ()
       disable = not lvim.builtin.lualine.active,
     },
     {
-      'blackCauldron7/surround.nvim',
-      event = "BufRead",
+      'ur4ltz/surround.nvim',
       config = function()
-        require "surround".setup {}
+        require "surround".setup {mappings_style = "surround"}
       end,
     },
     {
