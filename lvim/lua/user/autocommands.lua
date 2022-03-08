@@ -11,6 +11,7 @@ M.config = function ()
     { "BufRead,BufNewFile", "*.asm", "setfiletype nasm"},
     { "BufRead,BufNewFile", "Cargo.toml", "call crates#toggle()"},
     { "BufRead,BufNewFile", "/etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/*", "setfiletype nginx"},
+    { "BufRead,BufNewFile", "CMakeLists.*", "setfiletype cmake"},
   }
 end
 
