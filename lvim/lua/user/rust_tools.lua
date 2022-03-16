@@ -3,7 +3,7 @@ M.config = function()
 
   local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.6.10/'
   local codelldb_path = extension_path .. 'adapter/codelldb'
-  local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+  local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib'
 
   local status_ok, rust_tools = pcall(require, "rust-tools")
   if not status_ok then
