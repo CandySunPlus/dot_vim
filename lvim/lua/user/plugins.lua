@@ -87,6 +87,7 @@ M.config = function ()
       end,
       cmd = "Trouble",
     },
+    { "nvim-telescope/telescope-ui-select.nvim" },
     {
       "rcarriga/nvim-dap-ui",
       config = function()

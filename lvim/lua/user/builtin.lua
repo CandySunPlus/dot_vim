@@ -63,12 +63,8 @@ M.config = function ()
   lvim.builtin.treesitter.context_commentstring.enable = true
   lvim.builtin.treesitter.matchup = true
 
-  lvim.builtin.dap.active = false
+  lvim.builtin.dap.active = true
   lvim.builtin.terminal.active = true
-
-  if lvim.builtin.dap.active then
-    require("user.dap").config()
-  end
 
   if lvim.builtin.lualine.active then
     lvim.builtin.lualine.on_config_done = function (lualine)

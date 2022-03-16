@@ -20,10 +20,6 @@ vim.o.showbreak = " ↳  "
 -- for plugins
 vim.g.tokyonight_style = "storm"
 
-if lvim.builtin.dap.active then
-  require("user.dap").config()
-end
-
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 require("user.builtin").config()
