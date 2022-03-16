@@ -20,15 +20,6 @@ M.config = function()
     tools = {
       autoSetHints = true,
       hover_with_actions = true,
-      runnables = {
-        use_telescope = true,
-      },
-      -- how to execute terminal commands
-		  -- options right now: termopen / quickfix
-  		executor = require("rust-tools/executors").termopen,
-	  	-- callback to execute once rust-analyzer is done initializing the workspace
-		  -- The callback receives one parameter indicating the `health` of the server: "ok" | "warning" | "error"
-		  on_initialized = nil,
       inlay_hints = {
         only_current_line = false,
         show_parameter_hints = true,
@@ -54,7 +45,6 @@ M.config = function()
       },
     },
     server = {
-      standalone = true,
       cmd = requested_server._default_options.cmd,
       on_attach = require("lvim.lsp").common_on_attach,
       on_init = require("lvim.lsp").common_on_init,
