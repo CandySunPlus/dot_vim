@@ -73,9 +73,7 @@ M.config = function ()
       event = "InsertEnter",
     },
     {
-      -- "simrat39/rust-tools.nvim",
-      "matze/rust-tools.nvim",
-      branch = "fix-upstreamed-inlayhints",
+      "simrat39/rust-tools.nvim",
       config = function()
         require("user.rust_tools").config()
       end,
