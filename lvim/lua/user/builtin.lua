@@ -40,11 +40,10 @@ M.config = function ()
 
   -- Dashboard
   -- =========================================
-  lvim.builtin.dashboard.active = true
-  lvim.builtin.dashboard.custom_section["m"] = {
-    description = { "  Marks              " },
-    command = "Telescope marks",
-  }
+  lvim.builtin.alpha.active = true
+  table.insert(lvim.builtin.alpha.dashboard.section.buttons.entries, {
+    "SPC m", "  Marks", "<CMD>Telescope marks<CR>",
+  })
 
   -- LSP
   -- =========================================
