@@ -36,6 +36,10 @@ export SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass
 export PUB_HOSTED_URL=https://pub.sankuai.com
 export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
 
+# for rustup
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+
 # for nnn
 export NNN_USE_EDITOR=1
 
