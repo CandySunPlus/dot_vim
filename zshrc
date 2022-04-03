@@ -10,6 +10,10 @@ if [[ $(uname) == "Darwin" ]]; then
     ulimit -S -n 1024
 fi
 
+if grep -q microsoft /proc/version; then
+    export TERM=ms-terminal
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="powerlevel10k/powerlevel10k"
