@@ -10,7 +10,7 @@ if [[ $(uname) == "Darwin" ]]; then
     ulimit -S -n 1024
 fi
 
-if grep -q microsoft /proc/version; then
+if (grep -q microsoft /proc/version) && [ -z "$TMUX" ]; then
     export TERM=ms-terminal
 fi
 
@@ -54,6 +54,7 @@ alias proxy="export https_proxy=http://$PHOST:7890 http_proxy=http://$PHOST:7890
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
 alias kssh="kitty +kitten ssh"
+alias tmux="TERM=xterm-256color tmux"
 
 # for python virtual ENV
 if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
