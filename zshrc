@@ -10,7 +10,9 @@ if [[ $(uname) == "Darwin" ]]; then
     ulimit -S -n 1024
 fi
 
-if (grep -q microsoft /proc/version) && [ -z "$TMUX" ]; then
+grep -q microsoft /proc/version 2> /dev/null
+
+if [ $? -eq 0 ] && [ -z "$TMUX" ]; then
     export TERM=ms-terminal
 fi
 
