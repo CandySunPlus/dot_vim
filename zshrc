@@ -14,6 +14,7 @@ grep -q microsoft /proc/version 2> /dev/null
 
 if [ $? -eq 0 ] && [ -z "$TMUX" ]; then
     export TERM=ms-terminal
+    alias tmux="TERM=xterm-256color tmux"
 fi
 
 # Path to your oh-my-zsh installation.
@@ -56,7 +57,6 @@ alias proxy="export https_proxy=http://$PHOST:7890 http_proxy=http://$PHOST:7890
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
 alias kssh="kitty +kitten ssh"
-alias tmux="TERM=xterm-256color tmux"
 
 # for python virtual ENV
 if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
