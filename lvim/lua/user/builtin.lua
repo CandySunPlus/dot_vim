@@ -3,7 +3,7 @@ local M = {}
 M.config = function ()
   -- CMP
   -- =========================================
-  lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+  -- lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
   lvim.builtin.cmp.experimental = {
     ghost_text = false,
     native_menu = false,
