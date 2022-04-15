@@ -1,22 +1,7 @@
 local M = {}
 M.config = function()
 
-  local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.6.10/'
-  local codelldb_path = extension_path .. 'adapter/codelldb'
-  local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib'
-
-  local status_ok, rust_tools = pcall(require, "rust-tools")
-  if not status_ok then
-    return
-  end
-
-  local lsp_installer_servers = require "nvim-lsp-installer.servers"
-  local _, requested_server = lsp_installer_servers.get_server("rust_analyzer")
-
   local opts = {
-    dap = {
-      adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path, liblldb_path)
-    },
     tools = {
       autoSetHints = true,
       hover_with_actions = true,
@@ -30,6 +15,9 @@ M.config = function()
         right_align = false,
         right_align_padding = 7,
         highlight = "Comment",
+      },
+      runnables = {
+        use_telescope = true
       },
       hover_actions = {
         border = {
@@ -45,12 +33,13 @@ M.config = function()
       },
     },
     server = {
-      cmd = requested_server._default_options.cmd,
+      cmd = { vim.fn.stdpath "data" .. "/lsp_servers/rust/rust-analyzer" },
       on_attach = require("lvim.lsp").common_on_attach,
       on_init = require("lvim.lsp").common_on_init,
     },
   }
-  rust_tools.setup(opts)
+
+  require("rust-tools").setup(opts)
 end
 
 return M
