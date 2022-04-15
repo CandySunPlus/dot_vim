@@ -25,7 +25,7 @@ vim.g.tokyonight_style = "storm"
 require("user.builtin").config()
 
 -- generic LSP settings
-vim.list_extend(lvim.lsp.override, { "rust_analyzer" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 -- Additional Plugins
 require("user.plugins").config()
