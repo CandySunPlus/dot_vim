@@ -1,6 +1,6 @@
 local M = {}
 
-M.config = function ()
+M.config = function()
   -- CMP
   -- =========================================
   -- lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
@@ -27,7 +27,7 @@ M.config = function ()
   -- =========================================
   lvim.builtin.nvimtree.side = "left"
   lvim.builtin.nvimtree.show_icons.git = 0
-  lvim.builtin.nvimtree.setup.open_on_setup = 0
+  lvim.builtin.nvimtree.setup.open_on_setup = false
   lvim.builtin.nvimtree.setup.diagnostics = {
     enable = true,
     icons = {
@@ -55,7 +55,7 @@ M.config = function ()
   }
 
   -- if you don't want all the parsers change this to a table of the ones you want
-  lvim.builtin.treesitter.ensure_installed = "maintained"
+  -- lvim.builtin.treesitter.ensure_installed = "maintained"
   lvim.builtin.treesitter.ignore_install = { "haskell" }
   lvim.builtin.treesitter.highlight.enabled = true
   lvim.builtin.treesitter.indent.enable = true
@@ -66,7 +66,7 @@ M.config = function ()
   lvim.builtin.terminal.active = true
 
   if lvim.builtin.lualine.active then
-    lvim.builtin.lualine.on_config_done = function (lualine)
+    lvim.builtin.lualine.on_config_done = function(lualine)
       require("user.lualine").config(lualine)
     end
   end
