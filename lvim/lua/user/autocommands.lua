@@ -1,17 +1,77 @@
 local M = {}
 
-M.config = function ()
-  lvim.autocommands.custom_groups = {
-    { "Filetype", "vue", "syntax sync fromstart"},
-    { "BufRead,BufNewFile", "*.wxml", "setfiletype html"},
-    { "BufRead,BufNewFile", "*.wxss", "setfiletype less"},
-    { "BufRead,BufNewFile", "*.wxs", "setfiletype javascript"},
-    { "BufRead,BufNewFile", "*.mina", "setfiletype vue"},
-    { "BufRead,BufNewFile", "*.m", "setfiletype objc"},
-    { "BufRead,BufNewFile", "*.asm", "setfiletype nasm"},
-    { "BufRead,BufNewFile", "Cargo.toml", "call crates#toggle()"},
-    { "BufRead,BufNewFile", "/etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/*", "setfiletype nginx"},
-    { "BufRead,BufNewFile", "CMakeLists.*", "setfiletype cmake"},
+M.config = function()
+  lvim.autocmds = {
+    {
+      "Filetype",
+      {
+        pattern = { "vue" },
+        command = "syntax sync fromstart",
+      },
+    },
+    {
+      "BufRead,BufNewFile",
+      {
+        pattern = { "*.wxml" },
+        command = "setfiletype html",
+      },
+    },
+    {
+      "BufRead,BufNewFile",
+      {
+        pattern = { "*.wxss" },
+        command = "setfiletype less",
+      },
+    },
+    {
+      "BufRead,BufNewFile",
+      {
+        pattern = { "*.wxs" },
+        command = "setfiletype javascript",
+      },
+    },
+    {
+      "BufRead,BufNewFile",
+      {
+        pattern = { "*.mina" },
+        command = "setfiletype vue",
+      },
+    },
+    {
+      "BufRead,BufNewFile",
+      {
+        pattern = { "*.m" },
+        command = "setfiletype objc",
+      },
+    },
+    {
+      "BufRead,BufNewFile",
+      {
+        pattern = { "*.asm" },
+        command = "setfiletype nasm",
+      },
+    },
+    {
+      "BufRead,BufNewFile",
+      {
+        pattern = { "CMakeLists.*" },
+        command = "setfiletype cmake",
+      },
+    },
+    {
+      "BufRead,BufNewFile",
+      {
+        pattern = { "/etc/nginx/*", "/usr/local/nginx/conf/*", "/usr/local/etc/nginx/*" },
+        command = "setfiletype nginx",
+      },
+    },
+    {
+      "BufRead,BufNewFile",
+      {
+        pattern = { "Cargo.toml" },
+        command = "call crates#toggle()",
+      },
+    },
   }
 end
 
