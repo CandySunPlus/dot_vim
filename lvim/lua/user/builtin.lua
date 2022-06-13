@@ -26,7 +26,7 @@ M.config = function()
   -- NvimTree
   -- =========================================
   lvim.builtin.nvimtree.side = "left"
-  lvim.builtin.nvimtree.show_icons.git = 0
+  -- lvim.builtin.nvimtree.show_icons.git = 0
   lvim.builtin.nvimtree.setup.open_on_setup = false
   lvim.builtin.nvimtree.setup.diagnostics = {
     enable = true,
