@@ -88,10 +88,9 @@ M.config = function()
       cmd = "Trouble",
     },
     {
-      "nvim-telescope/telescope-ui-select.nvim",
-      requires = "nvim-telescope/telescope.nvim",
+      "stevearc/dressing.nvim",
       config = function()
-        require("user.telescope").config()
+        require("user.dressing").config()
       end,
     },
     {
