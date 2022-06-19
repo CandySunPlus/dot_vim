@@ -1,6 +1,6 @@
 local M = {}
 
-M.config = function ()
+M.config = function()
   -- keymappings [view all the defaults by pressing <leader>Lk]
   lvim.leader = "space"
   -- add your own keymapping
@@ -21,15 +21,16 @@ M.config = function ()
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
     w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
-    t = { "<cmd>TodoTrouble<cr>", "TodoTrouble"}
+    t = { "<cmd>TodoTrouble<cr>", "TodoTrouble" }
   }
 
   lvim.builtin.which_key.mappings["e"] = {}
   lvim.builtin.which_key.mappings["k"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
   lvim.builtin.which_key.mappings["l"]["h"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" }
   lvim.builtin.which_key.mappings["l"]["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" }
+  lvim.builtin.which_key.mappings["l"]["R"] = { "<cmd>Telescope lsp_references<cr>", "Symbols References" }
+  lvim.builtin.which_key.mappings["l"]["i"] = { "<cmd>Telescope lsp_implementations<cr>", "Symbols Implementations" }
   lvim.builtin.which_key.mappings["s"]["t"] = { "<cmd>TodoTelescope<cr>", "Todo" }
-  lvim.builtin.which_key.mappings["s"]["o"] = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" }
 end
 
 return M
