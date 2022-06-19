@@ -1,6 +1,6 @@
 local M = {}
 
-M.config = function ()
+M.config = function()
   lvim.plugins = {
     { "folke/tokyonight.nvim" },
     { "folke/lsp-colors.nvim", event = "BufRead" },
@@ -54,7 +54,7 @@ M.config = function ()
     {
       'ur4ltz/surround.nvim',
       config = function()
-        require "surround".setup {mappings_style = "sandwich"}
+        require "surround".setup { mappings_style = "sandwich" }
       end,
     },
     {
@@ -87,7 +87,13 @@ M.config = function ()
       end,
       cmd = "Trouble",
     },
-    { "nvim-telescope/telescope-ui-select.nvim" },
+    {
+      "nvim-telescope/telescope-ui-select.nvim",
+      requires = "nvim-telescope/telescope.nvim",
+      config = function()
+        require("user.telescope").config()
+      end,
+    },
     {
       "rcarriga/nvim-dap-ui",
       config = function()
@@ -103,7 +109,7 @@ M.config = function ()
       config = function()
         require("user/editorconfig").config()
       end,
-      cmd = {"EditorConfigEnable", "EditorConfigDisable", "EditorConfigReload"}
+      cmd = { "EditorConfigEnable", "EditorConfigDisable", "EditorConfigReload" }
     },
     {
       "mhinz/vim-crates"

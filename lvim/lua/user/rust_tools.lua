@@ -1,7 +1,16 @@
 local M = {}
 M.config = function()
 
+  local codelldb_path = '/home/niksun/.local/bin/codelldb'
+  local liblldb_path = '/usr/lib/liblldb.so'
+
+
   local opts = {
+    dap = {
+      adapter = require(
+        'rust-tools.dap'
+      ).get_codelldb_adapter(codelldb_path, liblldb_path)
+    },
     tools = {
       autoSetHints = true,
       hover_with_actions = true,
