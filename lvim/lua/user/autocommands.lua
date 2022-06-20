@@ -5,6 +5,13 @@ M.config = function()
     {
       "Filetype",
       {
+        pattern = { "toml" },
+        command = "lua require('cmp').setup.buffer { sources = {{ name = 'crates' }}}",
+      },
+    },
+    {
+      "Filetype",
+      {
         pattern = { "vue" },
         command = "syntax sync fromstart",
       },
