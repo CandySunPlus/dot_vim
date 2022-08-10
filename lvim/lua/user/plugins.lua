@@ -34,7 +34,7 @@ M.config = function()
       event = "BufRead",
     },
     {
-      "windwp/nvim-spectre",
+      "nvim-pack/nvim-spectre",
       event = "BufRead",
       config = function()
         require("spectre").setup()
