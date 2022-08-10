@@ -4,7 +4,6 @@ M.config = function()
   local codelldb_path = '/home/niksun/.local/bin/codelldb'
   local liblldb_path = '/usr/lib/liblldb.so'
 
-
   local opts = {
     dap = {
       adapter = require(
@@ -12,8 +11,8 @@ M.config = function()
       ).get_codelldb_adapter(codelldb_path, liblldb_path)
     },
     tools = {
+      executor = require("rust-tools/executors").termopen,
       autoSetHints = true,
-      hover_with_actions = true,
       inlay_hints = {
         only_current_line = false,
         show_parameter_hints = true,
@@ -42,7 +41,7 @@ M.config = function()
       },
     },
     server = {
-      cmd = { vim.fn.stdpath "data" .. "/lsp_servers/rust/rust-analyzer" },
+      cmd = { vim.fn.stdpath "data" .. "/mason/bin/rust-analyzer" },
       on_attach = require("lvim.lsp").common_on_attach,
       on_init = require("lvim.lsp").common_on_init,
     },
