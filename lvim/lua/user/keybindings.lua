@@ -31,6 +31,7 @@ M.config = function()
   lvim.builtin.which_key.mappings["l"]["R"] = { "<cmd>Telescope lsp_references<cr>", "Symbols References" }
   lvim.builtin.which_key.mappings["l"]["i"] = { "<cmd>Telescope lsp_implementations<cr>", "Symbols Implementations" }
   lvim.builtin.which_key.mappings["s"]["t"] = { "<cmd>TodoTelescope<cr>", "Todo" }
+  lvim.builtin.which_key.mappings["s"]["g"] = { "<cmd>Telescope live_grep<cr>", "Grep Files" }
 
   lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references<cr>", "Goto References" }
   lvim.lsp.buffer_mappings.normal_mode["gI"] = { "<cmd>Telescope lsp_implementations<cr>",
