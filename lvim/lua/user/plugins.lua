@@ -116,6 +116,9 @@ M.config = function()
       config = function()
         require('crates').setup()
       end
+    },
+    {
+      'tpope/vim-fugitive'
     }
   }
 end
