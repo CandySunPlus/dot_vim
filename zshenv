@@ -67,6 +67,7 @@ path=(
     $HOME/.yarn/bin
     $HOME/.opt/bin
     $HOME/.local/bin
+    $HOME/.local/share/nvim/mason/bin
     $HOME/.go/bin
     $HOME/.dotnet/tools
     $HOME/.emacs.d/bin
