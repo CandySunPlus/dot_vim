@@ -40,6 +40,8 @@ M.config = function()
     },
   }
 
+  lvim.builtin.notify.active = true
+
   -- Dashboard
   -- =========================================
   lvim.builtin.alpha.active = true
