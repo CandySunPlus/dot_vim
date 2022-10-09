@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function()
   lvim.plugins = {
-    { "folke/tokyonight.nvim" },
+    -- { "folke/tokyonight.nvim" },
     { "folke/lsp-colors.nvim", event = "BufRead" },
     {
       "norcalli/nvim-colorizer.lua",
@@ -10,13 +10,6 @@ M.config = function()
         require("user.colorizer").config()
       end,
       event = "BufRead"
-    },
-    {
-      "lukas-reineke/indent-blankline.nvim",
-      event = "BufRead",
-      setup = function()
-        require("user.indent_blankline").setup()
-      end
     },
     {
       "andymass/vim-matchup",
@@ -92,15 +85,6 @@ M.config = function()
       config = function()
         require("user.dressing").config()
       end,
-    },
-    {
-      "rcarriga/nvim-dap-ui",
-      config = function()
-        require("dapui").setup()
-      end,
-      ft = { "python", "rust", "go" },
-      requires = { "mfussenegger/nvim-dap" },
-      disable = not lvim.builtin.dap.active,
     },
     {
       "editorconfig/editorconfig-vim",

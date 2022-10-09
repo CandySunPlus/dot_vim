@@ -40,14 +40,17 @@ M.config = function()
     },
   }
 
+  lvim.builtin.breadcrumbs.active = true
+  lvim.builtin.lir.active = true
+
   lvim.builtin.notify.active = true
 
   -- Dashboard
   -- =========================================
   lvim.builtin.alpha.active = true
-  table.insert(lvim.builtin.alpha.dashboard.section.buttons.entries, {
-    "SPC m", "  Marks", "<CMD>Telescope marks<CR>",
-  })
+  -- table.insert(lvim.builtin.alpha.dashboard.section.buttons.entries, {
+  --   "SPC m", "  Marks", "<CMD>Telescope marks<CR>",
+  -- })
 
   -- LSP
   -- =========================================
