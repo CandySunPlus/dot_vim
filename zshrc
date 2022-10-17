@@ -52,11 +52,12 @@ export NNN_USE_EDITOR=1
 
 # export DOCKER_HOST="ssh://LinuxLocal"
 # for proxy
-PHOST=127.0.0.1
+PHOST=192.168.5.119
 alias proxy="export https_proxy=http://$PHOST:7890 http_proxy=http://$PHOST:7890 all_proxy=socks5://$PHOST:7890"
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
 alias kssh="kitty +kitten ssh"
+alias docker="podman"
 
 # for python virtual ENV
 if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then

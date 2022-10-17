@@ -54,6 +54,13 @@ M.config = function()
     {
       "BufRead,BufNewFile",
       {
+        pattern = { "*.mm" },
+        command = "setfiletype objcpp",
+      },
+    },
+    {
+      "BufRead,BufNewFile",
+      {
         pattern = { "*.asm" },
         command = "setfiletype nasm",
       },
