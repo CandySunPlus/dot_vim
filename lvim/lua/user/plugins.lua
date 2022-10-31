@@ -102,6 +102,13 @@ M.config = function()
       end
     },
     {
+      'akinsho/git-conflict.nvim',
+      tag = "*",
+      config = function()
+        require('git-conflict').setup()
+      end
+    },
+    {
       'tpope/vim-fugitive'
     }
   }

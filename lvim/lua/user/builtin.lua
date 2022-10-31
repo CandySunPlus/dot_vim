@@ -43,7 +43,6 @@ M.config = function()
   lvim.builtin.breadcrumbs.active = true
   lvim.builtin.lir.active = true
 
-  lvim.builtin.notify.active = true
 
   -- Dashboard
   -- =========================================

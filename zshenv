@@ -49,19 +49,23 @@ typeset -gU cdpath fpath mailpath path
 # export PKG_CONFIG_PATH="/usr/local/opt/protobuf@3.6/lib/pkgconfig:$PKG_CONFIG_PATH"
 #
 LDFLAGS=(
-  -L/usr/local/opt/ruby/lib
-  $LDFLAGS
+    -L/usr/local/opt/openssl@3/lib
+    -L/usr/local/opt/ruby/lib
+    $LDFLAGS
 )
 CPPFLAGS=(
-  -I/usr/local/opt/ruby/include
-  $CPPFLAGS
+    -I/usr/local/opt/openssl@3/include
+    -I/usr/local/opt/ruby/include
+    $CPPFLAGS
 )
 PKG_CONFIG_PATH=(
-  /usr/local/opt/ruby/lib/pkgconfig
-  $PKG_CONFIG_PATH
+    /usr/local/opt/openssl@3/lib/pkgconfig
+    /usr/local/opt/ruby/lib/pkgconfig
+    $PKG_CONFIG_PATH
 )
 
 path=(
+    $HOME/.r2env/bin
     $HOME/.cargo/bin
     $HOME/.android/emulator
     $HOME/.yarn/bin
