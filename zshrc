@@ -57,7 +57,10 @@ alias proxy="export https_proxy=http://$PHOST:7890 http_proxy=http://$PHOST:7890
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
 alias kssh="kitty +kitten ssh"
-alias docker="podman"
+
+if [[ $(uname) != "Darwin" ]]; then
+    alias docker="podman"
+fi
 
 # for python virtual ENV
 if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
