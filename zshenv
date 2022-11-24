@@ -77,8 +77,7 @@ path=(
     $HOME/.emacs.d/bin
     $HOME/.pub-cache/bin
     /usr/local/Caskroom/flutter/1.20.2/flutter/.pub-cache/bin
-    /usr/local/opt/ruby/bin
-    /usr/local/opt/{llvm,ruby}/bin
+    /usr/local/opt/{llvm,ruby,cpio,ruby}/bin
     /usr/local/opt/go/libexec/bin
     $HOME/.android/cmdline-tools/latest/bin
     /usr/local/{bin,sbin}

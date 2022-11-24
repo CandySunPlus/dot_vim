@@ -7,14 +7,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
-    ulimit -S -n 1024
+  ulimit -S -n 1024
 fi
 
 grep -q microsoft /proc/version 2> /dev/null
 
 if [ $? -eq 0 ] && [ -z "$TMUX" ]; then
-    export TERM=ms-terminal
-    alias tmux="TERM=xterm-256color tmux"
+  export TERM=ms-terminal
+  alias tmux="TERM=xterm-256color tmux"
 fi
 
 # Path to your oh-my-zsh installation.
@@ -52,22 +52,23 @@ export NNN_USE_EDITOR=1
 
 # export DOCKER_HOST="ssh://LinuxLocal"
 # for proxy
-PHOST=192.168.5.119
+# PHOST=192.168.5.119
+PHOST=127.0.0.1
 alias proxy="export https_proxy=http://$PHOST:7890 http_proxy=http://$PHOST:7890 all_proxy=socks5://$PHOST:7890"
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
 alias kssh="kitty +kitten ssh"
 
 if [[ $(uname) != "Darwin" ]]; then
-    alias docker="podman"
+  alias docker="podman"
 fi
 
 # for python virtual ENV
 if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
-    export VIRTUALENVWRAPPER_PYTHON=`which python3`
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/development/python
-    source /usr/local/bin/virtualenvwrapper.sh
+  export VIRTUALENVWRAPPER_PYTHON=`which python3`
+  export WORKON_HOME=$HOME/.virtualenvs
+  export PROJECT_HOME=$HOME/development/python
+  source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 
