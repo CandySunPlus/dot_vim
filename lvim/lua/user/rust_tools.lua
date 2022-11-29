@@ -1,7 +1,7 @@
 local M = {}
 M.config = function()
 
-  local codelldb_path = '/home/niksun/.local/bin/codelldb'
+  local codelldb_path = vim.fn.stdpath "data" .. "/mason/bin/codelldb"
   local liblldb_path = '/usr/lib/liblldb.so'
 
   local opts = {
