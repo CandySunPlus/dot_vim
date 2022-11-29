@@ -20,5 +20,5 @@ indent_style = tab
 [*.lua]
 indent_size = 2
 
-[*.sh]
+[{init,*.sh}]
 indent_size = 2
