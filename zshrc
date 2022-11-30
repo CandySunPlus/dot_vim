@@ -58,7 +58,7 @@ alias proxy="export https_proxy=http://$PHOST:7890 http_proxy=http://$PHOST:7890
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
 alias kssh="kitty +kitten ssh"
-alias docker=podman
+# alias docker=podman
 
 if [[ $(uname) != "Darwin" ]]; then
   alias docker="podman"
@@ -94,19 +94,3 @@ alias luamake=/home/niksun/source/lua-language-server/3rd/luamake/luamake
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -e "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; then source "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; fi
 # END_KITTY_SHELL_INTEGRATION
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/niksun/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/niksun/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/niksun/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/niksun/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
