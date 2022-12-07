@@ -24,6 +24,14 @@ M.config = function()
     t = { "<cmd>TodoTrouble<cr>", "TodoTrouble" }
   }
 
+  lvim.builtin.which_key.mappings["D"] = {
+    name = "+Diffview",
+    d = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
+    h = { "<cmd>DiffviewFileHistory<cr>", "Open File History" },
+    c = { "<cmd>DiffviewClose<cr>", "Close Diffview" },
+    u = { "<cmd>DiffviewRefresh<cr>", "Update Diffview" }
+  }
+
   lvim.builtin.which_key.mappings["e"] = {}
   lvim.builtin.which_key.mappings["k"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
   lvim.builtin.which_key.mappings["l"]["h"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" }

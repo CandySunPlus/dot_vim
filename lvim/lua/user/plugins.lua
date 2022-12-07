@@ -59,7 +59,10 @@ M.config = function()
     },
     {
       "sindrets/diffview.nvim",
-      cmd = "DiffviewOpen",
+      requires = 'nvim-lua/plenary.nvim',
+      config = function()
+        require("user/diffview").config()
+      end
     },
     {
       "ray-x/lsp_signature.nvim",
