@@ -45,9 +45,10 @@ M.config = function()
       disable = not lvim.builtin.lualine.active,
     },
     {
-      'ur4ltz/surround.nvim',
+      "kylechui/nvim-surround",
+      tag = "*",
       config = function()
-        require "surround".setup { mappings_style = "sandwich" }
+        require("nvim-surround").setup()
       end,
     },
     {
