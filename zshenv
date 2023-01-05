@@ -49,39 +49,42 @@ typeset -gU cdpath fpath mailpath path
 # export PKG_CONFIG_PATH="/usr/local/opt/protobuf@3.6/lib/pkgconfig:$PKG_CONFIG_PATH"
 #
 LDFLAGS=(
-    -L/usr/local/opt/openssl@3/lib
-    -L/usr/local/opt/ruby/lib
-    $LDFLAGS
+  -L/usr/local/opt/openssl@3/lib
+  -L/usr/local/opt/ruby/lib
+  -L/usr/local/opt/ncurses/lib
+  $LDFLAGS
 )
 CPPFLAGS=(
-    -I/usr/local/opt/openssl@3/include
-    -I/usr/local/opt/ruby/include
-    $CPPFLAGS
+  -I/usr/local/opt/openssl@3/include
+  -I/usr/local/opt/ruby/include
+  -I/usr/local/opt/ncurses/include
+  $CPPFLAGS
 )
 PKG_CONFIG_PATH=(
-    /usr/local/opt/openssl@3/lib/pkgconfig
-    /usr/local/opt/ruby/lib/pkgconfig
-    $PKG_CONFIG_PATH
+  /usr/local/opt/ncurses/lib/pkgconfig
+  /usr/local/opt/openssl@3/lib/pkgconfig
+  /usr/local/opt/ruby/lib/pkgconfig
+  $PKG_CONFIG_PATH
 )
 
 path=(
-    $HOME/.r2env/bin
-    $HOME/.cargo/bin
-    $HOME/.android/emulator
-    $HOME/.yarn/bin
-    $HOME/.opt/bin
-    $HOME/.local/bin
-    $HOME/.local/share/nvim/mason/bin
-    $HOME/.go/bin
-    $HOME/.dotnet/tools
-    $HOME/.emacs.d/bin
-    $HOME/.pub-cache/bin
-    /usr/local/Caskroom/flutter/1.20.2/flutter/.pub-cache/bin
-    /usr/local/opt/{llvm,ruby,cpio,ruby}/bin
-    /usr/local/opt/go/libexec/bin
-    $HOME/.android/cmdline-tools/latest/bin
-    /usr/local/{bin,sbin}
-    $path
+  $HOME/.r2env/bin
+  $HOME/.cargo/bin
+  $HOME/.android/emulator
+  $HOME/.yarn/bin
+  $HOME/.opt/bin
+  $HOME/.local/bin
+  $HOME/.local/share/nvim/mason/bin
+  $HOME/.go/bin
+  $HOME/.dotnet/tools
+  $HOME/.emacs.d/bin
+  $HOME/.pub-cache/bin
+  /usr/local/Caskroom/flutter/1.20.2/flutter/.pub-cache/bin
+  /usr/local/opt/{llvm,ruby,cpio,ruby}/bin
+  /usr/local/opt/go/libexec/bin
+  $HOME/.android/cmdline-tools/latest/bin
+  /usr/local/{bin,sbin}
+  $path
 )
 
 
@@ -105,4 +108,3 @@ if (( $+commands[lesspipe.sh] )); then
 fi
 
 . "$HOME/.cargo/env"
-

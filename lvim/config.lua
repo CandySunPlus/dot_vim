@@ -24,7 +24,7 @@ vim.o.showbreak = " ↳  "
 require("user.builtin").config()
 
 -- generic LSP settings
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" }, 1, 1)
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" }, 1, 1)
 
 -- Additional Plugins
 require("user.plugins").config()

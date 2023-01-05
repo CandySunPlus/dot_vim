@@ -73,11 +73,10 @@ M.config = function()
       event = "InsertEnter",
     },
     {
-      "simrat39/rust-tools.nvim",
+      "lvimuser/lsp-inlayhints.nvim",
       config = function()
-        require("user.rust_tools").config()
+        require("user/lsp_inlayhints").config()
       end,
-      ft = { "rust", "rs" },
     },
     {
       "folke/trouble.nvim",

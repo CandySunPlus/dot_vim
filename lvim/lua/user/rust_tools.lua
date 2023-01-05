@@ -44,6 +44,15 @@ M.config = function()
       cmd = { vim.fn.stdpath "data" .. "/mason/bin/rust-analyzer" },
       on_attach = require("lvim.lsp").common_on_attach,
       on_init = require("lvim.lsp").common_on_init,
+      settings = {
+        ['rust-analyzer'] = {
+          cargo = {
+            buildScripts = {
+              enable = false
+            }
+          }
+        }
+      }
     },
   }
 
