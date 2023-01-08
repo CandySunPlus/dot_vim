@@ -2,8 +2,13 @@ local M = {}
 
 M.config = function()
   lvim.plugins = {
-    -- { "folke/tokyonight.nvim" },
     { "folke/lsp-colors.nvim", event = "BufRead" },
+    {
+      "xiyaowong/nvim-transparent",
+      config = function()
+        require("user.transparent").config()
+      end
+    },
     {
       "norcalli/nvim-colorizer.lua",
       config = function()
