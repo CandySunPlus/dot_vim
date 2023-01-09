@@ -13,7 +13,7 @@ M.config = function()
 
   -- Use which-key to add extra bindings with the leader-key prefix
   -- lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
-  lvim.builtin.which_key.mappings["t"] = {
+  lvim.builtin.which_key.mappings["T"] = {
     name = "+Trouble",
     r = { "<cmd>Trouble lsp_references<cr>", "References" },
     f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
@@ -22,6 +22,14 @@ M.config = function()
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
     w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
     t = { "<cmd>TodoTrouble<cr>", "TodoTrouble" }
+  }
+
+  lvim.builtin.which_key.mappings["t"] = {
+    name = "+Terminal",
+    h = { "<cmd>ToggleTerm direction=horizontal size=10<cr>", "Toggle Horizontal Terminal" },
+    v = { "<cmd>ToggleTerm direction=vertical size=60<cr>", "Toggle Vertical Terminal" },
+    f = { "<cmd>ToggleTerm direction=float<cr>", "Toggle Float Terminal" },
+    t = { "<cmd>ToggleTerm direction=tab<cr>", "Toggle Tab Terminal" },
   }
 
   lvim.builtin.which_key.mappings["D"] = {
