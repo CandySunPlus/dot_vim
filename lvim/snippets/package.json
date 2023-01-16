@@ -1,0 +1,16 @@
+{
+    "name": "nvim-snippets",
+    "author": "niksun",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "cpp",
+                "path": "./c.json"
+            },
+            {
+                "language": "c",
+                "path": "./c.json"
+            }
+        ]
+    }
+}
