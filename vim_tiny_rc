@@ -37,8 +37,10 @@ Plug 'tpope/vim-surround'
 Plug 'tmhedberg/matchit'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
+Plug 'Yggdroot/indentLine'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
@@ -74,3 +76,39 @@ let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
 
 colorscheme tokyonight
+
+nmap <silent> <leader>g :<C-U>call magit#show_magit('h')<CR>
+nmap <silent> <leader>p :<C-U>CocList files<CR>
+nmap <silent> <leader>o :<C-U>CocList mru<CR>
+nmap <silent> <leader>b :<C-U>CocList buffers<CR>
+nmap <silent> <leader>f :<C-U>CocList --auto-preview --interactive grep<CR>
+nmap <silent> <leader>ld <Plug>(coc-definition)
+nmap <silent> <leader>lr <Plug>(coc-references)
+nmap <silent> <leader>ln <Plug>(coc-rename)
+nmap <silent> <leader>lf <Plug>(coc-format)
+vmap <silent> <leader>lf <Plug>(coc-format-selected)
+nmap <silent> <leader>li <Plug>(coc-implementation)
+nmap <silent> <leader>lt <Plug>(coc-type-definition)
+nmap <silent> <leader>la <Plug>(coc-codeaction)
+vmap <silent> <leader>la <Plug>(coc-codeaction-selected)
+nmap <silent> <leader>lh :<C-U>call CocAction('doHover')<CR>
+nmap <silent> <leader>lc :<C-U>CocList commands<CR>
+nmap <silent> <leader>lo :<C-U>CocList outline<CR>
+nmap <silent> <leader>le :<C-U>CocList diagnostics<CR>
+nmap <silent> <leader>gb :<C-U>CocList branches<CR>
+nmap <silent> <leader>gc :<C-U>CocList commits<CR>
+
+
+let g:indentLine_char = "┆"
+let g:indentLine_first_char = "┆"
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" " <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>""
