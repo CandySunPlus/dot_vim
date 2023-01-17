@@ -38,6 +38,7 @@ Plug 'tmhedberg/matchit'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'Lokaltog/vim-easymotion'
+Plug 'ghifarit53/tokyonight-vim'
 call plug#end()
 
 autocmd FileType * set shiftwidth=4 | set expandtab | set tabstop=4
@@ -66,3 +67,10 @@ au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/
 nmap <leader>k :NERDTreeToggle<cr>
 nmap <leader>/ :TComment<cr>
 vmap <leader>/ :TComment<cr>gv
+
+set termguicolors
+
+let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight
