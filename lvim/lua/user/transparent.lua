@@ -11,6 +11,7 @@ M.config = function()
       -- In particular, when you set it to 'all', that means all available groups
 
       "NvimTreeNormal",
+      "LspInlayHint",
 
     },
     exclude = {}, -- table: groups you don't want to clear
