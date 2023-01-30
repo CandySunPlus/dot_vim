@@ -17,8 +17,5 @@ indent_style = tab
 [*.go]
 indent_style = tab
 
-[*.lua]
-indent_size = 2
-
-[{init,*.sh}]
-indent_size = 2
+[*.rs]
+indent_size = 4
