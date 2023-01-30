@@ -13,8 +13,8 @@ M.config = function()
       type_hints = {
         -- type and other hints
         show = true,
-        prefix = " ",
-        separator = "",
+        prefix = "",
+        separator = ", ",
         remove_colon_start = false,
         remove_colon_end = false,
       },
