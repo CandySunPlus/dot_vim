@@ -4,13 +4,13 @@ M.config = function()
   -- CMP
   -- =========================================
   -- lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
-  lvim.builtin.cmp.experimental = {
-    ghost_text = false,
-    native_menu = false,
-    custom_menu = true,
-  }
-  lvim.builtin.bufferline.options.indicator_icon = nil
-  lvim.builtin.bufferline.options.indicator = { style = "icon", icon = "▎" }
+  -- lvim.builtin.cmp.experimental = {
+  --   ghost_text = false,
+  --   native_menu = false,
+  --   custom_menu = true,
+  -- }
+  -- lvim.builtin.bufferline.options.indicator_icon = nil
+  -- lvim.builtin.bufferline.options.indicator = { style = "icon", icon = "▎" }
   lvim.builtin.cmp.formatting.kind_icons = require("user.lsp_kind").symbols()
   lvim.builtin.cmp.formatting.source_names = {
     buffer = "(Buffer)",
