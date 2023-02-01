@@ -1,44 +1,14 @@
 local M = {}
 
 M.config = function()
-  -- CMP
-  -- =========================================
-  -- lvim.builtin.cmp.documentation.border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
-  -- lvim.builtin.cmp.experimental = {
-  --   ghost_text = false,
-  --   native_menu = false,
-  --   custom_menu = true,
-  -- }
-  -- lvim.builtin.bufferline.options.indicator_icon = nil
-  -- lvim.builtin.bufferline.options.indicator = { style = "icon", icon = "▎" }
-  lvim.builtin.cmp.formatting.kind_icons = require("user.lsp_kind").symbols()
-  lvim.builtin.cmp.formatting.source_names = {
-    buffer = "(Buffer)",
-    nvim_lsp = "(LSP)",
-    luasnip = "(Snip)",
-    treesitter = " ",
-    nvim_lua = "(NvLua)",
-    spell = " 暈",
-    emoji = "  ",
-    path = "  ",
-    calc = "  ",
-    cmp_tabnine = "  ",
-  }
+
+  lvim.use_icons = true
 
   -- NvimTree
   -- =========================================
   lvim.builtin.nvimtree.side = "left"
   -- lvim.builtin.nvimtree.show_icons.git = 0
   lvim.builtin.nvimtree.setup.open_on_setup = false
-  lvim.builtin.nvimtree.setup.diagnostics = {
-    enable = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  }
 
   lvim.builtin.breadcrumbs.active = true
   lvim.builtin.lir.active = true
@@ -53,13 +23,6 @@ M.config = function()
 
   -- LSP
   -- =========================================
-  lvim.lsp.diagnostics.signs.values = {
-    { name = "LspDiagnosticsSignError", text = " " },
-    { name = "LspDiagnosticsSignWarning", text = "" },
-    { name = "LspDiagnosticsSignHint", text = "" },
-    { name = "LspDiagnosticsSignInformation", text = "" },
-  }
-
   lvim.lsp.on_attach_callback = function(client, bufnr)
     require("lsp-inlayhints").on_attach(client, bufnr)
   end
