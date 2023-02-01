@@ -25,7 +25,7 @@ M.config = function()
     },
     {
       "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
+      dependencies = "nvim-lua/plenary.nvim",
       config = function()
         require("todo-comments").setup()
       end,
@@ -47,11 +47,11 @@ M.config = function()
     },
     {
       "nvim-lua/lsp-status.nvim",
-      disable = not lvim.builtin.lualine.active,
+      enable = lvim.builtin.lualine.active,
     },
     {
       "kylechui/nvim-surround",
-      tag = "*",
+      version = "*",
       config = function()
         require("nvim-surround").setup()
       end,
@@ -65,7 +65,7 @@ M.config = function()
     },
     {
       "sindrets/diffview.nvim",
-      requires = 'nvim-lua/plenary.nvim',
+      dependencies = 'nvim-lua/plenary.nvim',
       config = function()
         require("user/diffview").config()
       end
@@ -85,7 +85,7 @@ M.config = function()
     },
     {
       "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
+      dependencies = "nvim-tree/nvim-web-devicons",
       config = function()
         require("trouble").setup()
       end,
@@ -107,14 +107,14 @@ M.config = function()
     },
     {
       'saecki/crates.nvim',
-      requires = { 'nvim-lua/plenary.nvim' },
+      dependencies = { 'nvim-lua/plenary.nvim' },
       config = function()
         require('crates').setup()
       end
     },
     {
       'akinsho/git-conflict.nvim',
-      tag = "*",
+      version = "*",
       config = function()
         require('git-conflict').setup()
       end
