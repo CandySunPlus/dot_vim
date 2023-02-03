@@ -49,6 +49,10 @@ M.config = function()
     "Symbols Implementations" }
   lvim.builtin.which_key.mappings["s"]["t"] = { "<cmd>TodoTelescope<cr>", "Todo" }
   lvim.builtin.which_key.mappings["s"]["g"] = { "<cmd>Telescope live_grep<cr>", "Grep Files" }
+  lvim.builtin.which_key.mappings["l"]["R"] = { "<cmd>Telescope lsp_references theme=dropdown<cr>", "Symbols References" }
+
+  lvim.builtin.which_key.mappings["g"]["g"] = { "<cmd>lua require 'user.terminal'.gitui_toggle()<cr>", "GitUI" }
+  lvim.builtin.which_key.mappings["g"]["G"] = { "<cmd>lua require 'lvim.core.terminal'.lazygit_toggle()<cr>", "Lazygit" }
 
   lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references theme=dropdown<cr>", "Goto References" }
   lvim.lsp.buffer_mappings.normal_mode["gI"] = { "<cmd>Telescope lsp_implementations theme=dropdown<cr>",
