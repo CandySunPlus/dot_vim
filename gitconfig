@@ -10,11 +10,20 @@
   email = candysfm@gmail.com
 [core]
   editor = lvim
-[difftool]
-  prompt = true
+  pager = delta
+
+[delta]
+  navigate = true
+  light = false
+
+[merge]
+  conflictstyle = diff3
+
 [diff]
-  tool = nvimdiff
-[difftool "nvimdiff"]
-  cmd = "lvim -d \"$LOCAL\" \"$REMOTE\""
-[mergetool]
-  keepBackup = false
+  colorMoved = default
+[interactive]
+  diffFilter = delta --color-only
+[pull]
+  release = true
+  rebase = true
+  autoSetupRemote = true
