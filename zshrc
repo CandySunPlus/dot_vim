@@ -52,12 +52,18 @@ export NNN_USE_EDITOR=1
 
 # export DOCKER_HOST="ssh://LinuxLocal"
 # for proxy
-# PHOST=192.168.5.119
-PHOST=${PHOST:=127.0.0.1}
-alias proxy="export https_proxy=http://$PHOST:7890 http_proxy=http://$PHOST:7890 all_proxy=socks5://$PHOST:7890"
+
+proxy() {
+  PHOST=${PHOST:=127.0.0.1}
+  export https_proxy=http://$PHOST:7890
+  export http_proxy=http://$PHOST:7890
+  export all_proxy=socks5://$PHOST:7890
+}
+
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="exa"
 alias kssh="kitty +kitten ssh"
+alias aws="aws --endpoint-url https://s3plus.vip.sankuai.com"
 # alias docker=podman
 
 if [[ $(uname) != "Darwin" ]]; then

@@ -14,30 +14,30 @@ M.config = function()
   -- Use which-key to add extra bindings with the leader-key prefix
   -- lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
   lvim.builtin.which_key.mappings["T"] = {
-    name = "+Trouble",
-    r = { "<cmd>Trouble lsp_references<cr>", "References" },
-    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-    d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
-    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
-    t = { "<cmd>TodoTrouble<cr>", "TodoTrouble" }
+      name = "+Trouble",
+      r = { "<cmd>Trouble lsp_references<cr>", "References" },
+      f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+      d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnosticss" },
+      q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+      l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+      w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
+      t = { "<cmd>TodoTrouble<cr>", "TodoTrouble" }
   }
 
   lvim.builtin.which_key.mappings["t"] = {
-    name = "+Terminal",
-    h = { "<cmd>ToggleTerm direction=horizontal size=10<cr>", "Toggle Horizontal Terminal" },
-    v = { "<cmd>ToggleTerm direction=vertical size=60<cr>", "Toggle Vertical Terminal" },
-    f = { "<cmd>ToggleTerm direction=float<cr>", "Toggle Float Terminal" },
-    t = { "<cmd>ToggleTerm direction=tab<cr>", "Toggle Tab Terminal" },
+      name = "+Terminal",
+      h = { "<cmd>ToggleTerm direction=horizontal size=10<cr>", "Toggle Horizontal Terminal" },
+      v = { "<cmd>ToggleTerm direction=vertical size=60<cr>", "Toggle Vertical Terminal" },
+      f = { "<cmd>ToggleTerm direction=float<cr>", "Toggle Float Terminal" },
+      t = { "<cmd>ToggleTerm direction=tab<cr>", "Toggle Tab Terminal" },
   }
 
   lvim.builtin.which_key.mappings["D"] = {
-    name = "+Diffview",
-    d = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
-    h = { "<cmd>DiffviewFileHistory<cr>", "Open File History" },
-    c = { "<cmd>DiffviewClose<cr>", "Close Diffview" },
-    u = { "<cmd>DiffviewRefresh<cr>", "Update Diffview" }
+      name = "+Diffview",
+      d = { "<cmd>DiffviewOpen<cr>", "Open Diffview" },
+      h = { "<cmd>DiffviewFileHistory<cr>", "Open File History" },
+      c = { "<cmd>DiffviewClose<cr>", "Close Diffview" },
+      u = { "<cmd>DiffviewRefresh<cr>", "Update Diffview" }
   }
 
   lvim.builtin.which_key.mappings["e"] = {}
@@ -46,7 +46,7 @@ M.config = function()
   lvim.builtin.which_key.mappings["l"]["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" }
   lvim.builtin.which_key.mappings["l"]["R"] = { "<cmd>Telescope lsp_references theme=dropdown<cr>", "Symbols References" }
   lvim.builtin.which_key.mappings["l"]["i"] = { "<cmd>Telescope lsp_implementations theme=dropdown<cr>",
-    "Symbols Implementations" }
+      "Symbols Implementations" }
   lvim.builtin.which_key.mappings["s"]["t"] = { "<cmd>TodoTelescope<cr>", "Todo" }
   lvim.builtin.which_key.mappings["s"]["g"] = { "<cmd>Telescope live_grep<cr>", "Grep Files" }
   lvim.builtin.which_key.mappings["l"]["R"] = { "<cmd>Telescope lsp_references theme=dropdown<cr>", "Symbols References" }
@@ -56,7 +56,7 @@ M.config = function()
 
   lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references theme=dropdown<cr>", "Goto References" }
   lvim.lsp.buffer_mappings.normal_mode["gI"] = { "<cmd>Telescope lsp_implementations theme=dropdown<cr>",
-    "Goto Implementations" }
+      "Goto Implementations" }
 end
 
 return M
