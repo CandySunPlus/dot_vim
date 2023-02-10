@@ -53,7 +53,7 @@ export NNN_USE_EDITOR=1
 # export DOCKER_HOST="ssh://LinuxLocal"
 # for proxy
 
-proxy() {
+function proxy {
   PHOST=${PHOST:=127.0.0.1}
   export https_proxy=http://$PHOST:7890
   export http_proxy=http://$PHOST:7890
