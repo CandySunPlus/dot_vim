@@ -46,8 +46,10 @@ M.config = function()
       end,
     },
     {
-      "nvim-lua/lsp-status.nvim",
-      enable = lvim.builtin.lualine.active,
+      "j-hui/fidget.nvim",
+      config = function()
+        require("fidget").setup {}
+      end,
     },
     {
       "kylechui/nvim-surround",
@@ -69,13 +71,6 @@ M.config = function()
       config = function()
         require("user/diffview").config()
       end
-    },
-    {
-      "ray-x/lsp_signature.nvim",
-      config = function()
-        require("user/lsp_sign").config()
-      end,
-      event = "InsertEnter",
     },
     {
       "lvimuser/lsp-inlayhints.nvim",
