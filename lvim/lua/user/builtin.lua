@@ -1,7 +1,6 @@
 local M = {}
 
 M.config = function()
-
   lvim.use_icons = true
 
   -- NvimTree
@@ -23,6 +22,7 @@ M.config = function()
 
   -- LSP
   -- =========================================
+  lvim.lsp.automatic_configuration.skipped_filetypes = { "markdown", "rst", "plaintext", "proto" }
   lvim.lsp.on_attach_callback = function(client, bufnr)
     require("lsp-inlayhints").on_attach(client, bufnr)
   end
