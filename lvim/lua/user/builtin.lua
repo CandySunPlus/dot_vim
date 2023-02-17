@@ -12,7 +12,6 @@ M.config = function()
   lvim.builtin.breadcrumbs.active = true
   lvim.builtin.lir.active = true
 
-
   -- Dashboard
   -- =========================================
   lvim.builtin.alpha.active = true
@@ -22,6 +21,17 @@ M.config = function()
 
   -- LSP
   -- =========================================
+  local types = require('cmp.types')
+  lvim.builtin.cmp.completion = {
+    autocomplete = {
+      types.cmp.TriggerEvent.TextChanged,
+    },
+    completeopt = 'menu,menuone,noselect',
+    keyword_pattern = [[\%(-\?\d\+\%(\.\d\+\)\?\|\h\w*\%(-\w*\)*\)]],
+    keyword_length = 1,
+  }
+  lvim.builtin.cmp.preselect = types.cmp.PreselectMode.None
+
   lvim.lsp.automatic_configuration.skipped_filetypes = { "markdown", "rst", "plaintext", "proto" }
   lvim.lsp.on_attach_callback = function(client, bufnr)
     require("lsp-inlayhints").on_attach(client, bufnr)
