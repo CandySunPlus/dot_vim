@@ -87,10 +87,11 @@ M.config = function()
       cmd = "Trouble",
     },
     {
-      "stevearc/dressing.nvim",
+      "ray-x/lsp_signature.nvim",
       config = function()
-        require("user.dressing").config()
+        require("user/lsp_sign").config()
       end,
+      event = "InsertEnter"
     },
     {
       "editorconfig/editorconfig-vim",
