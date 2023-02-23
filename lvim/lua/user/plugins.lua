@@ -87,6 +87,12 @@ M.config = function()
       cmd = "Trouble",
     },
     {
+      "stevearc/dressing.nvim",
+      config = function()
+        require("user/dressing").config()
+      end
+    },
+    {
       "ray-x/lsp_signature.nvim",
       config = function()
         require("user/lsp_sign").config()
