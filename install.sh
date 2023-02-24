@@ -15,3 +15,4 @@ ln -sf "$BASE_PATH/kitty" ~/.config/
 ln -sf "$BASE_PATH/lvim" ~/.config/
 ln -sf "$BASE_PATH/cargo_config" ~/.cargo/config
 ln -sf "$BASE_PATH/clang-format" ~/.clang-format
+ln -sf "$BASE_PATH/rustfmt.toml" ~/.rustfmt.toml
