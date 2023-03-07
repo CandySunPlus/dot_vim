@@ -16,8 +16,10 @@ M.config = function()
     {
       command = "shellcheck",
     },
+    {
+      command = "misspell"
+    }
   }
-
 end
 
 return M
