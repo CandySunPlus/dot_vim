@@ -18,6 +18,12 @@ M.config = function()
 
   -- Use which-key to add extra bindings with the leader-key prefix
   -- lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
+  lvim.builtin.which_key.mappings["f"] = {
+    function()
+      require("lvim.core.telescope.custom-finders").find_project_files { previewer = true }
+    end,
+    "Find File"
+  }
   lvim.builtin.which_key.mappings["T"] = {
     name = "+Trouble",
     r = { "<cmd>Trouble lsp_references<cr>", "References" },
