@@ -88,10 +88,6 @@ path=(
 )
 
 
-#
-# Homebrew
-#
-export HOMEBREW_GITHUB_API_TOKEN="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"
 
 #
 # Less
