@@ -1,0 +1,27 @@
+theme = "tokyonight_storm"
+
+[editor]
+line-number = "relative"
+cursorline = true
+true-color = true
+bufferline = "multiple"
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.whitespace.characters]
+tab = "→"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)

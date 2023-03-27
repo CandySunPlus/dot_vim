@@ -127,11 +127,7 @@ M.config = function()
     {
       "jackMort/ChatGPT.nvim",
       config = function()
-        require("chatgpt").setup({
-          keymaps = {
-            submit = "<C-o>"
-          }
-        })
+        require("user/chatgpt").config()
       end,
       dependencies = {
         "MunifTanjim/nui.nvim",
