@@ -4,6 +4,7 @@
 lvim.format_on_save = true
 lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight-storm"
+-- lvim.log.level = "debug"
 -- vim.o.tabstop = 4
 -- vim.o.shiftwidth = 4
 vim.o.exrc = true
