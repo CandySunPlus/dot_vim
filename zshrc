@@ -20,7 +20,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions vi-mode)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # ZLE_RPROMPT_INDENT=0
