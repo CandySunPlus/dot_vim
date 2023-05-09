@@ -8,7 +8,7 @@ M.config = function()
   chatgpt.setup({
     loading_text = "Loading...",
     keymaps = {
-      submit = "<C-o>"
+      submit = "<C-O>"
     }
   })
 end
