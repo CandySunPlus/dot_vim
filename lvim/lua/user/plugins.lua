@@ -125,6 +125,9 @@ M.config = function()
       'tpope/vim-fugitive'
     },
     {
+      'github/copilot.vim'
+    },
+    {
       "jackMort/ChatGPT.nvim",
       config = function()
         require("user/chatgpt").config()
