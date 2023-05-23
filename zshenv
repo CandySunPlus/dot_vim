@@ -69,12 +69,12 @@ PKG_CONFIG_PATH=(
 
 path=(
   $HOME/.r2env/bin
-  $HOME/.cargo/bin
   $HOME/.android/emulator
   $HOME/.yarn/bin
   $HOME/.opt/bin
   $HOME/.local/bin
   $HOME/.local/share/nvim/mason/bin
+  $HOME/.cargo/bin
   $HOME/.go/bin
   $HOME/.dotnet/tools
   $HOME/.emacs.d/bin

@@ -39,3 +39,5 @@ require("user.null_ls").config()
 require("user.keybindings").config()
 
 require("user.snips").config()
+
+require("user.dap").config()
