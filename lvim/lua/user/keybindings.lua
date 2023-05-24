@@ -58,6 +58,8 @@ M.config = function()
   lvim.builtin.which_key.mappings["l"]["R"] = { "<cmd>Telescope lsp_references theme=dropdown<cr>", "Symbols References" }
   lvim.builtin.which_key.mappings["l"]["i"] = { "<cmd>Telescope lsp_implementations theme=dropdown<cr>",
     "Symbols Implementations" }
+  lvim.builtin.which_key.mappings["d"]["B"] = { "<cmd>Telescope dap list_breakpoints<cr>", "Breakpoints" }
+  lvim.builtin.which_key.mappings["d"]["l"] = { "<cmd>Telescope dap commands<cr>", "Breakpoints" }
   lvim.builtin.which_key.mappings["s"]["t"] = { "<cmd>TodoTelescope<cr>", "Todo" }
   lvim.builtin.which_key.mappings["s"]["g"] = { "<cmd>Telescope live_grep<cr>", "Grep Files" }
   lvim.builtin.which_key.mappings["l"]["R"] = { "<cmd>Telescope lsp_references theme=dropdown<cr>", "Symbols References" }

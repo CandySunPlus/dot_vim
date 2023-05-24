@@ -151,7 +151,18 @@ M.config = function()
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope.nvim"
       }
+    },
+    {
+      'nvim-telescope/telescope-dap.nvim',
+      config = function()
+        require("telescope").load_extension('dap')
+      end,
+      dependencies = {
+        'mfussenegger/nvim-dap',
+        'nvim-telescope/telescope.nvim'
+      }
     }
+
   }
 end
 return M

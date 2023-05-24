@@ -1,2 +1,3 @@
 lvim/plugin
 lvim/lazy-lock.json
+.luarc.json
