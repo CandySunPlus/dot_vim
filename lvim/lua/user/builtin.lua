@@ -12,6 +12,10 @@ M.config = function()
   lvim.builtin.breadcrumbs.active = true
   lvim.builtin.lir.active = true
 
+  -- Telescope
+  lvim.builtin.telescope.defaults.layout_config.width = 0.8
+  lvim.builtin.telescope.defaults.path_display = { shorten = { len = 2, exclude = { 1, -1, -2 } } }
+
   -- Dashboard
   -- =========================================
   lvim.builtin.alpha.active = true
