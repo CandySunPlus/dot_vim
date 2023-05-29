@@ -125,28 +125,11 @@ M.config = function()
       end)
       return
     end
-    local command, args, cwd = get_command(1, command)
+    local cmd, args, cwd = get_command(1, command)
     term.Terminal:new({
       dir = cwd,
-      cmd = make_command_from_args(command, args),
+      cmd = make_command_from_args(cmd, args),
       close_on_exit = false,
-      on_open = function(t)
-        -- enter normal mode
-        vim.api.nvim_feedkeys(
-          vim.api.nvim_replace_termcodes([[<C-\><C-n>]], true, true, true),
-          "",
-          true
-        )
-
-        -- set close keymap
-        vim.api.nvim_buf_set_keymap(
-          t.bufnr,
-          "n",
-          "q",
-          "<cmd>close<CR>",
-          { noremap = true, silent = true }
-        )
-      end,
     }):toggle()
   end
 
