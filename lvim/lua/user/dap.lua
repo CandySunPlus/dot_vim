@@ -107,8 +107,47 @@ M.config = function()
     }):start()
   end
 
+  local function make_command_from_args(command, args)
+    local ret = command .. " "
+
+    for _, value in ipairs(args) do
+      ret = ret .. value .. " "
+    end
+
+    return ret
+  end
+
   local function run_command(command)
+    local ok, term = pcall(require, "toggleterm.terminal")
+    if not ok then
+      vim.schedule(function()
+        vim.notify("toggleterm not found.", vim.log.levels.ERROR)
+      end)
+      return
+    end
     local command, args, cwd = get_command(1, command)
+    term.Terminal:new({
+      dir = cwd,
+      cmd = make_command_from_args(command, args),
+      close_on_exit = false,
+      on_open = function(t)
+        -- enter normal mode
+        vim.api.nvim_feedkeys(
+          vim.api.nvim_replace_termcodes([[<C-\><C-n>]], true, true, true),
+          "",
+          true
+        )
+
+        -- set close keymap
+        vim.api.nvim_buf_set_keymap(
+          t.bufnr,
+          "n",
+          "q",
+          "<cmd>close<CR>",
+          { noremap = true, silent = true }
+        )
+      end,
+    }):toggle()
   end
 
   vim.lsp.commands["rust-analyzer.runSingle"] = function(command)
