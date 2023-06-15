@@ -2,7 +2,8 @@
 
 -- general
 lvim.format_on_save = {
-    pattern = "*.rs",
+  enabled = true,
+  pattern = { "*.lua", "*.rs", "*.toml" },
 }
 lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight-storm"
@@ -12,12 +13,11 @@ vim.o.cmdheight = 1
 vim.o.relativenumber = true
 vim.o.wrap = true
 vim.o.foldenable = false
--- vim.o.foldmethod = "expr"
+vim.o.foldmethod = "marker"
 -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.o.foldlevel = 5
+vim.o.foldlevel = 5
 vim.o.showbreak = " ↳  "
-
-
+vim.g.editorconfig = true
 
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile

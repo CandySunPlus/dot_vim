@@ -47,6 +47,7 @@ M.config = function()
     },
     {
       "j-hui/fidget.nvim",
+      version = "legacy",
       config = function()
         require("fidget").setup {}
       end,
@@ -98,14 +99,6 @@ M.config = function()
         require("user/lsp_sign").config()
       end,
       event = "InsertEnter"
-    },
-    {
-      "editorconfig/editorconfig-vim",
-      event = "BufRead",
-      config = function()
-        require("user/editorconfig").config()
-      end,
-      cmd = { "EditorConfigEnable", "EditorConfigDisable", "EditorConfigReload" }
     },
     {
       'saecki/crates.nvim',
