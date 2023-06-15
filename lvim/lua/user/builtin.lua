@@ -60,11 +60,11 @@ M.config = function()
   lvim.builtin.dap.active = true
   lvim.builtin.terminal.active = true
 
-  if lvim.builtin.lualine.active then
-    lvim.builtin.lualine.on_config_done = function(lualine)
-      require("user.lualine").config(lualine)
-    end
-  end
+  -- if lvim.builtin.lualine.active then
+  -- lvim.builtin.lualine.on_config_done = function(lualine)
+  --   require("user.lualine").config(lualine)
+  -- end
+  -- end
 end
 
 return M
