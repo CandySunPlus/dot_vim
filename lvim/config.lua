@@ -1,21 +1,20 @@
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
-lvim.format_on_save = false
+lvim.format_on_save = {
+    pattern = "*.rs",
+}
 lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight-storm"
--- lvim.log.level = "debug"
--- vim.o.tabstop = 4
--- vim.o.shiftwidth = 4
 vim.o.exrc = true
 vim.o.numberwidth = 2
 vim.o.cmdheight = 1
 vim.o.relativenumber = true
 vim.o.wrap = true
 vim.o.foldenable = false
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldlevel = 5
+-- vim.o.foldmethod = "expr"
+-- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.o.foldlevel = 5
 vim.o.showbreak = " ↳  "
 
 
