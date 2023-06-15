@@ -41,6 +41,12 @@ M.config = function()
     require("lsp-inlayhints").on_attach(client, bufnr)
   end
 
+  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
+  local capabilities = require("lvim.lsp").common_capabilities()
+  capabilities.offsetEncoding = { "utf-16" }
+  local opts = { capabilities = capabilities }
+  require("lvim.lsp.manager").setup("clangd", opts)
+
   -- if you don't want all the parsers change this to a table of the ones you want
   -- lvim.builtin.treesitter.ensure_installed = "maintained"
   lvim.builtin.treesitter.ensure_installed = { "c", "cpp", "rust", "python", "toml", "yaml", "cmake", "make",
