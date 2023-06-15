@@ -1,20 +1,27 @@
 local M = {}
 
 M.config = function()
-  lvim.autocmds = {
-    {
-      "Filetype",
-      {
-        pattern = { "toml" },
-        command = "lua require('cmp').setup.buffer { sources = {{ name = 'crates' }}}",
-      },
-    },
+  lvim.autocommands = {
     {
       "Filetype",
       {
         pattern = { "vue" },
         command = "syntax sync fromstart",
       },
+    },
+    {
+      "BufWinEnter",
+      {
+        pattern = { "*" },
+        command = "silent! loadview"
+      }
+    },
+    {
+      "BufLeave",
+      {
+        pattern = { "*" },
+        command = "silent! mkview"
+      }
     },
     {
       "BufRead,BufNewFile",
@@ -77,13 +84,6 @@ M.config = function()
       {
         pattern = { "/etc/nginx/*", "/usr/local/nginx/conf/*", "/usr/local/etc/nginx/*" },
         command = "setfiletype nginx",
-      },
-    },
-    {
-      "BufRead,BufNewFile",
-      {
-        pattern = { "Cargo.toml" },
-        command = "call crates#toggle()",
       },
     },
   }

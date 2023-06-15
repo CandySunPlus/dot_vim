@@ -2,6 +2,7 @@ local M = {}
 
 M.config = function()
   local formatters = require "lvim.lsp.null-ls.formatters"
+  local linters = require "lvim.lsp.null-ls.linters"
 
   formatters.setup {
     {
@@ -9,8 +10,6 @@ M.config = function()
       extra_args = { "--indent-size", "2" },
     },
   }
-
-  local linters = require "lvim.lsp.null-ls.linters"
 
   linters.setup {
     {
