@@ -28,10 +28,10 @@ M.config = function()
     name = "+Trouble",
     r = { "<cmd>Trouble lsp_references<cr>", "References" },
     f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-    d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnosticss" },
+    d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnosticss" },
+    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnosticss" },
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
     t = { "<cmd>TodoTrouble<cr>", "TodoTrouble" }
   }
 
