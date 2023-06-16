@@ -9,6 +9,7 @@ M.config = function()
       command = "beautysh",
       extra_args = { "--indent-size", "2" },
     },
+    { command = "clang-format" }
   }
 
   linters.setup {
