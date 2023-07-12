@@ -3,7 +3,7 @@
 -- general
 lvim.format_on_save = {
   enabled = true,
-  pattern = { "*.lua", "*.rs", "*.toml" },
+  pattern = { "*.lua", "*.rs", "*.toml", "*.ts", "*.tsx" },
 }
 lvim.lint_on_save = true
 lvim.colorscheme = "tokyonight-storm"

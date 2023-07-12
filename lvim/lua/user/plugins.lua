@@ -57,7 +57,7 @@ M.config = function()
     },
     {
       "j-hui/fidget.nvim",
-      version = "legacy",
+      branch = "legacy",
       config = function()
         require("fidget").setup {}
       end,

@@ -52,13 +52,22 @@ LDFLAGS=(
   -L/usr/local/opt/openssl@3/lib
   -L/usr/local/opt/ruby/lib
   -L/usr/local/opt/ncurses/lib
+  -L/usr/local/lib
   $LDFLAGS
 )
-CPPFLAGS=(
+CXXFLAGS=(
+  -I/usr/local/include
   -I/usr/local/opt/openssl@3/include
   -I/usr/local/opt/ruby/include
   -I/usr/local/opt/ncurses/include
-  $CPPFLAGS
+  $CXXFLAGS
+)
+CFLAGS=(
+  -I/usr/local/include
+  -I/usr/local/opt/openssl@3/include
+  -I/usr/local/opt/ruby/include
+  -I/usr/local/opt/ncurses/include
+  $CFLAGS
 )
 PKG_CONFIG_PATH=(
   /usr/local/opt/ncurses/lib/pkgconfig
