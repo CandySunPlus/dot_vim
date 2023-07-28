@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+SYSROOT=~/development/toolchains/linux-gnu
+
+LIBC=$1
+shift
+
+CLANG="clang"
+
+if [ "$0" = "cross-clang++" ]; then
+  CLANG="clang++"
+fi
+
+if [ "$LIBC" = "musl" ]; then
+  $CLANG -target x86_64-unknown-linux-musl --sysroot=$SYSROOT \
+    -fuse-ld=mold -static -nostdinc -nostdlib \
+    -I$SYSROOT/usr/include/x86_64-linux-musl -L$SYSROOT/usr/lib/x86_64-linux-musl \
+    $SYSROOT/usr/lib/x86_64-linux-musl/crt1.o $SYSROOT/usr/lib/x86_64-linux-musl/crti.o $SYSROOT/usr/lib/x86_64-linux-musl/crtn.o -lc \
+    "$@"
+elif [ "$LIBC" = "glibc" ]; then
+  $CLANG -target x86_64-unknown-linux-gnu --sysroot=$SYSROOT \
+    "$@"
+fi
