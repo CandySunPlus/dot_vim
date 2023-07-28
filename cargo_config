@@ -1,16 +1,10 @@
 [env]
-CC_x86_64-unknown-linux-musl = "cross-clang musl -fuse-ld=mold"
-CXX_x86_64-unknown-linux-musl = "cross-clang++ musl -fuse-ld=mold"
-CC_x86_64-unknown-linux-gnu = "cross-clang glibc -fuse-ld=mold"
-CXX_x86_64-unknown-linux-gnu = "cross-clang++ glibc -fuse-ld=mold"
-
-[target.x86_64-unknown-linux-musl]
-linker = "cross-clang"
-rustflags = ["-C", "link-arg=musl", "-C", "target-feature=-crt-static"]
+CC_x86_64-unknown-linux-gnu = "cross-clang -fuse-ld=mold"
+CXX_x86_64-unknown-linux-gnu = "cross-clang++ -fuse-ld=mold"
 
 [target.x86_64-unknown-linux-gnu]
 linker = "cross-clang"
-rustflags = ["-C", "link-arg=glibc", "-C", "target-feature=-crt-static"]
+rustflags = ["-C", "link-arg=-fuse-ld=mold", "-C", "target-feature=-crt-static"]
 
 [source.crates-io]
 replace-with = 'rsproxy'
