@@ -164,8 +164,15 @@ M.config = function()
         'mfussenegger/nvim-dap',
         'nvim-telescope/telescope.nvim'
       }
+    },
+    {
+      'stevearc/oil.nvim',
+      opts = {},
+      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      config = function()
+        require('oil').setup()
+      end
     }
-
   }
 end
 return M
