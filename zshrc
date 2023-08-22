@@ -50,9 +50,7 @@ export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 # for nnn
 export NNN_USE_EDITOR=1
 
-# export DOCKER_HOST="ssh://LinuxLocal"
 # for proxy
-
 function proxy {
   PHOST=${PHOST:=127.0.0.1}
   export https_proxy=http://$PHOST:7890
@@ -78,19 +76,10 @@ if [ -s "/usr/local/bin/virtualenvwrapper.sh" ]; then
   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 eval "$(zoxide init zsh)"
-
-alias luamake=/home/niksun/source/lua-language-server/3rd/luamake/luamake
-
-
-
+eval "$(fnm env --use-on-cd)"
 
 # >>> xmake >>>
 [[ -s "$HOME/.xmake/profile" ]] && source "$HOME/.xmake/profile" # load xmake profile
