@@ -6,7 +6,8 @@ lvim.format_on_save = {
   pattern = { "*.lua", "*.rs", "*.toml", "*.ts", "*.tsx" },
 }
 lvim.lint_on_save = true
-lvim.colorscheme = "tokyonight-storm"
+-- lvim.colorscheme = "tokyonight-storm"
+lvim.colorscheme = "nord"
 vim.o.exrc = true
 vim.o.numberwidth = 2
 vim.o.cmdheight = 1

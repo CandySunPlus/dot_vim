@@ -172,6 +172,9 @@ M.config = function()
       config = function()
         require('oil').setup()
       end
+    },
+    {
+      'shaunsingh/nord.nvim'
     }
   }
 end
