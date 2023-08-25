@@ -7,7 +7,7 @@ lvim.format_on_save = {
 }
 lvim.lint_on_save = true
 -- lvim.colorscheme = "tokyonight-storm"
-lvim.colorscheme = "nord"
+lvim.colorscheme = "catppuccin-mocha"
 vim.o.exrc = true
 vim.o.numberwidth = 2
 vim.o.cmdheight = 1
