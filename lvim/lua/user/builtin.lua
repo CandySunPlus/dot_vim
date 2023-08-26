@@ -60,6 +60,8 @@ M.config = function()
   lvim.builtin.dap.active = true
   lvim.builtin.terminal.active = true
 
+  lvim.builtin.lualine.options.theme = "catppuccin"
+
   -- if lvim.builtin.lualine.active then
   -- lvim.builtin.lualine.on_config_done = function(lualine)
   --   require("user.lualine").config(lualine)
