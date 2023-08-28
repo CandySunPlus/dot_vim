@@ -12,7 +12,8 @@ M.config = function()
       "NvimTreeNormal",
       "LspInlayHint",
       "FidgetTitle",
-      "FidgetTask"
+      "FidgetTask",
+      "NormalFloat"
 
     },
     exclude_groups = {}, -- table: groups you don't want to clear

@@ -22,6 +22,8 @@ M.config = function()
   -- table.insert(lvim.builtin.alpha.dashboard.section.buttons.entries, {
   --   "SPC m", "  Marks", "<CMD>Telescope marks<CR>",
   -- })
+  --
+  lvim.builtin.lir.active = false
 
   -- LSP
   -- =========================================
