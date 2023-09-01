@@ -5,6 +5,7 @@ M.config = function()
   lvim.leader = "space"
   -- add your own keymapping
   lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+  lvim.keys.term_mode["<C-l>"] = ""
 
   -- unmap a default keymapping
   -- lvim.keys.normal_mode["<C-Up>"] = ""
