@@ -19,12 +19,36 @@ M.config = function()
 
   -- Use which-key to add extra bindings with the leader-key prefix
   -- lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
+  -- require('user.telescope_pickers').prettyGrepPicker({ picker = 'live_grep' })
+  -- require('user.telescope_pickers').prettyGrepPicker({ picker = 'grep_string' })
+  -- require('user.telescope_pickers').prettyFilesPicker({ picker = 'git_files' })
+  -- require('user.telescope_pickers').prettyFilesPicker({ picker = 'oldfiles' })
+  -- require("lvim.core.telescope.custom-finders").find_project_files { previewer = true }
+
+  function find_project_files()
+    local tp = require('user.telescope_pickers')
+    local ok = pcall(tp.prettyFilesPicker, { picker = 'git_files' })
+
+    if not ok then
+      tp.prettyFilesPicker({ picker = 'find_files' })
+    end
+  end
+
   lvim.builtin.which_key.mappings["f"] = {
-    function()
-      require("lvim.core.telescope.custom-finders").find_project_files { previewer = true }
-    end,
+    find_project_files,
     "Find File"
   }
+  lvim.builtin.which_key.mappings["s"]["f"] = {
+    find_project_files,
+    "Find File"
+  }
+  lvim.builtin.which_key.mappings["s"]["g"] = {
+    function()
+      require('user.telescope_pickers').prettyGrepPicker({ picker = 'live_grep' })
+    end,
+    "Grep File"
+  }
+
   lvim.builtin.which_key.mappings["T"] = {
     name = "+Trouble",
     r = { "<cmd>Trouble lsp_references<cr>", "References" },
