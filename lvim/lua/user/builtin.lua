@@ -5,7 +5,9 @@ M.config = function()
 
   -- NvimTree
   -- =========================================
-  lvim.builtin.nvimtree.side = "left"
+  lvim.builtin.nvimtree.setup.view.side = "left"
+  lvim.builtin.nvimtree.setup.sync_root_with_cwd = false
+  -- lvim.builtin.nvimtree.
   -- lvim.builtin.nvimtree.show_icons.git = 0
   -- lvim.builtin.nvimtree.setup.open_on_setup = false
 
@@ -14,7 +16,12 @@ M.config = function()
 
   -- Telescope
   lvim.builtin.telescope.defaults.layout_config.width = 0.8
-  lvim.builtin.telescope.defaults.path_display = { shorten = { len = 2, exclude = { 1, -1, -2 } } }
+  -- lvim.builtin.telescope.defaults.path_display = { shorten = { len = 2, exclude = { 1, -1, -2 } } }
+  lvim.builtin.telescope.pickers = {
+    find_files = {
+      find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+    }
+  }
 
   -- Dashboard
   -- =========================================
