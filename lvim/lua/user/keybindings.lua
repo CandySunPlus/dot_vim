@@ -25,7 +25,7 @@ M.config = function()
   -- require('user.telescope_pickers').prettyFilesPicker({ picker = 'oldfiles' })
   -- require("lvim.core.telescope.custom-finders").find_project_files { previewer = true }
 
-  function find_project_files()
+  local function find_project_files()
     local tp = require('user.telescope_pickers')
     local ok = pcall(tp.prettyFilesPicker, { picker = 'git_files' })
 
@@ -53,8 +53,8 @@ M.config = function()
     name = "+Trouble",
     r = { "<cmd>Trouble lsp_references<cr>", "References" },
     f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-    d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnosticss" },
-    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnosticss" },
+    d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics" },
+    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
     t = { "<cmd>TodoTrouble<cr>", "TodoTrouble" }
@@ -79,6 +79,7 @@ M.config = function()
   lvim.builtin.which_key.mappings["e"] = {}
   lvim.builtin.which_key.mappings["k"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
   lvim.builtin.which_key.mappings["l"]["h"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" }
+  lvim.builtin.which_key.mappings["l"]["q"] = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics" }
   lvim.builtin.which_key.mappings["l"]["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" }
   lvim.builtin.which_key.mappings["l"]["R"] = { "<cmd>Telescope lsp_references theme=dropdown<cr>", "Symbols References" }
   lvim.builtin.which_key.mappings["l"]["i"] = { "<cmd>Telescope lsp_implementations theme=dropdown<cr>",
