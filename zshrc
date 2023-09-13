@@ -10,13 +10,6 @@ if [[ $(uname) == "Darwin" ]]; then
   ulimit -S -n 1024
 fi
 
-grep -q microsoft /proc/version 2> /dev/null
-
-if [ $? -eq 0 ] && [ -z "$TMUX" ]; then
-  export TERM=ms-terminal
-  alias tmux="TERM=xterm-256color tmux"
-fi
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="powerlevel10k/powerlevel10k"
