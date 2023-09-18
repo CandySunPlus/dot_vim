@@ -29,7 +29,8 @@ fi
 #
 # Android
 #
-export ANDROID_NDK_HOME='/Users/niksun/.android/ndk'
+export ANDROID_SDK_ROOT='~/.android'
+export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT'/ndk'
 
 #
 # Paths
