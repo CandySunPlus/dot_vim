@@ -1,23 +1,25 @@
 [env]
 CC_x86_64-unknown-linux-gnu = "cross-clang"
 CXX_x86_64-unknown-linux-gnu = "cross-clang++"
-CC_x86_64-unknown-linux-musl = "musl-clang"
-CXX_x86_64-unknown-linux-musl = "musl-clang++"
+# CC_x86_64-unknown-linux-musl = "musl-clang"
+# CXX_x86_64-unknown-linux-musl = "musl-clang++"
 
 [target.x86_64-unknown-linux-gnu]
 linker = "cross-clang"
 rustflags = ["-C", "link-arg=-fuse-ld=mold", "-C", "target-feature=-crt-static"]
 
 [target.x86_64-unknown-linux-musl]
-linker = "musl-clang"
+linker = "x86_64-unknown-linux-musl-gcc"
 # rustflags = ["-C", "link-arg=-fuse-ld=mold"]
-rustflags = ["-C", "link-arg=-fuse-ld=mold", "-C", "target-feature=-crt-static"]
+rustflags = ["-C", "target-feature=-crt-static"]
 
 [source.crates-io]
-replace-with = 'rsproxy'
-
+replace-with = 'rsproxy-sparse'
 [source.rsproxy]
 registry = "https://rsproxy.cn/crates.io-index"
-
+[source.rsproxy-sparse]
+registry = "sparse+https://rsproxy.cn/index/"
+[registries.rsproxy]
+index = "https://rsproxy.cn/crates.io-index"
 [net]
 git-fetch-with-cli = true
