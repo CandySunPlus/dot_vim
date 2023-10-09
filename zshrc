@@ -52,7 +52,7 @@ function proxy {
 }
 
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
-alias ls="exa"
+alias ls="eza"
 alias kssh="kitty +kitten ssh"
 alias aws="aws --endpoint-url https://s3plus.vip.sankuai.com"
 # alias docker=podman
