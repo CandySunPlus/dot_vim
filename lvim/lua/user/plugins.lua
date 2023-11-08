@@ -42,13 +42,6 @@ M.config = function()
       event = "BufRead",
     },
     {
-      "nvim-pack/nvim-spectre",
-      event = "BufRead",
-      config = function()
-        require("spectre").setup()
-      end,
-    },
-    {
       "folke/flash.nvim",
       event = "VeryLazy",
       opts = {},
