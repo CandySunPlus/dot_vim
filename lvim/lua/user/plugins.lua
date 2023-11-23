@@ -48,7 +48,7 @@ M.config = function()
       keys = {
         { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,   desc = "Flash" },
         {
-          "S",
+          "<c-s>",
           mode = { "n", "x", "o" },
           function() require("flash").treesitter() end,
           desc =
@@ -61,14 +61,7 @@ M.config = function()
           function() require("flash").treesitter_search() end,
           desc =
           "Treesitter Search"
-        },
-        {
-          "<c-s>",
-          mode = { "c" },
-          function() require("flash").toggle() end,
-          desc =
-          "Toggle Flash Search"
-        },
+        }
       },
     },
     {
