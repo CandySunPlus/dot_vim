@@ -63,7 +63,7 @@ M.config = function()
   lvim.builtin.treesitter.ignore_install = { "haskell" }
   lvim.builtin.treesitter.highlight.enabled = true
   lvim.builtin.treesitter.indent.enable = true
-  lvim.builtin.treesitter.context_commentstring.enable = true
+  lvim.builtin.treesitter.context_commentstring.enable = false
   lvim.builtin.treesitter.matchup = true
 
   lvim.builtin.dap.active = true
