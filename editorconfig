@@ -20,7 +20,7 @@ indent_style = tab
 [*.rs]
 indent_size = 4
 
-[{*.java,*.gradle}]
+[{*.java,*.gradle,*kt,*kts,*groovy}]
 indent_size = 4
 
 [{*.c,*.cpp,*.cc,*.h}]
