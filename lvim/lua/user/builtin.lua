@@ -53,7 +53,12 @@ M.config = function()
   vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
   local capabilities = require("lvim.lsp").common_capabilities()
   capabilities.offsetEncoding = { "utf-16" }
-  local opts = { capabilities = capabilities, cmd = { "clangd", "--fallback-style=none" } }
+  local opts = {
+    capabilities = capabilities,
+    cmd = { "clangd", "--fallback-style=none" },
+    root_dir = require("lspconfig.util").root_pattern(".nlsp-settings", "compile_commands.json", "compile_flags.txt",
+      ".git"),
+  }
   require("lvim.lsp.manager").setup("clangd", opts)
 
   -- if you don't want all the parsers change this to a table of the ones you want
