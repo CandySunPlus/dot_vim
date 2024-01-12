@@ -7,10 +7,14 @@ Language: Cpp
 # Force pointers to the type for C++.
 DerivePointerAlignment: false
 PointerAlignment: Left
-ColumnLimit: 80
-AlignAfterOpenBracket: DontAlign
+ColumnLimit: 120
+AlignAfterOpenBracket: BlockIndent
+AllowAllParametersOfDeclarationOnNextLine: false 
 AllowAllArgumentsOnNextLine: true
-AllowAllParametersOfDeclarationOnNextLine: true
+BinPackArguments: false
+BinPackParameters: true
+IndentWidth: 2
+ContinuationIndentWidth: 2
 ---
 Language: Proto
 # Don't format .proto files.
