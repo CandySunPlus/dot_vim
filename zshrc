@@ -72,7 +72,7 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 eval "$(zoxide init zsh)"
-eval "$(fnm env --use-on-cd)"
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 # >>> xmake >>>
 [[ -s "$HOME/.xmake/profile" ]] && source "$HOME/.xmake/profile" # load xmake profile
