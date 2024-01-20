@@ -10,6 +10,13 @@ M.config = function()
       }
     },
     {
+      "BufWinEnter",
+      {
+        pattern = { "*.nasm" },
+        command = "silent! set ft=nasm"
+      }
+    },
+    {
       "BufLeave",
       {
         pattern = { "*" },

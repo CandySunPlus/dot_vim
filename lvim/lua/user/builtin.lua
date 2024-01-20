@@ -62,6 +62,7 @@ M.config = function()
   require("lvim.lsp.manager").setup("clangd", opts)
 
   require("lvim.lsp.manager").setup("asm_lsp", {
+    filetypes = { "asm", "vmasm", "nasm" },
     root_dir = require("lspconfig.util").root_pattern(".asm-lsp.toml", ".git"),
   })
 
