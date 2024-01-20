@@ -61,6 +61,10 @@ M.config = function()
   }
   require("lvim.lsp.manager").setup("clangd", opts)
 
+  require("lvim.lsp.manager").setup("asm_lsp", {
+    root_dir = require("lspconfig.util").root_pattern(".asm-lsp.toml", ".git"),
+  })
+
   -- if you don't want all the parsers change this to a table of the ones you want
   -- lvim.builtin.treesitter.ensure_installed = "maintained"
   lvim.builtin.treesitter.ensure_installed = { "c", "cpp", "rust", "python", "toml", "yaml", "cmake", "make",
