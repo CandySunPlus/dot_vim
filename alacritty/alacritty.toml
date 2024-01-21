@@ -1,10 +1,15 @@
 import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
 [env]
-TERM = "xterm-256color"
+# TERM = "xterm-256color"
+
+[window]
+opacity = 0.95
 
 [font]
-size = 12.0
+size = 13.9
+offset.x = 0
+offset.y = 0
 
 [font.bold]
 family = "BlexMono Nerd Font Mono"
@@ -16,7 +21,7 @@ style = "Bold Italic"
 
 [font.italic]
 family = "BlexMono Nerd Font Mono"
-style = "Italic"
+style = "Medium Italic"
 
 [font.normal]
 family = "BlexMono Nerd Font Mono"
