@@ -27,17 +27,18 @@ M.config = function()
 
   local function find_project_files()
     local tp = require('user.telescope_pickers')
-    local ok = pcall(tp.prettyFilesPicker, { picker = 'git_files' })
+    -- local ok = pcall(tp.prettyFilesPicker, { picker = 'git_files' })
 
-    if not ok then
-      tp.prettyFilesPicker({ picker = 'find_files' })
-    end
+    -- if not ok then
+    tp.prettyFilesPicker({ picker = 'find_files' })
+    -- end
   end
 
   lvim.builtin.which_key.mappings["f"] = {
     find_project_files,
     "Find File"
   }
+
   lvim.builtin.which_key.mappings["s"]["f"] = {
     find_project_files,
     "Find File"
