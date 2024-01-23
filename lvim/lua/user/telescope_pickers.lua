@@ -57,7 +57,7 @@ function telescopePickers.prettyFilesPicker(pickerAndOptions)
   end
 
   -- Ensure 'options' integrity
-  options = pickerAndOptions.options or {}
+  local options = pickerAndOptions.options or {}
 
   -- Use Telescope's existing function to obtain a default 'entry_maker' function
   -- ----------------------------------------------------------------------------
@@ -158,7 +158,7 @@ function telescopePickers.prettyGrepPicker(pickerAndOptions)
   end
 
   -- Ensure 'options' integrity
-  options = pickerAndOptions.options or {}
+  local options = pickerAndOptions.options or {}
 
   -- Use Telescope's existing function to obtain a default 'entry_maker' function
   -- ----------------------------------------------------------------------------
