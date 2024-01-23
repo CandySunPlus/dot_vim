@@ -31,6 +31,7 @@ M.config = function()
   -- })
   --
   lvim.builtin.lir.active = false
+  table.insert(lvim.builtin.project.patterns, ".proj")
 
   -- LSP
   -- =========================================
