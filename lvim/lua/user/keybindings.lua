@@ -80,7 +80,7 @@ M.config = function()
   lvim.builtin.which_key.mappings["k"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" }
   lvim.builtin.which_key.mappings["l"]["h"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" }
   lvim.builtin.which_key.mappings["l"]["q"] = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics" }
-  lvim.builtin.which_key.mappings["l"]["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" }
+  lvim.builtin.which_key.mappings["l"]["o"] = { "<cmd>Outline<cr>", "Outline" }
   lvim.builtin.which_key.mappings["l"]["R"] = { "<cmd>Telescope lsp_references theme=dropdown<cr>", "Symbols References" }
   lvim.builtin.which_key.mappings["l"]["i"] = { "<cmd>Telescope lsp_implementations theme=dropdown<cr>",
     "Symbols Implementations" }

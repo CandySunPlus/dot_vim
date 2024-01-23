@@ -84,11 +84,19 @@ M.config = function()
       end,
     },
     {
-      "simrat39/symbols-outline.nvim",
-      cmd = "SymbolsOutline",
+      "onsails/lspkind.nvim",
+    },
+    {
+      "hedyhli/outline.nvim",
+      lazy = true,
+      cmd = "Outline",
       config = function()
-        require("symbols-outline").setup()
-      end,
+        require("outline").setup({
+          symbols = {
+            icon_source = "lspkind"
+          }
+        })
+      end
     },
     {
       "sindrets/diffview.nvim",

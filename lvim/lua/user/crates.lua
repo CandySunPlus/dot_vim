@@ -5,21 +5,12 @@ M.config = function()
   local cmp = require('cmp')
 
   require('crates').setup {
-    null_ls = {
-      enabled = true,
-      name = "crates.nvim"
+    src = {
+      cmp = {
+        enabled = true
+      }
     }
   }
-
-  cmp.setup.filetype('toml', {
-    sources = cmp.config.sources({
-      { name = "nvim_lsp" },
-      { name = "crates" },
-      { name = "path" },
-    }, {
-      { name = "buffer" }
-    })
-  })
 end
 
 return M
