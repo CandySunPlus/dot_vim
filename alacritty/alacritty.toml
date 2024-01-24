@@ -21,8 +21,8 @@ style = "Bold Italic"
 
 [font.italic]
 family = "BlexMono Nerd Font Mono"
-style = "Medium Italic"
+style = "Italic"
 
 [font.normal]
 family = "BlexMono Nerd Font Mono"
-style = "Medium"
+style = "Regular"
