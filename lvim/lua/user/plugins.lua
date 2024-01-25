@@ -3,6 +3,9 @@ local M = {}
 M.config = function()
   lvim.plugins = {
     {
+      "hrsh7th/cmp-calc"
+    },
+    {
       'nvim-treesitter/nvim-treesitter-textobjects',
       after = 'nvim-treesitter',
       config = function()
