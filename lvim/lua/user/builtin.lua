@@ -35,6 +35,7 @@ M.config = function()
 
   -- LSP
   -- =========================================
+
   local types = require('cmp.types')
   lvim.builtin.cmp.completion = {
     autocomplete = {

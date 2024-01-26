@@ -196,7 +196,8 @@ M.config = function()
         require('oil').setup()
       end
     },
-    { "catppuccin/nvim",       name = "catppuccin", priority = 1000 }
+    { 'catppuccin/nvim',       name = 'catppuccin', priority = 1000 },
+    { 'simonefranza/nvim-conv' }
   }
 end
 return M
