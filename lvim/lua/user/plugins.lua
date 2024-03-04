@@ -2,15 +2,6 @@ local M = {}
 
 M.config = function()
   lvim.plugins = {
-    {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-      config = function()
-        require('user.treesitter').config()
-      end,
-      dependencies = {
-        'nvim-treesitter/nvim-treesitter'
-      }
-    },
     { "folke/lsp-colors.nvim", event = "BufRead" },
     {
       "xiyaowong/nvim-transparent",
