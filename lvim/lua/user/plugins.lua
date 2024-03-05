@@ -16,21 +16,13 @@ M.config = function()
       end,
       event = "BufRead"
     },
-    {
-      "andymass/vim-matchup",
-      event = "CursorMoved",
-      config = function()
-        vim.g.matchup_matchparen_offscreen = { method = "popup" }
-      end,
-    },
-    {
-      "folke/todo-comments.nvim",
-      dependencies = "nvim-lua/plenary.nvim",
-      config = function()
-        require("todo-comments").setup()
-      end,
-      event = "BufRead",
-    },
+    -- {
+    --   "andymass/vim-matchup",
+    --   event = "CursorMoved",
+    --   config = function()
+    --     vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    --   end,
+    -- },
     {
       "folke/flash.nvim",
       event = "VeryLazy",
@@ -59,6 +51,14 @@ M.config = function()
           "Treesitter Search"
         }
       },
+    },
+    {
+      "folke/todo-comments.nvim",
+      dependencies = "nvim-lua/plenary.nvim",
+      config = function()
+        require("todo-comments").setup()
+      end,
+      event = "BufRead",
     },
     {
       "j-hui/fidget.nvim",
@@ -156,17 +156,6 @@ M.config = function()
       config = function()
         require("copilot_cmp").setup()
       end
-    },
-    {
-      "jackMort/ChatGPT.nvim",
-      config = function()
-        require("user/chatgpt").config()
-      end,
-      dependencies = {
-        "MunifTanjim/nui.nvim",
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim"
-      }
     },
     {
       'nvim-telescope/telescope-dap.nvim',
