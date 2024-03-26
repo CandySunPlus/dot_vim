@@ -4,8 +4,8 @@ layout {
   }
 
   pane size=1 borderless=true {
-    plugin location="file:zjstatus.wasm" {
-      format_left  "#[fg=0,bg=10][{session}]  {tabs}"
+    plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+      format_left  "{mode}#[fg=0,bg=10][{session}] {tabs}"
       format_right "#[fg=0,bg=10]{datetime}"
       format_space "#[bg=10]"
 
@@ -13,6 +13,23 @@ layout {
 
       tab_normal   "{index}:{name}  "
       tab_active   "{index}:{name}* "
+
+      mode_normal        "#[bg=#89B4FA] {name} "
+      mode_locked        "#[fg=0,bg=10] {name} "
+      mode_resize        "#[bg=#89B4FA] {name} "
+      mode_pane          "#[bg=#89B4FA] {name} "
+      mode_tab           "#[bg=#89B4FA] {name} "
+      mode_scroll        "#[bg=#89B4FA] {name} "
+      mode_enter_search  "#[bg=#89B4FA] {name} "
+      mode_search        "#[bg=#89B4FA] {name} "
+      mode_rename_tab    "#[bg=#89B4FA] {name} "
+      mode_rename_pane   "#[bg=#89B4FA] {name} "
+      mode_session       "#[bg=#89B4FA] {name} "
+      mode_move          "#[bg=#89B4FA] {name} "
+      mode_prompt        "#[bg=#89B4FA] {name} "
+      mode_tmux          "#[bg=#ffc387,fg=0] {name} "
+
+      mode_default_to_mode "tmux"
 
       datetime          " {format} "
       datetime_format   "%H:%M %d-%b-%y"
