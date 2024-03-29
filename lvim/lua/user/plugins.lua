@@ -83,7 +83,10 @@ M.config = function()
       config = function()
         require("outline").setup({
           symbols = {
-            icon_source = "lspkind"
+            icon_source = "lspkind",
+            icons = {
+              Object = { icon = '', hl = 'Type' }
+            }
           }
         })
       end
