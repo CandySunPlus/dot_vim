@@ -41,6 +41,8 @@ call plug#begin('~/.vim/plugged')
 " My Plugins here:
 
 Plug 'tpope/vim-scriptease'
+Plug 'rust-lang/rust.vim'
+Plug 'arzg/vim-rust-syntax-ext'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'qpkorr/vim-bufkill'
 " Auto Complete
@@ -88,13 +90,13 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'morhetz/gruvbox'
-Plug 'ayu-theme/ayu-vim'
+" Plug 'ayu-theme/ayu-vim'
 Plug 'connorholyday/vim-snazzy'
-Plug 'joshdick/onedark.vim'
-Plug 'ghifarit53/tokyonight-vim'
+" Plug 'joshdick/onedark.vim'
+" Plug 'ghifarit53/tokyonight-vim'
 Plug 'ryanoasis/vim-devicons'
 " For all language
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'briancollins/vim-jst'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 
@@ -147,8 +149,8 @@ let g:webdevicons_conceal_nerdtree_brackets = 0
 " let g:nord_italic_comments = 1
 
 " let ayucolor="mirage"
-let g:tokyonight_style = 'storm'
-let g:tokyonight_enable_italic = 1
+" let g:tokyonight_style = 'storm'
+" let g:tokyonight_enable_italic = 1
 colorscheme catppuccin_mocha
 
 vnoremap <silent> <C-c> "+y
@@ -205,7 +207,7 @@ nmap <silent> <leader>li <Plug>(coc-implementation)
 nmap <silent> <leader>lt <Plug>(coc-type-definition)
 nmap <silent> <leader>la <Plug>(coc-codeaction)
 vmap <silent> <leader>la <Plug>(coc-codeaction-selected)
-nmap <silent> <leader>ls :<C-U>call CocAction('doHover')<CR>
+nmap <silent> <leader>lh :<C-U>call CocAction('doHover')<CR>
 nmap <silent> <leader>lc :<C-U>CocList commands<CR>
 nmap <silent> <leader>lo :<C-U>CocList outline<CR>
 nmap <silent> <leader>le :<C-U>CocList diagnostics<CR>
