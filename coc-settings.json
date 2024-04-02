@@ -113,5 +113,6 @@
     "cpp": ["c"],
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }

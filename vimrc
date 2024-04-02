@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
 " My Plugins here:
 
 Plug 'tpope/vim-scriptease'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'qpkorr/vim-bufkill'
 " Auto Complete
 Plug 'neoclide/coc.nvim', {'do': 'yarn install'}
@@ -148,7 +149,7 @@ let g:webdevicons_conceal_nerdtree_brackets = 0
 " let ayucolor="mirage"
 let g:tokyonight_style = 'storm'
 let g:tokyonight_enable_italic = 1
-colorscheme tokyonight
+colorscheme catppuccin_mocha
 
 vnoremap <silent> <C-c> "+y
 " Indent lines with cmd+[ and cmd+]
@@ -280,7 +281,7 @@ let g:lightline = { }
 let g:lightline = {
             \ 'separator': { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' },
-            \ 'colorscheme': 'tokyonight',
+            \ 'colorscheme': 'catppuccin_mocha',
             \ }
 let g:lightline.component_function = {
             \   'gitbranch': 'GitBranch',
