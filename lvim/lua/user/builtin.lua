@@ -48,9 +48,6 @@ M.config = function()
   lvim.builtin.cmp.preselect = types.cmp.PreselectMode.None
 
   lvim.lsp.automatic_configuration.skipped_filetypes = { "markdown", "rst", "plaintext", "proto" }
-  lvim.lsp.on_attach_callback = function(client, bufnr)
-    require("lsp-inlayhints").on_attach(client, bufnr)
-  end
 
   vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
   local capabilities = require("lvim.lsp").common_capabilities()

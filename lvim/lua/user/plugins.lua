@@ -99,12 +99,6 @@ M.config = function()
       end
     },
     {
-      "lvimuser/lsp-inlayhints.nvim",
-      config = function()
-        require("user/lsp_inlayhints").config()
-      end,
-    },
-    {
       "folke/trouble.nvim",
       dependencies = "nvim-tree/nvim-web-devicons",
       config = function()

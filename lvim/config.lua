@@ -41,3 +41,4 @@ require("user.keybindings").config()
 require("user.snips").config()
 
 require("user.dap").config()
+require("user.lsp_inlayhints").config()
