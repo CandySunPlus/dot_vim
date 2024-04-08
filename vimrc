@@ -123,6 +123,9 @@ au BufRead,BufNewFile *.asm set filetype=nasm
 " for nginx
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/*,/usr/local/etc/nginx/* if &ft == '' | setfiletype nginx | endif
 
+syntax enable
+filetype plugin indent on
+
 if has('gui_macvim')
     set macligatures
 endif
@@ -133,8 +136,8 @@ endif
 
 if (has('termguicolors'))
   " fix bug for vim
-  set t_8f=[38;2;%lu;%lu;%lum
-  set t_8b=[48;2;%lu;%lu;%lum
+  " set t_8f=[38;2;%lu;%lu;%lum
+  " set t_8b=[48;2;%lu;%lu;%lum
 
   set termguicolors
 endif

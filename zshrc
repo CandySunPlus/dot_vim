@@ -55,7 +55,10 @@ alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
 alias ls="eza"
 alias kssh="kitty +kitten ssh"
 alias aws="aws --endpoint-url https://s3plus.vip.sankuai.com"
-# alias docker=podman
+alias mnpm="npm --registry=http://r.npm.sankuai.com \
+--cache=$HOME/.cache/mnpm \
+--disturl=http://npm.sankuai.com/mirrors/node \
+--userconfig=$HOME/.mnpmrc"
 
 if [[ $(uname) != "Darwin" ]]; then
   alias docker="podman"

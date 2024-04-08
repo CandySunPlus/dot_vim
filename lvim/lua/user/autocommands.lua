@@ -17,6 +17,20 @@ M.config = function()
       }
     },
     {
+      "BufWinEnter",
+      {
+        pattern = { "*.wxml" },
+        command = "silent! set ft=html"
+      }
+    },
+    {
+      "BufWinEnter",
+      {
+        pattern = { "*.wxss" },
+        command = "silent! set ft=css"
+      }
+    },
+    {
       "BufLeave",
       {
         pattern = { "*" },
