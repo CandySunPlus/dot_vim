@@ -77,6 +77,19 @@ M.config = function()
       "onsails/lspkind.nvim",
     },
     {
+      'VidocqH/lsp-lens.nvim',
+      event = "BufRead",
+      opts = {
+        include_declaration = true,
+        sections = {
+          definition = false,
+          references = true,
+          implementation = false
+
+        }
+      }
+    },
+    {
       "hedyhli/outline.nvim",
       lazy = true,
       cmd = "Outline",

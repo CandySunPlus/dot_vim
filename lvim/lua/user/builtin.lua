@@ -49,7 +49,8 @@ M.config = function()
 
   lvim.lsp.automatic_configuration.skipped_filetypes = { "markdown", "rst", "plaintext", "proto" }
 
-  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
+  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd", "tsserver" })
+
   local capabilities = require("lvim.lsp").common_capabilities()
   capabilities.offsetEncoding = { "utf-16" }
   local opts = {
