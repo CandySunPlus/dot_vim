@@ -1,6 +1,6 @@
 local opts = {
   settings = {
-    typescript = {
+    javascript = {
       inlayHints = {
         includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all'
         includeInlayParameterNameHintsWhenArgumentMatchesName = true,
