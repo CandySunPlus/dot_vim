@@ -10,9 +10,9 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      autoformat = true, -- enable or disable auto formatting on start
-      codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = true, -- enable/disable inlay hints on start
+      autoformat = true,      -- enable or disable auto formatting on start
+      codelens = true,        -- enable/disable codelens refresh on start
+      inlay_hints = true,     -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
     config = {
@@ -30,7 +30,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = true,     -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           "lua",
           "rust",
@@ -65,6 +65,9 @@ return {
           desc = "Show hover",
         },
         ["<Leader>lo"] = { ":AerialToggle<cr>", desc = "Symbol outline" },
+        ["<Leader>lt"] = { ":Trouble document_diagnostics<cr>", desc = "Trouble diagnostics" },
+        ["<Leader>lj"] = { ":lua vim.diagnostic.goto_next()<cr>", desc = "Next diagnostics" },
+        ["<Leader>lk"] = { ":lua vim.diagnostics.goto_prev()<cr>", desc = "Prev diagnostics" },
       },
     },
   },
