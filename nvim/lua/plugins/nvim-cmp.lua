@@ -27,11 +27,23 @@ return {
       opts.formatting = {
         format = lspkind.cmp_format({
           mode = "symbol",
-          max_width = 50,
           symbol_map = { Copilot = "" },
+          menu = {
+            nvim_lsp = "(LSP)",
+            emoji = "(Emoji)",
+            path = "(Path)",
+            calc = "(Calc)",
+            cmp_tabnine = "(Tabnine)",
+            vsnip = "(Snippet)",
+            luasnip = "(Snippet)",
+            buffer = "(Buffer)",
+            tmux = "(TMUX)",
+            copilot = "(Copilot)",
+            treesitter = "(TreeSitter)",
+          },
         }),
       }
-      table.insert(opts.sources, { name = "copilot", group_index = 2 })
+      table.insert(opts.sources, { name = "copilot", group_index = 2, priority = 1001 })
     end,
   },
 }
