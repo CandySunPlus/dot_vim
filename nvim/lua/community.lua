@@ -10,7 +10,6 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
-  { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.project.project-nvim" },
