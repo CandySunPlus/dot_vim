@@ -15,13 +15,28 @@ return {
       inlay_hints = true, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
+    config = {
+      clangd = {
+        cmd = { "clangd", "--fallback-style=none" },
+        root_dir = require("lspconfig.util").root_pattern(
+          ".nlsp-settings",
+          "compile_commands.json",
+          "compile_flags.txt",
+          ".git"
+        ),
+      },
+    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
-          "lua", "rust", "toml", "typescript", "typescriptreact"
+          "lua",
+          "rust",
+          "toml",
+          "typescript",
+          "typescriptreact",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
         },
@@ -41,5 +56,16 @@ return {
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
     end,
+    mappings = {
+      n = {
+        ["<Leader>lh"] = {
+          function()
+            vim.lsp.buf.hover()
+          end,
+          desc = "Show hover",
+        },
+        ["<Leader>lo"] = { ":AerialToggle<cr>", desc = "Symbol outline" },
+      },
+    },
   },
 }
