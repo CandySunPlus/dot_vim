@@ -6,7 +6,7 @@ Standard: Latest
 Language: Cpp
 ColumnLimit: 120
 AlignAfterOpenBracket: BlockIndent
-AllowAllParametersOfDeclarationOnNextLine: false 
+AllowAllParametersOfDeclarationOnNextLine: false
 AllowAllArgumentsOnNextLine: true
 BinPackArguments: false
 BinPackParameters: true
