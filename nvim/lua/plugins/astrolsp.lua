@@ -10,9 +10,9 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      autoformat = true,      -- enable or disable auto formatting on start
-      codelens = true,        -- enable/disable codelens refresh on start
-      inlay_hints = true,     -- enable/disable inlay hints on start
+      autoformat = true, -- enable or disable auto formatting on start
+      codelens = true, -- enable/disable codelens refresh on start
+      inlay_hints = true, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
     config = {
@@ -30,7 +30,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true,     -- enable or disable format on save globally
+        enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           "lua",
           "rust",
@@ -45,7 +45,7 @@ return {
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
       },
-      timeout_ms = 1000, -- default format timeout
+      timeout_ms = 5000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
       --   return true
       -- end
