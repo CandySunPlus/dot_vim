@@ -19,5 +19,10 @@ return {
         -- Normal = { bg = "#000000" },
       },
     },
+    status = {
+      separators = {
+        tab = { "", " " },
+      },
+    },
   },
 }
