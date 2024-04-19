@@ -28,7 +28,7 @@ return {
         "prettier",
         "shellcheck",
         "shfmt",
-        "codespell",
+        -- "codespell",
         -- add more arguments for adding more null-ls sources
       })
     end,
