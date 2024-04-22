@@ -29,6 +29,3 @@ indent_size = 4
 
 [{*.py}]
 indent_size = 4
-
-[{*.c,*.cpp,*.cc,*.h}]
-indent_size = 2
