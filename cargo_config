@@ -6,12 +6,11 @@
 
 [target.x86_64-unknown-linux-gnu]
 linker = "clang"
-rustflags = ["-C", "link-arg=-fuse-ld=mold", "-C", "target-feature=-crt-static"]
+rustflags = ["-C", "link-arg=-fuse-ld=mold"]
 
 [target.x86_64-unknown-linux-musl]
-linker = "x86_64-unknown-linux-musl-gcc"
-# rustflags = ["-C", "link-arg=-fuse-ld=mold"]
-rustflags = ["-C", "target-feature=-crt-static"]
+linker = "musl-clang"
+# rustflags = ["-C", "target-feature=-crt-static"]
 
 [source.crates-io]
 replace-with = 'rsproxy-sparse'
