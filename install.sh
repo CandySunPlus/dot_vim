@@ -2,10 +2,6 @@
 
 BASE_PATH=$(cd "$(dirname "$0")" || exit; pwd)
 mkdir -p ~/.vim
-ln -sf "$BASE_PATH/cross-clang" ~/.local/bin/
-ln -sf "$BASE_PATH/cross-clang" ~/.local/bin/cross-clang++
-ln -sf "$BASE_PATH/musl-clang" ~/.local/bin/
-ln -sf "$BASE_PATH/musl-clang" ~/.local/bin/musl-clang++
 ln -sf "$BASE_PATH/coc-settings.json" ~/.vim/coc-settings.json
 ln -sf "$BASE_PATH/gitconfig" ~/.gitconfig
 ln -sf "$BASE_PATH/editorconfig" ~/.editorconfig
