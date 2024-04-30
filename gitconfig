@@ -9,7 +9,7 @@
 	name = sunbeiluo
 	email = sunbeiluo@meituan.com
 [core]
-  editor = lvim
+  editor = nvim
   pager = delta
 
 [delta]
