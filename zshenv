@@ -14,8 +14,8 @@ fi
 # Editors
 #
 
-export EDITOR='lvim'
-export VISUAL='lvim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PAGER='less'
 
 #
@@ -74,6 +74,7 @@ PKG_CONFIG_PATH=(
   /usr/local/opt/ncurses/lib/pkgconfig
   /usr/local/opt/openssl@3/lib/pkgconfig
   /usr/local/opt/ruby/lib/pkgconfig
+  ~/.local/share/pkgconfig
   $PKG_CONFIG_PATH
 )
 
