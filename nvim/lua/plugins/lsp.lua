@@ -12,6 +12,7 @@ return {
     "VidocqH/lsp-lens.nvim",
     event = "BufRead",
     opts = {
+      enable = false,
       include_declaration = true,
       sections = {
         definition = false,
