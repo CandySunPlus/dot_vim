@@ -14,10 +14,12 @@ return {
           "LspInlayHint",
           "FidgetTitle",
           "FidgetTask",
-          "NormalFloat"
+          "NormalFloat",
+          "NeoTreeNormal",
+          "NeoTreeNormalNC",
         },
         exclude_groups = {}, -- table: groups you don't want to clear
       })
-    end
+    end,
   },
 }
