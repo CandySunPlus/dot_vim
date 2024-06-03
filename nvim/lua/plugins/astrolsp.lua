@@ -65,7 +65,7 @@ return {
           desc = "Show hover",
         },
         ["<Leader>lo"] = { ":AerialToggle<cr>", desc = "Symbol outline" },
-        ["<Leader>lt"] = { ":Trouble document_diagnostics<cr>", desc = "Trouble diagnostics" },
+        ["<Leader>lt"] = { ":Trouble diagnostics<cr>", desc = "Trouble diagnostics" },
         ["<Leader>lj"] = { ":lua vim.diagnostic.goto_next()<cr>", desc = "Next diagnostics" },
         ["<Leader>lk"] = { ":lua vim.diagnostics.goto_prev()<cr>", desc = "Prev diagnostics" },
       },
