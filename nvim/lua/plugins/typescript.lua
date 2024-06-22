@@ -9,17 +9,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "tsserver", "eslint" })
-    end,
-  },
-  {
-    "jay-babu/mason-null-ls.nvim",
-    optional = true,
-    opts = function(_, opts)
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "biome" })
-      if not opts.handlers then
-        opts.handlers = {}
-      end
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "tsserver", "biome" })
     end,
   },
   {
@@ -28,6 +18,12 @@ return {
     optional = true,
     ---@diagnostic disable: missing-fields
     opts = {
+      formatting = {
+        filter = function(client)
+          require("astrocore").notify(client.name)
+          return true
+        end,
+      },
       config = {
         ["tsserver"] = { -- enable inlay hints by default for `typescript-tools`
           settings = {
