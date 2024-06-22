@@ -19,8 +19,7 @@ return {
     ---@diagnostic disable: missing-fields
     opts = {
       formatting = {
-        filter = function(client)
-          require("astrocore").notify(client.name)
+        filter = function()
           return true
         end,
       },
