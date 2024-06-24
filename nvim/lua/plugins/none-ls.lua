@@ -30,6 +30,21 @@ return {
       end
       opts.handlers = {
         function() end,
+        biome = function(source_name, methods)
+          local null_ls = require('null-ls');
+          null_ls.register(null_ls.builtins.formatting.biome.with({
+            args = {
+              'check',
+              '--fix',
+              '--formatter-enabled=true',
+              '--organize-imports-enabled=true',
+              '--linter-enabled=false',
+              '--stdin-file-path',
+              '$FILENAME',
+            },
+            to_stdin = true,
+          }))
+        end,
         shfmt = function(source_name, methods)
           -- custom logic
           require("mason-null-ls").default_setup(source_name, methods) -- to maintain default behavior
