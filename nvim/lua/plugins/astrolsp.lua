@@ -61,6 +61,10 @@ return {
       if client.name == "tsserver" then
         client.server_capabilities.documentFormattingProvider = false
       end
+
+      if client.name == "jsonls" then
+        client.server_capabilities.documentFormattingProvider = false
+      end
     end,
     mappings = {
       n = {
