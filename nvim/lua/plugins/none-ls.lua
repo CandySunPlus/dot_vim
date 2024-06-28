@@ -38,7 +38,7 @@ return {
               '--fix',
               '--formatter-enabled=true',
               '--organize-imports-enabled=true',
-              '--linter-enabled=false',
+              '--linter-enabled=true',
               '--stdin-file-path',
               '$FILENAME',
             },
