@@ -40,7 +40,7 @@ return {
               '--attribute-position=auto',
               '--formatter-enabled=true',
               '--organize-imports-enabled=true',
-              '--qoute-style=single',
+              '--quote-style=single',
               '--linter-enabled=true',
               '--stdin-file-path',
               '$FILENAME',
