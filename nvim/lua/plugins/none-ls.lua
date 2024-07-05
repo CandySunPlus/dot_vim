@@ -14,7 +14,7 @@ return {
       config.sources = {
         -- Set a formatter
         -- null_ls.builtins.formatting.stylua,
-        -- null_ls.builtins.formatting.prettier,
+        -- null_ls.builtins.formatting.prettierd,
         -- null_ls.builtins.formatting.codespell,
         -- null_ls.builtins.formatting.shfmt,
       }
@@ -25,11 +25,24 @@ return {
     "jay-babu/mason-null-ls.nvim",
     optional = true,
     opts = function(_, opts)
+      opts.ensure_installed = {
+        'biome',
+        'prettierd',
+        'shfmt'
+      }
       if not opts.handlers then
         opts.handlers = {}
       end
       opts.handlers = {
         function() end,
+        prettierd = function()
+          local null_ls = require('null-ls');
+          null_ls.register(null_ls.builtins.formatting.prettierd.with({
+            condition = function(utils)
+              return not utils.root_has_file('biome.json')
+            end,
+          }))
+        end,
         biome = function(source_name, methods)
           local null_ls = require('null-ls');
           null_ls.register(null_ls.builtins.formatting.biome.with({
@@ -37,15 +50,16 @@ return {
               'check',
               '--fix',
               '--indent-style=space',
-              '--attribute-position=auto',
               '--formatter-enabled=true',
               '--organize-imports-enabled=true',
-              '--quote-style=single',
               '--linter-enabled=true',
               '--stdin-file-path',
               '$FILENAME',
             },
             to_stdin = true,
+            condition = function(utils)
+              return utils.root_has_file('biome.json')
+            end,
           }))
         end,
         shfmt = function(source_name, methods)
