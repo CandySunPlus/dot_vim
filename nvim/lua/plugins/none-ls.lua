@@ -36,6 +36,7 @@ return {
             args = {
               'check',
               '--fix',
+              '--indent-style=space',
               '--formatter-enabled=true',
               '--organize-imports-enabled=true',
               '--linter-enabled=true',
