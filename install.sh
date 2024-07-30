@@ -18,5 +18,5 @@ ln -sf "$BASE_PATH/cargo_config" ~/.cargo/config.toml
 ln -sf "$BASE_PATH/clang-format" ~/.clang-format
 ln -sf "$BASE_PATH/clang-tidy" ~/.clang-tidy
 ln -sf "$BASE_PATH/rustfmt.toml" ~/.rustfmt.toml
-ln -sf "$BASE_PATH/nvim" ~/.config/nvim
+ln -sf "$BASE_PATH/nvim" ~/.config/
 ln -sf "$BASE_PATH/lazygit.config.yml" ~/.config/lazygit/config.yml
