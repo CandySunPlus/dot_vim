@@ -21,7 +21,7 @@ return {
       opts.formatting = {
         format = lspkind.cmp_format({
           mode = "symbol",
-          symbol_map = { Copilot = "" },
+          symbol_map = { Copilot = "", codeium = "󰘦" },
           menu = {
             nvim_lsp = "(LSP)",
             emoji = "(Emoji)",
@@ -33,7 +33,8 @@ return {
             buffer = "(Buffer)",
             tmux = "(TMUX)",
             copilot = "(Copilot)",
-            treesitter = "(TreeSitter)",
+            codeium = "(Codeium)",
+            treesitter = "(TS)",
           },
         }),
       }
