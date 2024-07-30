@@ -1,29 +1,23 @@
 return {
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
     config = function()
-      require("copilot").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
+      require("codeium").setup({
       })
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end,
+    end
   },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "zbirenbaum/copilot-cmp",
-      "zbirenbaum/copilot.lua",
+      "Exafunction/codeium.nvim",
     },
     opts = function(_, opts)
       local lspkind = require("lspkind")
+      local cmp = require('cmp')
       opts.formatting = {
         format = lspkind.cmp_format({
           mode = "symbol",
@@ -43,7 +37,13 @@ return {
           },
         }),
       }
-      table.insert(opts.sources, { name = "copilot", group_index = 2, priority = 1001 })
+      opts.sources = cmp.config.sources({
+        { name = "nvim_lsp", priority = 1000 },
+        { name = "luasnip",  priority = 750 },
+        { name = "buffer",   priority = 500 },
+        { name = "path",     priority = 250 },
+        { name = "codeium",  priority = 700 },
+      })
     end,
   },
 }
