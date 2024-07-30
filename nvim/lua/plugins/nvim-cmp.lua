@@ -21,18 +21,15 @@ return {
       opts.formatting = {
         format = lspkind.cmp_format({
           mode = "symbol",
-          symbol_map = { Copilot = "", Codeium = "󰘦" },
+          symbol_map = { Copilot = "", Codeium = "" },
           menu = {
             nvim_lsp = "(LSP)",
             emoji = "(Emoji)",
             path = "(Path)",
-            calc = "(Calc)",
-            cmp_tabnine = "(Tabnine)",
             vsnip = "(Snippet)",
             luasnip = "(Snippet)",
             buffer = "(Buffer)",
             tmux = "(TMUX)",
-            copilot = "(Copilot)",
             codeium = "(Codeium)",
             treesitter = "(TS)",
           },
