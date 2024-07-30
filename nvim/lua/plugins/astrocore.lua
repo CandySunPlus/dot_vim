@@ -28,9 +28,9 @@ return {
     rooter = {
       notify = true,
       detector = {
-        "lsp",                                       -- highest priority is getting workspace from running language servers
+        "lsp",                                                 -- highest priority is getting workspace from running language servers
         { ".git", "_darcs",   ".hg",         ".bzr", ".svn" }, -- next check for a version controlled parent directory
-        { "lua",  "MakeFile", "package.json" },      -- lastly check for known project root files
+        { "lua",  "MakeFile", "package.json" },                -- lastly check for known project root files
       },
     },
     -- Mappings can be configured through AstroCore as well.

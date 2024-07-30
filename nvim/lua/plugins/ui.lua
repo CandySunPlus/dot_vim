@@ -13,5 +13,5 @@ return {
     opts = {
       current_line_blame = true,
     }
-  }
+  },
 }
