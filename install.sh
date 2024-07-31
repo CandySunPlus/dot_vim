@@ -10,6 +10,7 @@ ln -sf "$BASE_PATH/prettierrc" ~/.prettierrc
 ln -sf "$BASE_PATH/zshenv" ~/.zshenv
 ln -sf "$BASE_PATH/zshrc" ~/.zshrc
 ln -sf "$BASE_PATH/p10k.zsh" ~/.p10k.zsh
+ln -sf "$BASE_PATH/starship.toml" ~/.config/
 ln -sf "$BASE_PATH/tmux.conf" ~/.tmux.conf
 ln -sf "$BASE_PATH/kitty" ~/.config/
 ln -sf "$BASE_PATH/lvim" ~/.config/
