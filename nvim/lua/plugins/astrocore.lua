@@ -40,8 +40,8 @@ return {
       n = {
         -- second key is the lefthand side of the map
         ["<Leader>e"] = false,
-        ["<Leader>k"] = { ":Neotree toggle<cr>", desc = "Toggle Explorer" },
-        ["<Leader>P"] = { ":Telescope projects<cr>", desc = "Project" },
+        ["<Leader>k"] = { ":Neotree toggle<cr>", silent = true, desc = "Toggle Explorer" },
+        ["<Leader>P"] = { ":Telescope projects<cr>", silent = true, desc = "Project" },
         ["<Leader>lS"] = false,
       },
       t = {
