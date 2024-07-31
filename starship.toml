@@ -3,10 +3,10 @@
 format = """
 $os\
 $directory\
+$cmd_duration\
 $line_break\
 $jobs\
 $sudo\
-$command_duration\
 $env_var\
 $shell\
 $character"""
@@ -80,6 +80,9 @@ $custom\
 $status\
 $battery\
 $time"""
+
+[cmd_duration]
+format = " [$duration]($style)"
 
 [time]
 disabled = false
