@@ -36,7 +36,12 @@ export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT'/ndk'
 # Paths
 #
 
-typeset -gU cdpath fpath mailpath path
+# typeset -gU cdpath fpath mailpath path
+typeset -TxU LDFLAGS ldflags ' '
+typeset -TxU CXXFLAGS cxxflags ' '
+typeset -TxU CFLAGS clfags ' '
+typeset -TxU PKG_CONFIG_PATH pkg_config_path ' '
+
 
 # Set the the list of directories that cd searches.
 # cdpath=(
@@ -49,33 +54,33 @@ typeset -gU cdpath fpath mailpath path
 # export CPPFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/opt/protobuf@3.6/include"
 # export PKG_CONFIG_PATH="/usr/local/opt/protobuf@3.6/lib/pkgconfig:$PKG_CONFIG_PATH"
 #
-LDFLAGS=(
+ldflags=(
   -L/usr/local/opt/openssl@3/lib
   -L/usr/local/opt/ruby/lib
   -L/usr/local/opt/ncurses/lib
   -L/usr/local/lib
-  $LDFLAGS
+  $ldflags
 )
-CXXFLAGS=(
+cxxflags=(
   -I/usr/local/include
   -I/usr/local/opt/openssl@3/include
   -I/usr/local/opt/ruby/include
   -I/usr/local/opt/ncurses/include
-  $CXXFLAGS
+  $cxxflags
 )
-CFLAGS=(
+cflags=(
   -I/usr/local/include
   -I/usr/local/opt/openssl@3/include
   -I/usr/local/opt/ruby/include
   -I/usr/local/opt/ncurses/include
-  $CFLAGS
+  $cflags
 )
-PKG_CONFIG_PATH=(
+pkg_config_path=(
   /usr/local/opt/ncurses/lib/pkgconfig
   /usr/local/opt/openssl@3/lib/pkgconfig
   /usr/local/opt/ruby/lib/pkgconfig
   ~/.local/share/pkgconfig
-  $PKG_CONFIG_PATH
+  $pkg_config_path
 )
 
 path=(
