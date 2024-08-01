@@ -40,7 +40,7 @@ export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT'/ndk'
 typeset -TxU LDFLAGS ldflags ' '
 typeset -TxU CXXFLAGS cxxflags ' '
 typeset -TxU CFLAGS clfags ' '
-typeset -TxU PKG_CONFIG_PATH pkg_config_path ' '
+typeset -TxU PKG_CONFIG_PATH pkg_config_path
 
 
 # Set the the list of directories that cd searches.
