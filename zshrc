@@ -4,7 +4,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode direnv)
 source $ZSH/oh-my-zsh.sh
 
 # common
