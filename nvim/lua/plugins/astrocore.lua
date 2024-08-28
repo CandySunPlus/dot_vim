@@ -43,6 +43,15 @@ return {
         ["<Leader>k"] = { ":Neotree toggle<cr>", silent = true, desc = "Toggle Explorer" },
         ["<Leader>P"] = { ":Telescope projects<cr>", silent = true, desc = "Project" },
         ["<Leader>lS"] = false,
+        ["<Leader>mi"] = { ":MoltenInit<cr>", silent = true, desc = "Initialize the plugin" },
+        ["<Leader>mr"] = { ":MoltenEvaluateOperator<cr>", silent = true, desc = "Run operator selection" },
+        ["<Leader>md"] = { ":MoltenDelete<cr>", silent = true, desc = "Delete evaluate cell" },
+        ["<Leader>ml"] = { ":MoltenEvaluateLine<cr>", silent = true, desc = "Evaluate line" },
+        ["<Leader>mo"] = { ":noautocmd MoltenEnterOutput<cr>", silent = true, desc = "Show or enter output" },
+        ["<Leader>mc"] = { ":MoltenReevaluateCell<cr>", silent = true, desc = "Re-evaluate cell" },
+      },
+      v = {
+        ["<Leader>mr"] = { ":<C-u>MoltenEvaluateVisual<cr>gv", silent = true, desc = "Run visual selection" },
       },
       t = {
         -- setting a mapping to false will disable it
