@@ -29,7 +29,7 @@ return {
         endpoint = "https://api.moonshot.cn/v1",
         model = "moonshot-v1-8k",
         temperature = 0.3,
-        max_tokens = 8192
+        max_tokens = 4096
       }
     },
     dependencies = {

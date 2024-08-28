@@ -10,7 +10,6 @@ $all\
 $line_break\
 $jobs\
 $sudo\
-$env_var\
 $shell\
 $character"""
 

@@ -66,8 +66,10 @@ if test -e "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/k
 # and ~/.bashrc (for interactive shells) :
 
 export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 nerdfetch
 
