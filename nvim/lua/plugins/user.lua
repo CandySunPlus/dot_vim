@@ -37,6 +37,7 @@ return {
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
+      "HakonHarnes/img-clip.nvim"
     }
   },
   {

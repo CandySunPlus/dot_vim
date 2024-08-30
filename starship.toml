@@ -16,6 +16,7 @@ $character"""
 right_format = """
 $cmd_duration"""
 
+command_timeout = 1000
 
 [cmd_duration]
 format = " [$duration]($style)"
