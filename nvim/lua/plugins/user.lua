@@ -37,16 +37,40 @@ return {
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      "HakonHarnes/img-clip.nvim"
-    }
-  },
-  {
-    "benlubas/molten-nvim",
-    version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
-    build = ":UpdateRemotePlugins",
-    init = function()
-      -- this is an example, not a default. Please see the readme for more configuration options
-      vim.g.molten_output_win_max_height = 12
-    end,
-  },
+      {
+        -- support for image pasting
+        "HakonHarnes/img-clip.nvim",
+        event = "VeryLazy",
+        opts = {
+          -- recommended settings
+          default = {
+            embed_image_as_base64 = false,
+            prompt_for_file_name = false,
+            drag_and_drop = {
+              insert_mode = true,
+            },
+            -- required for Windows users
+            use_absolute_path = true,
+          },
+        },
+      },
+      {
+        -- Make sure to setup it properly if you have lazy=true
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {
+          file_types = { "markdown", "Avante" },
+        },
+        ft = { "markdown", "Avante" },
+      },
+    },
+    {
+      "benlubas/molten-nvim",
+      version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
+      build = ":UpdateRemotePlugins",
+      init = function()
+        -- this is an example, not a default. Please see the readme for more configuration options
+        vim.g.molten_output_win_max_height = 12
+      end,
+    },
+  }
 }
