@@ -33,7 +33,7 @@
       "keyColor": "33"
     },
     {
-      "key": " memory",
+      "key": "󰍛 memory",
       "type": "memory",
       "keyColor": "35"
     },
@@ -44,7 +44,7 @@
       "keyColor": "36"
     },
     {
-      "key": " colors",
+      "key": " colors",
       "type": "colors",
       "symbol": "circle",
       "keyColor": "39"
