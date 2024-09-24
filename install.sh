@@ -21,3 +21,4 @@ ln -sf "$BASE_PATH/clang-tidy" ~/.clang-tidy
 ln -sf "$BASE_PATH/rustfmt.toml" ~/.rustfmt.toml
 ln -sf "$BASE_PATH/nvim" ~/.config/
 ln -sf "$BASE_PATH/lazygit.config.yml" ~/.config/lazygit/config.yml
+ln -sf "$BASE_PATH/fastfetch.jsonc" ~/.config/fastfetch/config.jsonc
