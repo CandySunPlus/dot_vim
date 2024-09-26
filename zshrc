@@ -7,28 +7,13 @@ export ZSH="$HOME/.oh-my-zsh"
 plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode direnv)
 source $ZSH/oh-my-zsh.sh
 
-# common
 export XDG_CONFIG_HOME=~/.config
 export CURL_CA_BUNDLE=/etc/ssl/cert.pem
 export GOPATH="$HOME/.go"
-# export JAVA_HOME=$(/usr/libexec/java_home)
-# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles
 
-# for nodejs
-export NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
-export ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
-export SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass
-
-# for flutter
-export PUB_HOSTED_URL=https://pub.sankuai.com
-export FLUTTER_STORAGE_BASE_URL=https://mirrors.sjtug.sjtu.edu.cn
-
-# for rustup
+# for rustup use rsproxy
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
-
-# for nnn
-export NNN_USE_EDITOR=1
 
 # for proxy
 function proxy {
@@ -51,31 +36,16 @@ if [[ $(uname) != "Darwin" ]]; then
   alias docker="podman"
 fi
 
-# >>> xmake >>>
-[[ -s "$HOME/.xmake/profile" ]] && source "$HOME/.xmake/profile" # load xmake profile
-# <<< xmake <<<
-
-
-# BEGIN_KITTY_SHELL_INTEGRATION
-if test -e "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; then source "/Applications/kitty.app/Contents/Resources/kitty/shell-integration/kitty.zsh"; fi
-# END_KITTY_SHELL_INTEGRATION
-#
-# Load pyenv automatically by appending
-# the following to
-# ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
-# and ~/.bashrc (for interactive shells) :
+fastfetch
+eval "$(zoxide init zsh)"
+eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(starship init zsh)"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv virtualenv-init - | sed s/precmd/chpwd/g)"
+# eval "$(pyenv virtualenv-init -)"
 
-fastfetch
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-eval "$(zoxide init zsh)"
-eval "$(fnm env --use-on-cd --shell zsh)"
-
-eval "$(starship init zsh)"
