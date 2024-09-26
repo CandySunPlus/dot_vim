@@ -122,3 +122,4 @@ if (( $+commands[lesspipe.sh] )); then
 fi
 
 . "$HOME/.cargo/env"
+. "$HOME/.rye/env"

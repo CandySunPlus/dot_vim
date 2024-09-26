@@ -41,11 +41,4 @@ eval "$(zoxide init zsh)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(starship init zsh)"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init - | sed s/precmd/chpwd/g)"
-# eval "$(pyenv virtualenv-init -)"
-
 
