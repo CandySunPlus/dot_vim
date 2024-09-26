@@ -91,19 +91,15 @@ path=(
   $HOME/.local/bin
   $HOME/.local/share/nvim/mason/bin
   $HOME/.cargo/bin
+  $HOME/.rye/shims
   $HOME/.go/bin
   $HOME/.dotnet/tools
   $HOME/.emacs.d/bin
   $HOME/.pub-cache/bin
-  /usr/local/Caskroom/flutter/1.20.2/flutter/.pub-cache/bin
-  /usr/local/opt/{llvm,ruby,cpio,ruby}/bin
-  /usr/local/opt/go/libexec/bin
   $HOME/.android/cmdline-tools/latest/bin
   /usr/local/{bin,sbin}
   $path
 )
-
-
 
 #
 # Less
@@ -121,5 +117,3 @@ if (( $+commands[lesspipe.sh] )); then
   export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
-. "$HOME/.cargo/env"
-. "$HOME/.rye/env"
