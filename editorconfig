@@ -9,7 +9,7 @@ end_of_line = lf
 insert_final_newline = true
 charset = utf-8
 indent_style = space
-indent_size = 2
+indent_size = 4
 max_line_length = 120
 
 [{Makefile,**.mk}]
@@ -17,15 +17,3 @@ indent_style = tab
 
 [*.go]
 indent_style = tab
-
-[*.rs]
-indent_size = 4
-
-[{*.java,*.gradle,*kt,*kts,*groovy,*.xml}]
-indent_size = 4
-
-[{*.cmake,CMakeLists.txt}]
-indent_size = 4
-
-[{*.py}]
-indent_size = 4
