@@ -17,7 +17,11 @@ Checks: "*,
         -readability-magic-numbers,
         -cppcoreguidelines-avoid-magic-numbers,
         -cppcoreguidelines-non-private-member-variables-in-classes,
+        -cppcoreguidelines-pro-type-vararg,
+        -cppcoreguidelines-pro-bounds-array-to-pointer-decay,
         -misc-non-private-member-variables-in-classes,
+        -hicpp-vararg,
+        -hicpp-no-array-decay,
 "
 WarningsAsErrors: ''
 HeaderFilterRegex: ''
