@@ -8,7 +8,7 @@ config.font = wezterm.font_with_fallback {
     'Maple Mono NF CN'
 }
 config.line_height = 1.1
-config.font_size = 12
+config.font_size = 13
 -- config.harfbuzz_features = { 'ss09', 'calt' }
 config.color_scheme = 'Catppuccin Mocha'
 config.use_fancy_tab_bar = false
