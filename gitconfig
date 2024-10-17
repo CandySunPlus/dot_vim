@@ -11,8 +11,11 @@
 [core]
   editor = nvim
   pager = delta
+[include]
+	path = ~/.config/delta/catppuccin.gitconfig
 
 [delta]
+  features = catppuccin-<flavour>
   navigate = true
   light = false
 
