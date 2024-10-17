@@ -36,9 +36,10 @@ if [[ $(uname) != "Darwin" ]]; then
   alias docker="podman"
 fi
 
-fastfetch
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(starship init zsh)"
+fastfetch
 
 
