@@ -37,6 +37,7 @@ if [[ $(uname) != "Darwin" ]]; then
   alias docker="podman"
 fi
 
+eval "$(jenv init -)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(starship init zsh)"

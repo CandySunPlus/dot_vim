@@ -66,8 +66,8 @@ pkg_config_path=(
 )
 
 path=(
+  $HOME/.jenv/bin
   $HOME/.r2env/bin
-  $HOME/.android/emulator
   $HOME/.yarn/bin
   $HOME/.opt/bin
   $HOME/.local/bin
