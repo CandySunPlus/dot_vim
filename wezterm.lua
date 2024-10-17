@@ -7,7 +7,7 @@ config.font = wezterm.font_with_fallback {
     'IosevkaCustom Nerd Font Mono',
     'Maple Mono NF CN'
 }
-config.line_height = 1.1
+config.line_height = 1.05
 config.font_size = 13
 -- config.harfbuzz_features = { 'ss09', 'calt' }
 config.color_scheme = 'Catppuccin Mocha'
