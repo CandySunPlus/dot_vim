@@ -71,14 +71,12 @@ path=(
   $HOME/.yarn/bin
   $HOME/.opt/bin
   $HOME/.local/bin
-  $HOME/.local/share/nvim/mason/bin
   $HOME/.cargo/bin
   $HOME/.rye/shims
   $HOME/.go/bin
   $HOME/.dotnet/tools
   $HOME/.emacs.d/bin
   $HOME/.pub-cache/bin
-  $HOME/.android/cmdline-tools/latest/bin
   /usr/local/{bin,sbin}
   $path
 )
