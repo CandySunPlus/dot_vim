@@ -1,5 +1,6 @@
 if [[ $(uname) == "Darwin" ]]; then
   ulimit -S -n 1024
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Path to your oh-my-zsh installation.
@@ -36,7 +37,6 @@ if [[ $(uname) != "Darwin" ]]; then
   alias docker="podman"
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(starship init zsh)"
