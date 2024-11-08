@@ -10,7 +10,7 @@
 
 [target.x86_64-unknown-linux-musl]
 linker = "musl-clang"
-rustflags = ["-C", "link-arg=-Wl,--no-dynamic-linker"]
+rustflags = ["-C", "link-arg=-Wl,--no-dynamic-linker", "-C", "target-feature=-crt-static"]
 # rustflags = ["-C", "link-arg=-fuse-ld=lld"]
 # rustflags = ["-C", "target-feature=-crt-static"]
 

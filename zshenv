@@ -90,7 +90,7 @@ path=(
 # Remove -X and -F (exit if the content fits on one screen) to enable it.
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
-export BAT_THEME="Catppuccin Mocha"
+export BAT_THEME="Catppuccin-mocha"
 
 # Set the Less input preprocessor.
 if (( $+commands[lesspipe.sh] )); then
