@@ -1,7 +1,7 @@
 #!/bin/sh
 
-TOOLCHAIN=/usr/local/opt/x86_64-unknown-linux-musl/toolchain
-SYSROOT=/usr/local/opt/x86_64-unknown-linux-musl/toolchain/x86_64-unknown-linux-musl/sysroot
+TOOLCHAIN=/usr/lib/musl
+SYSROOT=/usr/lib/musl
 
 CLANG="clang"
 
@@ -9,4 +9,4 @@ if [ "$0" = "musl-clang++" ]; then
   CLANG="clang++"
 fi
 
-$CLANG -target x86_64-unknown-linux-musl --sysroot=$SYSROOT --gcc-toolchain=$TOOLCHAIN "$@"
+$CLANG -target x86_64-unknown-linux-musl --sysroot=$SYSROOT -isystem=$TOOLCHAIN/include -L$TOOLCHAIN/lib "$@"
