@@ -39,7 +39,7 @@ export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT'/ndk'
 # typeset -gU cdpath fpath mailpath path
 typeset -TxU LDFLAGS ldflags ' '
 typeset -TxU CXXFLAGS cxxflags ' '
-typeset -TxU CFLAGS clfags ' '
+typeset -TxU CFLAGS cflags ' '
 typeset -TxU PKG_CONFIG_PATH pkg_config_path
 
 
@@ -53,15 +53,18 @@ typeset -TxU PKG_CONFIG_PATH pkg_config_path
 #
 ldflags=(
   $ldflags
+  -L/opt/homebrew/lib
 )
 cxxflags=(
   $cxxflags
 )
 cflags=(
   $cflags
+  -I/opt/homebrew/include
 )
 pkg_config_path=(
   ~/.local/share/pkgconfig
+  /opt/homebrew/lib/pkgconfig
   $pkg_config_path
 )
 
