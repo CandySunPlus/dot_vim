@@ -8,16 +8,16 @@ config.font = wezterm.font_with_fallback {
     'Maple Mono NF CN'
 }
 config.line_height = 1.05
-config.font_size = 13
+config.font_size = 12
 -- config.harfbuzz_features = { 'ss09', 'calt' }
 config.color_scheme = 'Catppuccin Mocha'
-config.use_fancy_tab_bar = false
-config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = false
 config.window_decorations = "RESIZE"
-config.show_new_tab_button_in_tab_bar = false
--- config.window_background_opacity = 9
--- config.macos_window_background_blur = 70
--- config.text_background_opacity = 0.9
+config.show_new_tab_button_in_tab_bar = true
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 70
+config.text_background_opacity = 0.9
 
 config.window_padding = {
     left = 5,
