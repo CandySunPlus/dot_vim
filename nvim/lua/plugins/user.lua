@@ -24,10 +24,14 @@ return {
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
+    version = false,
     build = "make",
     opts = {
       provider = "openai",
       openai = {
+        -- endpoint = "http://127.0.0.1:1234/v1",
+        -- model = "hermes-3-llama-3.1-8b",
+        -- model = "yu-coder-9b-chat",
         endpoint = "https://api.moonshot.cn/v1",
         model = "moonshot-v1-8k",
         temperature = 0.3,
@@ -39,7 +43,7 @@ return {
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      "HakonHarnes/img-clip.nvim",
+      "zbirenbaum/copilot.lua",
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
@@ -62,7 +66,6 @@ return {
         'MeanderingProgrammer/render-markdown.nvim',
         opts = {
           file_types = { "markdown", "Avante" },
-          code = { style = 'language' }
         },
         ft = { "markdown", "Avante" },
       },
