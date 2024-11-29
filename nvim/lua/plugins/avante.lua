@@ -9,10 +9,9 @@ return {
     openai = {
       endpoint = "https://api.mistral.ai/v1",
       model = "ministral-8b-latest",
-      -- ['local'] = true,
-      -- endpoint = "http://127.0.0.1:8080/v1",
-      -- model = "hermes3",
       temperature = 0.2,
+      -- endpoint = "https://api.moonshot.cn/v1",
+      -- model = "moonshot-v1-8k",
       max_tokens = 4096
     },
   },
