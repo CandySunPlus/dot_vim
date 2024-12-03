@@ -17,6 +17,7 @@ return {
         signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
         wrap = true,           -- sets vim.opt.wrap
         showbreak = " ↳  ",
+        laststatus = 3,
         guicursor =
         "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
       },
