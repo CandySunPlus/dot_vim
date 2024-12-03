@@ -21,6 +21,7 @@ return {
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "zbirenbaum/copilot.lua",
+    "hrsh7th/nvim-cmp",            -- autocompletion for avante commands and mentions
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
