@@ -2,7 +2,7 @@ return {
   "yetone/avante.nvim",
   event = "VeryLazy",
   lazy = false,
-  -- version = false,
+  version = false,
   build = "make",
   opts = {
     provider = "openai",
@@ -39,13 +39,13 @@ return {
         },
       },
     },
-    {
-      -- Make sure to setup it properly if you have lazy=true
-      'MeanderingProgrammer/render-markdown.nvim',
-      opts = {
-        file_types = { "markdown", "Avante" },
-      },
-      ft = { "markdown", "Avante" },
-    },
+    -- {
+    --   -- Make sure to setup it properly if you have lazy=true
+    --   'MeanderingProgrammer/render-markdown.nvim',
+    --   opts = {
+    --     file_types = { "markdown", "Avante" },
+    --   },
+    --   ft = { "markdown", "Avante" },
+    -- },
   }
 }

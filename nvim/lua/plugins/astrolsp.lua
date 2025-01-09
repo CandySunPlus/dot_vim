@@ -14,18 +14,7 @@ return {
       codelens = true,        -- enable/disable codelens refresh on start
       inlay_hints = true,     -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
-    },
-    config = {
-      clangd = {
-        settings = {},
-        cmd = { "clangd", "--fallback-style=none" },
-        root_dir = require("lspconfig.util").root_pattern(
-          ".nlsp-settings",
-          "compile_commands.json",
-          "compile_flags.txt",
-          ".git"
-        ),
-      },
+      signature_help = true,
     },
     -- customize lsp formatting options
     formatting = {
