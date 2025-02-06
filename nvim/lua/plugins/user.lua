@@ -1,24 +1,27 @@
+-- You can also add or configure plugins by creating files in this `plugins/` folder
+-- Here are some examples:
+
 ---@type LazySpec
 return {
   {
-    'folke/noice.nvim',
+    "folke/noice.nvim",
     opts = {
       lsp = {
         progress = {
-          enabled = false
+          enabled = false,
         },
         hover = {
-          enabled = false
+          enabled = false,
         },
         signature = {
-          enabled = false
-        }
+          enabled = false,
+        },
       },
       presets = {
         bottom_search = false,
-        command_palette = false
-      }
-    }
+        command_palette = false,
+      },
+    },
   },
   {
     "benlubas/molten-nvim",
