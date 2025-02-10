@@ -7,11 +7,9 @@ return {
   opts = {
     provider = "openai",
     openai = {
-      endpoint = "https://api.mistral.ai/v1",
-      model = "ministral-8b-latest",
-      temperature = 0.2,
-      -- endpoint = "https://api.moonshot.cn/v1",
-      -- model = "moonshot-v1-8k",
+      temperature = 0.7,
+      endpoint = "https://api.moonshot.cn/v1",
+      model = "moonshot-v1-32k-vision-preview",
       max_tokens = 4096
     },
   },
