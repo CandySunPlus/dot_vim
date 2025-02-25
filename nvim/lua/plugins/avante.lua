@@ -5,12 +5,15 @@ return {
   version = false,
   build = "make",
   opts = {
-    provider = "openai",
-    openai = {
-      temperature = 0.7,
-      endpoint = "https://api.moonshot.cn/v1",
-      model = "moonshot-v1-32k-vision-preview",
-      max_tokens = 4096
+    provider = "kimi",
+    vendors = {
+      kimi = {
+        __inherited_from = 'openai',
+        endpoint = "https://api.moonshot.cn/v1",
+        model = "kimi-latest",
+        max_tokens = 4096,
+        temperature = 0.2,
+      }
     },
   },
   dependencies = {
