@@ -19,28 +19,4 @@ return {
       },
     },
   },
-  {
-    "Saghen/blink.cmp",
-    dependencies = {
-      "onsails/lspkind.nvim",
-    },
-    opts = {
-      completion = {
-        menu = {
-          draw = {
-            components = {
-              kind_icon = {
-                text = function(ctx)
-                  return require("lspkind").symbolic(ctx.kind, {
-                    mode = "symbol",
-                    symbol_map = { Copilot = "" },
-                  })
-                end,
-              },
-            },
-          },
-        },
-      },
-    },
-  },
 }
