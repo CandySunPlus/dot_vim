@@ -1,9 +1,28 @@
 -- You can also add or configure plugins by creating files in this `plugins/` folder
--- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
 
 ---@type LazySpec
 return {
+  {
+    "folke/noice.nvim",
+    opts = {
+      lsp = {
+        progress = {
+          enabled = false,
+        },
+        hover = {
+          enabled = false,
+        },
+        signature = {
+          enabled = false,
+        },
+      },
+      presets = {
+        bottom_search = false,
+        command_palette = false,
+      },
+    },
+  },
   {
     "benlubas/molten-nvim",
     build = ":UpdateRemotePlugins",
