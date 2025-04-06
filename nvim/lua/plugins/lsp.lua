@@ -1,11 +1,11 @@
 ---@type LazySpec
 return {
   { "folke/lsp-colors.nvim", event = "BufRead" },
-  {
-    "j-hui/fidget.nvim",
-    branch = "legacy",
-    config = function() require("fidget").setup {} end,
-  },
+  -- {
+  --   "j-hui/fidget.nvim",
+  --   branch = "legacy",
+  --   config = function() require("fidget").setup {} end,
+  -- },
   {
     "VidocqH/lsp-lens.nvim",
     event = "BufRead",
