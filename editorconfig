@@ -20,3 +20,7 @@ indent_style = tab
 
 [*.lua]
 indent_size = 2
+
+[{*.js,*.ts,*.css,*.html,*.xml,*.json}]
+indent_size = 2
+
