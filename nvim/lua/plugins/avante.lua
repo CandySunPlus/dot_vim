@@ -5,12 +5,13 @@ return {
   version = false,
   build = "make",
   opts = {
-    provider = "kimi",
+    provider = "siliconflow",
     vendors = {
-      kimi = {
+      siliconflow = {
         __inherited_from = "openai",
-        endpoint = "https://api.moonshot.cn/v1",
-        model = "kimi-latest",
+        endpoint = "https://api.siliconflow.cn/v1",
+        -- endpoint = "https://api.moonshot.cn/v1",
+        model = "Qwen/Qwen2.5-32B-Instruct",
         max_tokens = 4096,
         temperature = 0.2,
       },
