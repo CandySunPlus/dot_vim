@@ -29,7 +29,7 @@ fi
 #
 # Android
 #
-export ANDROID_SDK_ROOT='/Users/niksun/Library/Android/sdk'
+export ANDROID_SDK_ROOT=$(realpath ~)'/Library/Android/sdk'
 export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT'/ndk'
 
 #
