@@ -10,9 +10,9 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      autoformat = true, -- enable or disable auto formatting on start
-      codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = true, -- enable/disable inlay hints on start
+      autoformat = true,      -- enable or disable auto formatting on start
+      codelens = true,        -- enable/disable codelens refresh on start
+      inlay_hints = true,     -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
       signature_help = false,
     },
@@ -20,7 +20,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = true,     -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           "lua",
           "rust",
@@ -122,22 +122,16 @@ return {
           cond = "textDocument/referneces",
           silent = true,
         },
-        ["<Leader>lR"] = {
-          function() require("snacks").picker.lsp_references() end,
-          desc = "Search referneces",
-          cond = "textDocument/referneces",
-          silent = true,
-        },
-        ["<Leader>lD"] = {
-          function() require("snacks").picker.lsp_declaration() end,
-          desc = "Declaration of current symbol",
-          cond = "textDocument/declaration",
-          silent = true,
-        },
         ["gy"] = {
           function() require("snacks").picker.lsp_type_definitions() end,
           desc = "Definition of current type",
           cond = "textDocument/typeDefinition",
+          silent = true,
+        },
+        ["<Leader>lD"] = {
+          function() require("snacks").picker.lsp_declarations() end,
+          desc = "Declaration of current symbol",
+          cond = "textDocument/declaration",
           silent = true,
         },
         ["<Leader>lh"] = { ":lua vim.lsp.buf.hover()<cr>", desc = "Show hover", silent = true },
