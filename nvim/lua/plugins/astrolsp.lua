@@ -10,9 +10,9 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      autoformat = true, -- enable or disable auto formatting on start
-      codelens = true, -- enable/disable codelens refresh on start
-      inlay_hints = true, -- enable/disable inlay hints on start
+      autoformat = true,      -- enable or disable auto formatting on start
+      codelens = true,        -- enable/disable codelens refresh on start
+      inlay_hints = true,     -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
       signature_help = true,
     },
@@ -20,7 +20,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = true,     -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           "lua",
           "rust",
@@ -105,43 +105,55 @@ return {
           end,
         },
         ["gd"] = {
-          ":Telescope lsp_definitions<cr>",
+          function() require("snacks").picker.lsp_definitions() end,
           desc = "Show the definition of current symbol",
           cond = "textDocument/definition",
           silent = true,
         },
-        ["gr"] = {
-          ":Telescope lsp_references<cr>",
-          desc = "Search referneces",
-          cond = "textDocument/referneces",
-          silent = true,
-        },
         ["gI"] = {
-          ":Telescope lsp_implementations<cr>",
+          function() require("snacks").picker.lsp_implementations() end,
           desc = "Implementation of current symbol",
           cond = "textDocument/implementation",
           silent = true,
         },
+        ["gR"] = {
+          function() require("snacks").picker.lsp_references() end,
+          desc = "Search referneces",
+          cond = "textDocument/referneces",
+          silent = true,
+        },
+        ["<Leader>lR"] = {
+          function() require("snacks").picker.lsp_references() end,
+          desc = "Search referneces",
+          cond = "textDocument/referneces",
+          silent = true,
+        },
+        ["<Leader>lD"] = {
+          function() require("snacks").picker.lsp_declaration() end,
+          desc = "Declaration of current symbol",
+          cond = "textDocument/declaration",
+          silent = true,
+        },
         ["gy"] = {
-          ":Telescope lsp_type_definitions<cr>",
+          function() require("snacks").picker.lsp_type_definitions() end,
           desc = "Definition of current type",
           cond = "textDocument/typeDefinition",
           silent = true,
         },
         ["<Leader>lh"] = { ":lua vim.lsp.buf.hover()<cr>", desc = "Show hover", silent = true },
         ["<Leader>lu"] = { ":lua vim.lsp.buf.signature_help()<cr>", desc = "Show hover", silent = true },
-        ["<Leader>lo"] = { ":AerialToggle<cr>", desc = "Symbol outline", silent = true },
+        ["<Leader>lo"] = { function() require("aerial").toggle() end, desc = "Symbol outline", silent = true },
         ["<Leader>lt"] = { ":Trouble diagnostics<cr>", desc = "Trouble diagnostics", silent = true },
         ["<Leader>lj"] = { ":lua vim.diagnostic.goto_next()<cr>", desc = "Next diagnostics", silent = true },
         ["<Leader>lk"] = { ":lua vim.diagnostics.goto_prev()<cr>", desc = "Prev diagnostics", silent = true },
         ["<Leader>lR"] = {
-          ":Telescope lsp_references<cr>",
+          function() require("snacks").picker.lsp_references() end,
           desc = "Search referneces",
           cond = "textDocument/referneces",
           silent = true,
         },
         ["<Leader>lG"] = {
-          ":Telescope lsp_workspace_symbols<cr>",
+          function() require("snacks").picker.lsp_workspace_symbols() end,
           desc = "Search workspace symbols",
           cond = "textDocument/symbol",
           silent = true,

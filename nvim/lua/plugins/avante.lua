@@ -15,6 +15,12 @@ return {
         temperature = 0.2,
       },
     },
+    file_selector = {
+      --- @alias FileSelectorProvider "native" | "fzf" | "telescope" | string
+      provider = "snacks",
+      -- Options override for custom providers
+      provider_opts = {},
+    },
   },
   dependencies = {
     "stevearc/dressing.nvim",
