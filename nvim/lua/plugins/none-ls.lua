@@ -29,10 +29,15 @@ return {
         "biome",
         "prettierd",
         "shfmt",
+        "stylua",
       }
       if not opts.handlers then opts.handlers = {} end
       opts.handlers = {
         function() end,
+        stylua = function()
+          local null_ls = require "null-ls"
+          null_ls.register(null_ls.builtins.formatting.stylua)
+        end,
         black = function()
           local null_ls = require "null-ls"
           null_ls.register(null_ls.builtins.formatting.black)
