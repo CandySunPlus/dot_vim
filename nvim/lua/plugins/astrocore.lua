@@ -74,7 +74,6 @@ return {
         },
         ["<Leader>e"] = false,
         ["<Leader>k"] = { ":Neotree toggle<cr>", silent = true, desc = "Toggle Explorer" },
-        ["<Leader>P"] = { ":Telescope projects<cr>", silent = true, desc = "Project" },
         ["<Leader>lS"] = false,
         ["<Leader>mi"] = { ":MoltenInit<cr>", silent = true, desc = "Initialize the plugin" },
         ["<Leader>mr"] = { ":MoltenEvaluateOperator<cr>", silent = true, desc = "Run operator selection" },
