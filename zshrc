@@ -32,6 +32,7 @@ alias mnpm="npm --registry=http://r.npm.sankuai.com \
 --cache=$HOME/.cache/mnpm \
 --disturl=http://npm.sankuai.com/mirrors/node \
 --userconfig=$HOME/.mnpmrc"
+alias enp="enpass-cli -vault=$(realpath ~)/Documents/Enpass/Vaults/primary -sort"
 
 if [[ $(uname) != "Darwin" ]]; then
   alias docker="podman"
