@@ -5,7 +5,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode direnv)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode direnv rye)
 source $ZSH/oh-my-zsh.sh
 
 export XDG_CONFIG_HOME=~/.config
@@ -42,6 +42,7 @@ eval "$(jenv init -)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(starship init zsh)"
+eval "$(cat $HOME/.rye/env)"
 fastfetch
 
 

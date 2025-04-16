@@ -69,13 +69,11 @@ pkg_config_path=(
 )
 
 path=(
-  $HOME/.jenv/bin
   $HOME/.r2env/bin
   $HOME/.yarn/bin
   $HOME/.opt/bin
   $HOME/.local/bin
   $HOME/.cargo/bin
-  $HOME/.rye/shims
   $HOME/.go/bin
   $HOME/.dotnet/tools
   $HOME/.emacs.d/bin
