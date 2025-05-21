@@ -24,7 +24,7 @@ return {
         __inherited_from = "openai",
         endpoint = "https://aihubmix.com/v1",
         api_key_name = "AIHUBMIX_API_KEY",
-        model = "o3-mini",
+        model = "gpt-4.1-mini",
         temperature = 0.2,
       },
       friday = {
@@ -34,6 +34,21 @@ return {
         api_key_name = "FRIDAY_API_KEY",
         max_tokens = 4096,
         temperature = 0.2,
+      },
+      siliconflow_qwen3_8b = {
+        __inherited_from = "openai",
+        endpoint = "https://api.siliconflow.cn/v1",
+        model = "Qwen/Qwen3-8B",
+        api_key_name = "SILICONFLOW_API_KEY",
+        max_completion_tokens = 32768,
+        temperature = 0,
+      },
+      siliconflow_qwen3_32b = {
+        __inherited_from = "openai",
+        endpoint = "https://api.siliconflow.cn/v1",
+        model = "Qwen/Qwen3-32B",
+        api_key_name = "SILICONFLOW_API_KEY",
+        temperature = 0,
       },
     },
     file_selector = {
