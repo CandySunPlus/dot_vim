@@ -11,44 +11,54 @@ return {
       --- ... existing behaviours
       enable_cursor_planning_mode = true, -- enable cursor planning mode!
     },
-    vendors = {
+    providers = {
       kimi = {
         __inherited_from = "openai",
         endpoint = "https://api.moonshot.cn/v1",
         model = "kimi-latest",
         api_key_name = "KIMI_API_KEY",
-        max_completion_tokens = 32768,
-        temperature = 0.2,
+        extra_request_body = {
+          max_completion_tokens = 32768,
+          temperature = 0.2
+        }
       },
       aihubmix = {
         __inherited_from = "openai",
         endpoint = "https://aihubmix.com/v1",
         api_key_name = "AIHUBMIX_API_KEY",
         model = "gpt-4.1-mini",
-        temperature = 0.2,
+        extra_request_body = {
+          temperature = 0.2,
+        }
       },
       friday = {
         __inherited_from = "openai",
         endpoint = "https://aigc.sankuai.com/v1/openai/native",
         model = "anthropic.claude-3.5-sonnet",
         api_key_name = "FRIDAY_API_KEY",
-        max_tokens = 4096,
-        temperature = 0.2,
+        extra_request_body = {
+          max_tokens = 4096,
+          temperature = 0.2
+        }
       },
       siliconflow_qwen3_8b = {
         __inherited_from = "openai",
         endpoint = "https://api.siliconflow.cn/v1",
         model = "Qwen/Qwen3-8B",
         api_key_name = "SILICONFLOW_API_KEY",
-        max_completion_tokens = 32768,
-        temperature = 0,
+        extra_request_body = {
+          max_completion_tokens = 32768,
+          temperature = 0
+        }
       },
       siliconflow_qwen3_32b = {
         __inherited_from = "openai",
         endpoint = "https://api.siliconflow.cn/v1",
         model = "Qwen/Qwen3-32B",
         api_key_name = "SILICONFLOW_API_KEY",
-        temperature = 0,
+        extra_request_body = {
+          temperature = 0,
+        }
       },
     },
     file_selector = {
