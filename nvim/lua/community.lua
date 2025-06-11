@@ -10,7 +10,7 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.cmake" },
   { import = "astrocommunity.pack.cpp" },
-  { import = "astrocommunity.colorscheme.catppuccin" },
+  -- { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.project.project-nvim" },
   { import = "astrocommunity.recipes.vscode-icons" },
   -- { import = "astrocommunity.recipes.heirline-nvchad-statusline" },
