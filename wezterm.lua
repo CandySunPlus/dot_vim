@@ -15,9 +15,9 @@ config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = false
 config.window_decorations = "RESIZE"
 config.show_new_tab_button_in_tab_bar = true
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1
 config.macos_window_background_blur = 70
-config.text_background_opacity = 0.9
+config.text_background_opacity = 1
 
 config.window_padding = {
     left = 5,
