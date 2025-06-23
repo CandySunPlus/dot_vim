@@ -20,6 +20,8 @@ replace-with = 'rsproxy-sparse'
 registry = "https://rsproxy.cn/crates.io-index"
 [source.rsproxy-sparse]
 registry = "sparse+https://rsproxy.cn/index/"
+[registries.rsproxy-sparse]
+index = "sparse+https://rsproxy.cn/index/"
 [registries.rsproxy]
 index = "https://rsproxy.cn/crates.io-index"
 [net]
