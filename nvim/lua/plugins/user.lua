@@ -17,4 +17,9 @@ return {
       vim.g.molten_output_show_more = true
     end,
   },
+  {
+    "echasnovski/mini.align",
+    version = "*",
+    init = function() require("mini.align").setup() end,
+  },
 }
