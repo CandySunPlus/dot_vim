@@ -5,7 +5,7 @@ return {
   version = false,
   build = "make",
   opts = {
-    provider = "openrouter",
+    provider = "aihubmix",
     providers = {
       kimi = {
         __inherited_from = "openai",
