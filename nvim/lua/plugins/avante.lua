@@ -27,7 +27,7 @@ return {
       },
       openrouter = {
         __inherited_from = "openai",
-        endpoint = "https://aihubmix.com/v1",
+        endpoint = "https://openrouter.ai/api/v1",
         api_key_name = "OPENROUTER_API_KEY",
         model = "gpt-4.1-mini",
         extra_request_body = {
