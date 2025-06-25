@@ -20,7 +20,7 @@ return {
         __inherited_from = "openai",
         endpoint = "https://aihubmix.com/v1",
         api_key_name = "AIHUBMIX_API_KEY",
-        model = "aihubmix-router",
+        model = "gpt-4.1-mini",
         extra_request_body = {
           temperature = 0.2,
         },
