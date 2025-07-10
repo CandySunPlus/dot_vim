@@ -1,6 +1,7 @@
 if [[ $(uname) == "Darwin" ]]; then
   ulimit -S -n 1024
   eval "$(/opt/homebrew/bin/brew shellenv)"
+  alias tar="COPYFILE_DISABLE=1 tar"
 fi
 
 # Path to your oh-my-zsh installation.
@@ -54,5 +55,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+
+
 
 source ~/.moaextrc
