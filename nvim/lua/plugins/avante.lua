@@ -5,12 +5,12 @@ return {
   version = false,
   build = "make",
   opts = {
-    provider = "aihubmix",
+    provider = "kimi",
     providers = {
       kimi = {
         __inherited_from = "openai",
         endpoint = "https://api.moonshot.cn/v1",
-        model = "kimi-latest",
+        model = "kimi-k2-0711-preview",
         api_key_name = "KIMI_API_KEY",
         extra_request_body = {
           temperature = 0.2,
