@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 config.font = wezterm.font_with_fallback({
   -- 'PragmataPro Mono Liga',
 
-  { family = "Iosevka Custom", stretch = "SemiCondensed" },
+  "Iosevka Custom",
   "IosevkaCustom Nerd Font Mono",
   -- "Maple Mono NF CN",
 })
