@@ -88,6 +88,14 @@ return {
         },
       },
     },
+    defaults = {
+      hover = {
+        border = "bold",
+      },
+      signature_help = {
+        border = "bold",
+      },
+    },
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
