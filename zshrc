@@ -63,4 +63,14 @@ esac
 
 
 
+
+
+
 source ~/.moaextrc
+
+# bun completions
+[ -s "/Users/niksun/.bun/_bun" ] && source "/Users/niksun/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

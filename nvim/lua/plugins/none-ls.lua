@@ -51,17 +51,17 @@ return {
         biome = function(source_name, methods)
           local null_ls = require "null-ls"
           null_ls.register(null_ls.builtins.formatting.biome.with {
-            args = {
-              "check",
-              "--fix",
-              "--indent-style=space",
-              "--formatter-enabled=true",
-              "--organize-imports-enabled=true",
-              "--linter-enabled=true",
-              "--stdin-file-path",
-              "$FILENAME",
-            },
-            to_stdin = true,
+            -- args = {
+            --   "check",
+            --   "--fix",
+            --   "--indent-style=space",
+            --   "--formatter-enabled=true",
+            --   "--organize-imports-enabled=true",
+            --   "--linter-enabled=true",
+            --   "--stdin-file-path",
+            --   "$FILENAME",
+            -- },
+            -- to_stdin = true,
             condition = function(utils) return utils.root_has_file "biome.json" end,
           })
         end,

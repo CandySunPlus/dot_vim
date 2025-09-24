@@ -21,6 +21,6 @@ indent_style = tab
 [*.lua]
 indent_size = 2
 
-[{*.js,*.ts,*.jsx,*.tsx,*.css,*.html,*.xml,*.json}]
+[{*.js,*.ts,*.jsx,*.tsx,*.css,*.html,*.json}]
 indent_size = 2
 
