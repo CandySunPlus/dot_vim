@@ -49,7 +49,7 @@ case ":$PATH:" in
     *) eval "$(jenv init -)" ;;
 esac
 case ":$PATH:" in
-    *"fnm_multishells"*) echo "has fnm" ;;
+    *"fnm_multishells"*) ;;
     *) eval "$(fnm env --use-on-cd --shell zsh)" ;;
 esac
 eval "$(cat $HOME/.rye/env)"
