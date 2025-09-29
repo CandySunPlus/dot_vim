@@ -41,7 +41,7 @@ typeset -TxU LDFLAGS ldflags ' '
 typeset -TxU CXXFLAGS cxxflags ' '
 typeset -TxU CFLAGS cflags ' '
 typeset -TxU PKG_CONFIG_PATH pkg_config_path
-
+typeset -aU path
 
 # Set the the list of directories that cd searches.
 # cdpath=(
