@@ -74,8 +74,6 @@ path=(
   $HOME/.cargo/bin
   $HOME/.go/bin
   $HOME/.dotnet/tools
-  $HOME/.emacs.d/bin
-  $HOME/.pub-cache/bin
   /usr/local/{bin,sbin}
   $path
 )
