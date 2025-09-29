@@ -47,7 +47,6 @@ eval "$(cat $HOME/.rye/env)"
 fastfetch
 
 
-
 # pnpm
 export PNPM_HOME="/Users/niksun/Library/pnpm"
 case ":$PATH:" in
@@ -55,16 +54,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-
-
-
-
-
-
-
-
-
 
 source ~/.moaextrc
 
