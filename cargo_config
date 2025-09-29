@@ -9,10 +9,10 @@
 # rustflags = ["-C", "link-arg=-fuse-ld=mold"]
 
 [target.x86_64-unknown-linux-musl]
-linker = "musl-clang"
+# linker = "musl-clang"
 # rustflags = ["-C", "link-arg=-Wl,--no-dynamic-linker"]
 # rustflags = ["-C", "link-arg=-fuse-ld=lld"]
-rustflags = ["-C", "target-feature=-crt-static"]
+# rustflags = ["-C", "target-feature=-crt-static"]
 
 [source.crates-io]
 replace-with = 'rsproxy-sparse'

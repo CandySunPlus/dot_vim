@@ -11,7 +11,10 @@ source $ZSH/oh-my-zsh.sh
 
 export XDG_CONFIG_HOME=~/.config
 export CURL_CA_BUNDLE=/etc/ssl/cert.pem
+export GOROOT="$HOME/.local/go"
 export GOPATH="$HOME/.go"
+export GOPROXY=https://goproxy.cn,direct
+export GO111MODULE=on
 
 # for rustup use rsproxy
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
