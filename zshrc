@@ -66,7 +66,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-source ~/.moaextrc
 
 # bun completions
 [ -s "/Users/niksun/.bun/_bun" ] && source "/Users/niksun/.bun/_bun"
@@ -77,3 +76,5 @@ case ":$PATH:" in
     *":$BUN_INSTALL/bin:"*) ;;
     *) export PATH="$BUN_INSTALL/bin:$PATH" ;;
 esac
+
+source ~/.moaextrc
