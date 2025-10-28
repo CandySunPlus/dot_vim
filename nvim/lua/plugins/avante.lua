@@ -10,7 +10,7 @@ return {
       kimi = {
         __inherited_from = "openai",
         endpoint = "https://api.moonshot.cn/v1",
-        model = "kimi-k2-0711-preview",
+        model = "kimi-k2-0905-preview",
         api_key_name = "KIMI_API_KEY",
         extra_request_body = {
           temperature = 0.2,
@@ -20,7 +20,7 @@ return {
         __inherited_from = "openai",
         endpoint = "https://aihubmix.com/v1",
         api_key_name = "AIHUBMIX_API_KEY",
-        model = "gpt-4.1-mini",
+        model = "zai-glm-4.6",
         extra_request_body = {
           temperature = 0.2,
         },
@@ -29,7 +29,7 @@ return {
         __inherited_from = "openai",
         endpoint = "https://openrouter.ai/api/v1",
         api_key_name = "OPENROUTER_API_KEY",
-        model = "gpt-4.1-mini",
+        model = "z-ai/glm-4.6",
         extra_request_body = {
           temperature = 0.2,
         },
