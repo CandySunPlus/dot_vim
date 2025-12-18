@@ -5,7 +5,7 @@ return {
   version = false,
   build = "make",
   opts = {
-    provider = "kimi-cli",
+    provider = "kimi",
     acp_providers = {
       ["kimi-cli"] = {
         command = "kimi",
