@@ -1,5 +1,17 @@
 return {
   {
+    "Exafunction/windsurf.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "saghen/blink.cmp",
+    },
+    config = function()
+      require("codeium").setup {
+        enable_cmp_source = false,
+      }
+    end,
+  },
+  {
     "xzbdmw/colorful-menu.nvim",
     config = function()
       -- You don't need to set these options.
@@ -94,7 +106,7 @@ return {
     "saghen/blink.cmp",
     optional = true,
     dependencies = {
-      "giuxtaposition/blink-cmp-copilot",
+      "Exafunction/windsurf.nvim",
     },
     opts = {
       completion = {
@@ -126,16 +138,15 @@ return {
           "path",
           "snippets",
           "buffer",
-          "copilot",
+          "codeium",
           "avante_commands",
           "avante_mentions",
           "avante_files",
         },
         providers = {
-          copilot = {
-            name = "copilot",
-            module = "blink-cmp-copilot",
-            score_offset = 100,
+          codeium = {
+            name = "Codeium",
+            module = "codeium.blink",
             async = true,
           },
           avante_commands = {
