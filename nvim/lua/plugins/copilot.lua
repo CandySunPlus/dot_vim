@@ -1,18 +1,5 @@
 return {
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-      filetypes = {
-        markdown = true,
-        help = true,
-      },
-    },
-  },
-  {
     "xzbdmw/colorful-menu.nvim",
     config = function()
       -- You don't need to set these options.

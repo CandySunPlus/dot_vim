@@ -9,7 +9,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode direnv rye)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode direnv rye kimi-cli)
 source $ZSH/oh-my-zsh.sh
 
 export XDG_CONFIG_HOME=~/.config
@@ -77,7 +77,13 @@ case ":$PATH:" in
     *) export PATH="$BUN_INSTALL/bin:$PATH" ;;
 esac
 
-source ~/.moaextrc
 
 # Added by CatPaw
 export PATH="/Users/niksun/.catpaw/bin:$PATH"
+
+
+
+
+
+
+source ~/.moaextrc

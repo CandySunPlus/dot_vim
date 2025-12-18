@@ -5,7 +5,13 @@ return {
   version = false,
   build = "make",
   opts = {
-    provider = "kimi",
+    provider = "kimi-cli",
+    acp_providers = {
+      ["kimi-cli"] = {
+        command = "kimi",
+        args = { "--acp" },
+      },
+    },
     providers = {
       kimi = {
         __inherited_from = "openai",

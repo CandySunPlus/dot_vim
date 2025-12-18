@@ -28,4 +28,16 @@ config.window_padding = {
   bottom = 5,
 }
 
+config.ssh_domains = {
+  {
+    -- This name identifies the domain
+    name = "LinuxLocal",
+    -- The hostname or address to connect to. Will be used to match settings
+    -- from your ssh config file
+    remote_address = "192.168.5.5",
+    -- The username to use on the remote host
+    username = "niksun",
+  },
+}
+
 return config
