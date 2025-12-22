@@ -1,17 +1,5 @@
 return {
   {
-    "Exafunction/windsurf.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "saghen/blink.cmp",
-    },
-    config = function()
-      require("codeium").setup {
-        enable_cmp_source = false,
-      }
-    end,
-  },
-  {
     "xzbdmw/colorful-menu.nvim",
     config = function()
       -- You don't need to set these options.
@@ -138,17 +126,11 @@ return {
           "path",
           "snippets",
           "buffer",
-          "codeium",
           "avante_commands",
           "avante_mentions",
           "avante_files",
         },
         providers = {
-          codeium = {
-            name = "Codeium",
-            module = "codeium.blink",
-            async = true,
-          },
           avante_commands = {
             name = "avante_commands",
             module = "blink.compat.source",
