@@ -1,5 +1,16 @@
 return {
   {
+    "TabbyML/vim-tabby",
+    lazy = false,
+    dependencies = {
+      "neovim/nvim-lspconfig",
+    },
+    init = function()
+      vim.g.tabby_agent_start_command = { "npx", "tabby-agent", "--stdio" }
+      vim.g.tabby_inline_completion_trigger = "auto"
+    end,
+  },
+  {
     "xzbdmw/colorful-menu.nvim",
     config = function()
       -- You don't need to set these options.
@@ -93,9 +104,7 @@ return {
   {
     "saghen/blink.cmp",
     optional = true,
-    dependencies = {
-      "Kurama622/llm.nvim",
-    },
+    dependencies = {},
     opts = {
       completion = {
         menu = {
@@ -126,7 +135,6 @@ return {
           "path",
           "snippets",
           "buffer",
-          "llm",
           "avante_commands",
           "avante_mentions",
           "avante_files",
@@ -149,13 +157,6 @@ return {
             module = "blink.compat.source",
             score_offset = 1000, -- show at a higher priority than lsp
             opts = {},
-          },
-          llm = {
-            name = "LLM",
-            module = "llm.common.completion.frontends.blink",
-            timeout_ms = 10000,
-            score_offset = 100,
-            async = true,
           },
         },
       },
