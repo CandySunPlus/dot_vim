@@ -93,9 +93,7 @@ return {
   {
     "saghen/blink.cmp",
     optional = true,
-    dependencies = {
-      "Exafunction/windsurf.nvim",
-    },
+    dependencies = {},
     opts = {
       completion = {
         menu = {
