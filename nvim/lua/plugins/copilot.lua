@@ -93,7 +93,9 @@ return {
   {
     "saghen/blink.cmp",
     optional = true,
-    dependencies = {},
+    dependencies = {
+      "Kurama622/llm.nvim",
+    },
     opts = {
       completion = {
         menu = {
@@ -124,6 +126,7 @@ return {
           "path",
           "snippets",
           "buffer",
+          "llm",
           "avante_commands",
           "avante_mentions",
           "avante_files",
@@ -146,6 +149,13 @@ return {
             module = "blink.compat.source",
             score_offset = 1000, -- show at a higher priority than lsp
             opts = {},
+          },
+          llm = {
+            name = "LLM",
+            module = "llm.common.completion.frontends.blink",
+            timeout_ms = 10000,
+            score_offset = 100,
+            async = true,
           },
         },
       },
