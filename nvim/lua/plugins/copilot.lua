@@ -110,6 +110,7 @@ return {
       completion = {
         menu = {
           border = "bold",
+          winblend = 0,
           draw = {
             -- We don't need label_description now because label and label_description are already
             -- combined together in label by colorful-menu.nvim.
@@ -123,12 +124,18 @@ return {
           },
         },
         documentation = {
-          window = { border = "bold" },
+          window = {
+            border = "bold",
+            winblend = 0,
+          },
         },
       },
       signature = {
         enabled = true,
-        window = { border = "bold" },
+        window = {
+          border = "bold",
+          winblend = 0,
+        },
       },
       sources = {
         default = {
