@@ -1,7 +1,6 @@
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
-  lazy = false,
   version = false,
   build = "make",
   opts = {
@@ -17,9 +16,11 @@ return {
         __inherited_from = "openai",
         endpoint = "https://api.moonshot.cn/v1",
         model = "kimi-k2-0905-preview",
+        timeout = 30000,
         api_key_name = "KIMI_API_KEY",
         extra_request_body = {
-          temperature = 0.2,
+          temperature = 0.75,
+          max_tokens = 32768,
         },
       },
       aihubmix = {
@@ -37,7 +38,7 @@ return {
         api_key_name = "OPENROUTER_API_KEY",
         model = "z-ai/glm-4.6",
         extra_request_body = {
-          temperature = 0.2,
+          temperature = 0.75,
         },
       },
       friday = {
@@ -81,13 +82,13 @@ return {
         },
       },
     },
-    -- {
-    --   -- Make sure to setup it properly if you have lazy=true
-    --   'MeanderingProgrammer/render-markdown.nvim',
-    --   opts = {
-    --     file_types = { "markdown", "Avante" },
-    --   },
-    --   ft = { "markdown", "Avante" },
-    -- },
+    {
+      -- Make sure to setup it properly if you have lazy=true
+      "MeanderingProgrammer/render-markdown.nvim",
+      opts = {
+        file_types = { "markdown", "Avante" },
+      },
+      ft = { "markdown", "Avante" },
+    },
   },
 }
