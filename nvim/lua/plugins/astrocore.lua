@@ -83,6 +83,14 @@ return {
       v = {
         ["<Leader>mr"] = { ":<C-u>MoltenEvaluateVisual<cr>gv", silent = true, desc = "Run visual selection" },
       },
+      i = {
+        ["<A-f>"] = { function() require("neocodeium").accept() end },
+        ["<A-w>"] = { function() require("neocodeium").accept_word() end },
+        ["<A-a>"] = { function() require("neocodeium").accept_line() end },
+        ["<A-e>"] = { function() require("neocodeium").cycle_or_complete() end },
+        ["<A-r>"] = { function() require("neocodeium").cycle_or_complete(-1) end },
+        ["<A-c>"] = { function() require("neocodeium").clear() end },
+      },
     },
   },
 }

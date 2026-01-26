@@ -1,16 +1,25 @@
 return {
   {
-    "TabbyML/vim-tabby",
-    lazy = false,
-    dependencies = {
-      "neovim/nvim-lspconfig",
-    },
-    init = function()
-      vim.g.tabby_agent_start_command = { "npx", "tabby-agent", "--stdio" }
-      vim.g.tabby_inline_completion_trigger = "auto"
-      vim.g.tabby_inline_completion_keybinding_accept = "<C-I>"
+    "monkoose/neocodeium",
+    event = "VeryLazy",
+    config = function()
+      local neocodeium = require "neocodeium"
+      neocodeium.setup()
+      vim.keymap.set("i", "<A-f>", neocodeium.accept)
     end,
   },
+  -- {
+  --   "TabbyML/vim-tabby",
+  --   lazy = false,
+  --   dependencies = {
+  --     "neovim/nvim-lspconfig",
+  --   },
+  --   init = function()
+  --     vim.g.tabby_agent_start_command = { "npx", "tabby-agent", "--stdio" }
+  --     vim.g.tabby_inline_completion_trigger = "auto"
+  --     vim.g.tabby_inline_completion_keybinding_accept = "<C-I>"
+  --   end,
+  -- },
   {
     "xzbdmw/colorful-menu.nvim",
     config = function()

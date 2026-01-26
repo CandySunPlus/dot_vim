@@ -15,7 +15,8 @@ return {
       kimi = {
         __inherited_from = "openai",
         endpoint = "https://api.moonshot.cn/v1",
-        model = "kimi-k2-0905-preview",
+        -- model = "kimi-k2-0905-preview",
+        model = "kimi-k2-turbo-preview",
         timeout = 30000,
         api_key_name = "KIMI_API_KEY",
         extra_request_body = {
