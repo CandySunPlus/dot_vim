@@ -7,7 +7,7 @@ config.font = wezterm.font_with_fallback({
 
   "Iosevka Custom",
   "IosevkaCustom Nerd Font Mono",
-  -- "Maple Mono NF CN",
+  "Sarasa Term SC",
 })
 config.line_height = 1.05
 config.font_size = 12
