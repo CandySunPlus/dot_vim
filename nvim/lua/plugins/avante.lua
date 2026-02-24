@@ -65,7 +65,6 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-    "zbirenbaum/copilot.lua",
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",
