@@ -9,7 +9,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode direnv rye kimi-cli)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode direnv kimi-cli)
 source $ZSH/oh-my-zsh.sh
 
 export XDG_CONFIG_HOME=~/.config
@@ -52,7 +52,8 @@ case ":$PATH:" in
     *"fnm_multishells"*) ;;
     *) eval "$(fnm env --use-on-cd --shell zsh)" ;;
 esac
-eval "$(cat $HOME/.rye/env)"
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 fastfetch
@@ -80,6 +81,8 @@ esac
 
 # Added by CatPaw
 export PATH="/Users/niksun/.catpaw/bin:$PATH"
+
+
 
 
 
