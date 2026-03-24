@@ -17,6 +17,7 @@ vim.o.termguicolors = true
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 vim.o.signcolumn = 'yes'
+vim.o.relativenumber = true
 
 -- Space as leader key
 vim.g.mapleader = ' '
