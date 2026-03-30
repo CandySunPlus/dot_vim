@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/niksun/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 if [[ $(uname) == "Darwin" ]]; then
     ulimit -S -n 1024
     case ":$PATH:" in
@@ -97,3 +104,6 @@ export PATH="/Users/niksun/.catpaw/bin:$PATH"
 
 
 source ~/.moaextrc
+
+# opencode
+export PATH=/Users/niksun/.opencode/bin:$PATH

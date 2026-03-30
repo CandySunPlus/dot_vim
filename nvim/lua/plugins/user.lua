@@ -22,4 +22,9 @@ return {
     version = "*",
     init = function() require("mini.align").setup() end,
   },
+  {
+    "stevearc/aerial.nvim",
+    version = "^3",
+    optional = true,
+  },
 }
