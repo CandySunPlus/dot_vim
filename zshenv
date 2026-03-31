@@ -95,3 +95,4 @@ if (( $+commands[lesspipe.sh] )); then
 fi
 
 . "$HOME/.cargo/env"
+. "/home/niksun/.local/share/bob/env/env.sh"

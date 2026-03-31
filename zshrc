@@ -105,5 +105,3 @@ export PATH="/Users/niksun/.catpaw/bin:$PATH"
 
 source ~/.moaextrc
 
-# opencode
-export PATH=/Users/niksun/.opencode/bin:$PATH
