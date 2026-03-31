@@ -52,25 +52,24 @@ return {
           local null_ls = require "null-ls"
           null_ls.register(null_ls.builtins.formatting.biome.with {
             -- args = {
-              --   "check",
-              --   "--fix",
-              --   "--indent-style=space",
-              --   "--formatter-enabled=true",
-              --   "--organize-imports-enabled=true",
-              --   "--linter-enabled=true",
-              --   "--stdin-file-path",
-              --   "$FILENAME",
-              -- },
-              -- to_stdin = true,
-              condition = function(utils) return utils.root_has_file "biome.json" end,
-            })
-          end,
-          shfmt = function(source_name, methods)
-            -- custom logic
-            require("mason-null-ls").default_setup(source_name, methods) -- to maintain default behavior
-          end,
-        }
-      end,
-    },
-
-  }
+            --   "check",
+            --   "--fix",
+            --   "--indent-style=space",
+            --   "--formatter-enabled=true",
+            --   "--organize-imports-enabled=true",
+            --   "--linter-enabled=true",
+            --   "--stdin-file-path",
+            --   "$FILENAME",
+            -- },
+            -- to_stdin = true,
+            condition = function(utils) return utils.root_has_file "biome.json" end,
+          })
+        end,
+        shfmt = function(source_name, methods)
+          -- custom logic
+          require("mason-null-ls").default_setup(source_name, methods) -- to maintain default behavior
+        end,
+      }
+    end,
+  },
+}
