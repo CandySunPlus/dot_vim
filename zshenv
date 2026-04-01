@@ -71,6 +71,7 @@ pkg_config_path=(
 path=(
   $HOME/.opt/bin
   $HOME/.local/bin
+  $HOME/.local/share/bob/nvim-bin
   $HOME/.cargo/bin
   $HOME/.go/bin
   $HOME/.dotnet/tools
@@ -94,5 +95,3 @@ if (( $+commands[lesspipe.sh] )); then
   export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
-. "$HOME/.cargo/env"
-. "/home/niksun/.local/share/bob/env/env.sh"
