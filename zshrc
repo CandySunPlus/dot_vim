@@ -16,7 +16,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode direnv kimi-cli)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-vi-mode direnv kimi-cli tmux)
 source $ZSH/oh-my-zsh.sh
 
 export XDG_CONFIG_HOME=~/.config
