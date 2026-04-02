@@ -80,7 +80,7 @@ return {
         ["gri"] = false,
 
         -- mappings seen under group name "Buffer"
-        ["<Leader>bp"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["<Leader>bn"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["<Leader>bd"] = {
           function()
             require("astroui.status.heirline").buffer_picker(
