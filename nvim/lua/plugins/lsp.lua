@@ -11,17 +11,17 @@ return {
   --   branch = "legacy",
   --   config = function() require("fidget").setup {} end,
   -- },
-  {
-    "VidocqH/lsp-lens.nvim",
-    event = "BufRead",
-    opts = {
-      enable = false,
-      include_declaration = true,
-      sections = {
-        definition = false,
-        references = true,
-        implementation = false,
-      },
-    },
-  },
+  -- {
+  --   "VidocqH/lsp-lens.nvim",
+  --   event = "BufRead",
+  --   opts = {
+  --     enable = false,
+  --     include_declaration = true,
+  --     sections = {
+  --       definition = false,
+  --       references = false,
+  --       implementation = false,
+  --     },
+  --   },
+  -- },
 }
