@@ -54,6 +54,7 @@ typeset -aU path
 ldflags=(
   $ldflags
   -L/opt/homebrew/lib
+  -L$HOME/.local/lib
 )
 cxxflags=(
   $cxxflags
@@ -61,9 +62,10 @@ cxxflags=(
 cflags=(
   $cflags
   -I/opt/homebrew/include
+  -I$HOME/.local/include
 )
 pkg_config_path=(
-  ~/.local/share/pkgconfig
+  $HOME/.local/share/pkgconfig
   /opt/homebrew/lib/pkgconfig
   $pkg_config_path
 )
