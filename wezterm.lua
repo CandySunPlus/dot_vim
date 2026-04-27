@@ -28,6 +28,8 @@ config.window_padding = {
   bottom = 5,
 }
 
+config.front_end = "WebGpu"
+
 config.ssh_domains = {
   {
     -- This name identifies the domain
