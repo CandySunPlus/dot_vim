@@ -6,8 +6,8 @@
 [init]
   defaultBranch = main
 [user]
-	name = sunbeiluo
-	email = sunbeiluo@meituan.com
+	name = NikSun
+	email = candysfm@gmail.com
 [core]
   editor = nvim
   pager = delta

@@ -86,22 +86,7 @@ case ":$PATH:" in
 esac
 
 
-# Added by CatPaw
-export PATH="/Users/niksun/.catpaw/bin:$PATH"
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-source ~/.moaextrc
 
