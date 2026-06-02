@@ -49,6 +49,11 @@ typeset -aU path
 # )
 
 # Set the list of directories that Zsh searches for programs.
+fpath=(
+    /opt/homebrew/share/zsh/functions
+    /opt/homebrew/share/zsh/site-functions
+    ${fpath:#/opt/homebrew/Cellar/zsh/*/share/zsh/*}
+)
 
 #
 ldflags=(
