@@ -39,7 +39,7 @@ function proxy {
 }
 
 alias unproxy="unset http_proxy; unset https_proxy; unset all_proxy;"
-alias ls="eza"
+alias ls="lsd"
 alias aws="aws --endpoint-url https://s3plus.vip.sankuai.com"
 alias mnpm="npm --registry=http://r.npm.sankuai.com \
     --cache=$HOME/.cache/mnpm \
@@ -90,3 +90,6 @@ esac
 
 
 
+
+
+source ~/.moaextrc
