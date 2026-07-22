@@ -11,6 +11,7 @@
 [core]
   editor = nvim
   pager = delta
+	quotepath = false
 [include]
 	path = ~/.config/delta/catppuccin.gitconfig
 
