@@ -89,7 +89,3 @@ esac
 
 
 
-
-
-
-source ~/.moaextrc
