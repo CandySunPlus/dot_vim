@@ -85,7 +85,3 @@ case ":$PATH:" in
     *) export PATH="$BUN_INSTALL/bin:$PATH" ;;
 esac
 
-
-
-# kimi-code
-export PATH="/Users/niksun/.kimi-code/bin:$PATH"
