@@ -89,3 +89,6 @@ esac
 
 
 
+
+# kimi-code
+export PATH="/Users/niksun/.kimi-code/bin:$PATH"
