@@ -7,11 +7,7 @@ compinit
 
 if [[ $(uname) == "Darwin" ]]; then
     ulimit -S -n 1024
-    case ":$PATH:" in
-        *":/opt/homebrew/bin:"*) ;;
-        *) eval "$(/opt/homebrew/bin/brew shellenv)" ;;
-    esac
-alias tar="COPYFILE_DISABLE=1 tar"
+    alias tar="COPYFILE_DISABLE=1 tar"
 fi
 
 # Path to your oh-my-zsh installation.

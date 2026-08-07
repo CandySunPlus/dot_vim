@@ -48,12 +48,10 @@ typeset -aU path
 #   $cdpath
 # )
 
-# Set the list of directories that Zsh searches for programs.
-fpath=(
-    /opt/homebrew/share/zsh/functions
-    /opt/homebrew/share/zsh/site-functions
-    ${fpath:#/opt/homebrew/Cellar/zsh/*/share/zsh/*}
-)
+case ":$PATH:" in
+    *":/opt/homebrew/bin:"*) ;;
+    *) eval "$(/opt/homebrew/bin/brew shellenv)" ;;
+esac
 
 #
 ldflags=(
@@ -96,6 +94,7 @@ path=(
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
 export BAT_THEME="Catppuccin Mocha"
+export GH_TOKEN=$(gh auth token)
 
 # Set the Less input preprocessor.
 if (( $+commands[lesspipe.sh] )); then
