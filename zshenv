@@ -95,6 +95,7 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 
 export BAT_THEME="Catppuccin Mocha"
 export GH_TOKEN=$(gh auth token)
+export GITHUB_TOKEN=$(gh auth token)
 
 # Set the Less input preprocessor.
 if (( $+commands[lesspipe.sh] )); then
