@@ -1,0 +1,38 @@
+# —— 字体 ——
+font-family = Iosevka Custom
+font-family = IosevkaCustom Nerd Font Mono
+font-family = Sarasa Term SC
+font-size = 12
+adjust-cell-height = 5%
+
+# —— 哑光黑色书写纸 + 浅色笔（background 必须与 shader 里 PAPER_BG 一致）——
+background = 242426
+foreground = e8e4da
+cursor-color = e8e4da
+selection-background = 4a4536
+selection-foreground = f4f1ea
+
+# 啫喱笔色板：白、银、金、粉彩……
+palette = 0=#3a3a3e
+palette = 1=#e8736b
+palette = 2=#8fc79a
+palette = 3=#e6c36a
+palette = 4=#7fa8e0
+palette = 5=#c79ad9
+palette = 6=#7cc8c8
+palette = 7=#cfcbc2
+palette = 8=#6e6c70
+palette = 9=#f08a80
+palette = 10=#a6d9ae
+palette = 11=#f0d488
+palette = 12=#9cbcf0
+palette = 13=#d8b0e8
+palette = 14=#99dcdc
+palette = 15=#f4f1ea
+
+# —— 纸纹 shader ——
+custom-shader = shaders/black-card.glsl
+custom-shader-animation = false
+
+window-padding-x = 6
+window-padding-y = 4

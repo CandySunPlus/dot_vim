@@ -28,7 +28,7 @@ config.window_padding = {
   bottom = 5,
 }
 
-config.front_end = "WebGpu"
+config.front_end = "OpenGL"
 
 config.ssh_domains = {
   {

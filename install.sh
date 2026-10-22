@@ -12,6 +12,7 @@ ln -sf "$BASE_PATH/p10k.zsh" ~/.p10k.zsh
 ln -sf "$BASE_PATH/starship.toml" ~/.config/
 ln -sf "$BASE_PATH/tmux.conf" ~/.tmux.conf
 ln -sf "$BASE_PATH/kitty" ~/.config/
+ln -sf "$BASE_PATH/ghostty" ~/.config/
 ln -sf "$BASE_PATH/zellij" ~/.config/
 ln -sf "$BASE_PATH/cargo_config" ~/.cargo/config.toml
 ln -sf "$BASE_PATH/clang-format" ~/.clang-format
