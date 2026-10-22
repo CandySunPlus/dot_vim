@@ -36,3 +36,6 @@ custom-shader-animation = false
 
 window-padding-x = 6
 window-padding-y = 4
+
+# ssh 到新机器时自动安装 xterm-ghostty terminfo，装不上则回退 xterm-256color
+shell-integration-features = ssh-terminfo,ssh-env
