@@ -44,3 +44,7 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[lfs "customtransfer.xet"]
+	path = git-xet
+	args = transfer
+	concurrent = true
